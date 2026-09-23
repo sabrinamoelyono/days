@@ -3,46 +3,30 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
 <title>DAYS Invoice Builder</title>
 <meta name="description" content="Build and export branded DAYS invoices — PT. Vakansi Media Global.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
+  /* DAYS palette. Approved pairings: orange/cream (either way round), navy on sky,
+     yellow on navy, navy on sand, navy on yellow. */
   :root {
-    --brand: #EC5B39;
-    --brand-ink: #C9431F;
-    --bg: #FBF8F5;
+    --orange: #E65F38;
+    --cream: #FBEEE4;
+    --sky: #A2BBE3;
+    --navy: #2E2D6B;
+    --yellow: #FFE800;
+    --sand: #EFCEA4;
+
+    --bg: var(--cream);
     --surface: #FFFFFF;
-    --ink: #1B1714;
-    --muted: #6E655E;
-    --line: #E8E0D8;
-    --tint: #FDEEE9;
-    --table-tint: #DCE7E9;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --brand: #F26A49;
-      --brand-ink: #FF8A6B;
-      --bg: #141110;
-      --surface: #1D1917;
-      --ink: #F3EEEA;
-      --muted: #A89E96;
-      --line: #342D29;
-      --tint: #2A1C17;
-      --table-tint: #223235;
-    }
-  }
-  :root[data-theme="dark"] {
-    --brand: #F26A49;
-    --brand-ink: #FF8A6B;
-    --bg: #141110;
-    --surface: #1D1917;
-    --ink: #F3EEEA;
-    --muted: #A89E96;
-    --line: #342D29;
-    --tint: #2A1C17;
-    --table-tint: #223235;
+    --field: #FDF7F2;
+    --ink: var(--navy);
+    --muted: #5B5A86;
+    --line: #E8DCD0;
+    --line-cool: #E2E7F2;
   }
 
   * { box-sizing: border-box; }
@@ -54,241 +38,343 @@
     font: 16px/1.5 "Inter Tight", system-ui, -apple-system, "Segoe UI", sans-serif;
   }
   .mono { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: .92em; letter-spacing: -.01em; }
-  a { color: var(--brand-ink); }
+  [hidden] { display: none !important; }
 
-  /* Page header */
-  .topbar { border-bottom: 1px solid var(--line); padding: 32px 20px 24px; }
+  /* Page header: yellow on navy */
+  .topbar { background: var(--navy); padding: 32px 20px 28px; margin-bottom: 24px; }
   .topbar .inner { max-width: 1400px; margin: 0 auto; }
   .eyebrow {
     font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
-    color: var(--brand-ink); margin: 0 0 8px;
+    color: var(--sky); margin: 0 0 8px;
   }
-  .topbar h1 { font-size: clamp(22px, 3.5vw, 30px); font-weight: 800; letter-spacing: -.02em; margin: 0 0 6px; }
-  .topbar p { color: var(--muted); margin: 0; max-width: 640px; }
+  .topbar h1 { font-size: clamp(26px, 3.5vw, 36px); font-weight: 800; letter-spacing: -.02em; margin: 0 0 6px; color: var(--yellow); }
+  .topbar p { color: var(--cream); margin: 0; max-width: 680px; }
 
   /* Layout */
   .app {
     display: grid;
-    grid-template-columns: minmax(300px, 400px) 1fr;
+    grid-template-columns: minmax(300px, 400px) minmax(0, 1fr);
     gap: 32px;
     max-width: 1400px;
     margin: 0 auto;
-    padding: 32px 20px 80px;
+    padding: 0 20px 80px;
     align-items: start;
   }
   @media (max-width: 900px) {
-    .app { grid-template-columns: 1fr; }
+    .app { grid-template-columns: minmax(0, 1fr); }
   }
 
   /* Editor */
-  .editor { display: flex; flex-direction: column; gap: 16px; }
+  .editor { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+  .editor-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  .autosave-note { font-size: 12px; color: var(--muted); }
+  .confirm-bar { background: var(--sand); color: var(--navy); border-radius: 14px; padding: 14px 16px; }
+  .confirm-bar p { margin: 0 0 12px; font-size: 14px; }
+  .confirm-actions { display: flex; gap: 8px; flex-wrap: wrap; }
   .card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px 18px 20px; }
   .card h2 {
+    display: flex; align-items: center;
     font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
-    color: var(--muted); margin: 0 0 14px;
+    color: var(--ink); margin: 0 0 14px;
+  }
+  .step {
+    display: inline-flex; align-items: center; justify-content: center; flex: none;
+    width: 24px; height: 24px; border-radius: 999px; margin-right: 10px;
+    background: var(--yellow); color: var(--navy); font-size: 12px; font-weight: 800; letter-spacing: 0;
   }
   .field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 12px; }
   .field:last-child { margin-bottom: 0; }
   .field label { font-size: 12px; font-weight: 600; color: var(--muted); }
-  .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .field label .opt { font-weight: 400; }
+  .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+  .row2 .field { margin-bottom: 0; }
   input[type="text"], input[type="number"], input[type="date"], textarea {
     font: 15px/1.4 "Inter Tight", sans-serif;
     padding: 9px 11px; border: 1px solid var(--line); border-radius: 8px;
-    background: var(--bg); color: var(--ink); width: 100%;
+    background: var(--field); color: var(--ink); width: 100%; min-width: 0;
   }
-  input:focus, textarea:focus { outline: 2px solid var(--brand); outline-offset: 1px; }
+  input::placeholder, textarea::placeholder { color: #9A99B6; }
+  textarea { resize: vertical; field-sizing: content; min-height: 44px; }
+  input.mono { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 14px; }
+  input:focus, textarea:focus { outline: 2px solid var(--navy); outline-offset: 1px; background: #fff; }
+  .hint { font-size: 12px; color: var(--muted); margin: 6px 0 0; }
 
   .btn {
-    border: 0; cursor: pointer; font-family: inherit; font-weight: 600; font-size: 13px;
-    border-radius: 999px; padding: 9px 16px; display: inline-flex; align-items: center; gap: 6px;
+    border: 0; cursor: pointer; font-family: inherit; font-weight: 700; font-size: 14px;
+    border-radius: 999px; padding: 10px 18px; display: inline-flex; align-items: center; gap: 6px;
   }
-  .btn-primary { background: var(--brand); color: #fff; }
-  .btn-primary:hover { background: var(--brand-ink); }
+  .btn:focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; }
+  .btn-primary { background: var(--orange); color: var(--cream); }
+  .btn-primary:hover { background: #D14F2A; }
   .btn-primary:disabled { opacity: .6; cursor: default; }
-  .btn-line { background: transparent; color: var(--ink); border: 1px solid var(--line); }
-  .btn-line:hover { border-color: var(--brand); color: var(--brand-ink); }
+  .btn-line { background: var(--surface); color: var(--navy); border: 1px solid #CFCDE2; }
+  .btn-line:hover { border-color: var(--navy); background: var(--field); }
   .btn-block { width: 100%; justify-content: center; }
   .btn-icon {
     border: 0; background: transparent; color: var(--muted); cursor: pointer;
-    width: 26px; height: 26px; border-radius: 999px; flex: none;
-    display: inline-flex; align-items: center; justify-content: center; font-size: 16px; line-height: 1;
+    width: 28px; height: 28px; border-radius: 999px; flex: none;
+    display: inline-flex; align-items: center; justify-content: center; font-size: 18px; line-height: 1;
   }
-  .btn-icon:hover { background: var(--tint); color: var(--brand-ink); }
-
-  .item-row {
-    border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin-bottom: 10px;
-    display: flex; flex-direction: column; gap: 8px;
+  .btn-icon:hover { background: var(--cream); color: var(--navy); }
+  .linkbtn {
+    background: none; border: 0; padding: 0; font: inherit; font-weight: 600; cursor: pointer;
+    color: var(--navy); text-decoration: underline; text-underline-offset: 2px;
   }
-  .item-row-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
-  .item-amount { font-size: 12px; color: var(--muted); }
-  .item-amount b { color: var(--ink); }
 
-  .term-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
-  .term-row input { flex: 1; }
+  .item-row { border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px 12px; margin-bottom: 10px; }
+  .item-row-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px; }
+  .item-no { font-size: 12px; font-weight: 700; color: var(--muted); }
+  .item-row .row2 { margin-bottom: 8px; }
+  .item-amount { font-size: 12px; color: var(--muted); text-align: right; }
+  .item-amount b { color: var(--ink); font-family: "JetBrains Mono", ui-monospace, monospace; font-weight: 500; }
+  .items-total {
+    display: flex; justify-content: space-between; align-items: baseline;
+    background: var(--sand); color: var(--navy); border-radius: 10px;
+    margin-top: 14px; padding: 10px 14px; font-weight: 700;
+  }
+  .items-total b { font-family: "JetBrains Mono", ui-monospace, monospace; }
 
-  .genno { border-top: 1px dashed var(--line); margin-top: 14px; padding-top: 14px; }
-  .genno .row2 { margin-bottom: 8px; }
-  .hint { font-size: 12px; color: var(--muted); margin: 6px 0 0; }
+  .term-row { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px; }
+  .term-row textarea { flex: 1; font-size: 14px; }
 
-  .actions { display: flex; flex-direction: column; gap: 10px; }
-  .autosave-note { font-size: 12px; color: var(--muted); text-align: center; }
+  details.card { padding: 0; }
+  details.card > summary {
+    list-style: none; cursor: pointer; padding: 16px 18px;
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  }
+  details.card > summary::-webkit-details-marker { display: none; }
+  details.card > summary::after { content: "+"; font-size: 20px; line-height: 1; color: var(--muted); }
+  details.card[open] > summary::after { content: "−"; }
+  .sum-title { font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+  .sum-note { display: block; font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .details-body { padding: 0 18px 20px; }
+  .subhead { font-size: 12px; font-weight: 700; color: var(--navy); margin: 6px 0 10px; }
+  .subhead + .field { margin-top: 0; }
+  .details-body .subhead:not(:first-child) { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--line); }
 
-  /* Preview (this is the exported node) */
-  .preview-wrap { overflow-x: auto; }
+  /* Preview column */
+  .preview-col { min-width: 0; display: flex; flex-direction: column; }
+  @media (min-width: 901px) {
+    .preview-col { position: sticky; top: 16px; max-height: calc(100vh - 32px); }
+    .preview-scroll { flex: 1 1 auto; min-height: 0; overflow-y: auto; scrollbar-gutter: stable; }
+  }
+  .preview-head, .problems { width: 100%; max-width: 794px; margin-inline: auto; }
+  .preview-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; flex: none; }
+  .preview-label { font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  .problems {
+    flex: none; background: var(--yellow); color: var(--navy);
+    border-radius: 10px; padding: 10px 14px; margin-bottom: 12px; font-size: 13px;
+  }
+  .problems p { margin: 0 0 4px; font-weight: 700; }
+  .problems ul { margin: 0; padding-left: 18px; }
+  .preview-fit { overflow: hidden; }
+  .preview-scale { width: 794px; transform-origin: top left; }
+
+  /* The invoice itself — this node is what gets exported */
   .preview {
-    width: 794px; max-width: none; margin: 0 auto; background: var(--surface);
-    box-shadow: 0 1px 3px rgba(27, 23, 20, .12); padding: 56px 52px 48px;
-    color: #1B1714; font: 15px/1.5 "Inter Tight", sans-serif;
+    width: 794px; background: #FFFFFF;
+    box-shadow: 0 1px 3px rgba(27, 23, 20, .12), 0 8px 24px rgba(27, 23, 20, .06);
+    padding: 44px 52px 40px;
+    color: var(--navy); font: 15px/1.5 "Inter Tight", sans-serif;
   }
-  @media print { .preview { box-shadow: none; } }
   .p-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; }
   .p-head img { height: 34px; width: auto; display: block; margin-bottom: 10px; }
-  .p-issuer { font-size: 13px; color: #3a332e; }
-  .p-issuer .name { font-weight: 700; color: #1B1714; margin-bottom: 2px; }
+  .p-issuer { font-size: 13px; color: var(--muted); }
+  .p-issuer .name { font-weight: 700; color: var(--navy); margin-bottom: 2px; }
   .p-meta { text-align: right; }
-  .p-meta h2 { font-size: 26px; font-weight: 800; letter-spacing: -.01em; margin: 0 0 10px; color: #1B1714; }
+  .p-meta h2 { font-size: 26px; font-weight: 800; letter-spacing: -.01em; margin: 0 0 10px; color: var(--navy); }
   .p-meta .line { font-size: 13px; margin-bottom: 2px; }
-  .p-meta .line .k { color: var(--brand-ink); font-weight: 600; margin-right: 6px; }
-  .p-meta .line .v { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: .93em; }
+  .p-meta .line .k { color: var(--muted); margin-right: 6px; }
+  .p-meta .line .v { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: .93em; font-weight: 500; }
 
-  .p-divider { height: 4px; background: var(--brand); border-radius: 2px; margin: 22px 0 24px; }
+  .p-divider { height: 4px; background: var(--orange); border-radius: 2px; margin: 22px 0 24px; }
 
   .p-label {
     font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
     color: var(--muted); margin: 0 0 6px;
   }
-  .p-client { font-size: 16px; font-weight: 700; margin: 0 0 24px; }
+  .p-billed { margin-bottom: 24px; }
+  .p-client { font-size: 17px; font-weight: 700; margin: 0; }
+  .p-client-details { font-size: 13px; color: var(--muted); margin: 4px 0 0; white-space: pre-line; }
 
-  .p-table { width: 100%; border-collapse: collapse; font-size: 14px; margin-bottom: 4px; }
-  .p-table th { background: var(--table-tint); text-align: left; padding: 10px 14px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: #2c2622; }
+  .p-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .p-table th { background: var(--sky); color: var(--navy); text-align: left; padding: 10px 14px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; }
   .p-table th.r, .p-table td.r { text-align: right; }
-  .p-table td { padding: 12px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
-  .p-table tfoot td { background: var(--table-tint); font-weight: 700; border-bottom: none; }
-  .p-table .mono-cell { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: .93em; white-space: nowrap; }
+  .p-table td { padding: 12px 14px; border-bottom: 1px solid var(--line-cool); vertical-align: top; }
+  .p-table .mono-cell, .p-total .mono-cell { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: .93em; white-space: nowrap; }
+  /* White top padding keeps the navy bar off the slice line if the PDF breaks here. */
+  .p-total-wrap { display: flex; justify-content: flex-end; padding-top: 3px; }
+  .p-total {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 24px;
+    min-width: 40%; background: var(--navy); color: var(--yellow); font-weight: 700; padding: 14px;
+  }
+  .p-table .empty td { color: var(--muted); font-style: italic; text-align: center; }
 
-  .p-foot { margin-top: 30px; padding-top: 16px; border-top: 1px solid var(--line); }
-  .p-foot + .p-foot { margin-top: 20px; }
-  .p-foot ul { margin: 0; padding-left: 16px; font-size: 12.5px; color: #3a332e; }
+  .p-foot { margin-top: 30px; padding-top: 16px; border-top: 1px solid var(--line-cool); }
+  .p-foot ul { margin: 0; padding-left: 16px; font-size: 12.5px; color: var(--muted); }
   .p-foot li { margin-bottom: 4px; }
+  .p-pay { background: var(--sand); border-top: 0; border-radius: 10px; padding: 16px 18px; margin-top: 24px; }
+  .p-pay .p-label { color: var(--navy); }
   .p-pay .line { font-size: 13px; margin-bottom: 3px; }
   .p-pay .line b { font-weight: 600; }
 
   @media print {
     * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-    .topbar, .editor, .actions { display: none !important; }
+    body { background: #fff; }
+    .topbar, .editor, .preview-head, .problems { display: none !important; }
     .app { display: block; padding: 0; }
-    .preview-wrap { overflow: visible; }
-    .preview { border: 0; border-radius: 0; width: auto; margin: 0; }
+    .preview-col { position: static; max-height: none; }
+    .preview-scroll, .preview-fit { overflow: visible; height: auto !important; }
+    .preview-scale { transform: none !important; width: auto; }
+    .preview { box-shadow: none; width: auto; }
   }
 </style>
 </head>
 <body>
 
-<div class="topbar">
+<header class="topbar">
   <div class="inner">
-    <p class="eyebrow">DAYS · Internal Tool</p>
+    <p class="eyebrow">DAYS · Internal tool</p>
     <h1>Invoice Builder</h1>
-    <p>Fill in a client, line items and terms, then download a branded PDF invoice — visas, packages, or anything else DAYS bills for.</p>
+    <p>Work through the numbered steps, check the preview, then download the PDF. Your draft is saved in this browser as you type.</p>
   </div>
-</div>
+</header>
 
 <div class="app">
   <form class="editor" id="editor" autocomplete="off">
 
-    <div class="card">
-      <h2>Issuer</h2>
-      <div class="field"><label for="f-company">Company</label><input type="text" id="f-company"></div>
-      <div class="field"><label for="f-addr1">Address line 1</label><input type="text" id="f-addr1"></div>
-      <div class="field"><label for="f-addr2">Address line 2</label><input type="text" id="f-addr2"></div>
-      <div class="field"><label for="f-phone">Phone</label><input type="text" id="f-phone"></div>
+    <div class="editor-top" id="editor-top">
+      <button type="button" class="btn btn-line" id="new-invoice">+ New invoice</button>
+      <span class="autosave-note">Draft autosaves in this browser</span>
     </div>
-
-    <div class="card">
-      <h2>Invoice</h2>
-      <div class="field"><label for="f-date">Date</label><input type="date" id="f-date"></div>
-      <div class="field"><label for="f-invno">Invoice No.</label><input type="text" id="f-invno" class="mono"></div>
-      <div class="field"><label for="f-client">Billed to (client name)</label><input type="text" id="f-client"></div>
-
-      <div class="genno">
-        <p class="hint" style="margin-top:0;">Generate a number in the DAYS format: <span class="mono">INV/sequence/Roman-month/CATEGORY/mon</span></p>
-        <div class="row2">
-          <input type="text" id="g-seq" placeholder="Sequence, e.g. 062671" class="mono">
-          <input type="text" id="g-cat" placeholder="Category, e.g. VISA">
-        </div>
-        <button type="button" class="btn btn-line btn-block" id="g-run">Generate from date above</button>
+    <div class="confirm-bar" id="new-confirm" role="alertdialog" aria-labelledby="new-confirm-text" hidden>
+      <p id="new-confirm-text"><b>Start a new invoice?</b> The client, date and line items are cleared. Company details, bank details and terms stay as they are.</p>
+      <div class="confirm-actions">
+        <button type="button" class="btn btn-primary" id="new-yes">Start new invoice</button>
+        <button type="button" class="btn btn-line" id="new-no">Keep editing</button>
       </div>
     </div>
 
-    <div class="card">
-      <h2>Line items</h2>
+    <section class="card">
+      <h2><span class="step">1</span>Client &amp; date</h2>
+      <div class="field"><label for="f-client">Billed to</label><input type="text" id="f-client" placeholder="Client name"></div>
+      <div class="field">
+        <label for="f-client-details">Client details <span class="opt">(optional)</span></label>
+        <textarea id="f-client-details" rows="2" placeholder="Company, address, email or phone"></textarea>
+      </div>
+      <div class="field"><label for="f-date">Invoice date</label><input type="date" id="f-date"></div>
+    </section>
+
+    <section class="card">
+      <h2><span class="step">2</span>Line items</h2>
       <div id="items"></div>
       <button type="button" class="btn btn-line btn-block" id="add-item">+ Add item</button>
-    </div>
+      <div class="items-total"><span>Total</span><b id="e-total"></b></div>
+    </section>
 
-    <div class="card">
-      <h2>Terms &amp; conditions</h2>
+    <section class="card">
+      <h2><span class="step">3</span>Invoice number</h2>
+      <div class="row2">
+        <div class="field">
+          <label for="f-cat">Category</label>
+          <input type="text" id="f-cat" list="cat-list" placeholder="e.g. VISA">
+          <datalist id="cat-list">
+            <option value="VISA"><option value="TRIP"><option value="FEST"><option value="F1">
+            <option value="SPORT"><option value="FLIGHT"><option value="HOTEL">
+          </datalist>
+        </div>
+        <div class="field"><label for="f-seq">Sequence</label><input type="text" id="f-seq" class="mono" inputmode="numeric" placeholder="062671"></div>
+      </div>
+      <div class="field">
+        <label for="f-invno">Invoice no.</label>
+        <input type="text" id="f-invno" class="mono">
+        <p class="hint" id="invno-hint-auto">Built from the category, sequence and invoice date.</p>
+        <p class="hint" id="invno-hint-manual" hidden>Edited by hand. <button type="button" class="linkbtn" id="invno-auto">Use automatic number</button></p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2><span class="step">4</span>Terms &amp; conditions</h2>
       <div id="terms"></div>
       <button type="button" class="btn btn-line btn-block" id="add-term">+ Add term</button>
-    </div>
+    </section>
 
-    <div class="card">
-      <h2>Payment information</h2>
-      <div class="field"><label for="f-bank">Bank name</label><input type="text" id="f-bank"></div>
-      <div class="field"><label for="f-accname">Account name</label><input type="text" id="f-accname"></div>
-      <div class="field"><label for="f-accno">Account no.</label><input type="text" id="f-accno" class="mono"></div>
-    </div>
-
-    <div class="actions">
-      <button type="button" class="btn btn-primary btn-block" id="download">Download PDF</button>
-      <button type="button" class="btn btn-line btn-block" id="reset">Reset to sample</button>
-      <p class="autosave-note" id="autosave-note"></p>
-    </div>
+    <details class="card">
+      <summary>
+        <span><span class="sum-title">Company &amp; bank details</span><span class="sum-note">Issuer address and payment account. Rarely changes.</span></span>
+      </summary>
+      <div class="details-body">
+        <p class="subhead">Issuer</p>
+        <div class="field"><label for="f-company">Company</label><input type="text" id="f-company"></div>
+        <div class="field"><label for="f-addr1">Address line 1</label><input type="text" id="f-addr1"></div>
+        <div class="field"><label for="f-addr2">Address line 2</label><input type="text" id="f-addr2"></div>
+        <div class="field"><label for="f-phone">Phone</label><input type="text" id="f-phone"></div>
+        <p class="subhead">Payment information</p>
+        <div class="field"><label for="f-bank">Bank name</label><input type="text" id="f-bank"></div>
+        <div class="field"><label for="f-accname">Account name</label><input type="text" id="f-accname"></div>
+        <div class="field"><label for="f-accno">Account no.</label><input type="text" id="f-accno" class="mono"></div>
+      </div>
+    </details>
   </form>
 
-  <div class="preview-wrap">
-    <div class="preview" id="preview">
-      <div class="p-head">
-        <div>
-          <img src="data:image/png;base64,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" alt="DAYS">
-          <div class="p-issuer">
-            <div class="name" id="p-company"></div>
-            <div id="p-addr1"></div>
-            <div id="p-addr2"></div>
-            <div id="p-phone"></div>
+  <div class="preview-col">
+    <div class="preview-head">
+      <span class="preview-label">Preview</span>
+      <button type="button" class="btn btn-primary" id="download">Download PDF</button>
+    </div>
+    <div class="problems" id="problems" role="alert" hidden></div>
+    <div class="preview-scroll" id="preview-scroll">
+      <div class="preview-fit" id="preview-fit">
+        <div class="preview-scale" id="preview-scale">
+          <div class="preview" id="preview">
+            <div class="p-head">
+              <div>
+                <img src="data:image/png;base64,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" alt="DAYS">
+                <div class="p-issuer">
+                  <div class="name" id="p-company"></div>
+                  <div id="p-addr1"></div>
+                  <div id="p-addr2"></div>
+                  <div id="p-phone"></div>
+                </div>
+              </div>
+              <div class="p-meta">
+                <h2>INVOICE</h2>
+                <div class="line"><span class="k">Date:</span><span class="v" id="p-date"></span></div>
+                <div class="line"><span class="k">Invoice No:</span><span class="v" id="p-invno"></span></div>
+              </div>
+            </div>
+
+            <div class="p-divider"></div>
+
+            <div class="p-billed">
+              <p class="p-label">Billed to</p>
+              <p class="p-client" id="p-client"></p>
+              <p class="p-client-details" id="p-client-details"></p>
+            </div>
+
+            <table class="p-table">
+              <thead>
+                <tr><th>Description</th><th class="r">Unit Price</th><th class="r">Qty</th><th class="r">Amount</th></tr>
+              </thead>
+              <tbody id="p-items"></tbody>
+            </table>
+            <div class="p-total-wrap">
+              <div class="p-total"><span>TOTAL</span><span class="mono-cell" id="p-total"></span></div>
+            </div>
+
+            <div class="p-foot" id="p-terms-block">
+              <p class="p-label">Terms &amp; conditions</p>
+              <ul id="p-terms"></ul>
+            </div>
+
+            <div class="p-foot p-pay">
+              <p class="p-label">Payment information</p>
+              <div class="line"><b>Bank Name:</b> <span id="p-bank"></span></div>
+              <div class="line"><b>Account Name:</b> <span id="p-accname"></span></div>
+              <div class="line"><b>Account No:</b> <span id="p-accno"></span></div>
+            </div>
           </div>
         </div>
-        <div class="p-meta">
-          <h2>INVOICE</h2>
-          <div class="line"><span class="k">Date:</span><span class="v" id="p-date"></span></div>
-          <div class="line"><span class="k">Invoice No:</span><span class="v" id="p-invno"></span></div>
-        </div>
-      </div>
-
-      <div class="p-divider"></div>
-
-      <p class="p-label">Billed to</p>
-      <p class="p-client" id="p-client"></p>
-
-      <table class="p-table">
-        <thead>
-          <tr><th>Description</th><th class="r">Unit Price</th><th class="r">Qty</th><th class="r">Amount</th></tr>
-        </thead>
-        <tbody id="p-items"></tbody>
-        <tfoot>
-          <tr><td></td><td></td><td class="r">TOTAL</td><td class="r mono-cell" id="p-total"></td></tr>
-        </tfoot>
-      </table>
-
-      <div class="p-foot">
-        <p class="p-label">Terms &amp; conditions</p>
-        <ul id="p-terms"></ul>
-      </div>
-
-      <div class="p-foot p-pay">
-        <p class="p-label">Payment information</p>
-        <div class="line"><b>Bank Name:</b> <span id="p-bank"></span></div>
-        <div class="line"><b>Account Name:</b> <span id="p-accname"></span></div>
-        <div class="line"><b>Account No:</b> <span id="p-accno"></span></div>
       </div>
     </div>
   </div>
@@ -301,15 +387,20 @@
   const MONTHS_ABBR = ["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"];
   const ROMAN = ["I","II","III","IV","V","VI","VII","VIII","IX","X","XI","XII"];
   const STORE_KEY = "days-invoice-builder-draft";
+  const PAGE_PX = 794;
 
   const SAMPLE = {
     company: "PT. Vakansi Media Global",
     addr1: "Jalan Tebet Barat IX No. 2",
     addr2: "Jakarta Selatan 12810",
     phone: "+62-812-20000-185",
-    date: "2026-09-16",
-    invoiceNo: "INV/062671/IX/VISA/SEP",
     client: "Lia Yusita",
+    clientDetails: "",
+    date: "2026-09-16",
+    category: "VISA",
+    seq: "062671",
+    invoiceNo: "INV/062671/IX/VISA/SEP",
+    invoiceNoManual: false,
     items: [{ desc: "Visa Schengen — Germany", price: 3950000, qty: 1 }],
     terms: [
       "Full payment is required to confirm and secure all bookings.",
@@ -323,45 +414,64 @@
     accountNo: "2914100185"
   };
 
-  let state = loadDraft() || structuredClone(SAMPLE);
+  const FIELDS = {
+    "f-client": "client", "f-client-details": "clientDetails", "f-date": "date",
+    "f-cat": "category", "f-seq": "seq",
+    "f-company": "company", "f-addr1": "addr1", "f-addr2": "addr2", "f-phone": "phone",
+    "f-bank": "bank", "f-accname": "accountName", "f-accno": "accountNo"
+  };
 
-  function loadDraft() {
-    try {
-      const raw = localStorage.getItem(STORE_KEY);
-      return raw ? JSON.parse(raw) : null;
-    } catch (e) { return null; }
+  const $ = (id) => document.getElementById(id);
+
+  let state = loadState();
+
+  function loadState() {
+    let draft = null;
+    try { draft = JSON.parse(localStorage.getItem(STORE_KEY) || "null"); } catch (e) {}
+    if (!draft) return structuredClone(SAMPLE);
+    // Drafts saved before automatic numbering existed keep their hand-typed number.
+    if (!("invoiceNoManual" in draft)) draft.invoiceNoManual = true;
+    return { ...structuredClone(SAMPLE), ...draft };
   }
   function saveDraft() {
     try { localStorage.setItem(STORE_KEY, JSON.stringify(state)); } catch (e) {}
   }
 
   function formatRp(n) {
-    n = Math.round(Number(n) || 0);
-    return "Rp. " + n.toLocaleString("id-ID");
+    return "Rp. " + Math.round(Number(n) || 0).toLocaleString("id-ID");
   }
   function formatDateLong(iso) {
-    const parts = (iso || "").split("-").map(Number);
-    if (parts.length !== 3 || !parts[0]) return "";
-    const [y, m, d] = parts;
-    return `${d} ${MONTHS[m - 1]} ${y}`;
+    const [y, m, d] = (iso || "").split("-").map(Number);
+    return y && m && d ? `${d} ${MONTHS[m - 1]} ${y}` : "";
   }
-  function total() {
-    return state.items.reduce((sum, it) => sum + (Number(it.price) || 0) * (Number(it.qty) || 0), 0);
+  function todayIso() {
+    const d = new Date();
+    return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
   }
+  const lineAmount = (it) => (Number(it.price) || 0) * (Number(it.qty) || 0);
+  const isBlankItem = (it) => !String(it.desc || "").trim() && !(Number(it.price) > 0);
+  const total = () => state.items.reduce((sum, it) => sum + lineAmount(it), 0);
 
-  const $ = (id) => document.getElementById(id);
+  function autoInvoiceNo() {
+    const m = Number((state.date || "").split("-")[1]) - 1;
+    if (!(m >= 0 && m < 12)) return "";
+    const seq = (String(state.seq || "").replace(/\D/g, "") || "1").padStart(6, "0");
+    const cat = String(state.category || "").trim().toUpperCase().replace(/[\s/]+/g, "-") || "GEN";
+    return `INV/${seq}/${ROMAN[m]}/${cat}/${MONTHS_ABBR[m]}`;
+  }
+  function refreshInvoiceNo() {
+    if (!state.invoiceNoManual) {
+      state.invoiceNo = autoInvoiceNo();
+      $("f-invno").value = state.invoiceNo;
+    }
+    $("invno-hint-auto").hidden = state.invoiceNoManual;
+    $("invno-hint-manual").hidden = !state.invoiceNoManual;
+  }
 
   function renderEditorStatic() {
-    $("f-company").value = state.company;
-    $("f-addr1").value = state.addr1;
-    $("f-addr2").value = state.addr2;
-    $("f-phone").value = state.phone;
-    $("f-date").value = state.date;
+    for (const [id, key] of Object.entries(FIELDS)) $(id).value = state[key];
     $("f-invno").value = state.invoiceNo;
-    $("f-client").value = state.client;
-    $("f-bank").value = state.bank;
-    $("f-accname").value = state.accountName;
-    $("f-accno").value = state.accountNo;
+    refreshInvoiceNo();
   }
 
   function renderItemsEditor() {
@@ -372,26 +482,26 @@
       row.className = "item-row";
       row.innerHTML = `
         <div class="item-row-head">
-          <input type="text" data-role="desc" placeholder="Description" style="flex:1;">
-          <button type="button" class="btn-icon" data-role="remove" title="Remove item">&times;</button>
+          <span class="item-no">Item ${i + 1}</span>
+          <button type="button" class="btn-icon" data-role="remove" aria-label="Remove item ${i + 1}" title="Remove item">&times;</button>
         </div>
+        <div class="field"><label for="item-${i}-desc">Description</label><input type="text" id="item-${i}-desc" data-role="desc" placeholder="e.g. Visa Schengen — Germany"></div>
         <div class="row2">
-          <input type="number" data-role="price" placeholder="Unit price" min="0" step="1000">
-          <input type="number" data-role="qty" placeholder="Qty" min="0" step="1">
+          <div class="field"><label for="item-${i}-price">Unit price (Rp)</label><input type="number" id="item-${i}-price" data-role="price" class="mono" min="0" step="1000" inputmode="numeric" placeholder="0"></div>
+          <div class="field"><label for="item-${i}-qty">Qty</label><input type="number" id="item-${i}-qty" data-role="qty" class="mono" min="0" step="1" inputmode="numeric"></div>
         </div>
-        <div class="item-amount">Amount: <b data-role="amount"></b></div>
+        <div class="item-amount">Amount <b data-role="amount"></b></div>
       `;
-      row.querySelector('[data-role="desc"]').value = it.desc;
-      row.querySelector('[data-role="price"]').value = it.price;
-      row.querySelector('[data-role="qty"]').value = it.qty;
-      row.querySelector('[data-role="amount"]').textContent = formatRp((it.price || 0) * (it.qty || 0));
-
-      const amountEl = row.querySelector('[data-role="amount"]');
-      const updateAmount = () => { amountEl.textContent = formatRp((Number(state.items[i].price) || 0) * (Number(state.items[i].qty) || 0)); };
-      row.querySelector('[data-role="desc"]').addEventListener("input", (e) => { state.items[i].desc = e.target.value; sync(); });
-      row.querySelector('[data-role="price"]').addEventListener("input", (e) => { state.items[i].price = e.target.value; updateAmount(); sync(); });
-      row.querySelector('[data-role="qty"]').addEventListener("input", (e) => { state.items[i].qty = e.target.value; updateAmount(); sync(); });
-      row.querySelector('[data-role="remove"]').addEventListener("click", () => {
+      const q = (role) => row.querySelector(`[data-role="${role}"]`);
+      q("desc").value = it.desc;
+      q("price").value = it.price;
+      q("qty").value = it.qty;
+      const updateAmount = () => { q("amount").textContent = formatRp(lineAmount(state.items[i])); };
+      updateAmount();
+      q("desc").addEventListener("input", (e) => { state.items[i].desc = e.target.value; sync(); });
+      q("price").addEventListener("input", (e) => { state.items[i].price = e.target.value; updateAmount(); sync(); });
+      q("qty").addEventListener("input", (e) => { state.items[i].qty = e.target.value; updateAmount(); sync(); });
+      q("remove").addEventListener("click", () => {
         state.items.splice(i, 1);
         renderItemsEditor();
         sync();
@@ -406,8 +516,8 @@
     state.terms.forEach((t, i) => {
       const row = document.createElement("div");
       row.className = "term-row";
-      row.innerHTML = `<input type="text" value="">  <button type="button" class="btn-icon" title="Remove term">&times;</button>`;
-      const input = row.querySelector("input");
+      row.innerHTML = `<textarea rows="2" aria-label="Term ${i + 1}"></textarea><button type="button" class="btn-icon" aria-label="Remove term ${i + 1}" title="Remove term">&times;</button>`;
+      const input = row.querySelector("textarea");
       input.value = t;
       input.addEventListener("input", (e) => { state.terms[i] = e.target.value; sync(); });
       row.querySelector("button").addEventListener("click", () => {
@@ -427,50 +537,48 @@
     $("p-date").textContent = formatDateLong(state.date);
     $("p-invno").textContent = state.invoiceNo;
     $("p-client").textContent = state.client;
+    $("p-client-details").textContent = state.clientDetails;
+    $("p-client-details").hidden = !String(state.clientDetails || "").trim();
 
     const tbody = $("p-items");
     tbody.innerHTML = "";
-    state.items.forEach((it) => {
+    const items = state.items.filter((it) => !isBlankItem(it));
+    items.forEach((it) => {
       const tr = document.createElement("tr");
-      const amount = (Number(it.price) || 0) * (Number(it.qty) || 0);
-      tr.innerHTML = `
-        <td>${escapeHtml(it.desc)}</td>
-        <td class="r mono-cell">${formatRp(it.price)}</td>
-        <td class="r mono-cell">${Number(it.qty) || 0}</td>
-        <td class="r mono-cell">${formatRp(amount)}</td>
-      `;
+      [[it.desc, ""], [formatRp(it.price), "r mono-cell"], [String(Number(it.qty) || 0), "r mono-cell"], [formatRp(lineAmount(it)), "r mono-cell"]]
+        .forEach(([text, cls]) => {
+          const td = document.createElement("td");
+          td.textContent = text;
+          if (cls) td.className = cls;
+          tr.appendChild(td);
+        });
       tbody.appendChild(tr);
     });
+    if (!items.length) {
+      tbody.innerHTML = `<tr class="empty"><td colspan="4">No line items yet</td></tr>`;
+    }
     $("p-total").textContent = formatRp(total());
+    $("e-total").textContent = formatRp(total());
 
+    const terms = state.terms.filter((t) => String(t).trim());
     const ul = $("p-terms");
     ul.innerHTML = "";
-    state.terms.forEach((t) => {
+    terms.forEach((t) => {
       const li = document.createElement("li");
       li.textContent = t;
       ul.appendChild(li);
     });
+    $("p-terms-block").hidden = !terms.length;
 
     $("p-bank").textContent = state.bank;
     $("p-accname").textContent = state.accountName;
     $("p-accno").textContent = state.accountNo;
   }
 
-  function escapeHtml(s) {
-    return String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
-  }
-
   function sync() {
+    $("problems").hidden = true;
     saveDraft();
     renderPreview();
-  }
-
-  function bindIssuerFields() {
-    [["f-company","company"], ["f-addr1","addr1"], ["f-addr2","addr2"], ["f-phone","phone"],
-     ["f-date","date"], ["f-invno","invoiceNo"], ["f-client","client"],
-     ["f-bank","bank"], ["f-accname","accountName"], ["f-accno","accountNo"]].forEach(([id, key]) => {
-      $(id).addEventListener("input", (e) => { state[key] = e.target.value; sync(); });
-    });
   }
 
   function fullRender() {
@@ -480,64 +588,162 @@
     renderPreview();
   }
 
+  // Scale the fixed-width A4 preview to fit its column. The transform sits on a
+  // wrapper so the exported #preview node is always captured at full size.
+  function fitPreview() {
+    const avail = $("preview-scroll").clientWidth;
+    const s = Math.min(1, avail / PAGE_PX);
+    const offset = Math.max(0, (avail - PAGE_PX * s) / 2);
+    $("preview-scale").style.transform = `translateX(${offset}px) scale(${s})`;
+    $("preview-fit").style.height = Math.ceil($("preview").offsetHeight * s) + "px";
+  }
+
+  function problems() {
+    const out = [];
+    if (!String(state.client).trim()) out.push("Add the client's name (step 1).");
+    if (!state.date) out.push("Pick an invoice date (step 1).");
+    const items = state.items.filter((it) => !isBlankItem(it));
+    if (!items.some((it) => String(it.desc).trim())) out.push("Add at least one line item (step 2).");
+    state.items.forEach((it, i) => {
+      if (isBlankItem(it)) return;
+      if (!String(it.desc).trim()) out.push(`Item ${i + 1} has a price but no description (step 2).`);
+      else if (!(Number(it.price) > 0)) out.push(`Item ${i + 1} has no unit price (step 2).`);
+      else if (!(Number(it.qty) > 0)) out.push(`Item ${i + 1} has no quantity (step 2).`);
+    });
+    if (!String(state.invoiceNo).trim()) out.push("Add an invoice number (step 3).");
+    return out;
+  }
+  function showProblems(title, list) {
+    const box = $("problems");
+    box.innerHTML = "";
+    const p = document.createElement("p");
+    p.textContent = title;
+    box.appendChild(p);
+    if (list.length) {
+      const ul = document.createElement("ul");
+      list.forEach((msg) => {
+        const li = document.createElement("li");
+        li.textContent = msg;
+        ul.appendChild(li);
+      });
+      box.appendChild(ul);
+    }
+    box.hidden = false;
+  }
+
+  for (const [id, key] of Object.entries(FIELDS)) {
+    $(id).addEventListener("input", (e) => { state[key] = e.target.value; refreshInvoiceNo(); sync(); });
+  }
+  $("f-invno").addEventListener("input", (e) => {
+    state.invoiceNo = e.target.value;
+    state.invoiceNoManual = true;
+    refreshInvoiceNo();
+    sync();
+  });
+  $("invno-auto").addEventListener("click", () => {
+    state.invoiceNoManual = false;
+    refreshInvoiceNo();
+    sync();
+  });
+
   $("add-item").addEventListener("click", () => {
-    state.items.push({ desc: "", price: 0, qty: 1 });
+    state.items.push({ desc: "", price: "", qty: 1 });
     renderItemsEditor();
     sync();
+    $(`item-${state.items.length - 1}-desc`).focus();
   });
   $("add-term").addEventListener("click", () => {
     state.terms.push("");
     renderTermsEditor();
     sync();
+    $("terms").lastElementChild.querySelector("textarea").focus();
   });
-  $("reset").addEventListener("click", () => {
-    if (!confirm("Reset the form to the sample invoice? Unsaved changes will be lost.")) return;
-    state = structuredClone(SAMPLE);
+
+  function setConfirmOpen(open) {
+    $("new-confirm").hidden = !open;
+    $("editor-top").hidden = open;
+  }
+  $("new-invoice").addEventListener("click", () => {
+    const hasContent = String(state.client).trim() || state.items.some((it) => !isBlankItem(it));
+    if (!hasContent) { startNewInvoice(); return; }
+    setConfirmOpen(true);
+    $("new-yes").focus();
+  });
+  $("new-no").addEventListener("click", () => { setConfirmOpen(false); $("new-invoice").focus(); });
+  $("new-yes").addEventListener("click", () => { setConfirmOpen(false); startNewInvoice(); });
+
+  function startNewInvoice() {
+    const digits = String(state.seq || "").replace(/\D/g, "");
+    const next = String((parseInt(digits || "0", 10) || 0) + 1).padStart(Math.max(6, digits.length), "0");
+    Object.assign(state, {
+      client: "", clientDetails: "", date: todayIso(), seq: next, invoiceNoManual: false,
+      items: [{ desc: "", price: "", qty: 1 }]
+    });
     fullRender();
-    saveDraft();
-  });
-
-  $("g-run").addEventListener("click", () => {
-    const seqRaw = $("g-seq").value.trim();
-    const cat = ($("g-cat").value.trim() || "GEN").toUpperCase();
-    const dateVal = $("f-date").value;
-    if (!dateVal) { alert("Pick a date first."); return; }
-    const m = Number(dateVal.split("-")[1]) - 1;
-    const seq = (seqRaw || "1").replace(/\D/g, "").padStart(6, "0").slice(-6);
-    const invNo = `INV/${seq}/${ROMAN[m]}/${cat}/${MONTHS_ABBR[m]}`;
-    $("f-invno").value = invNo;
-    state.invoiceNo = invNo;
     sync();
-  });
+    $("f-client").focus();
+  }
 
-  $("download").addEventListener("click", () => {
-    const btn = $("download");
+  // Opened as a local file, html2pdf saves directly. Hosted as a claude.ai artifact,
+  // the sandbox blocks script downloads, so the PDF goes through the downloads capability.
+  async function savePdf(worker, filename) {
+    if (typeof window.claude?.use !== "function") return worker.save();
+    const downloads = await window.claude.use("downloads");
+    if (!downloads) throw { code: "unavailable" };
+    const blob = await worker.outputPdf("blob");
+    return downloads.save({ filename, data: blob });
+  }
+
+  $("download").addEventListener("click", async () => {
+    const list = problems();
+    if (list.length) { showProblems("Fix these before downloading:", list); return; }
     if (typeof html2pdf === "undefined") {
-      alert("PDF library failed to load — check your internet connection and try again.");
+      showProblems("The PDF library didn't load. Check your internet connection and reload the page.", []);
       return;
     }
+    const btn = $("download");
     const label = btn.textContent;
     btn.disabled = true;
     btn.textContent = "Preparing…";
-    const filename = (state.invoiceNo || "DAYS-Invoice").replace(/\//g, "-") + ".pdf";
-    html2pdf()
+    const unsafe = /[\\/:*?"<>|]+/g;
+    const base = String(state.invoiceNo).trim().replace(unsafe, "-");
+    const client = String(state.client).trim().replace(unsafe, "").trim();
+    const filename = client ? `${base} - ${client}.pdf` : `${base}.pdf`;
+    const worker = html2pdf()
       .set({
-        margin: 0,
+        margin: [10, 0, 10, 0],
         filename,
         image: { type: "jpeg", quality: 0.98 },
-        html2canvas: { scale: 2, useCORS: true, backgroundColor: "#ffffff" },
-        jsPDF: { unit: "mm", format: "a4", orientation: "portrait" }
+        // scrollX/Y: without these html2canvas offsets the capture by the page scroll and returns blank pages.
+        html2canvas: { scale: 2, useCORS: true, backgroundColor: "#ffffff", scrollX: 0, scrollY: 0 },
+        jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+        pagebreak: { mode: ["css", "legacy"], avoid: ["tr", "li", ".p-billed", ".p-total-wrap", ".p-pay"] }
       })
-      .from($("preview"))
-      .save()
-      .finally(() => {
-        btn.disabled = false;
-        btn.textContent = label;
-      });
+      .from($("preview"));
+    try {
+      await savePdf(worker, filename);
+    } catch (e) {
+      const code = e && e.code;
+      if (code === "declined") {
+        // The viewer chose not to save; nothing to report.
+      } else if (code === "rate_limited") {
+        showProblems("A save prompt is already open. Finish that one, then try again.", []);
+      } else if (code) {
+        showProblems("Downloading isn't available in this view. Open the invoice builder file in your browser to download the PDF.", []);
+      } else {
+        showProblems("Something went wrong while creating the PDF. Please try again.", []);
+      }
+    } finally {
+      btn.disabled = false;
+      btn.textContent = label;
+    }
   });
 
-  bindIssuerFields();
   fullRender();
+  const ro = new ResizeObserver(fitPreview);
+  ro.observe($("preview-scroll"));
+  ro.observe($("preview"));
+  document.fonts.ready.then(fitPreview);
 })();
 </script>
 </body>
