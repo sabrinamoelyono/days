@@ -1,6 +1,6 @@
 # DAYS — Brand Identity
 
-DAYS is a culture-driven travel concierge for people who travel *because of* something: a festival lineup, a race weekend, a moment they don't want to miss. This document is the reference for how the brand looks, sounds and is named. For the legal and corporate profile of the company behind it, see [README.md](README.md).
+DAYS is a culture-driven travel concierge for people who travel *because of* something: a festival lineup, a race weekend, a moment they don't want to miss. This document is the reference for how the brand looks, sounds and is named. For the legal and corporate profile of the company behind it, see [README.md](README.md). For the live brand as it appears to customers, see **[talkaboutdays.com](https://talkaboutdays.com)**.
 
 ## Positioning
 
