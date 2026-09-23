@@ -6,7 +6,7 @@
 A culture-driven travel concierge shaping how you move through destinations, from festivals to local scenes.</p>
 
 <p align="center">
-  <a href="https://talkaboutdays.com">talkaboutdays.com</a> ·
+  <a href="https://www.talkaboutdays.com/">talkaboutdays.com</a> ·
   <a href="company-profile/DAYS-Company-Profile.pdf">Company profile (PDF)</a> ·
   <a href="DESIGN.md">Brand identity</a>
 </p>
@@ -85,6 +85,7 @@ All four are registered at the Tebet office for preparation, operations and comm
 
 ## Contact
 
+- **Website:** [talkaboutdays.com](https://www.talkaboutdays.com/)
 - **Office:** Jl. Tebet Barat IX No. 2, Tebet, South Jakarta 12810, Indonesia
 - **Email:** [daysforward.id@gmail.com](mailto:daysforward.id@gmail.com)
 - **Phone:** +62 812-2000-0185
