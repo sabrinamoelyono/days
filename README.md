@@ -98,6 +98,7 @@ All four are registered at the Tebet office for preparation, operations and comm
 | `assets/days-logo-square.png` | DAYS wordmark on a 500 × 500 transparent square (for avatars and icons) |
 | `company-profile/DAYS-Company-Profile.pdf` | Company profile, 6-page A4 PDF |
 | `company-profile/index.html` | Company profile as a single self-contained web page |
+| `invoice-builder/index.html` | Internal tool: fill in a client, line items and terms and download a branded DAYS invoice as a PDF |
 | `DESIGN.md` | Brand identity: logo use, colour, type, voice and naming |
 
 ---
