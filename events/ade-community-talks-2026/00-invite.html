@@ -43,10 +43,7 @@ body { position: relative; font-family: 'Archivo', sans-serif; }
 .page { padding-top: 220px; }
 .hero { margin-top: 120px; font-size: 210px; position: relative; }
 .hero em { text-shadow: 0 0 60px rgba(228,232,106,.35); }
-.badge { position: absolute; right: 70px; top: 320px; width: 230px; height: 230px; animation: none; }
-.badge text { font-family: 'DM Mono', monospace; font-size: 15.5px; letter-spacing: 0; fill: #cfccc3; text-transform: uppercase; }
-.badge .star { fill: var(--y); }
-.blank { margin-top: 40px; height: 100px; }
+.blank { margin-top: 30px; height: 80px; }
 .lead { margin-top: 48px; font-size: 28px; }
 .title { font-size: 80px; }
 .wave { margin-top: 44px; height: 70px; display: flex; align-items: center; gap: 5px; }
@@ -54,6 +51,19 @@ body { position: relative; font-family: 'Archivo', sans-serif; }
 .facts { margin-top: 40px; }
 .who { margin-top: 34px; }
 .foot { bottom: auto; top: 1640px; }
+
+/* poster typography */
+.serif { font-family: 'Archivo', sans-serif; font-weight: 900; font-stretch: 125%; text-transform: uppercase; letter-spacing: -.01em; }
+.serif em { font-style: normal; }
+.hero { font-size: 196px; line-height: .88; margin-top: 90px; }
+.title { font-size: 62px; line-height: 1; font-weight: 800; }
+.title em { color: var(--y); }
+.date { font-size: 64px; line-height: .95; }
+.time { font-size: 40px; }
+.venue { font-size: 28px; font-weight: 800; }
+.mono, .venue small { font-family: 'Archivo', sans-serif !important; font-weight: 600; font-stretch: 112%; letter-spacing: .3em; font-size: 15px; }
+.who { font-size: 15px; line-height: 2.1; }
+.lead { font-size: 26px; }
 </style></head>
 <body>
 <div class="glow g1"></div><div class="glow g2"></div><div class="grain"></div>
@@ -61,17 +71,11 @@ body { position: relative; font-family: 'Archivo', sans-serif; }
   <div class="row"><div class="mono"><b>ADE</b> Community Talks</div><div class="mono">Jakarta — 2026</div></div>
   <div class="hr" style="margin-top:26px"></div>
 
-<svg class="badge" viewBox="0 0 230 230">
-    <defs><path id="c" d="M115,115 m-92,0 a92,92 0 1,1 184,0 a92,92 0 1,1 -184,0"/></defs>
-    <circle cx="115" cy="115" r="112" fill="none" stroke="rgba(237,235,228,.18)"/>
-    <text><textPath href="#c" textLength="572" lengthAdjust="spacing">ADE Community Talks · Jakarta 2026 · </textPath></text>
-    <path class="star" d="M115 88 L121 109 L142 115 L121 121 L115 142 L109 121 L88 115 L109 109 Z"/>
-  </svg>
-  <div class="serif hero">We invite<br><em>you</em></div>
+<div class="serif hero">We<br>invite<br><em>you</em></div>
   <div class="blank"><span class="mono" style="font-size:15px">your name</span></div>
 
   <div class="lead">to an afternoon of talks, music and good company on</div>
-  <div class="serif title">How Indonesia <em>Built</em><br>Its Sound</div>
+  <div class="serif title">How Indonesia<br><em>Built</em> Its Sound</div>
 
   <div class="wave" id="wave"></div>
 
