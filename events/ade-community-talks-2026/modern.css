@@ -1,13 +1,13 @@
 @font-face { font-family: 'Archivo'; src: url('fonts/archivo.woff2') format('woff2'); font-weight: 100 900; font-stretch: 62% 125%; font-display: block; }
-:root { --bg: #0C0C0B; --y: #E4E86A; --fg: #EDEBE4; --mute: #8C8A82; --soft: #cfccc3; --line: rgba(237,235,228,.18); }
+:root { --bg: #0C0C0B; --y: #FEFB16; --fg: #EDEBE4; --mute: #8C8A82; --soft: #cfccc3; --line: rgba(237,235,228,.18); }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html, body { width: 1080px; height: 1920px; background: var(--bg); color: var(--fg); overflow: hidden; }
 body { position: relative; font-family: 'Archivo', sans-serif; }
 
 /* backdrop: soft lime glow + grain */
 .glow { position: absolute; border-radius: 50%; filter: blur(110px); }
-.g1 { width: 760px; height: 760px; right: -320px; top: -200px; background: radial-gradient(circle, rgba(214,222,40,.42), rgba(214,222,40,0) 70%); }
-.g2 { width: 900px; height: 700px; left: -420px; bottom: -160px; background: radial-gradient(circle, rgba(120,130,20,.38), rgba(120,130,20,0) 70%); }
+.g1 { width: 760px; height: 760px; right: -320px; top: -200px; background: radial-gradient(circle, rgba(254,251,22,.42), rgba(254,251,22,0) 70%); }
+.g2 { width: 900px; height: 700px; left: -420px; bottom: -160px; background: radial-gradient(circle, rgba(150,148,10,.38), rgba(150,148,10,0) 70%); }
 .grain { position: absolute; inset: 0; opacity: .12; mix-blend-mode: screen;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"); }
 
