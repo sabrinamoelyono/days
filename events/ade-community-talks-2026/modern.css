@@ -39,3 +39,10 @@ body { position: relative; font-family: 'Archivo', sans-serif; }
 .who { line-height: 2.1; }
 .who span { color: #55534d; padding: 0 10px; }
 .who i { font-style: normal; white-space: nowrap; color: var(--fg); }
+
+/* yellow light beam, top right (from the original poster) */
+.beam { position: absolute; right: 0; top: 290px; width: 200px; height: 760px;
+  background: linear-gradient(185deg, var(--y) 0%, #e8e512 28%, rgba(150,148,10,.45) 62%, rgba(12,12,11,0) 100%);
+  clip-path: polygon(34% 0, 100% 0, 100% 100%, 0 74%); }
+.beam::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0,0,0,.5), rgba(0,0,0,0) 45%); }
+.page { z-index: 1; }
