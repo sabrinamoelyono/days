@@ -24,8 +24,6 @@ body { position: relative; font-family: 'Archivo', sans-serif; }
 .display em { font-style: normal; color: var(--y); }
 .lead { font-size: 26px; line-height: 1.4; color: var(--soft); }
 
-.wave { height: 70px; display: flex; align-items: center; gap: 5px; }
-.wave i { flex: 1; background: var(--y); border-radius: 3px; }
 
 .facts { display: grid; grid-template-columns: 1.25fr 1fr 1.35fr; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .facts > div { padding: 30px 0 32px; }
@@ -40,3 +38,12 @@ body { position: relative; font-family: 'Archivo', sans-serif; }
 .who span { color: #55534d; padding: 0 10px; }
 .who i { font-style: normal; white-space: nowrap; color: var(--fg); }
 
+
+/* header: ADE logo box + name */
+.brandmark { display: flex; align-items: center; gap: 22px; }
+.brandmark img { width: 64px; height: 64px; display: block; }
+
+/* partner logos, footer */
+.logos { position: absolute; left: 64px; right: 64px; bottom: 96px; display: flex; align-items: center; justify-content: space-between; gap: 36px; padding-top: 34px; border-top: 1px solid var(--line); }
+.logos img { display: block; height: 40px; width: auto; opacity: .9; }
+.logos .ph { height: 54px; width: 230px; border: 1px dashed rgba(237,235,228,.35); display: flex; align-items: center; justify-content: center; font-weight: 700; font-stretch: 112%; font-size: 14px; letter-spacing: .2em; color: var(--mute); text-transform: uppercase; }
