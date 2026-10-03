@@ -14,4 +14,4 @@ All three pages keep the top 220 px clear for Instagram's profile bar and leave 
 
 To re-render after editing: `node render.js 00-invite.html 01-lineup.html 02-topics.html` (needs Playwright).
 
-Partner logos sit in the `.logos` row at the bottom of each page. Ismaya Live and Mixmag Asia are dashed placeholders until their logo files arrive: drop a light (white) PNG or SVG into `img/` and replace the `<div class="ph">…</div>` with an `<img>`.
+Partner logos sit in the `.logos` row at the bottom of each page. Mixmag Asia is a dashed placeholder until its logo file arrives: drop a light (white) PNG or SVG into `img/` and replace the `<div class="ph">…</div>` with an `<img>`.
