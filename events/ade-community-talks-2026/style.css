@@ -70,9 +70,9 @@ h1 { font-weight: 900; font-stretch: 125%; color: var(--y); text-transform: uppe
 
 /* topics page */
 .topics { border-top: 2px solid var(--y); }
-.topic { display: grid; grid-template-columns: 150px 1fr; gap: 24px; padding: 50px 0 52px; border-bottom: 2px solid rgba(254,251,22,.35); }
-.topic .no { font-size: 84px; font-weight: 900; font-stretch: 125%; color: var(--y); line-height: .9; }
-.topic h2 { font-size: 40px; font-weight: 800; font-stretch: 112%; text-transform: uppercase; line-height: 1.05; letter-spacing: -.005em; }
-.topic p { font-size: 27px; color: #d6d6d6; line-height: 1.4; margin-top: 14px; max-width: 760px; }
+.topic { display: grid; grid-template-columns: 112px 1fr; gap: 20px; padding: 29px 0 31px; border-bottom: 2px solid rgba(254,251,22,.35); }
+.topic .no { font-size: 56px; font-weight: 900; font-stretch: 125%; color: var(--y); line-height: .9; }
+.topic h2 { font-size: 32px; font-weight: 800; font-stretch: 112%; text-transform: uppercase; line-height: 1.05; letter-spacing: -.005em; }
+.topic p { font-size: 24px; color: #d6d6d6; line-height: 1.35; margin-top: 8px; max-width: 800px; }
 .after { font-size: 25px; line-height: 1.45; color: #fff; }
 .after b { color: var(--y); font-weight: 700; }
