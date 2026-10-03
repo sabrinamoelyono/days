@@ -1,57 +1,68 @@
-<!doctype html><html><head><meta charset="utf-8"><title>ADE Community Talks — Invite</title><link rel="stylesheet" href="style.css">
+<!doctype html><html><head><meta charset="utf-8"><title>ADE Community Talks — Invite</title>
 <style>
-  html, body { background: var(--y); color: var(--ink); }
-  .inv .eyebrow { color: var(--ink); }
-  .inv .rule { background: var(--ink); }
-  .huge { font-weight: 900; font-stretch: 125%; text-transform: uppercase; line-height: .84; letter-spacing: -.02em; font-size: 168px; }
-  .blank { margin-top: 70px; height: 150px; border-bottom: 6px solid var(--ink); position: relative; }
-  .blank small { position: absolute; right: 0; bottom: -40px; font-size: 15px; font-weight: 700; letter-spacing: .3em; font-stretch: 112%; }
-  .lead { font-size: 34px; line-height: 1.3; font-weight: 500; margin-top: 92px; max-width: 900px; }
-  .lead b { font-weight: 900; font-stretch: 112%; text-transform: uppercase; display: block; font-size: 58px; line-height: 1; margin-top: 12px; letter-spacing: -.01em; }
-  .ticket { margin-top: 64px; background: var(--ink); color: #fff; display: grid; grid-template-columns: 1fr 250px; position: relative; }
-  .ticket::before, .ticket::after { content: ''; position: absolute; left: calc(100% - 250px - 22px); width: 44px; height: 44px; border-radius: 50%; background: var(--y); }
-  .ticket::before { top: -22px; } .ticket::after { bottom: -22px; }
-  .ticket .l { padding: 40px 44px; }
-  .ticket .r { padding: 40px 34px; border-left: 3px dashed #444; display: flex; flex-direction: column; justify-content: center; }
-  .ticket .k { font-size: 13px; font-weight: 700; letter-spacing: .32em; color: var(--y); font-stretch: 112%; }
-  .ticket .v { font-size: 30px; font-weight: 800; font-stretch: 108%; margin-top: 6px; margin-bottom: 22px; text-transform: uppercase; }
-  .ticket .v:last-child { margin-bottom: 0; }
-  .ticket .d { font-size: 76px; font-weight: 900; font-stretch: 112%; line-height: .95; color: var(--y); }
-  .who { margin-top: 44px; font-size: 21px; font-weight: 700; letter-spacing: .14em; line-height: 1.7; text-transform: uppercase; font-stretch: 108%; }
-  .who span { opacity: .45; padding: 0 8px; }
-  .who i { font-style: normal; white-space: nowrap; }
-  .slab { position: absolute; left: 820px; top: 220px; width: 300px; height: 700px; background: linear-gradient(195deg, var(--ink) 0%, rgba(10,10,10,.85) 40%, rgba(10,10,10,0) 100%); clip-path: polygon(38% 0, 100% 0, 100% 100%, 0 72%); }
-  .slab2 { position: absolute; left: 760px; top: 220px; width: 60px; height: 460px; background: var(--ink); clip-path: polygon(70% 0, 100% 0, 30% 100%, 0 100%); opacity: .9; }
+@font-face { font-family: 'Archivo'; src: url('fonts/archivo.woff2') format('woff2'); font-weight: 100 900; font-stretch: 62% 125%; }
+@font-face { font-family: 'Instrument Serif'; src: url('fonts/instrument.woff2') format('woff2'); }
+@font-face { font-family: 'Instrument Serif'; font-style: italic; src: url('fonts/instrument-italic.woff2') format('woff2'); }
+@font-face { font-family: 'DM Mono'; font-weight: 400; src: url('fonts/dmmono-400.woff2') format('woff2'); }
+@font-face { font-family: 'DM Mono'; font-weight: 500; src: url('fonts/dmmono-500.woff2') format('woff2'); }
+:root { --bg: #0C0C0B; --y: #E4E86A; --fg: #EDEBE4; --mute: #8C8A82; --line: rgba(237,235,228,.18); }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 1080px; height: 1920px; background: var(--bg); color: var(--fg); overflow: hidden; }
+body { position: relative; font-family: 'Archivo', sans-serif; }
+.glow { position: absolute; border-radius: 50%; filter: blur(110px); }
+.g1 { width: 760px; height: 760px; right: -320px; top: -200px; background: radial-gradient(circle, rgba(214,222,40,.42), rgba(214,222,40,0) 70%); }
+.g2 { width: 900px; height: 700px; left: -420px; bottom: -160px; background: radial-gradient(circle, rgba(120,130,20,.38), rgba(120,130,20,0) 70%); }
+.grain { position: absolute; inset: 0; opacity: .12; mix-blend-mode: screen;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"); }
+.page { position: absolute; inset: 0; padding: 72px 64px; }
+.mono { font-family: 'DM Mono', monospace; font-size: 19px; letter-spacing: .14em; text-transform: uppercase; color: var(--mute); }
+.mono b { color: var(--fg); font-weight: 500; }
+.row { display: flex; justify-content: space-between; align-items: center; }
+.hr { height: 1px; background: var(--line); }
+.serif { font-family: 'Instrument Serif', serif; font-weight: 400; letter-spacing: -.02em; }
+.hero { margin-top: 300px; font-size: 220px; line-height: .86; }
+.hero em { color: var(--y); }
+.blank { margin-top: 56px; height: 120px; border-bottom: 1.5px solid rgba(237,235,228,.55); display: flex; align-items: flex-end; justify-content: flex-end; padding-bottom: 14px; }
+.lead { margin-top: 64px; font-size: 30px; line-height: 1.4; color: #cfccc3; max-width: 820px; }
+.title { margin-top: 18px; font-size: 76px; line-height: .98; }
+.title em { color: var(--y); }
+.facts { margin-top: 84px; display: grid; grid-template-columns: 1.25fr 1fr 1.35fr; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.facts > div { padding: 30px 0 32px 0; }
+.facts > div + div { padding-left: 34px; border-left: 1px solid var(--line); }
+.facts .v { margin-top: 12px; }
+.date { font-size: 92px; line-height: .9; }
+.time { font-size: 44px; line-height: 1.05; }
+.venue { font-size: 34px; line-height: 1.1; }
+.venue small { display: block; font-family: 'DM Mono', monospace; font-size: 16px; letter-spacing: .08em; color: var(--mute); margin-top: 10px; }
+.who { margin-top: 44px; font-size: 18px; line-height: 2; }
+.who span { color: #55534d; padding: 0 10px; }
+.who i { font-style: normal; white-space: nowrap; color: var(--fg); }
+.foot { position: absolute; left: 64px; right: 64px; bottom: 72px; }
+.pill { border: 1px solid rgba(228,232,106,.6); color: var(--y); border-radius: 999px; padding: 14px 26px; font-family: 'DM Mono', monospace; font-size: 18px; letter-spacing: .14em; }
 </style></head>
 <body>
-<div class="grain" style="position:absolute;inset:0;opacity:.18;mix-blend-mode:multiply"></div>
-<div class="slab"></div>
-<div class="page inv">
-  <div class="top">
-    <div style="padding-top:10px"><div class="eyebrow">Amsterdam<br>Dance Event<br>Community Talks</div><div class="rule" style="margin-top:12px"></div></div>
-    <div style="padding-top:10px;text-align:right"><div class="eyebrow">An invitation<br>10.10.26</div><div class="rule" style="margin-top:12px"></div></div>
+<div class="glow g1"></div><div class="glow g2"></div><div class="grain"></div>
+<div class="page">
+  <div class="row"><div class="mono"><b>ADE</b> Community Talks</div><div class="mono">Jakarta — 2026</div></div>
+  <div class="hr" style="margin-top:26px"></div>
+
+  <div class="serif hero">We invite<br><em>you</em></div>
+  <div class="blank"><span class="mono" style="font-size:15px">your name</span></div>
+
+  <div class="lead">to an afternoon of conversation, music and good company on</div>
+  <div class="serif title">How Indonesia <em>Built</em><br>Its Sound</div>
+
+  <div class="facts">
+    <div><div class="mono">Date</div><div class="v serif date">10 Oct</div></div>
+    <div><div class="mono">Time</div><div class="v serif time">4–7 PM</div></div>
+    <div><div class="mono">Venue</div><div class="v serif venue">Space Available<small>JL. KEMANG RAYA 72</small></div></div>
   </div>
 
-  <div class="huge" style="margin-top:120px">We<br>invite<br>you</div>
-  <div class="blank"><small>YOUR NAME HERE</small></div>
+  <div class="mono who"><i>David Ferdian</i> <span>·</span> <i>Hogi Wirjono</i> <span>·</span> <i>Amira Waworuntu</i> <span>·</span> <i>Kimo Rizky</i> <span>·</span> <i>Sergio Berlino</i> <span>·</span> <i>Hendy Kana &amp; Mayo</i></div>
 
-  <div class="lead">to an afternoon of talks, music and good company on<b>How Indonesia Built Its Sound</b></div>
-
-  <div class="ticket">
-    <div class="l">
-      <div class="k">WHERE</div><div class="v">Space Available Jakarta</div>
-      <div class="k">ADDRESS</div><div class="v" style="font-size:22px;letter-spacing:.06em">Jl. Kemang Raya No.72</div>
-    </div>
-    <div class="r">
-      <div class="k">10 OCT</div><div class="d">4–7<br>PM</div>
-    </div>
-  </div>
-
-  <div class="who"><i>David Ferdian</i> <span>/</span> <i>Hogi Wirjono</i> <span>/</span> <i>Amira Waworuntu</i> <span>/</span> <i>Kimo Rizky</i> <span>/</span> <i>Sergio Berlino</i> <span>/</span> <i>Hendy Kana &amp; Mayo</i></div>
-
-  <div style="position:absolute;left:48px;right:48px;bottom:64px;display:flex;justify-content:space-between;align-items:flex-end">
-    <div class="eyebrow">Panel · Listening session<br>Networking</div>
-    <div class="cta" style="color:var(--ink)">RSVP — SWIPE UP ↑</div>
+  <div class="foot row">
+    <div class="mono">Talks · Listening · Community</div>
+    <div class="pill">RSVP ↑</div>
   </div>
 </div>
 </body></html>
