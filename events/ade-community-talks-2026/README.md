@@ -4,6 +4,7 @@
 
 | File | What it is |
 |---|---|
+| `00-invite.png` | Story (1080 × 1920): "We invite you ____" e-invite, with a blank line for the guest's name or @handle |
 | `01-lineup.png` | Story (1080 × 1920): title, date, venue and the six speaker slots |
 | `02-topics.png` | Story (1080 × 1920): the four talk topics |
 | `01-lineup.html`, `02-topics.html`, `style.css`, `bg.html` | Source for both pages |
