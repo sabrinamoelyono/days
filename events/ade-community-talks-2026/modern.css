@@ -46,4 +46,3 @@ body { position: relative; font-family: 'Archivo', sans-serif; }
 /* partner logos, footer */
 .logos { position: absolute; left: 64px; right: 64px; bottom: 96px; display: flex; align-items: center; justify-content: space-between; gap: 18px; padding-top: 34px; border-top: 1px solid var(--line); }
 .logos img { display: block; height: 40px; width: auto; opacity: .9; }
-.logos .ph { height: 46px; padding: 0 14px; white-space: nowrap; border: 1px dashed rgba(237,235,228,.35); display: flex; align-items: center; justify-content: center; font-weight: 700; font-stretch: 112%; font-size: 11px; letter-spacing: .16em; color: var(--mute); text-transform: uppercase; }
