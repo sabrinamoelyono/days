@@ -9,6 +9,7 @@
 | `02-topics.png` | Story (1080 × 1920): the seven talk topics |
 | `03-scene.png` | Story (1080 × 1920): why the event exists, bridging Indonesia's electronic music scene |
 | `04-days.png` | Story (1080 × 1920): about DAYS |
+| `04-days-b.png` | Option B of the DAYS page: ADE headline, DAYS logo inline in the text, no "About" label |
 | `*.html`, `modern.css` | Source for the three pages |
 | `img/` | Speaker photos, partner logos (light versions for the dark background) |
 
