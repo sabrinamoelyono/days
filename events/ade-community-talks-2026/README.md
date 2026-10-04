@@ -10,7 +10,7 @@
 | `03-scene.png` | Story (1080 × 1920): why the event exists, bridging Indonesia's electronic music scene |
 | `04-days.png` | Story (1080 × 1920): about DAYS |
 | `*.html`, `modern.css` | Source for the three pages |
-| `img/` | Speaker photos, ADE logo box, partner logos (light versions for the dark background) |
+| `img/` | Speaker photos, partner logos (light versions for the dark background) |
 
 All three pages keep the top 220 px clear for Instagram's profile bar and leave room at the bottom for a link sticker.
 

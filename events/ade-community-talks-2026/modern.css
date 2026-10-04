@@ -41,7 +41,7 @@ body { position: relative; font-family: 'Archivo', sans-serif; }
 
 /* header: ADE logo box + name */
 .brandmark { display: flex; align-items: center; gap: 22px; }
-.brandmark img { width: 64px; height: 64px; display: block; }
+.brandmark .ybox { width: 64px; height: 64px; background: #FEFB16; clip-path: polygon(0 0, 100% 0, 100% 78%, 78% 100%, 0 100%); flex: none; }
 
 /* partner logos, footer */
 .logos { position: absolute; left: 64px; right: 64px; bottom: 96px; display: flex; align-items: center; justify-content: space-between; gap: 18px; padding-top: 34px; border-top: 1px solid var(--line); }
