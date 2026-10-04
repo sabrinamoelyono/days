@@ -7,6 +7,8 @@
 | `00-invite.png` | Story (1080 × 1920): "We invite ____" e-invite, with a line for the guest's name or @handle |
 | `01-lineup.png` | Story (1080 × 1920): title, date, time, venue and the six speakers |
 | `02-topics.png` | Story (1080 × 1920): the seven talk topics |
+| `03-scene.png` | Story (1080 × 1920): why the event exists, bridging Indonesia's electronic music scene |
+| `04-days.png` | Story (1080 × 1920): about DAYS |
 | `*.html`, `modern.css` | Source for the three pages |
 | `img/` | Speaker photos, ADE logo box, partner logos (light versions for the dark background) |
 
