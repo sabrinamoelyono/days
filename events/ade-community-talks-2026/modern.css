@@ -29,9 +29,7 @@ body { position: relative; font-family: 'Archivo', sans-serif; }
 .facts > div { padding: 30px 0 32px; }
 .facts > div + div { padding-left: 34px; border-left: 1px solid var(--line); }
 .facts .v { margin-top: 12px; }
-.date { font-size: 64px; line-height: .95; }
-.time { font-size: 40px; line-height: 1.05; }
-.venue { font-size: 28px; line-height: 1.1; font-weight: 800; }
+.date, .time, .venue { font-size: 30px; line-height: 1.1; font-weight: 800; }
 .venue small { display: block; margin-top: 10px; }
 
 .who { line-height: 2.1; }
@@ -44,8 +42,12 @@ body { position: relative; font-family: 'Archivo', sans-serif; }
 .head.stack { font-size: 19px; line-height: 1.12; letter-spacing: .24em; }
 .brandmark .ybox { width: 64px; height: 64px; background: #FEFB16; clip-path: polygon(0 0, 100% 0, 100% 78%, 78% 100%, 0 100%); flex: none; }
 
-/* partner logos, footer */
-.logos { position: absolute; left: 64px; right: 64px; bottom: 76px; padding-top: 26px; border-top: 1px solid var(--line); display: flex; flex-direction: column; gap: 22px; }
-.lrow { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-.lrow:last-child { justify-content: space-evenly; }
-.logos img { display: block; height: 40px; width: auto; opacity: .9; }
+/* partner logos, footer: presenters | supporters, one line */
+.logos { position: absolute; left: 64px; right: 64px; bottom: 96px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; align-items: flex-end; gap: 30px; }
+.lgroup { display: flex; flex-direction: column; gap: 16px; }
+.lgroup .label { font-size: 12px; letter-spacing: .26em; }
+.lgroup .set { display: flex; align-items: center; gap: 24px; height: 46px; }
+.lgroup.rest { flex: 1; }
+.lgroup.rest .set { justify-content: space-between; }
+.logos .vr { width: 1px; align-self: stretch; background: var(--line); }
+.logos img { display: block; width: auto; opacity: .9; }
