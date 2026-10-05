@@ -137,6 +137,21 @@
   .term-row { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px; }
   .term-row textarea { flex: 1; font-size: 14px; }
 
+  .pay-options { display: grid; gap: 10px; }
+  .pay-option {
+    display: flex; gap: 12px; align-items: flex-start; cursor: pointer;
+    border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; background: var(--surface);
+  }
+  .pay-option:hover { border-color: #CFCDE2; }
+  .pay-option:has(input:checked) { border: 2px solid var(--navy); background: #E6EDF8; padding: 11px 13px; }
+  .pay-option input { accent-color: var(--navy); width: 16px; height: 16px; margin: 3px 0 0; flex: none; }
+  .pay-option input:focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; }
+  .pay-body { display: flex; flex-direction: column; gap: 1px; font-size: 14px; color: var(--navy); min-width: 0; }
+  .pay-bank { font-weight: 700; display: flex; align-items: center; gap: 8px; }
+  .pay-tag { font-size: 11px; font-weight: 700; background: var(--sky); color: var(--navy); border-radius: 999px; padding: 1px 8px; }
+  .pay-line { color: var(--muted); overflow-wrap: anywhere; }
+  .pay-options + .hint { margin-top: 10px; }
+
   details.card { padding: 0; }
   details.card > summary {
     list-style: none; cursor: pointer; padding: 16px 18px;
@@ -248,7 +263,7 @@
       <span class="autosave-note">Draft autosaves in this browser</span>
     </div>
     <div class="confirm-bar" id="new-confirm" role="alertdialog" aria-labelledby="new-confirm-text" hidden>
-      <p id="new-confirm-text"><b>Start a new invoice?</b> The client, date and line items are cleared. Company details, bank details and terms stay as they are.</p>
+      <p id="new-confirm-text"><b>Start a new invoice?</b> The client, date and line items are cleared and the payment account goes back to BCA. Company details and terms stay as they are.</p>
       <div class="confirm-actions">
         <button type="button" class="btn btn-primary" id="new-yes">Start new invoice</button>
         <button type="button" class="btn btn-line" id="new-no">Keep editing</button>
@@ -299,9 +314,32 @@
       <button type="button" class="btn btn-line btn-block" id="add-term">+ Add term</button>
     </section>
 
+    <section class="card">
+      <h2><span class="step">5</span>Payment account</h2>
+      <div class="pay-options" role="radiogroup" aria-label="Payment account">
+        <label class="pay-option" for="pay-company">
+          <input type="radio" name="payTo" id="pay-company" value="company">
+          <span class="pay-body">
+            <span class="pay-bank"><span id="pay-company-bank"></span><span class="pay-tag">Default</span></span>
+            <span class="pay-line" id="pay-company-name"></span>
+            <span class="pay-line mono" id="pay-company-no"></span>
+          </span>
+        </label>
+        <label class="pay-option" for="pay-mandiri">
+          <input type="radio" name="payTo" id="pay-mandiri" value="mandiri">
+          <span class="pay-body">
+            <span class="pay-bank" id="pay-mandiri-bank"></span>
+            <span class="pay-line" id="pay-mandiri-name"></span>
+            <span class="pay-line mono" id="pay-mandiri-no"></span>
+          </span>
+        </label>
+      </div>
+      <p class="hint">Applies to this invoice only. New invoices start on the default account.</p>
+    </section>
+
     <details class="card">
       <summary>
-        <span><span class="sum-title">Company &amp; bank details</span><span class="sum-note">Issuer address and payment account. Rarely changes.</span></span>
+        <span><span class="sum-title">Company details &amp; default bank account</span><span class="sum-note">Issuer address and the BCA account. Rarely changes.</span></span>
       </summary>
       <div class="details-body">
         <p class="subhead">Issuer</p>
@@ -309,7 +347,7 @@
         <div class="field"><label for="f-addr1">Address line 1</label><input type="text" id="f-addr1"></div>
         <div class="field"><label for="f-addr2">Address line 2</label><input type="text" id="f-addr2"></div>
         <div class="field"><label for="f-phone">Phone</label><input type="text" id="f-phone"></div>
-        <p class="subhead">Payment information</p>
+        <p class="subhead">Default payment account</p>
         <div class="field"><label for="f-bank">Bank name</label><input type="text" id="f-bank"></div>
         <div class="field"><label for="f-accname">Account name</label><input type="text" id="f-accname"></div>
         <div class="field"><label for="f-accno">Account no.</label><input type="text" id="f-accno" class="mono"></div>
@@ -411,8 +449,13 @@
     ],
     bank: "BCA",
     accountName: "PT Vakansi Media Global",
-    accountNo: "2914100185"
+    accountNo: "2914100185",
+    payTo: "company"
   };
+
+  // Optional per-invoice alternative to the default company account above.
+  const MANDIRI = { bank: "Bank Mandiri", accountName: "Sabrina", accountNo: "07000 0700 9462" };
+  const payAccount = () => (state.payTo === "mandiri" ? MANDIRI : state);
 
   const FIELDS = {
     "f-client": "client", "f-client-details": "clientDetails", "f-date": "date",
@@ -570,14 +613,27 @@
     });
     $("p-terms-block").hidden = !terms.length;
 
-    $("p-bank").textContent = state.bank;
-    $("p-accname").textContent = state.accountName;
-    $("p-accno").textContent = state.accountNo;
+    const acct = payAccount();
+    $("p-bank").textContent = acct.bank;
+    $("p-accname").textContent = acct.accountName;
+    $("p-accno").textContent = acct.accountNo;
+  }
+
+  function renderPayOptions() {
+    $("pay-company-bank").textContent = state.bank;
+    $("pay-company-name").textContent = state.accountName;
+    $("pay-company-no").textContent = state.accountNo;
+    $("pay-mandiri-bank").textContent = MANDIRI.bank;
+    $("pay-mandiri-name").textContent = MANDIRI.accountName;
+    $("pay-mandiri-no").textContent = MANDIRI.accountNo;
+    $("pay-company").checked = state.payTo !== "mandiri";
+    $("pay-mandiri").checked = state.payTo === "mandiri";
   }
 
   function sync() {
     $("problems").hidden = true;
     saveDraft();
+    renderPayOptions();
     renderPreview();
   }
 
@@ -585,6 +641,7 @@
     renderEditorStatic();
     renderItemsEditor();
     renderTermsEditor();
+    renderPayOptions();
     renderPreview();
   }
 
@@ -640,6 +697,9 @@
     refreshInvoiceNo();
     sync();
   });
+  document.querySelectorAll('input[name="payTo"]').forEach((radio) => {
+    radio.addEventListener("change", () => { state.payTo = radio.value; sync(); });
+  });
   $("invno-auto").addEventListener("click", () => {
     state.invoiceNoManual = false;
     refreshInvoiceNo();
@@ -676,7 +736,7 @@
     const digits = String(state.seq || "").replace(/\D/g, "");
     const next = String((parseInt(digits || "0", 10) || 0) + 1).padStart(Math.max(6, digits.length), "0");
     Object.assign(state, {
-      client: "", clientDetails: "", date: todayIso(), seq: next, invoiceNoManual: false,
+      client: "", clientDetails: "", date: todayIso(), seq: next, invoiceNoManual: false, payTo: "company",
       items: [{ desc: "", price: "", qty: 1 }]
     });
     fullRender();
