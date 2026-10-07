@@ -5,15 +5,13 @@
 :root { --y: #5B7CFF; }
 .g1 { background: radial-gradient(circle, rgba(70,100,255,.48), rgba(70,100,255,0) 70%); }
 .g2 { background: radial-gradient(circle, rgba(40,60,190,.42), rgba(40,60,190,0) 70%); }
-.lgroup.rest .set { justify-content: center; gap: 120px; }
+.lgroup.rest .set { justify-content: flex-start; gap: 72px; }
 </style></head>
 <body>
 <div class="glow g1"></div><div class="glow g2"></div><div class="grain"></div>
 <div class="page">
-  <div style="display:flex;align-items:center;gap:22px"><img src="../img/tripo-light.png" alt="Tripo 3000" style="width:240px;height:auto;display:block"><span class="label" style="font-size:19px;letter-spacing:.26em;color:var(--y);margin-left:6px">presents</span></div>
-  <div class="hr" style="margin-top:30px"></div>
 
-  <div class="display" style="font-size:196px;line-height:.88;margin-top:60px">We<br>invite</div>
+  <div class="display" style="font-size:196px;line-height:.88;margin-top:0">We<br>invite</div>
   <div class="blank"><span class="label">your name</span></div>
 
   <div class="lead" style="margin-top:48px">to an afternoon of talks, music and good company at</div>
@@ -29,7 +27,11 @@
 
   <div class="label who" style="margin-top:34px"><i>Amira Waworuntu</i> <span>·</span> <i>Kimo Rizky</i> <span>·</span> <i>Sergio Berlino</i> <span>·</span> <i>Kana &amp; Mayo</i></div>
   <div class="logos">
-    <div class="lgroup rest"><div class="set">
+    <div class="lgroup"><div class="label">Presented by</div><div class="set">
+      <img src="../img/tripo-light.png" alt="Tripo 3000" style="width:150px;height:auto">
+    </div></div>
+    <div class="vr"></div>
+    <div class="lgroup rest"><div class="label">Supported by</div><div class="set">
       <img src="../img/doubledeer-light.png" alt="Double Deer" style="height:40px">
       <img src="../img/lecirque-light.png" alt="Le Cirque" style="height:38px">
       <img src="../img/days-light.png" alt="DAYS" style="height:24px">
