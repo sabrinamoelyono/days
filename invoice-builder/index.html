@@ -232,6 +232,10 @@
   .p-pay .p-label { color: var(--navy); }
   .p-pay .line { font-size: 13px; margin-bottom: 3px; }
   .p-pay .line b { font-weight: 600; }
+  .p-pay-intro { font-size: 13px; margin: 0 0 8px; }
+  .p-accounts.two { display: grid; grid-template-columns: 1fr 1fr; }
+  .p-accounts.two .p-account + .p-account { border-left: 1px solid rgba(46, 45, 107, .25); padding-left: 18px; }
+  .p-accounts.two .p-account:first-child { padding-right: 18px; }
 
   @media print {
     * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
@@ -333,6 +337,13 @@
             <span class="pay-line mono" id="pay-mandiri-no"></span>
           </span>
         </label>
+        <label class="pay-option" for="pay-both">
+          <input type="radio" name="payTo" id="pay-both" value="both">
+          <span class="pay-body">
+            <span class="pay-bank">Both accounts</span>
+            <span class="pay-line">BCA and Bank Mandiri, the client can pay to either</span>
+          </span>
+        </label>
       </div>
       <p class="hint">Applies to this invoice only. New invoices start on the default account.</p>
     </section>
@@ -407,9 +418,8 @@
 
             <div class="p-foot p-pay">
               <p class="p-label">Payment information</p>
-              <div class="line"><b>Bank Name:</b> <span id="p-bank"></span></div>
-              <div class="line"><b>Account Name:</b> <span id="p-accname"></span></div>
-              <div class="line"><b>Account No:</b> <span id="p-accno"></span></div>
+              <p class="p-pay-intro" id="p-pay-intro" hidden>Transfer to either account:</p>
+              <div class="p-accounts" id="p-accounts"></div>
             </div>
           </div>
         </div>
@@ -455,7 +465,8 @@
 
   // Optional per-invoice alternative to the default company account above.
   const MANDIRI = { bank: "Bank Mandiri", accountName: "Sabrina", accountNo: "07000 0700 9462" };
-  const payAccount = () => (state.payTo === "mandiri" ? MANDIRI : state);
+  const payAccounts = () =>
+    state.payTo === "mandiri" ? [MANDIRI] : state.payTo === "both" ? [state, MANDIRI] : [state];
 
   const FIELDS = {
     "f-client": "client", "f-client-details": "clientDetails", "f-date": "date",
@@ -613,10 +624,24 @@
     });
     $("p-terms-block").hidden = !terms.length;
 
-    const acct = payAccount();
-    $("p-bank").textContent = acct.bank;
-    $("p-accname").textContent = acct.accountName;
-    $("p-accno").textContent = acct.accountNo;
+    const accounts = payAccounts();
+    const wrap = $("p-accounts");
+    wrap.innerHTML = "";
+    wrap.classList.toggle("two", accounts.length > 1);
+    $("p-pay-intro").hidden = accounts.length < 2;
+    accounts.forEach((acct) => {
+      const group = document.createElement("div");
+      group.className = "p-account";
+      [["Bank Name", acct.bank], ["Account Name", acct.accountName], ["Account No", acct.accountNo]].forEach(([k, v]) => {
+        const line = document.createElement("div");
+        line.className = "line";
+        const b = document.createElement("b");
+        b.textContent = k + ":";
+        line.append(b, " " + v);
+        group.appendChild(line);
+      });
+      wrap.appendChild(group);
+    });
   }
 
   function renderPayOptions() {
@@ -626,8 +651,9 @@
     $("pay-mandiri-bank").textContent = MANDIRI.bank;
     $("pay-mandiri-name").textContent = MANDIRI.accountName;
     $("pay-mandiri-no").textContent = MANDIRI.accountNo;
-    $("pay-company").checked = state.payTo !== "mandiri";
+    $("pay-company").checked = state.payTo !== "mandiri" && state.payTo !== "both";
     $("pay-mandiri").checked = state.payTo === "mandiri";
+    $("pay-both").checked = state.payTo === "both";
   }
 
   function sync() {
