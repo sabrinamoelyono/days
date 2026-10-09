@@ -101,6 +101,7 @@ All four are registered at the Tebet office for preparation, operations and comm
 | `DESIGN.md` | Brand identity: logo use, colour, type, voice and naming |
 | `privacy/index.html` | Privacy policy for talkaboutdays.com, covering UU PDP and Meta Platform Terms (Pixel, Instagram, WhatsApp, lead ads) |
 | `data-deletion/index.html` | Data deletion instructions page (for the Meta App Dashboard "Data deletion instructions URL") |
+| `squarespace/*-code-block.html` | The same two pages as self-contained snippets for a Squarespace Code Block (styles scoped so they don't affect the rest of the site) |
 
 ---
 
