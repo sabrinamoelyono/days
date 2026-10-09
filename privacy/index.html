@@ -94,6 +94,9 @@
   @media print {
     nav.toc { display: none; }
     body { background: #fff; color: #000; }
+    h2, h3 { break-after: avoid; page-break-after: avoid; }
+    .card, .callout, tr, li { break-inside: avoid; page-break-inside: avoid; }
+    section { padding-top: 28px; }
   }
 </style>
 </head>
