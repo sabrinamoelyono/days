@@ -1,0 +1,61 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>SCCC — Invite</title>
+<style>
+@font-face { font-family: 'Archivo'; src: url('img/archivo.woff2') format('woff2'); font-weight: 100 900; font-stretch: 62% 125%; font-display: block; }
+:root { --bg: #121211; --fg: #F1EFEA; --soft: #C9C6BE; --mute: #8E8B84; --line: rgba(241,239,234,.2); --red: #FF4B5C; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 1080px; height: 1920px; background: var(--bg); color: var(--fg); overflow: hidden; }
+body { position: relative; font-family: 'Archivo', sans-serif; }
+.glow { position: absolute; width: 900px; height: 600px; left: 90px; top: 520px; border-radius: 50%; filter: blur(140px); background: radial-gradient(circle, rgba(255,75,92,.22), rgba(255,75,92,0) 70%); }
+.grain { position: absolute; inset: 0; opacity: .10; mix-blend-mode: screen;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"); }
+.page { position: absolute; inset: 0; padding: 200px 72px 80px; }
+.mono { font-family: 'DejaVu Sans Mono', 'Courier New', monospace; letter-spacing: .02em; }
+.label { font-weight: 600; font-stretch: 112%; letter-spacing: .3em; font-size: 15px; text-transform: uppercase; color: var(--mute); }
+.wm { font-weight: 800; font-size: 30px; letter-spacing: -.01em; }
+.wm sup { font-size: 13px; font-weight: 600; vertical-align: 14px; margin-left: 2px; }
+.sccc { font-weight: 900; font-size: 96px; line-height: .86; letter-spacing: -.035em; margin-top: 18px; }
+.sccc sup { font-size: 30px; vertical-align: 52px; letter-spacing: 0; margin-left: 4px; }
+.photo { margin-top: 52px; height: 330px; border-radius: 4px; overflow: hidden; }
+.photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+h1 { font-weight: 800; font-size: 76px; line-height: .98; letter-spacing: -.02em; margin-top: 56px; }
+.for { margin-top: 40px; display: flex; align-items: flex-end; gap: 18px; font-size: 24px; color: var(--soft); }
+.for i { flex: 1; height: 1.5px; background: rgba(241,239,234,.5); margin-bottom: 6px; }
+.body { margin-top: 36px; font-size: 30px; line-height: 1.42; color: var(--soft); max-width: 880px; }
+.menu { margin-top: 44px; padding: 30px 0 32px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 200px 1fr; align-items: baseline; }
+.menu .t { font-weight: 800; font-size: 46px; letter-spacing: -.015em; color: var(--red); }
+.menu .s { margin-top: 10px; font-size: 22px; color: var(--soft); }
+.facts { margin-top: 40px; display: grid; grid-template-columns: 1fr 1.4fr; gap: 0 40px; }
+.facts .v { margin-top: 12px; font-weight: 800; font-size: 34px; line-height: 1.1; letter-spacing: -.01em; }
+.facts .a { margin-top: 10px; font-size: 18px; color: var(--soft); line-height: 1.4; }
+.foot { position: absolute; left: 72px; right: 72px; bottom: 80px; display: flex; justify-content: space-between; align-items: flex-end; padding-top: 24px; border-top: 1px solid var(--line); }
+.foot .mono { font-size: 17px; color: var(--soft); line-height: 1.5; }
+</style></head>
+<body>
+<div class="glow"></div><div class="grain"></div>
+<div class="page">
+  <div class="wm">space_available<sup>®</sup></div>
+  <div class="sccc">self care<br>community<br>centre<sup>tm</sup></div>
+
+  <div class="photo"><img src="img/bar.jpg" alt=""></div>
+
+  <h1>A new chapter<br>at our table.</h1>
+  <div class="for mono">For <i></i></div>
+
+  <div class="body">We've put together a new menu, and we'd like you to be among the first to try it.</div>
+
+  <div class="menu">
+    <div class="label">The menu</div>
+    <div><div class="t">Pragmatic comfort.</div><div class="s mono">Honest food, made well, for every day.</div></div>
+  </div>
+
+  <div class="facts">
+    <div><div class="label">Date</div><div class="v">Saturday,<br>17 October</div></div>
+    <div><div class="label">Venue</div><div class="v">Space Available<br>Jakarta</div><div class="a mono">Kemang</div></div>
+  </div>
+
+  <div class="foot">
+    <div class="mono">Self Care Community Centre (SCCC)<br>Jl. Kemang Raya No. 8B, Jakarta Selatan 12730</div>
+    <div class="wm" style="font-size:26px">space_available<sup>®</sup></div>
+  </div>
+</div>
+</body></html>
