@@ -134,6 +134,50 @@
   dl.contact { display: grid; grid-template-columns: auto 1fr; gap: 1mm 4mm; margin: 0; font-size: 9.5pt; }
   dl.contact dt { color: var(--muted); }
   dl.contact dd { margin: 0; }
+
+  /* Tripo page: poster edition */
+  .page.poster {
+    background: #120E0C; color: #F3EEEA; padding: 12mm 13mm 11mm;
+    font-family: "Inter Tight", system-ui, sans-serif;
+  }
+  .poster > * { position: relative; }
+  .poster .grain { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .09; pointer-events: none; }
+  .poster .islands { position: absolute; left: -6mm; right: -6mm; top: 92mm; width: calc(100% + 12mm); color: #EC5B39; opacity: .9; z-index: 0; }
+  .ptop, .pfoot {
+    display: flex; justify-content: space-between; gap: 8px;
+    font: 500 7.5pt/1 "JetBrains Mono", monospace; text-transform: uppercase; letter-spacing: .08em;
+    border-top: 1.5px solid #F3EEEA; border-bottom: 1.5px solid #F3EEEA; padding: 2.2mm 0;
+  }
+  .pfoot { margin-top: auto; }
+  .mast { margin: 5mm 0 0; }
+  .presents { font: 500 7.5pt "JetBrains Mono", monospace; letter-spacing: .1em; text-transform: uppercase; color: #FF8A6B; }
+  .giant {
+    font-size: 110pt; line-height: .8; font-weight: 800; letter-spacing: -.055em;
+    margin: 2mm 0 0 -1.5mm; color: #F3EEEA; mix-blend-mode: normal;
+  }
+  .tag { font-size: 17pt; line-height: 1.08; font-weight: 800; letter-spacing: -.02em; margin: 44mm 0 6mm; text-align: right; z-index: 1; }
+  .tag em { font-style: normal; color: #FF8A6B; }
+  .story { font-size: 10.5pt; line-height: 1.5; max-width: 125mm; margin: 0 0 5mm; color: #E4DCD5; }
+  .story b, .pgrid b { color: #fff; }
+  .bill { text-align: center; border-top: 1.5px solid #F3EEEA; padding-top: 3.5mm; margin-bottom: 6mm; }
+  .billhead {
+    font: 500 7pt "JetBrains Mono", monospace; letter-spacing: .14em; text-transform: uppercase;
+    color: #FF8A6B; margin: 0 0 1.5mm;
+  }
+  .bill .billhead { margin-top: 3mm; }
+  .bill .billhead:first-child { margin-top: 0; }
+  .bill i { font-style: normal; color: #EC5B39; }
+  .h1l { font-size: 28pt; font-weight: 800; letter-spacing: -.03em; line-height: 1; text-transform: uppercase; margin: 0 0 1.5mm; }
+  .h2l { font-size: 15pt; font-weight: 800; letter-spacing: -.015em; line-height: 1.1; text-transform: uppercase; margin: 0; }
+  .h3l { font-size: 10.5pt; font-weight: 600; line-height: 1.5; text-transform: uppercase; letter-spacing: .01em; margin: 0; }
+  .h3l i { font: 500 7pt "JetBrains Mono", monospace; vertical-align: 2px; }
+  .pgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6mm; border-top: 1.5px solid #F3EEEA; padding-top: 3.5mm; margin-bottom: 4mm; }
+  .pgrid p { font-size: 9.6pt; line-height: 1.45; margin: 0; color: #E4DCD5; }
+  .pgrid p.billhead { font-size: 7pt; color: #FF8A6B; margin-bottom: 1.5mm; }
+  @media screen and (max-width: 820px) {
+    .giant { font-size: 64pt; } .tag { margin-top: 18mm; } .pgrid { grid-template-columns: 1fr; }
+    .h1l { font-size: 20pt; } .h2l { font-size: 12pt; }
+  }
 </style>
 </head>
 <body>
@@ -192,65 +236,63 @@
   </div>
 </section>
 
-<!-- ============ PAGE 2 · TRIPO ============ -->
-<section class="page night">
-  <div class="top">
-    <span class="wordmark">TRIPO 3000</span>
-    <p class="kicker">Partner profile · ADE 2026</p>
+<!-- ============ PAGE 2 · TRIPO (poster) ============ -->
+<section class="page poster">
+  <svg class="grain" aria-hidden="true"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .5 0"/></filter><rect width="100%" height="100%" filter="url(#n)"/></svg>
+  <svg class="islands" viewBox="0 0 600 220" aria-hidden="true">
+    <g fill="currentColor">
+      <ellipse cx="60" cy="70" rx="46" ry="16" transform="rotate(-28 60 70)"/>
+      <ellipse cx="150" cy="128" rx="70" ry="9" transform="rotate(-6 150 128)"/>
+      <ellipse cx="236" cy="138" rx="9" ry="6"/><ellipse cx="258" cy="140" rx="11" ry="6"/><ellipse cx="284" cy="142" rx="12" ry="6"/>
+      <ellipse cx="200" cy="56" rx="42" ry="34"/>
+      <path d="M318 48c18-8 30 4 22 16-6 10 10 14 4 26-6 10-18 2-22 12-4 12 6 20-4 26-12 6-14-14-10-26 4-14-12-12-10-24 2-12 10-6 14-14 2-6-6-12 6-16z"/>
+      <ellipse cx="392" cy="96" rx="7" ry="10"/><ellipse cx="410" cy="120" rx="6" ry="5"/>
+      <path d="M470 86c40-8 80 2 110 18-14 10-30 6-40 16-10 8-30 2-44 10-12-14-30-18-26-44z"/>
+      <circle cx="350" cy="150" r="4"/><circle cx="372" cy="146" r="3"/><circle cx="440" cy="150" r="4"/><circle cx="300" cy="168" r="3"/>
+    </g>
+  </svg>
+
+  <div class="ptop">
+    <span>Partner profile</span>
+    <span>Jakarta · Bali · Since 2008</span>
+    <span>ADE 2026</span>
   </div>
 
-  <h1>We don't throw parties. <em>We build scenes.</em></h1>
-  <p class="lede">Tripo 3000 is a multi-award-winning partymaker and the founding brand of 3000 Group. Born in 2008 as Tripomatica, throwing parties on boats, rooftops and warehouses in Melbourne, it is now a key force in the underground scenes of Jakarta and Bali.</p>
-
-  <div class="facts">
-    <div class="fact"><b class="mono">2008</b><span>Founded as Tripomatica, Melbourne</span></div>
-    <div class="fact"><b class="mono">2014</b><span>Rebranded as Tripo 3000</span></div>
-    <div class="fact"><b>Multi-award</b><span>Winning event organiser</span></div>
-    <div class="fact"><b>Jakarta · Bali</b><span>Home scenes, Asia-wide reach</span></div>
+  <div class="mast">
+    <span class="presents">PT Tripo Gerakan Generasi presents</span>
+    <h1 class="giant">TRIPO<br>3000</h1>
+    <p class="tag">We don't throw parties.<br><em>We build scenes.</em></p>
   </div>
 
-  <div class="cols">
+  <p class="story">Multi-award-winning partymaker and founding brand of 3000 Group. Born in 2008 as <b>Tripomatica</b>, throwing parties on boats, rooftops and warehouses in Melbourne. Rebranded <b>Tripo 3000</b> in 2014, now a key force in the underground of Jakarta and Bali.</p>
+
+  <div class="bill">
+    <p class="billhead">Scenes we built</p>
+    <p class="h1l">Asia KolektifA <i>✦</i> Space Trip</p>
+    <p class="h2l">Club 4/4 <i>✦</i> Space Trip Tour <i>✦</i> Dark Room</p>
+    <p class="billhead">Shared decks with</p>
+    <p class="h3l">Jasper James <i>UK</i> · Budino <i>IT</i> · Odopt · Max Abysmal <i>NL</i> · Peak &amp; Swift <i>DE</i><br>Matisa <i>IT</i> · Yuzo Iwata <i>JP</i> · Robo X <i>SG</i> · Ling Chi <i>VN</i></p>
+  </div>
+
+  <div class="pgrid">
     <div>
-      <h2>Scenes we built</h2>
-      <div class="stack">
-        <div>
-          <h3>Asia KolektifA</h3>
-          <p>A multi-stage festival reconnecting the red thread across Asia, uniting talents, communities and collectives from across the continent.</p>
-        </div>
-        <div>
-          <h3>Space Trip</h3>
-          <p>With sister brand Ding Dong Disko since 2019. Rising selectors, a dancefloor as an escape, and a crowd that keeps coming back.</p>
-        </div>
-        <div>
-          <h3>Club 4/4</h3>
-          <p>A club programme built on the most universal rhythm in dance music, the space between one beat and the next.</p>
-        </div>
-        <div>
-          <h3>Space Trip Tour</h3>
-          <p>Six cities across Java and Bali, connecting emerging and established communities.</p>
-        </div>
-      </div>
+      <p class="billhead">The road to ADE</p>
+      <p>Hundreds of Indonesians fly to ADE every year. In 2026 Tripo 3000 and Mixmag Asia gave them a home before departure: <b>ADE Community Talks Jakarta</b>. Next stop, ADE 2027.</p>
     </div>
     <div>
-      <h2>Shared decks with</h2>
-      <p>Jasper James (UK) · Budino (Cocktail d'Amore, IT) · Odopt (Les Yeux Orange) · Max Abysmal (NL) · Peak &amp; Swift (DE) · Matisa (IT) · Yuzo Iwata (JP) · Robo X (SG) · Ling Chi (VN)</p>
-
-      <h2 style="margin-top:6mm">The road to ADE</h2>
-      <p>Hundreds of Indonesians travel to ADE each year with no platform to meet before they go. In 2026 Tripo 3000 and Mixmag Asia started one: <b>ADE Community Talks Jakarta</b>. Next stop, ADE 2027: more Indonesian delegates and artist showcases.</p>
-
-      <h2 style="margin-top:6mm">The family</h2>
-      <p>Part of 3000 Group with Ding Dong Disko, section b and A3000 Creative Compound. Led by co-founder Kana and Mayo, DJs who have played Osaka, Seoul, Bangkok and Melbourne.</p>
+      <p class="billhead">The family</p>
+      <p>3000 Group: Ding Dong Disko, section b, A3000 Creative Compound. Led by co-founder Kana and Mayo, behind the decks from Melbourne to Osaka, Seoul and Bangkok.</p>
+    </div>
+    <div>
+      <p class="billhead">Open to at ADE</p>
+      <p>Cross-city party exchanges with Europe · Asian collective showcases · artist and label collabs · partners for ADE 2027.</p>
     </div>
   </div>
 
-  <div class="callout">
-    <p class="kicker">Open to at ADE</p>
-    <p>Cross-city party exchanges with Europe · Asian collective showcases · label and artist collaborations · partners for ADE 2027's Indonesian programme.</p>
-  </div>
-
-  <div class="foot">
-    <span>Tripo 3000 · PT Tripo Gerakan Generasi · Jakarta</span>
-    <span>tripo3000.com · hello@tripo3000.com</span>
+  <div class="pfoot">
+    <span>tripo3000.com</span>
+    <span>hello@tripo3000.com</span>
+    <span>Community: Sabrina</span>
   </div>
 </section>
 
