@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ADE Speaker Kit</title>
-<meta name="description" content="Three one-page profiles for ADE: DAYS, Tripo 3000 and Sabrina, founder of DAYS and community manager at Tripo 3000.">
+<meta name="description" content="Three one-page profiles for ADE: DAYS, Tripo 3000 and Sabrina Moelyono, founder of DAYS and community manager at Tripo 3000.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -178,61 +178,98 @@
     .giant { font-size: 64pt; } .tag { margin-top: 18mm; } .pgrid { grid-template-columns: 1fr; }
     .h1l { font-size: 20pt; } .h2l { font-size: 12pt; }
   }
+
+  /* DAYS page: poster edition */
+  .page.dposter { background: #EC5B39; color: #1B1714; padding: 12mm 13mm 11mm; }
+  .dposter > * { position: relative; }
+  .dposter .grain { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .08; pointer-events: none; }
+  .dposter .ptop, .dposter .pfoot, .mposter .ptop { border-color: #1B1714; }
+  .dmark { display: block; width: 100%; height: auto; margin: 9mm 0 0; filter: brightness(0) saturate(100%); opacity: .92; }
+  .dtag { font-size: 29pt; line-height: 1.04; font-weight: 800; letter-spacing: -.025em; margin: 7mm 0 9mm; max-width: 170mm; color: #FBF8F5; }
+  .dstats { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1.5px solid #1B1714; border-bottom: 1.5px solid #1B1714; }
+  .dstats div { padding: 4.5mm 0 4mm; }
+  .dstats div + div { border-left: 1.5px solid #1B1714; padding-left: 4mm; }
+  .dstats b { display: block; font-size: 40pt; font-weight: 800; letter-spacing: -.04em; line-height: 1; }
+  .dstats span { font: 500 7.5pt "JetBrains Mono", monospace; text-transform: uppercase; letter-spacing: .06em; }
+  .dposter .billhead { color: #1B1714; opacity: .75; }
+  .dbill { text-align: center; padding: 8mm 0 7mm; border-bottom: 1.5px solid #1B1714; }
+  .dbill .h1l { font-size: 34pt; color: #FBF8F5; }
+  .dbill i { font-style: normal; color: #1B1714; }
+  .dthree { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6mm; margin-top: 4mm; }
+  .dthree p { margin: 0; font-size: 10.5pt; line-height: 1.4; font-weight: 500; }
+  .dwhy { padding: 7mm 0; border-bottom: 1.5px solid #1B1714; }
+  .dbig { font-size: 19pt; line-height: 1.2; font-weight: 800; letter-spacing: -.015em; margin: 0 0 2mm; }
+  .dwhy p:last-child { margin: 0; font-size: 11pt; font-weight: 500; }
+  .dopen { padding: 7mm 0 4mm; }
+  .dopen p:last-child { margin: 0; font-size: 11pt; font-weight: 600; text-transform: uppercase; letter-spacing: .01em; line-height: 1.45; }
+
+  /* Speaker page: photo + bio */
+  .page.mposter { background: #FBF8F5; padding: 12mm 13mm 11mm; }
+  .mposter .ptop { border-color: #1B1714; }
+  .mphoto {
+    position: relative; margin: 6mm 0 0; height: 150mm; border-radius: 0; overflow: hidden;
+    background: repeating-linear-gradient(135deg, #F1E9E2 0 8px, #EDE3DA 8px 16px);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .mphoto img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 25%; z-index: 1; }
+  .mph { font: 500 8pt "JetBrains Mono", monospace; letter-spacing: .14em; text-transform: uppercase; color: #6E655E; }
+  .mname { font-size: 58pt; line-height: .86; font-weight: 800; letter-spacing: -.045em; margin: 7mm 0 5mm; }
+  .mrole { font: 500 8.5pt "JetBrains Mono", monospace; text-transform: uppercase; letter-spacing: .08em; margin: 0 0 6mm; padding-bottom: 4mm; border-bottom: 1.5px solid #1B1714; }
+  .mrole i { font-style: normal; color: #EC5B39; }
+  .mbio { columns: 2; column-gap: 8mm; }
+  .mbio p { font-size: 10.5pt; line-height: 1.5; margin: 0 0 3mm; break-inside: avoid; }
+  @media screen and (max-width: 820px) {
+    .dstats, .dthree { grid-template-columns: 1fr; } .dstats div + div { border-left: 0; padding-left: 0; }
+    .mbio { columns: 1; } .mname { font-size: 40pt; } .mphoto { height: 90vw; }
+  }
 </style>
 </head>
 <body>
 
-<!-- ============ PAGE 1 · DAYS ============ -->
-<section class="page">
-  <div class="top">
-    <img src="../assets/days-wordmark.png" alt="DAYS">
-    <p class="kicker">Company profile · ADE 2026</p>
+<!-- ============ PAGE 1 · DAYS (poster) ============ -->
+<section class="page dposter">
+  <svg class="grain" aria-hidden="true"><filter id="n1"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .55 0"/></filter><rect width="100%" height="100%" filter="url(#n1)"/></svg>
+
+  <div class="ptop">
+    <span>Company profile</span>
+    <span>Jakarta ⇄ Europe · Since 2022</span>
+    <span>ADE 2026</span>
   </div>
 
-  <h1>The bridge between Indonesia's dancefloors and Europe's.</h1>
-  <p class="lede">DAYS is a Jakarta-based travel media company and cultural connector. We tell the stories of Europe's music scenes to Indonesian audiences, then take those audiences there, and open the door the other way for European artists, festivals and brands looking east.</p>
+  <img class="dmark" src="../assets/days-wordmark.png" alt="DAYS">
+  <p class="dtag">Travel media &amp; global connector between Indonesia and Europe.</p>
 
-  <div class="facts">
-    <div class="fact"><b class="mono">2024</b><span>Founded in Jakarta</span></div>
-    <div class="fact"><b>ID ⇄ EU</b><span>The corridor we work in</span></div>
-    <div class="fact"><b class="mono">25–45</b><span>Culturally fluent, high-intent audience</span></div>
-    <div class="fact"><b class="mono">3×</b><span>ADE trips run: 2023, 2024, 2025</span></div>
+  <div class="dstats">
+    <div><b>2022</b><span>Founded in Jakarta</span></div>
+    <div><b>5×</b><span>ADE trips, incl. 2026</span></div>
+    <div><b>ID ⇄ EU</b><span>The corridor we work in</span></div>
   </div>
 
-  <div class="cols">
-    <div>
-      <h2>What we do</h2>
-      <div class="stack">
-        <div>
-          <h3>Travel media</h3>
-          <p>Editorial and social content on Europe's festivals, clubs and city scenes, written for Indonesian readers: who's playing, why it matters, how to get there from Jakarta.</p>
-        </div>
-        <div>
-          <h3>Curated music travel</h3>
-          <p>Named, end-to-end trips built around one moment: Dekmantel in August, Primavera in May, Glastonbury in June, ADE in October. We handle the logistics so our travellers can be fully present.</p>
-        </div>
-        <div>
-          <h3>Global connector</h3>
-          <p>Partnerships, introductions and market entry between Indonesian and European promoters, festivals, venues, artists and brands.</p>
-        </div>
-      </div>
-    </div>
-    <div>
-      <h2>Why it matters to the music industry</h2>
-      <p>Southeast Asia is one of the fastest-growing audiences for electronic music, and Indonesia, with 280 million people and one of the youngest populations in the region, is its biggest. A new generation of Indonesian fans already follows European lineups in real time. They don't need persuading; they need a trusted route in.</p>
-      <p>For European festivals and artists, DAYS is a way to reach that audience with context and credibility rather than paid ads. For Indonesian fans and scenes, we're the friend who has already been, knows the right stage, and makes the introduction.</p>
-      <p>We sell trust before we sell trips. Since 2023 we've taken Indonesian travellers to ADE three years running, plus Awakenings and Primavera Sound.</p>
+  <div class="dbill">
+    <p class="billhead">What we do</p>
+    <p class="h1l">Media <i>✦</i> Travel <i>✦</i> Connector</p>
+    <div class="dthree">
+      <p>Stories of Europe's festivals and club scenes, told for Indonesian audiences.</p>
+      <p>End-to-end trips built around one moment: Dekmantel, Primavera Sound, ADE.</p>
+      <p>Introductions between Indonesian and European promoters, artists and brands.</p>
     </div>
   </div>
 
-  <div class="callout">
-    <p class="kicker">Open to at ADE</p>
-    <p>Festivals and promoters who want Southeast Asian audiences · artists and agencies planning Asia tours · brands and tourism boards building the Indonesia–Europe link · media and content partnerships.</p>
+  <div class="dwhy">
+    <p class="billhead">Why it matters</p>
+    <p class="dbig">Indonesia's fans already follow Europe's lineups in real time. They don't need persuading. They need a trusted route in.</p>
+    <p>Since 2023 we've taken Indonesian travellers to ADE five times, plus Primavera Sound.</p>
   </div>
 
-  <div class="foot">
-    <span>DAYS · PT Vakansi Media Global · Tebet, South Jakarta</span>
-    <span>talkaboutdays.com · daysforward.id@gmail.com · +62 812-2000-0185</span>
+  <div class="dopen">
+    <p class="billhead">Open to at ADE</p>
+    <p>Festivals &amp; promoters seeking Southeast Asian audiences · artists planning Asia tours · brands &amp; tourism boards · media partnerships</p>
+  </div>
+
+  <div class="pfoot">
+    <span>talkaboutdays.com</span>
+    <span>daysforward.id@gmail.com</span>
+    <span>+62 812-2000-0185</span>
   </div>
 </section>
 
@@ -297,71 +334,25 @@
 </section>
 
 <!-- ============ PAGE 3 · SABRINA ============ -->
-<section class="page">
-  <div class="top">
-    <img src="../assets/days-wordmark.png" alt="DAYS">
-    <p class="kicker">Speaker profile · ADE 2026</p>
+<section class="page mposter">
+  <div class="ptop">
+    <span>Speaker profile</span>
+    <span>Jakarta ⇄ Europe</span>
+    <span>ADE 2026</span>
   </div>
 
-  <h1>Sabrina <span class="ph">[Surname]</span></h1>
-  <p class="role"><b>Founder, DAYS</b> &nbsp;·&nbsp; <b>Community Manager, Tripo 3000</b> &nbsp;·&nbsp; Jakarta ⇄ Europe</p>
-
-  <div class="cols" style="grid-template-columns: 1.35fr 1fr;">
-    <div class="bio">
-      <h2>Bio</h2>
-      <p>Sabrina works where music, travel and community meet, as the founder of DAYS, a Jakarta-based travel media company that connects Indonesia's music lovers with Europe's festivals and club culture, telling the stories of those scenes and then taking people there.</p>
-      <p>Sabrina is also community manager at Tripo 3000, the multi-award-winning partymaker behind Asia KolektifA and Space Trip, looking after the crowd, artists and partners that turn a series of parties into a scene.</p>
-      <p>Between the two, Sabrina has a rare view of both sides of the dancefloor: how a local scene is built from the ground up, and how a new generation of Southeast Asian fans is crossing continents for the music they love. Through DAYS, the goal is to make the Indonesia–Europe link a two-way street for artists, promoters and audiences.</p>
-
-      <h2 style="margin-top:5mm">Short bio (50 words)</h2>
-      <p class="short">Sabrina is the founder of DAYS, a Jakarta-based travel media company connecting Indonesian music fans with Europe's festivals and clubs, and community manager at multi-award-winning partymaker Tripo 3000. Sabrina works on how scenes are built locally and how Southeast Asia's new generation of fans is reshaping global dancefloors.</p>
-    </div>
-    <div>
-      <h2>Expertise</h2>
-      <ul class="tight">
-        <li>Community building for nightlife and festivals</li>
-        <li>Southeast Asian music audiences and travel behaviour</li>
-        <li>Indonesia–Europe cultural and business exchange</li>
-        <li>Music tourism and destination storytelling</li>
-        <li>Founding and growing a culture-led brand</li>
-      </ul>
-
-      <h2 style="margin-top:5mm">Speaks on</h2>
-      <p>Panels, fireside chats and short keynotes. English and Bahasa Indonesia.</p>
-
-      <h2 style="margin-top:5mm">Contact</h2>
-      <dl class="contact">
-        <dt>Email</dt><dd>daysforward.id@gmail.com</dd>
-        <dt>Phone</dt><dd class="mono">+62 812-2000-0185</dd>
-        <dt>Web</dt><dd>talkaboutdays.com</dd>
-        <dt>Instagram</dt><dd><span class="ph">[@handle]</span></dd>
-        <dt>LinkedIn</dt><dd><span class="ph">[link]</span></dd>
-      </dl>
-    </div>
+  <div class="mphoto">
+    <img src="sabrina.jpg" alt="Sabrina Moelyono" onerror="this.remove()">
+    <span class="mph">Photo</span>
   </div>
 
-  <h2>Proposed talks</h2>
-  <div class="topics">
-    <div class="topic">
-      <span class="n mono">01</span>
-      <h3>The Long-Haul Raver</h3>
-      <p>Why Southeast Asian fans now fly halfway round the world for a lineup, what they expect when they land, and what European festivals miss about them.</p>
-    </div>
-    <div class="topic">
-      <span class="n mono">02</span>
-      <h3>Scenes Aren't Booked, They're Built</h3>
-      <p>Lessons from Tripo 3000 and Asia KolektifA on growing a loyal crowd: community first, capacity second, and keeping it alive between parties.</p>
-    </div>
-    <div class="topic">
-      <span class="n mono">03</span>
-      <h3>Jakarta ⇄ Amsterdam</h3>
-      <p>Building a two-way corridor for artists, promoters and audiences between Indonesia and Europe, beyond one-off bookings.</p>
-    </div>
-  </div>
+  <h1 class="mname">Sabrina<br>Moelyono</h1>
+  <p class="mrole">Founder, DAYS <i>✦</i> Community Manager, Tripo 3000</p>
 
-  <div class="foot">
-    <span>Founder, DAYS · Community Manager, Tripo 3000</span>
-    <span>Headshot and logos available on request</span>
+  <div class="mbio">
+    <p>Sabrina Moelyono works where music, travel and community meet. As founder of DAYS, a Jakarta-based travel media company, Sabrina connects Indonesia's music lovers with Europe's festivals and club culture: telling the stories of those scenes, then taking people there.</p>
+    <p>As community manager at Tripo 3000, the multi-award-winning partymaker behind Asia KolektifA and Space Trip, Sabrina looks after the crowd, artists and partners that turn a series of parties into a scene.</p>
+    <p>Between the two, Sabrina sees both sides of the dancefloor: how a local scene is built from the ground up, and how a new generation of Southeast Asian fans crosses continents for the music they love.</p>
   </div>
 </section>
 
