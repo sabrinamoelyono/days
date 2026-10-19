@@ -149,7 +149,7 @@
     border-top: 1.5px solid #F3EEEA; border-bottom: 1.5px solid #F3EEEA; padding: 2.2mm 0;
   }
   .pfoot { margin-top: auto; }
-  .mast { margin: 5mm 0 0; }
+  .mast { margin: 8mm 0 0; }
   .presents { font: 500 7.5pt "JetBrains Mono", monospace; letter-spacing: .1em; text-transform: uppercase; color: #FF8A6B; }
   .giant {
     font-size: 110pt; line-height: .8; font-weight: 800; letter-spacing: -.055em;
@@ -180,24 +180,26 @@
   }
 
   /* DAYS page: poster edition */
-  .page.dposter { background: #EC5B39; color: #1B1714; padding: 12mm 13mm 11mm; }
+  .page.dposter { background: #FBF8F5; color: #1B1714; padding: 12mm 13mm 11mm; }
   .dposter > * { position: relative; }
   .dposter .grain { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .08; pointer-events: none; }
-  .dposter .ptop, .dposter .pfoot, .mposter .ptop { border-color: #1B1714; }
-  .dmark { display: block; width: 100%; height: auto; margin: 9mm 0 0; filter: brightness(0) saturate(100%); opacity: .92; }
-  .dtag { font-size: 29pt; line-height: 1.04; font-weight: 800; letter-spacing: -.025em; margin: 7mm 0 9mm; max-width: 170mm; color: #FBF8F5; }
-  .dstats { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1.5px solid #1B1714; border-bottom: 1.5px solid #1B1714; }
+  .dposter .ptop, .dposter .pfoot { border-color: #EC5B39; }
+  .mposter .ptop { border-color: #1B1714; }
+  .dmark { display: block; height: 30mm; width: auto; margin: 12mm 0 0 -1mm; }
+  .dtag { font-size: 29pt; line-height: 1.04; font-weight: 800; letter-spacing: -.025em; margin: 9mm 0 10mm; max-width: 170mm; color: #1B1714; }
+  .dstats { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1.5px solid #EC5B39; border-bottom: 1.5px solid #EC5B39; }
   .dstats div { padding: 4.5mm 0 4mm; }
-  .dstats div + div { border-left: 1.5px solid #1B1714; padding-left: 4mm; }
+  .dstats div + div { border-left: 1.5px solid #EC5B39; padding-left: 4mm; }
   .dstats b { display: block; font-size: 40pt; font-weight: 800; letter-spacing: -.04em; line-height: 1; }
   .dstats span { font: 500 7.5pt "JetBrains Mono", monospace; text-transform: uppercase; letter-spacing: .06em; }
-  .dposter .billhead { color: #1B1714; opacity: .75; }
-  .dbill { text-align: center; padding: 8mm 0 7mm; border-bottom: 1.5px solid #1B1714; }
-  .dbill .h1l { font-size: 34pt; color: #FBF8F5; }
-  .dbill i { font-style: normal; color: #1B1714; }
+  .dposter .billhead { color: #C9431F; }
+  .dstats b { color: #EC5B39; }
+  .dbill { text-align: center; padding: 8mm 0 7mm; border-bottom: 1.5px solid #EC5B39; }
+  .dbill .h1l { font-size: 34pt; color: #1B1714; }
+  .dbill i { font-style: normal; color: #EC5B39; }
   .dthree { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6mm; margin-top: 4mm; }
   .dthree p { margin: 0; font-size: 10.5pt; line-height: 1.4; font-weight: 500; }
-  .dwhy { padding: 7mm 0; border-bottom: 1.5px solid #1B1714; }
+  .dwhy { padding: 7mm 0; border-bottom: 1.5px solid #EC5B39; }
   .dbig { font-size: 19pt; line-height: 1.2; font-weight: 800; letter-spacing: -.015em; margin: 0 0 2mm; }
   .dwhy p:last-child { margin: 0; font-size: 11pt; font-weight: 500; }
   .dopen { padding: 7mm 0 4mm; }
@@ -228,7 +230,6 @@
 
 <!-- ============ PAGE 1 · DAYS (poster) ============ -->
 <section class="page dposter">
-  <svg class="grain" aria-hidden="true"><filter id="n1"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .55 0"/></filter><rect width="100%" height="100%" filter="url(#n1)"/></svg>
 
   <div class="ptop">
     <span>Company profile</span>
@@ -290,13 +291,11 @@
   </svg>
 
   <div class="ptop">
-    <span>Partner profile</span>
     <span>Jakarta · Bali · Since 2008</span>
     <span>ADE 2026</span>
   </div>
 
   <div class="mast">
-    <span class="presents">PT Tripo Gerakan Generasi presents</span>
     <h1 class="giant">TRIPO<br>3000</h1>
     <p class="tag">We don't throw parties.<br><em>We build scenes.</em></p>
   </div>
@@ -314,7 +313,7 @@
   <div class="pgrid">
     <div>
       <p class="billhead">The road to ADE</p>
-      <p>Hundreds of Indonesians fly to ADE every year. In 2026 Tripo 3000 and Mixmag Asia gave them a home before departure: <b>ADE Community Talks Jakarta</b>. Next stop, ADE 2027.</p>
+      <p>Hundreds of Indonesians fly to ADE every year. In 2026 Tripo 3000 brings the scene to them: <b>Nusantara Elsewhere – Amsterdam</b>.</p>
     </div>
     <div>
       <p class="billhead">The family</p>
@@ -328,8 +327,7 @@
 
   <div class="pfoot">
     <span>tripo3000.com</span>
-    <span>hello@tripo3000.com</span>
-    <span>Community: Sabrina</span>
+    <span>Jakarta · Bali · Amsterdam</span>
   </div>
 </section>
 
