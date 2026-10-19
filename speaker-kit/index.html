@@ -202,6 +202,12 @@
   .dwhy { padding: 7mm 0; border-bottom: 1.5px solid #EC5B39; }
   .dbig { font-size: 19pt; line-height: 1.2; font-weight: 800; letter-spacing: -.015em; margin: 0 0 2mm; }
   .dwhy p:last-child { margin: 0; font-size: 11pt; font-weight: 500; }
+
+  .dcols { display: grid; grid-template-columns: 1fr 1fr; gap: 9mm; padding: 8mm 0 6mm; border-bottom: 1.5px solid #EC5B39; }
+  .dcols h3 { font-size: 11.5pt; font-weight: 700; margin: 3mm 0 1mm; }
+  .dcols .billhead + h3 { margin-top: 2mm; }
+  .dcols p { font-size: 10.6pt; line-height: 1.5; margin: 0 0 2.5mm; }
+  .dcols p.billhead { font-size: 7pt; margin: 0 0 2.5mm; }
   .dopen { padding: 7mm 0 4mm; }
   .dopen p:last-child { margin: 0; font-size: 11pt; font-weight: 600; text-transform: uppercase; letter-spacing: .01em; line-height: 1.45; }
 
@@ -246,20 +252,22 @@
     <div><b>ID ⇄ EU</b><span>The corridor we work in</span></div>
   </div>
 
-  <div class="dbill">
-    <p class="billhead">What we do</p>
-    <p class="h1l">Media <i>✦</i> Travel <i>✦</i> Connector</p>
-    <div class="dthree">
-      <p>Stories of Europe's festivals and club scenes, told for Indonesian audiences.</p>
-      <p>End-to-end trips built around one moment: Dekmantel, Primavera Sound, ADE.</p>
-      <p>Introductions between Indonesian and European promoters, artists and brands.</p>
+  <div class="dcols">
+    <div>
+      <p class="billhead">What we do</p>
+      <h3>Travel media</h3>
+      <p>Editorial and social content on Europe's festivals, clubs and city scenes, written for Indonesian readers: who's playing, why it matters, how to get there from Jakarta.</p>
+      <h3>Curated music travel</h3>
+      <p>End-to-end trips built around one moment: Dekmantel in August, Primavera in May, ADE in October. We handle the logistics so our travellers can be fully present.</p>
+      <h3>Global connector</h3>
+      <p>Partnerships, introductions and market entry between Indonesian and European promoters, festivals, venues, artists and brands.</p>
     </div>
-  </div>
-
-  <div class="dwhy">
-    <p class="billhead">Why it matters</p>
-    <p class="dbig">Indonesia's fans already follow Europe's lineups in real time. They don't need persuading. They need a trusted route in.</p>
-    <p>Since 2022 we've taken Indonesian travellers to ADE every year, five editions running, plus Primavera Sound.</p>
+    <div>
+      <p class="billhead">Why it matters to the music industry</p>
+      <p>Southeast Asia is one of the fastest-growing audiences for electronic music, and Indonesia, with 280 million people and one of the youngest populations in the region, is its biggest. A new generation of Indonesian fans already follows European lineups in real time. They don't need persuading; they need a trusted route in.</p>
+      <p>For European festivals and artists, DAYS is a way to reach that audience with context and credibility rather than paid ads. For Indonesian fans and scenes, we're the friend who has already been, knows the right stage, and makes the introduction.</p>
+      <p>Since 2022 we've taken Indonesian travellers to ADE five years running, plus Primavera Sound.</p>
+    </div>
   </div>
 
   <div class="dopen">
