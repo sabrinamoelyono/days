@@ -489,3 +489,12 @@ p { margin: 0; }
 .trusted .logos > div { height: 130px; }
 .trusted .logos .with-name span { font-size: 12px; }
 .logos img { object-fit: contain; }
+.who h3 { margin-top: 18px; padding-top: 14px; font-size: 18px; }
+.nums { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 16px; }
+.nums > div { background: var(--card); border-radius: 3px; padding: 10px 12px; }
+.nums b { display: block; font-family: var(--serif); font-weight: 400; font-size: 24px; line-height: 1.1; }
+.nums span { display: block; font-size: 10.5px; line-height: 1.4; color: var(--muted); margin-top: 4px; }
+.quote:has(.bridge) { grid-template-columns: 130px 1fr 1fr; gap: 0 28px; top: 556px; height: 196px; padding: 22px 26px; }
+.quote:has(.bridge) blockquote { font-size: 17px; }
+.bridge p { font-size: 12px; line-height: 1.55; color: var(--ink); margin-top: 8px; }
+.bridge p b { font-weight: 600; }
