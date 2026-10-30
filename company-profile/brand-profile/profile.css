@@ -416,3 +416,6 @@ p { margin: 0; }
 .logos > div { background: rgba(255,255,255,.88); border-radius: 3px; height: 82px; display: flex; align-items: center; justify-content: center; padding: 10px 14px; text-align: center; }
 .logos img { max-width: 100%; width: auto; display: block; }
 .logos span { font-family: var(--serif); font-size: 15px; line-height: 1.2; color: var(--ink); }
+.logos > div { background: #fff; }
+.logos .with-name { gap: 10px; justify-content: center; }
+.logos .with-name span { font-family: var(--sans); font-size: 10px; font-weight: 600; text-align: left; line-height: 1.3; }
