@@ -353,3 +353,29 @@ p { margin: 0; }
 .ptable td { padding-top: 8px; padding-bottom: 8px; font-weight: 600; font-variant-numeric: tabular-nums; }
 .ptable td:first-child { font-weight: 400; }
 .ptable td:nth-child(4), .ptable td:nth-child(5) { font-weight: 400; color: var(--muted); font-size: 10px; }
+
+/* Package pages */
+.pkg .photo { position: absolute; left: 0; top: 0; bottom: 0; width: 420px; object-fit: cover; width: 420px; height: 100%; }
+.pkg .badge { position: absolute; left: 32px; bottom: 32px; background: var(--orange); color: var(--cream); padding: 10px 14px; border-radius: 3px; }
+.pkg .badge .label { color: var(--cream); font-size: 7.5px; }
+.pkg .badge b { display: block; font-family: var(--serif); font-weight: 400; font-size: 22px; margin-top: 4px; }
+.pkg .content { position: absolute; left: 460px; right: 60px; top: 36px; bottom: 40px; }
+.pkg h2 { margin-top: 10px; font-size: 40px; }
+.pkg .sub { font-size: 13px; }
+.pkg .meta4 { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 18px; border-top: 1.5px solid var(--ink); }
+.pkg .meta4 > div { padding: 10px 12px 10px 0; border-bottom: 1px solid var(--rule); }
+.pkg .meta4 .label { font-size: 7px; color: var(--muted); }
+.pkg .meta4 .v { font-size: 11.5px; font-weight: 600; margin-top: 4px; line-height: 1.45; }
+.pkg .two { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 16px; }
+.pkg h4 { font-size: 17px; }
+.pkg .two p { font-size: 10.5px; line-height: 1.7; color: var(--muted); margin-top: 5px; }
+.pkg ul.inc { margin: 6px 0 0; padding-left: 14px; font-size: 10.5px; line-height: 1.75; }
+.pkg ul.inc b { font-weight: 600; }
+.pkg .thumbs { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-top: 16px; height: 118px; }
+.pkg .thumbs figure { margin: 0; position: relative; border-radius: 3px; overflow: hidden; }
+.pkg .thumbs img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.pkg .thumbs figcaption { position: absolute; left: 8px; bottom: 7px; color: #fff; font: 600 7px/1 var(--sans); letter-spacing: .18em; text-transform: uppercase; text-shadow: 0 1px 5px rgba(0,0,0,.6); }
+.pkg .price { display: flex; align-items: baseline; gap: 10px; margin-top: 14px; }
+.pkg .price .label { font-size: 7.5px; color: var(--muted); }
+.pkg .price b { font-family: var(--serif); font-weight: 400; font-size: 26px; color: #C9431F; }
+.pkg .price span { font-size: 10px; color: var(--muted); }
