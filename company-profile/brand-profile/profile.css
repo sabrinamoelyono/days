@@ -482,3 +482,6 @@ p { margin: 0; }
 .pkg .thumbs.one-up { height: 80px; }
 .pkg .price { margin-top: 10px; }
 .pkg .price span { font-size: 11.5px; }
+.people { gap: 24px; }
+.people figure { width: 228px; }
+.people img { width: 228px; height: 228px; }
