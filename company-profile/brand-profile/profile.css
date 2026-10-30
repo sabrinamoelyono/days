@@ -498,3 +498,10 @@ p { margin: 0; }
 .quote:has(.bridge) blockquote { font-size: 17px; }
 .bridge p { font-size: 12px; line-height: 1.55; color: var(--ink); margin-top: 8px; }
 .bridge p b { font-weight: 600; }
+.bar .dl { border: 0; cursor: pointer; font: 600 13px/1.4 var(--sans); background: var(--orange); color: #fff; padding: 9px 16px; border-radius: 999px; }
+.bar .dl[hidden] { display: none; }
+.bar .dl:disabled { opacity: .6; }
+@media print {
+  html, body { margin: 0 !important; padding: 0 !important; background: none !important; }
+  .page { zoom: 1 !important; width: 297mm; height: 210mm; }
+}

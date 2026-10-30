@@ -14,6 +14,7 @@
 
 <div class="bar">
   <span>DAYS · Profil perusahaan · A4 lanskap, 20 halaman</span>
+  <button type="button" class="dl" id="dl" hidden>Unduh PDF</button>
 </div>
 
 <!-- Collection icons, drawn once and reused -->
@@ -764,6 +765,22 @@
   addEventListener('resize', fit);
   addEventListener('beforeprint', function () { document.documentElement.style.setProperty('--z', 1); });
   addEventListener('afterprint', fit);
+  // Offer the print-ready PDF through the viewer's download prompt.
+  (async () => {
+    const btn = document.getElementById('dl');
+    const downloads = await (window.claude && claude.use ? claude.use('downloads') : null);
+    if (!downloads) return;
+    btn.hidden = false;
+    btn.addEventListener('click', async () => {
+      btn.disabled = true;
+      try {
+        const blob = await (await fetch('DAYS-Profil-Perusahaan.pdf')).blob();
+        await downloads.save({ filename: 'DAYS-Profil-Perusahaan.pdf', data: blob });
+      } catch (e) {
+        if (e && (e.code === 'unavailable' || e.code === 'not_granted')) btn.hidden = true;
+      } finally { btn.disabled = false; }
+    });
+  })();
 </script>
 </body>
 </html>
