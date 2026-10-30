@@ -402,3 +402,13 @@ p { margin: 0; }
 .pkgcols .it h4 { font-size: 16px; }
 .pkgcols .it .m { font-size: 10px; color: var(--muted); margin-top: 3px; line-height: 1.5; }
 .pkgcols .it .p { font-size: 10.5px; font-weight: 600; margin-top: 5px; color: #C9431F; }
+.pkg .tier2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+.pkg .tier2 > div { background: var(--card); border-radius: 3px; padding: 14px 16px; border-top: 3px solid var(--indigo); }
+.pkg .tier2 > div.hi { border-top-color: var(--orange); }
+.pkg .tier2 .label { font-size: 7px; color: var(--muted); }
+.pkg .tier2 h4 { font-size: 20px; margin-top: 4px; }
+.pkg .tier2 .d { font-size: 10.5px; font-weight: 600; margin-top: 2px; }
+.pkg .tier2 ul { margin: 8px 0 0; padding-left: 14px; font-size: 10px; line-height: 1.65; }
+.pkg .tier2 .pr { font-family: var(--serif); font-size: 19px; color: #C9431F; margin-top: 8px; }
+.pkg .tier2 .pr small { font-family: var(--sans); font-size: 9.5px; color: var(--muted); }
+.pkg .price b { white-space: nowrap; }
