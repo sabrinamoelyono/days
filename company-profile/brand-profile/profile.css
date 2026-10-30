@@ -412,3 +412,7 @@ p { margin: 0; }
 .pkg .tier2 .pr { font-family: var(--serif); font-size: 19px; color: #C9431F; margin-top: 8px; }
 .pkg .tier2 .pr small { font-family: var(--sans); font-size: 9.5px; color: var(--muted); }
 .pkg .price b { white-space: nowrap; }
+.logos { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin-top: 22px; }
+.logos > div { background: rgba(255,255,255,.88); border-radius: 3px; height: 82px; display: flex; align-items: center; justify-content: center; padding: 10px 14px; text-align: center; }
+.logos img { max-width: 100%; width: auto; display: block; }
+.logos span { font-family: var(--serif); font-size: 15px; line-height: 1.2; color: var(--ink); }
