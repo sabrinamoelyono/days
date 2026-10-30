@@ -8,6 +8,7 @@ A culture-driven travel concierge shaping how you move through destinations, fro
 <p align="center">
   <a href="https://www.talkaboutdays.com/">talkaboutdays.com</a> ·
   <a href="company-profile/DAYS-Company-Profile.pdf">Company profile (PDF)</a> ·
+  <a href="company-profile/brand-profile/DAYS-Brand-Profile.pdf">Brand profile (PDF)</a> ·
   <a href="DESIGN.md">Brand identity</a>
 </p>
 

@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DAYS Brand Profile</title>
+<meta name="description" content="DAYS company profile: experience-driven travel media and global connector between Indonesia and Europe.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --orange: #EC5E30;
+    --cream: #FFF3E9;
+    --blue: #9DB8DD;
+    --yellow: #FFE800;
+    --peach: #F1D1AA;
+    --indigo: #2C2C65;
+    --ink: #2C2C65;
+    --muted: #5E5A82;
+    --rule: rgba(44, 44, 101, .22);
+    --paper: #F3E8E2;
+    --card: rgba(255, 250, 245, .72);
+    --serif: "DM Serif Display", Georgia, serif;
+    --sans: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  /* The profile is a printed document, so it keeps its light palette in dark mode. */
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --screen: #1A1A33; }
+  }
+  :root[data-theme="dark"] { --screen: #1A1A33; }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--screen, #DCD6DE);
+    color: var(--ink);
+    font-family: var(--sans);
+  }
+
+  /* Screen chrome */
+  .bar {
+    max-width: 1123px; margin: 0 auto; padding: 16px;
+    display: flex; justify-content: space-between; align-items: center; gap: 12px;
+    font: 500 13px/1.4 var(--sans); color: var(--muted);
+  }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .bar { color: #C9C6E0; } }
+  :root[data-theme="dark"] .bar { color: #C9C6E0; }
+  .bar a {
+    background: var(--orange); color: #fff; text-decoration: none; font-weight: 600;
+    padding: 9px 16px; border-radius: 999px; white-space: nowrap;
+  }
+  .deck { padding: 0 16px 48px; }
+  .page {
+    width: 1123px; height: 794px; margin: 0 auto 24px;
+    position: relative; overflow: hidden;
+    background: var(--paper);
+    zoom: var(--z, 1);
+    box-shadow: 0 10px 40px rgba(20, 20, 50, .18);
+  }
+  /* Film grain over every page */
+  .page::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .5;
+    background: url(img/grain.png) repeat 0 0 / 160px;
+  }
+
+  @page { size: A4 landscape; margin: 0; }
+  @media print {
+    body { background: none; }
+    .bar { display: none; }
+    .deck { padding: 0; }
+    .page { zoom: 1; margin: 0; box-shadow: none; break-after: page; }
+    .page:last-child { break-after: auto; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+
+  /* Gradient washes */
+  .wash-cover { background:
+      radial-gradient(60% 75% at 100% 0%, rgba(236, 110, 70, .75), transparent 70%),
+      radial-gradient(45% 55% at 0% 100%, rgba(157, 184, 221, .8), transparent 70%),
+      var(--paper); }
+  .wash-warm { background:
+      radial-gradient(55% 65% at 100% 0%, rgba(236, 120, 85, .6), transparent 70%),
+      radial-gradient(45% 50% at 0% 100%, rgba(255, 232, 0, .35), transparent 70%),
+      var(--paper); }
+  .wash-blue { background:
+      radial-gradient(60% 90% at 100% 40%, rgba(157, 184, 221, .95), transparent 72%),
+      radial-gradient(40% 50% at 0% 100%, rgba(241, 209, 170, .7), transparent 70%),
+      #E7E4EC; }
+  .wash-yellow { background:
+      radial-gradient(45% 55% at 0% 0%, rgba(255, 232, 0, .5), transparent 70%),
+      radial-gradient(55% 70% at 100% 100%, rgba(236, 120, 85, .55), transparent 70%),
+      #F3EADA; }
+  .wash-peach { background:
+      radial-gradient(55% 65% at 0% 0%, rgba(236, 120, 85, .55), transparent 70%),
+      radial-gradient(45% 55% at 60% 100%, rgba(157, 184, 221, .7), transparent 70%),
+      var(--paper); }
+  .wash-team { background:
+      radial-gradient(50% 60% at 0% 0%, rgba(157, 184, 221, .9), transparent 70%),
+      radial-gradient(45% 55% at 100% 100%, rgba(241, 209, 170, .8), transparent 70%),
+      #E2E2EC; }
+  .wash-id { background:
+      radial-gradient(45% 50% at 100% 0%, rgba(255, 232, 0, .45), transparent 70%),
+      radial-gradient(50% 60% at 0% 100%, rgba(157, 184, 221, .55), transparent 70%),
+      var(--paper); }
+  .wash-contact { background: linear-gradient(180deg, #E26A45 0%, #E89A7C 38%, #EBCDB8 66%, #E6D2C4 82%, #ADB8D6 100%); }
+
+  /* Shared type */
+  .in { position: absolute; inset: 0; padding: 36px 70px 60px; }
+  .label {
+    font: 600 8.5px/1.3 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--ink);
+  }
+  .label.muted { color: var(--muted); }
+  h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; margin: 0; color: var(--ink); letter-spacing: -.005em; }
+  h2 { font-size: 38px; line-height: 1.1; }
+  .sub { font-size: 13px; color: var(--muted); margin: 8px 0 0; }
+  p { margin: 0; }
+  .body { font-size: 12px; line-height: 1.75; }
+  .body.muted { color: var(--muted); }
+  .rule { border-top: 1px solid var(--rule); }
+
+  /* Wordmark, one PNG per brand colour */
+  .wm { display: block; height: auto; }
+
+  /* 1. Cover */
+  .cover .top { display: flex; justify-content: space-between; }
+  .cover .wm { width: 512px; margin-top: 14px; }
+  .cover .mid { display: grid; grid-template-columns: 1fr 423px; gap: 56px; margin-top: 22px; align-items: start; }
+  .cover h1 { font-size: 29px; line-height: 1.16; }
+  .cover .mid .sub { font-size: 14px; margin-top: 10px; }
+  .cover .intro { font-size: 13.5px; line-height: 1.7; padding-top: 4px; }
+  .cover .five { margin-top: 20px; }
+  .tiles { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; margin-top: 10px; }
+  .tile {
+    height: 70px; border-radius: 3px; padding: 10px 12px; position: relative;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .tile svg { height: 27px; width: 76px; }
+  .tile .label { font-size: 8px; }
+  .t-city { background: var(--orange); color: var(--cream); }
+  .t-city .label { color: var(--cream); }
+  .t-nature { background: var(--blue); }
+  .t-sports { background: var(--yellow); }
+  .t-culinary { background: var(--peach); }
+  .t-music { background: var(--indigo); }
+  .t-music .label { color: var(--yellow); }
+  .strip { display: grid; grid-template-columns: 355fr 176fr 176fr 250fr; gap: 9px; margin-top: 14px; height: 134px; }
+  .strip figure { margin: 0; position: relative; border-radius: 3px; overflow: hidden; }
+  .strip img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .strip figcaption {
+    position: absolute; left: 12px; bottom: 9px; color: #fff;
+    font: 600 8px/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; text-shadow: 0 1px 6px rgba(0,0,0,.5);
+  }
+
+  /* 2. Who we are */
+  .who .grid { display: grid; grid-template-columns: 1fr 349px; gap: 59px; margin-top: 22px; }
+  .who h2 { margin-top: 14px; }
+  .who .lead p + p { margin-top: 14px; }
+  .who .lead .body { font-size: 11.5px; }
+  .who .lead strong { font-weight: 600; }
+  .who h3 { font-size: 21px; line-height: 1.38; margin-top: 30px; padding-top: 18px; border-top: 1px solid var(--rule); max-width: 580px; }
+  .facts { border-top: 1.5px solid var(--ink); }
+  .facts > div { padding: 12px 0 13px; border-bottom: 1px solid var(--rule); }
+  .facts .label { font-size: 7.5px; color: var(--muted); }
+  .facts .v { font-size: 11.5px; font-weight: 600; margin-top: 5px; }
+  .quote {
+    position: absolute; left: 70px; right: 70px; top: 520px; height: 182px;
+    background: var(--card); border: 1px solid rgba(255,255,255,.7); border-radius: 4px;
+    display: grid; grid-template-columns: 154px 1fr; gap: 0 0; padding: 30px 28px;
+  }
+  .quote .label { font-size: 7.5px; padding-top: 6px; }
+  .quote blockquote { margin: 0; font-family: var(--serif); font-size: 19px; line-height: 1.4; max-width: 700px; }
+  .quote p { font-size: 11px; line-height: 1.75; color: var(--muted); margin-top: 12px; max-width: 580px; }
+
+  /* 3. Brand architecture */
+  .arch h2 { margin-top: 14px; }
+  .arch .sub, .arch .note { max-width: 580px; font-size: 12px; line-height: 1.75; }
+  .arch h3 { font-size: 22px; margin-top: 30px; }
+  .arch .note { color: var(--muted); margin-top: 6px; font-size: 11px; }
+  .arch table { width: 984px; border-collapse: collapse; margin-top: 30px; font-size: 11px; }
+  .arch th { text-align: left; font: 600 7.5px/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--muted); padding: 0 0 10px; border-bottom: 1.5px solid var(--ink); }
+  .arch td { padding: 13px 0; border-bottom: 1px solid var(--rule); }
+  .arch td:nth-child(1) { width: 344px; }
+  .arch td:nth-child(2) { width: 248px; font-weight: 600; }
+  .arch td:nth-child(3) { color: var(--muted); }
+  .dot { display: inline-block; width: 8px; height: 8px; margin-right: 9px; vertical-align: -0.5px; }
+
+  /* 4–8. Collections */
+  .coll .panel { position: absolute; left: 0; top: 0; bottom: 0; width: 449px; padding: 56px 70px 52px; }
+  .coll .panel .wm { width: 243px; }
+  .coll .panel h2 { position: absolute; left: 70px; top: 330px; font-size: 52px; line-height: 1.06; }
+  .coll .panel svg { position: absolute; left: 70px; bottom: 52px; width: 272px; height: auto; }
+  .coll .content { position: absolute; left: 505px; right: 70px; top: 70px; }
+  .coll h3 { font-size: 34px; margin-top: 18px; }
+  .coll .en { font-size: 12.5px; line-height: 1.75; margin-top: 14px; max-width: 540px; }
+  .coll .id { font-size: 11.5px; line-height: 1.75; margin-top: 12px; color: var(--muted); max-width: 540px; }
+  .coll dl { margin: 18px 0 0; padding-top: 14px; border-top: 1px solid var(--rule); }
+  .coll dt { font: 600 7.5px/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; margin-top: 14px; }
+  .coll dt:first-child { margin-top: 0; }
+  .coll dd { margin: 6px 0 0; font-size: 12px; }
+  .coll dd.line { font-family: var(--serif); font-size: 17px; }
+  .p-city { background: var(--orange); }
+  .p-city h2 { color: var(--cream); }
+  .p-nature { background: var(--blue); }
+  .p-sports { background: var(--yellow); }
+  .p-culinary { background: var(--peach); }
+  .p-music { background: var(--indigo); }
+  .p-music h2 { color: var(--yellow); }
+
+  /* 9. Services */
+  .svc h2 { margin-top: 14px; }
+  .cols { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 26px; border-top: 1.5px solid var(--ink); }
+  .cols > div { padding: 14px 14px 12px; border-left: 1px solid var(--rule); }
+  .cols > div:first-child { padding-left: 0; border-left: 0; }
+  .cols .label { font-size: 7px; color: var(--muted); }
+  .cols h4 { font-size: 17px; line-height: 1.18; margin-top: 8px; }
+  .cols p { font-size: 10.5px; line-height: 1.7; color: var(--muted); margin-top: 8px; }
+  .cols ul { margin: 12px 0 0; padding-left: 14px; font-size: 10.5px; line-height: 1.7; }
+  .boxes { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-top: 14px; }
+  .boxes > div { background: var(--card); border-radius: 3px; padding: 12px 16px; min-height: 92px; }
+  .boxes .label { font-size: 7px; color: var(--muted); }
+  .boxes h4 { font-size: 17px; margin-top: 6px; }
+  .boxes .s { font-size: 10px; color: var(--muted); margin-top: 6px; }
+  .boxes p { font-size: 10px; line-height: 1.7; color: var(--muted); margin-top: 6px; }
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 18px; }
+  .steps > div { border-top: 1.5px solid var(--orange); padding-top: 10px; }
+  .steps .label { font-size: 7px; color: #C9431F; }
+  .steps h4 { font-family: var(--sans); font-weight: 600; font-size: 12.5px; margin-top: 8px; }
+  .steps p { font-size: 10px; line-height: 1.7; color: var(--muted); margin-top: 6px; }
+
+  /* 10. Open trips */
+  .trips h2 { margin-top: 14px; }
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 30px; }
+  .card { background: var(--card); border-radius: 3px; overflow: hidden; }
+  .card img { width: 100%; height: 128px; object-fit: cover; display: block; }
+  .card .c { padding: 12px 16px 16px; }
+  .tag { display: inline-block; font: 700 7px/1 var(--sans); letter-spacing: .14em; text-transform: uppercase; padding: 4px 6px; border-radius: 2px; }
+  .tag.music { background: var(--indigo); color: var(--yellow); }
+  .tag.sports { background: var(--yellow); color: var(--indigo); }
+  .card h4 { font-size: 19px; margin-top: 8px; }
+  .card .meta { font-size: 9.5px; font-weight: 600; margin-top: 5px; }
+  .card p { font-size: 10px; line-height: 1.65; color: var(--muted); margin-top: 8px; }
+  .journal { display: grid; grid-template-columns: 380px 1fr; gap: 26px; margin-top: 24px; border-top: 1.5px solid var(--ink); padding-top: 8px; }
+  .journal h4 { font-size: 21px; margin-top: 8px; }
+  .journal .d { font-size: 11px; line-height: 1.75; color: var(--muted); margin-top: 8px; max-width: 360px; }
+  .jlist { display: grid; grid-template-columns: 1fr 1fr; column-gap: 30px; }
+  .jlist > div { display: flex; justify-content: space-between; gap: 12px; padding: 9px 0; border-bottom: 1px solid var(--rule); font-family: var(--serif); font-size: 13px; line-height: 1.35; }
+  .jlist .label { font-size: 7px; color: var(--muted); padding-top: 3px; white-space: nowrap; }
+
+  /* 11. Team */
+  .team h2 { margin-top: 14px; }
+  .people { display: flex; gap: 25px; margin-top: 26px; }
+  .people figure { margin: 0; width: 272px; }
+  .people img { width: 272px; height: 272px; object-fit: cover; display: block; border-radius: 2px; }
+  .people figcaption { margin-top: 8px; }
+  .people .n { font-family: var(--serif); font-size: 21px; }
+  .people .label { font-size: 7.5px; color: var(--muted); margin-top: 2px; }
+
+  /* 12. Identity */
+  .ident h2 { margin-top: 14px; }
+  .swatches { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; margin-top: 34px; }
+  .sw { height: 120px; border-radius: 2px; padding: 12px 10px; display: flex; flex-direction: column; justify-content: flex-end; font-size: 8.5px; line-height: 1.5; }
+  .sw b { font: 700 7.5px/1.4 var(--sans); letter-spacing: .16em; }
+  .specimens { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 28px; }
+  .specimens > div { border-top: 1.5px solid var(--ink); padding-top: 10px; }
+  .specimens .label { font-size: 7.5px; color: var(--muted); }
+  .specimens .big { font-family: var(--serif); font-size: 30px; margin-top: 12px; }
+  .specimens .big.sans { font-family: var(--sans); font-weight: 500; font-size: 26px; letter-spacing: -.01em; }
+  .specimens p { font-size: 10px; color: var(--muted); margin-top: 8px; }
+
+  /* 13. Contact */
+  .contact .in { padding-top: 46px; }
+  .contact .grid { display: grid; grid-template-columns: 1fr 409px; gap: 60px; }
+  .contact h2 { font-size: 66px; line-height: 1.04; margin-top: 14px; }
+  .contact .sub { font-size: 15px; color: var(--ink); margin-top: 12px; }
+  .contact dl { margin: 0; border-top: 1.5px solid var(--ink); }
+  .contact dl > div { display: grid; grid-template-columns: 96px 1fr; gap: 0; padding: 13px 0; border-bottom: 1px solid rgba(44,44,101,.25); align-items: center; }
+  .contact dt { font: 700 7px/1.4 var(--sans); letter-spacing: .2em; text-transform: uppercase; }
+  .contact dd { margin: 0; font-size: 11.5px; font-weight: 600; line-height: 1.75; }
+  .contact a { color: #B33A12; text-decoration: underline; text-underline-offset: 3px; }
+  .foot { position: absolute; left: 70px; right: 70px; top: 488px; border-top: 1px solid rgba(44,44,101,.3); padding-top: 14px; display: flex; justify-content: space-between; align-items: center; }
+  .foot .wm { width: 42px; }
+  .foot p { font-size: 9px; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <span>DAYS · Company profile · A4 landscape, 13 pages</span>
+  <a href="DAYS-Brand-Profile.pdf" download>Download PDF</a>
+</div>
+
+<!-- Collection icons, drawn once and reused -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-city" viewBox="0 0 170 62">
+      <g fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M1 62V2h168v34"/><path d="M14 62V8h140v34"/><path d="M27 62V14h112v40"/>
+        <path d="M44 62V14"/><path d="M60 62V8"/><path d="M78 62V20"/><path d="M96 62V14"/>
+        <path d="M112 62V24"/><path d="M126 62V14"/>
+      </g>
+    </symbol>
+    <symbol id="i-nature" viewBox="0 0 170 62">
+      <g fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M1 8c28-10 56 10 84 0s56-10 84 0"/><path d="M1 20c28-10 56 10 84 0s56-10 84 0"/>
+        <path d="M1 32c28-10 56 10 84 0s56-10 84 0"/><path d="M1 44c28-10 56 10 84 0s56-10 84 0"/>
+        <path d="M1 56c28-10 56 10 84 0s56-10 84 0"/>
+      </g>
+    </symbol>
+    <symbol id="i-sports" viewBox="0 0 170 62">
+      <g fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+        <path d="M2 60L42 2"/><path d="M27 60L67 2"/><path d="M52 60L92 2"/>
+        <path d="M77 60L117 2"/><path d="M102 60L142 2"/><path d="M127 60L167 2"/>
+      </g>
+    </symbol>
+    <symbol id="i-culinary" viewBox="0 0 170 88">
+      <g fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M1 88V85a84 84 0 0 1 168 0v3"/><path d="M13 88V85a72 72 0 0 1 144 0v3"/>
+        <path d="M25 88V85a60 60 0 0 1 120 0v3"/><path d="M37 88V85a48 48 0 0 1 96 0v3"/>
+      </g>
+    </symbol>
+    <symbol id="i-music" viewBox="0 0 170 80">
+      <g fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round">
+        <path d="M4 34v12"/><path d="M20 26v28"/><path d="M36 14v52"/><path d="M52 24v32"/>
+        <path d="M68 4v72"/><path d="M84 18v44"/><path d="M100 30v20"/><path d="M116 12v56"/>
+        <path d="M132 24v32"/><path d="M148 8v64"/><path d="M164 30v20"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<main class="deck">
+
+  <!-- 1 · Cover -->
+  <section class="page cover wash-cover">
+    <div class="in">
+      <div class="top"><span class="label">DAYS / Company profile</span><span class="label">Tebet, Jakarta Selatan · 2026</span></div>
+      <img class="wm" src="img/days-orange.png" alt="DAYS">
+      <div class="mid">
+        <div>
+          <h1>Experience-driven travel media and global connector between Indonesia and Europe.</h1>
+          <p class="sub">Media perjalanan berbasis pengalaman dan penghubung global antara Indonesia dan Eropa.</p>
+        </div>
+        <p class="intro">DAYS is a Jakarta travel company that plans journeys around the reason you want to go: a festival, a race weekend, a city, a view or a long lunch. We handle the details, including visas and passports, and leave room for the moments that make a trip yours.</p>
+      </div>
+      <div class="label muted five">One brand. Five ways to go.</div>
+      <div class="tiles">
+        <div class="tile t-city"><svg style="color:var(--cream)"><use href="#i-city"/></svg><span class="label">City</span></div>
+        <div class="tile t-nature"><svg style="color:var(--indigo)"><use href="#i-nature"/></svg><span class="label">Nature</span></div>
+        <div class="tile t-sports"><svg style="color:var(--indigo)"><use href="#i-sports"/></svg><span class="label">Sports</span></div>
+        <div class="tile t-culinary"><svg style="color:var(--indigo)" viewBox="0 0 170 88"><use href="#i-culinary"/></svg><span class="label">Culinary, Leisure &amp; Wellbeing</span></div>
+        <div class="tile t-music"><svg style="color:var(--yellow)" viewBox="0 0 170 80"><use href="#i-music"/></svg><span class="label">Music Festival</span></div>
+      </div>
+      <div class="strip">
+        <figure><img src="img/maho-rasop.jpg" alt="Maho Rasop festival stage at dusk, Bangkok"><figcaption>Maho Rasop · Bangkok</figcaption></figure>
+        <figure><img src="img/city-1.jpg" alt="City buildings against a blue sky"></figure>
+        <figure><img src="img/city-2.jpg" alt="Gothic towers seen from street level"></figure>
+        <figure><img src="img/ade.jpg" alt="Amsterdam Dance Event venue lit at night"><figcaption>ADE · Amsterdam</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 · Who we are -->
+  <section class="page who wash-warm">
+    <div class="in">
+      <span class="label muted">Who we are</span>
+      <h2>Travel with personality.</h2>
+      <p class="sub">Perjalanan dengan karakter.</p>
+      <div class="grid">
+        <div class="lead">
+          <p class="body"><strong>Exploring travel, culture, and the days worth talking about.</strong> DAYS plans premium, approachable journeys for Indonesian travelers aged 25–55. Every trip is designed around interests, thoughtful choices and the people you travel with.</p>
+          <p class="body">Our voice is curious, warm, confident and considered: specific, useful language from people who have been there first.</p>
+          <p class="body muted">Keluarga, teman, solo traveler, dan grup. Gaya perjalanan boleh berbeda; perhatian terhadap pengalaman tetap sama.</p>
+          <h3>Our promise: make it feel personal, make the details clear, and leave room for the unexpected moments that make a trip yours.</h3>
+        </div>
+        <div class="facts">
+          <div><div class="label">Based in</div><div class="v">Tebet, Jakarta Selatan</div></div>
+          <div><div class="label">Who we travel with</div><div class="v">Families, friends, solo travelers and groups</div></div>
+          <div><div class="label">What we plan</div><div class="v">Five collections, four services</div></div>
+          <div><div class="label">Languages</div><div class="v">English and Bahasa Indonesia</div></div>
+          <div><div class="label">Personality</div><div class="v">Curious · Warm · Confident · Considered</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="quote">
+      <div class="label muted">Why book with DAYS</div>
+      <div>
+        <blockquote>“We are not just agents; we’ve tested and vetted every aspect of the cities we suggest.”</blockquote>
+        <p>Our team has years of experience managing visa applications and has personally explored the destinations we recommend, so every suggestion comes from first-hand knowledge rather than a brochure.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 · Brand architecture -->
+  <section class="page arch wash-blue">
+    <div class="in">
+      <span class="label muted">Brand architecture</span>
+      <h2>One DAYS. Five collections.</h2>
+      <p class="sub">Satu DAYS, lima cara berangkat. The wordmark stays constant; the color and collection name tell travelers what kind of trip it is.</p>
+      <h3>Let the reason for the trip lead.</h3>
+      <p class="note">Every trip gets one primary collection, chosen by its main motivation. Other experiences on the itinerary appear as supporting interests.</p>
+      <table>
+        <thead><tr><th>The trip</th><th>Leading collection</th><th>Why</th></tr></thead>
+        <tbody>
+          <tr><td>Skiing, surfing or a hiking-focused trip</td><td><span class="dot" style="background:var(--yellow)"></span>Sports</td><td>The activity is the reason to travel.</td></tr>
+          <tr><td>A mountain or coastal scenery escape</td><td><span class="dot" style="background:var(--blue)"></span>Nature</td><td>The landscape and slower discovery lead.</td></tr>
+          <tr><td>A festival trip with restaurants and sightseeing</td><td><span class="dot" style="background:var(--indigo)"></span>Music Festival</td><td>Music is the anchor; City and Culinary are secondary.</td></tr>
+          <tr><td>A food-led city break or a spa retreat</td><td><span class="dot" style="background:var(--peach)"></span>Culinary, Leisure &amp; Wellbeing</td><td>Food, rest or restoration shapes the itinerary.</td></tr>
+          <tr><td>A city break that includes one concert</td><td><span class="dot" style="background:var(--orange)"></span>City</td><td>The city experience remains the main draw.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 4 · City -->
+  <section class="page coll wash-cover">
+    <div class="panel p-city">
+      <img class="wm" src="img/days-cream.png" alt="DAYS">
+      <h2>A city.<br>Your pace.</h2>
+      <svg viewBox="0 0 170 62" style="color:var(--cream)"><use href="#i-city"/></svg>
+    </div>
+    <div class="content">
+      <span class="label muted">Collection · City</span>
+      <h3>City</h3>
+      <p class="en">For travelers who follow their curiosity through neighborhoods, culture and the city after dark.</p>
+      <p class="id">Untuk penjelajah yang ingin mengenal sudut kota, budaya lokal, dan suasana selepas senja.</p>
+      <dl>
+        <dt>Experiences</dt><dd>Tokyo neighborhood walk · Bangkok after dark · Melbourne city break</dd>
+        <dt>Featured places</dt><dd>New York · Bangkok · Tokyo</dd>
+        <dt>Campaign line</dt><dd class="line">Jelajahi kota, sesuai ritmemu.</dd>
+      </dl>
+    </div>
+  </section>
+
+  <!-- 5 · Nature -->
+  <section class="page coll wash-blue">
+    <div class="panel p-nature">
+      <img class="wm" src="img/days-indigo.png" alt="DAYS">
+      <h2>Room to<br>breathe.</h2>
+      <svg viewBox="0 0 170 62" style="color:var(--indigo)"><use href="#i-nature"/></svg>
+    </div>
+    <div class="content">
+      <span class="label muted">Collection · Nature</span>
+      <h3>Nature</h3>
+      <p class="en">For journeys where the landscape is the reason to go, with time to appreciate the view.</p>
+      <p class="id">Untuk perjalanan yang menjadikan keindahan alam sebagai tujuan utama, dengan waktu untuk menikmatinya.</p>
+      <dl>
+        <dt>Experiences</dt><dd>Lakeside escape · Mountain scenery · Coastal hideaway</dd>
+        <dt>Campaign line</dt><dd class="line">Ruang untuk menikmati alam.</dd>
+      </dl>
+    </div>
+  </section>
+
+  <!-- 6 · Sports -->
+  <section class="page coll wash-yellow">
+    <div class="panel p-sports">
+      <img class="wm" src="img/days-indigo.png" alt="DAYS">
+      <h2>Be there.<br>Be part of it.</h2>
+      <svg viewBox="0 0 170 62" style="color:var(--indigo)"><use href="#i-sports"/></svg>
+    </div>
+    <div class="content">
+      <span class="label muted">Collection · Sports</span>
+      <h3>Sports</h3>
+      <p class="en">For the thrill of being in the crowd or taking part: iconic events and active escapes.</p>
+      <p class="id">Untuk merasakan semangat dari tribun maupun ikut beraksi lewat perjalanan aktif.</p>
+      <dl>
+        <dt>Experiences</dt><dd>F1 weekend · Australian Open · Ski trip · Surf escape · Hiking trip</dd>
+        <dt>Track record</dt><dd>Niseko ski open trip, winter 2024–25</dd>
+        <dt>Campaign line</dt><dd class="line">Saksikan aksinya. Rasakan serunya.</dd>
+      </dl>
+    </div>
+  </section>
+
+  <!-- 7 · Culinary, Leisure & Wellbeing -->
+  <section class="page coll wash-warm">
+    <div class="panel p-culinary">
+      <img class="wm" src="img/days-indigo.png" alt="DAYS">
+      <h2>Take your<br>time.</h2>
+      <svg viewBox="0 0 170 88" style="color:var(--indigo)"><use href="#i-culinary"/></svg>
+    </div>
+    <div class="content">
+      <span class="label muted">Collection · Culinary, Leisure &amp; Wellbeing</span>
+      <h3>Culinary, Leisure &amp; Wellbeing</h3>
+      <p class="en">For good food, unhurried stays and time to feel restored. Discovery with a gentler pace.</p>
+      <p class="id">Untuk menikmati kuliner, bersantai, dan kembali segar. Menemukan hal baru dengan ritme yang lebih tenang.</p>
+      <dl>
+        <dt>Experiences</dt><dd>Culinary journey · Slow resort stay · Spa and wellbeing escape</dd>
+        <dt>Campaign line</dt><dd class="line">Nikmati tanpa terburu-buru.</dd>
+      </dl>
+    </div>
+  </section>
+
+  <!-- 8 · Music Festival -->
+  <section class="page coll wash-team">
+    <div class="panel p-music">
+      <img class="wm" src="img/days-yellow.png" alt="DAYS">
+      <h2>Follow<br>the sound.</h2>
+      <svg viewBox="0 0 170 80" style="color:var(--yellow)"><use href="#i-music"/></svg>
+    </div>
+    <div class="content">
+      <span class="label muted">Collection · Music Festival</span>
+      <h3>Music Festival</h3>
+      <p class="en">For journeys shaped by music, from the first set to the last shared memory.</p>
+      <p class="id">Untuk perjalanan yang mengikuti irama musik, dari penampilan pertama hingga kenangan yang dibawa pulang.</p>
+      <dl>
+        <dt>Experiences</dt><dd>Festival weekend · Multi-stage discovery · Music and city journey</dd>
+        <dt>Track record</dt><dd>Amsterdam Dance Event 2023 &amp; 2024 · Maho Rasop, Bangkok 2023 &amp; 2024</dd>
+        <dt>Campaign line</dt><dd class="line">Ikuti musiknya. Nikmati momennya.</dd>
+      </dl>
+    </div>
+  </section>
+
+  <!-- 9 · Services -->
+  <section class="page svc wash-yellow">
+    <div class="in">
+      <span class="label muted">Services</span>
+      <h2>What we take care of.</h2>
+      <p class="sub">Dari ide perjalanan sampai urusan dokumen.</p>
+      <div class="cols">
+        <div>
+          <span class="label">Music Festival</span>
+          <h4>Festival Experience</h4>
+          <p>Journeys to the world’s most iconic festivals, from high-energy dance events to laid-back classical programs.</p>
+          <ul><li>Front-row access to favorite artists and events</li><li>Exclusive offers and perks</li><li>Travel planned around the lineup</li></ul>
+        </div>
+        <div>
+          <span class="label">Culinary, Leisure &amp; Wellbeing</span>
+          <h4>Culinary &amp;<br>Leisure Journey</h4>
+          <p>Gourmet experiences paired with unhurried downtime, tailored to your taste.</p>
+          <ul><li>The finest local dining spots and exclusive food tours</li><li>Cooking classes led by renowned chefs</li><li>Optional wellness activities or a spa weekend</li></ul>
+        </div>
+        <div>
+          <span class="label">Any collection</span>
+          <h4>Personalized Itinerary</h4>
+          <p>Bespoke plans for adventures, cultural immersion or a simple getaway. Our travel expert handles everything from A to Z.</p>
+          <ul><li>Accommodation, activities and transport</li><li>Pre-departure arrangements</li><li>Already have a plan? We’ll perfect it, down to the brunch reservation</li></ul>
+        </div>
+        <div>
+          <span class="label">Every trip</span>
+          <h4>Visa &amp; Passport Services</h4>
+          <p>Guidance through every step of the visa application and passport renewal, so your documents are in order and you can focus on the trip.</p>
+          <ul><li>Visa application support</li><li>Passport renewals</li><li>Document checks before you fly</li></ul>
+        </div>
+      </div>
+      <div class="boxes">
+        <div><span class="label">Schengen area</span><h4>~15 working days</h4><div class="s">Typical visa processing time</div></div>
+        <div><span class="label">Australia</span><h4>48 hours – 3 months</h4><div class="s">Typical visa processing time</div></div>
+        <div><span class="label">Good to know</span><p>Processing times vary by embassy or consular service and can lengthen in high season. We plan applications around your departure date.</p></div>
+      </div>
+      <div class="steps">
+        <div><span class="label">Step 1</span><h4>Start with the reason</h4><p>We match your trip to one leading collection, then add the interests around it.</p></div>
+        <div><span class="label">Step 2</span><h4>Plan the details</h4><p>Stays, activities, transfers and reservations, with room for rest and personal preferences.</p></div>
+        <div><span class="label">Step 3</span><h4>Sort the paperwork</h4><p>Visa applications and passport renewals are timed to your departure.</p></div>
+        <div><span class="label">Step 4</span><h4>Travel with a clear plan</h4><p>A bilingual A4 itinerary: cover, day-by-day plan and a useful-details page with confirmed bookings and meeting points.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 · Selected open trips -->
+  <section class="page trips wash-peach">
+    <div class="in">
+      <span class="label muted">Selected open trips</span>
+      <h2>Days we’ve already talked about.</h2>
+      <p class="sub">Open trips combine flexibility with curated experiences, and travelers join as a group.</p>
+      <div class="cards">
+        <article class="card"><img src="img/ade.jpg" alt="ADE venue at night"><div class="c"><span class="tag music">Music Festival</span><h4>ADE 2024</h4><div class="meta">Amsterdam, Netherlands · 16–20 Oct 2024</div><p>Five days and five nights when the city never sleeps: more than 1,000 events in nearly 200 locations. DAYS also ran an ADE experience in 2023.</p></div></article>
+        <article class="card"><img src="img/maho-rasop.jpg" alt="Maho Rasop stage at dusk"><div class="c"><span class="tag music">Music Festival</span><h4>Maho Rasop 2024</h4><div class="meta">Bangkok, Thailand · 23–24 Nov 2024</div><p>Bangkok’s international independent music festival, known for eclectic curation and quality live performances. A year-end DAYS trip since 2023.</p></div></article>
+        <article class="card"><img src="img/niseko.jpg" alt="Snowy slopes and gondola in Niseko"><div class="c"><span class="tag sports">Sports</span><h4>Ski Trip 2024–25</h4><div class="meta">Niseko, Japan · Dec 2024 – Feb 2025</div><p>Led by an avid skier who has arranged snow trips in Japan since 2018. Open to all ski levels.</p></div></article>
+      </div>
+      <div class="journal">
+        <div>
+          <span class="label muted">Travel journal</span>
+          <h4>Cities Unwrapped</h4>
+          <p class="d">Destinations told through the people, sounds and craft that shape them.</p>
+        </div>
+        <div class="jlist">
+          <div><span>Japan with Home Gravity</span><span class="label">Japan</span></div>
+          <div><span>Amsterdam through Goldie’s Craft</span><span class="label">Amsterdam</span></div>
+          <div><span>Jakarta through Reikko’s sound</span><span class="label">Jakarta</span></div>
+          <div><span>Los Angeles through Danny’s Mudshop</span><span class="label">Los Angeles</span></div>
+          <div><span>Bangkok through Maho Rasop Festival</span><span class="label">Bangkok</span></div>
+          <div><span>Amsterdam through ADE</span><span class="label">Amsterdam</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11 · Team -->
+  <section class="page team wash-team">
+    <div class="in">
+      <span class="label muted">Team</span>
+      <h2>The people behind DAYS.</h2>
+      <div class="people">
+        <figure><img src="img/sabrina.jpg" alt="Sabrina"><figcaption><div class="n">Sabrina</div><div class="label">Chief Adventure Officer</div></figcaption></figure>
+        <figure><img src="img/anindita.jpg" alt="Anindita"><figcaption><div class="n">Anindita</div><div class="label">Head of Partnership</div></figcaption></figure>
+        <figure><img src="img/danica.jpg" alt="Danica"><figcaption><div class="n">Danica</div><div class="label">Head of Creative</div></figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12 · Identity -->
+  <section class="page ident wash-id">
+    <div class="in">
+      <span class="label muted">Identity</span>
+      <h2>A palette with a purpose.</h2>
+      <p class="sub">General DAYS communication uses orange on cream. Each collection takes its own color.</p>
+      <div class="swatches">
+        <div class="sw" style="background:var(--orange);color:var(--cream)"><b>ORANGE</b>#EC5E30<br>Master · City</div>
+        <div class="sw" style="background:var(--cream)"><b>CREAM</b>#FFF3E9<br>Ground</div>
+        <div class="sw" style="background:var(--blue)"><b>BLUE</b>#9DB8DD<br>Nature</div>
+        <div class="sw" style="background:var(--yellow)"><b>YELLOW</b>#FFE800<br>Sports</div>
+        <div class="sw" style="background:var(--peach)"><b>PEACH</b>#F1D1AA<br>Wellbeing</div>
+        <div class="sw" style="background:var(--indigo);color:var(--yellow)"><b>INDIGO</b>#2C2C65<br>Music · Ink</div>
+      </div>
+      <div class="specimens">
+        <div><span class="label">Headlines · DM Serif Display</span><div class="big">Room to breathe.</div><p>Editorial headlines and short emotional statements, in sentence case.</p></div>
+        <div><span class="label">Body · DM Sans</span><div class="big sans">Jelajahi sesuai ritmemu.</div><p>Body text, trip information and calls to action, in English and Bahasa Indonesia alike.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13 · Contact -->
+  <section class="page contact wash-contact">
+    <div class="in">
+      <div class="grid">
+        <div>
+          <span class="label">Get in touch</span>
+          <h2>Let’s plan your next DAYS.</h2>
+          <p class="sub">Yuk, rencanakan perjalananmu.</p>
+        </div>
+        <dl>
+          <div><dt>WhatsApp / Phone</dt><dd>+62 812 2000 0185</dd></div>
+          <div><dt>Email</dt><dd>lets@talkaboutdays.com</dd></div>
+          <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/talkaboutdays/">@talkaboutdays</a></dd></div>
+          <div><dt>Website</dt><dd><a href="https://www.talkaboutdays.com/">talkaboutdays.com</a></dd></div>
+          <div><dt>Studio</dt><dd>Jl. Tebet Barat IX No. 2, Jakarta Selatan</dd></div>
+          <div><dt>Hours</dt><dd>Mon–Fri · 09.00–18.00<br>Sat · 11.00–14.00<br>Sun · Closed</dd></div>
+        </dl>
+      </div>
+    </div>
+    <div class="foot">
+      <img class="wm" src="img/days-orange.png" alt="DAYS">
+      <p>Sources: DAYS Brand Identity Guidelines v1.0 and talkaboutdays.com. Photography from talkaboutdays.com.</p>
+    </div>
+  </section>
+
+</main>
+
+<script>
+  // Fit the fixed A4 pages to narrow screens.
+  function fit() {
+    var z = Math.min(1, (document.documentElement.clientWidth - 32) / 1123);
+    document.documentElement.style.setProperty('--z', z);
+  }
+  fit();
+  addEventListener('resize', fit);
+  addEventListener('beforeprint', function () { document.documentElement.style.setProperty('--z', 1); });
+  addEventListener('afterprint', fit);
+</script>
+</body>
+</html>
