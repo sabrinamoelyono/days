@@ -485,3 +485,7 @@ p { margin: 0; }
 .people { gap: 24px; }
 .people figure { width: 228px; }
 .people img { width: 228px; height: 228px; }
+.trusted .logos { margin-top: 70px; row-gap: 40px; }
+.trusted .logos > div { height: 130px; }
+.trusted .logos img { zoom: 1.5; }
+.trusted .logos .with-name span { font-size: 12px; }
