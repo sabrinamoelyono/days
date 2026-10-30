@@ -348,3 +348,8 @@ p { margin: 0; }
 /* Clients */
 .clients { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
 .clients span { background: var(--card); border-radius: 3px; padding: 10px 14px; font-family: var(--serif); font-size: 15px; }
+.ptable { margin-top: 10px; }
+.ptable th, .ptable td { padding-right: 10px; }
+.ptable td { padding-top: 8px; padding-bottom: 8px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.ptable td:first-child { font-weight: 400; }
+.ptable td:nth-child(4), .ptable td:nth-child(5) { font-weight: 400; color: var(--muted); font-size: 10px; }
