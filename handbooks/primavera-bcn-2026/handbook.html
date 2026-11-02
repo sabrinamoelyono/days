@@ -1,0 +1,508 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>DAYS × Primavera Sound Barcelona 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,800;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>/* DAYS brand tokens — see DESIGN.md */
+:root {
+  --brand: #EC5B39;      /* DAYS Orange: logo, accents, large numerals */
+  --brand-ink: #C9431F;  /* orange for text */
+  --ink: #1B1714;
+  --paper: #FBF8F5;
+  --surface: #FFFFFF;
+  --muted: #6E655E;
+  --line: #E8E0D8;
+  --tint: #FDEEE9;
+}
+
+@page { size: A4; margin: 0; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font: 400 9.6pt/1.55 "Inter Tight", system-ui, sans-serif;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact;
+}
+h1, h2, h3, p, ol, dl, dd { margin: 0; }
+
+.num, .code, .tag, .meta, .run, .area, .order span, .night .t, .facts dt, .sign, .eyebrow {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+}
+
+/* ---------- page frame ---------- */
+.page {
+  width: 210mm; height: 297mm; overflow: hidden;
+  position: relative; page-break-after: always; break-after: page;
+  background: var(--paper);
+  padding: 0 18mm;
+}
+.page:last-child { page-break-after: auto; break-after: auto; }
+.run {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 22mm; border-bottom: 1px solid var(--line);
+  font-size: 7pt; letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
+}
+.run .mark { height: 5.2mm; width: auto; }
+.run .pg { color: var(--brand-ink); font-weight: 500; }
+.body { padding-top: 11mm; }
+
+/* ---------- section opener ---------- */
+.eyebrow {
+  font-size: 7.4pt; font-weight: 500; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--brand-ink); margin-bottom: 4mm;
+}
+.opener { margin-bottom: 9mm; }
+.opener h1 {
+  font-size: 40pt; line-height: 1; font-weight: 800; letter-spacing: -.025em;
+  padding-bottom: 5mm; border-bottom: 2.4pt solid var(--brand); margin-bottom: 5mm;
+}
+.lede { font-size: 11.5pt; line-height: 1.5; color: var(--ink); max-width: 150mm; }
+.meta { margin-top: 4mm; font-size: 7.2pt; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+
+.num { font-size: 8pt; font-weight: 500; color: var(--brand); letter-spacing: .02em; }
+.tag {
+  display: inline-block; font-size: 6.6pt; font-weight: 500; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--brand-ink); background: var(--tint); padding: 1.2mm 2.4mm; border-radius: 99px; white-space: nowrap;
+}
+.tag.solid { background: var(--brand); color: #fff; }
+.area { font-size: 7pt; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.desc { color: #3A332E; }
+
+/* ---------- cover & closing ---------- */
+.cover, .closing {
+  background: var(--ink); color: var(--paper);
+  padding: 20mm 18mm; display: flex; flex-direction: column;
+}
+.cover-mark { width: 42mm; height: auto; }
+.cover-kicker {
+  position: absolute; top: 22mm; right: 18mm;
+  font-size: 9pt; color: #BDB3AB; font-style: italic;
+}
+.cover-main { margin-top: auto; }
+.cover .eyebrow, .closing .eyebrow { color: var(--brand); }
+.cover h1 {
+  font-size: 104pt; line-height: .9; font-weight: 800; letter-spacing: -.045em;
+  margin: 2mm 0 10mm; hyphens: manual;
+}
+.cover h1 .dot { color: var(--brand); }
+.cover-lede { font-size: 14pt; line-height: 1.5; color: #E6DED7; max-width: 130mm; }
+.facts {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+  margin-top: 22mm; border-top: 1px solid #3A332E;
+}
+.facts div { padding: 5mm 4mm 0 0; }
+.facts dt { font-size: 6.8pt; letter-spacing: .14em; text-transform: uppercase; color: var(--brand); margin-bottom: 1.5mm; }
+.facts dd { font-size: 10.5pt; font-weight: 500; }
+
+.closing .letter { margin-top: auto; margin-bottom: auto; max-width: 150mm; }
+.closing .big { font-size: 19pt; line-height: 1.38; font-weight: 500; letter-spacing: -.01em; margin-bottom: 7mm; }
+.closing .letter p:not(.big):not(.eyebrow) { font-size: 12pt; color: #E6DED7; }
+.closing .sign { font-size: 7.4pt; letter-spacing: .12em; text-transform: uppercase; color: #BDB3AB; border-top: 1px solid #3A332E; padding-top: 5mm; }
+
+/* ---------- contents ---------- */
+.toc { list-style: none; padding: 0; border-top: 1px solid var(--line); }
+.toc li { display: grid; grid-template-columns: 14mm 1fr auto; align-items: baseline; padding: 5mm 0; border-bottom: 1px solid var(--line); }
+.toc .num { font-size: 11pt; }
+.toc .t { font-size: 17pt; font-weight: 600; letter-spacing: -.015em; }
+.toc .s { font-family: "JetBrains Mono", monospace; font-size: 7pt; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+
+/* ---------- tips (quick tips + festival) ---------- */
+.tips { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; }
+.tip { background: var(--surface); border: 1px solid var(--line); border-radius: 3mm; padding: 6mm; }
+.code {
+  display: inline-block; font-size: 6.8pt; font-weight: 500; letter-spacing: .12em;
+  color: var(--brand-ink); background: var(--tint); border-radius: 1.4mm; padding: 1mm 2mm; margin-bottom: 4mm;
+}
+.tip h3 { font-size: 13pt; font-weight: 600; letter-spacing: -.01em; margin-bottom: 2mm; }
+.tip p { color: #3A332E; }
+
+/* ---------- neighbourhoods ---------- */
+.hoods { border-top: 1px solid var(--line); }
+.hood { display: grid; grid-template-columns: 52mm 1fr; gap: 6mm; padding: 4.6mm 0; border-bottom: 1px solid var(--line); }
+.hood h2 { font-size: 15pt; font-weight: 800; letter-spacing: -.02em; line-height: 1.15; }
+.hood .kick { font-family: "JetBrains Mono", monospace; font-size: 6.8pt; letter-spacing: .1em; text-transform: uppercase; color: var(--brand-ink); margin-top: 1mm; }
+
+/* ---------- restaurants ---------- */
+.callout {
+  display: flex; gap: 5mm; align-items: flex-start;
+  background: var(--tint); border-left: 2.4pt solid var(--brand); padding: 5mm 6mm; margin-bottom: 6mm;
+}
+.callout .code { background: var(--brand); color: #fff; margin: 0; }
+.callout .k { font-weight: 600; margin-bottom: 1mm; }
+.eat {
+  display: grid; grid-template-columns: 1fr; gap: 6mm;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 3mm;
+  padding: 6mm; margin-bottom: 5mm;
+}
+.eat.has-pic { grid-template-columns: 1fr 58mm; }
+.eat.feat { border-color: var(--brand); }
+.eat .top, .tapa .top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2mm; }
+.eat h2 { font-size: 21pt; font-weight: 800; letter-spacing: -.025em; line-height: 1.05; margin-bottom: 1.4mm; }
+.eat .line { font-style: italic; font-weight: 500; color: var(--brand-ink); margin: 2.5mm 0 2mm; }
+.eat .pic { width: 58mm; height: 58mm; object-fit: cover; border-radius: 2mm; display: block; }
+
+/* ---------- tapas ---------- */
+.tapas { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; }
+.tapa { background: var(--surface); border: 1px solid var(--line); border-radius: 3mm; padding: 4.6mm 5mm; }
+.tapa h2 { font-size: 14pt; font-weight: 800; letter-spacing: -.02em; line-height: 1.1; margin-bottom: 1mm; }
+.order { margin: 2.4mm 0; padding: 0 0 0 3mm; border-left: 2pt solid var(--brand); font-weight: 600; font-size: 9pt; line-height: 1.35; }
+.order span { font-size: 6.4pt; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--brand-ink); margin-right: 2mm; }
+.tapa .desc { font-size: 8.6pt; line-height: 1.5; }
+
+/* ---------- bars ---------- */
+.bars { border-top: 1px solid var(--line); }
+.bar { display: grid; grid-template-columns: 10mm 1fr 30mm; gap: 4mm; align-items: start; padding: 4.4mm 0; border-bottom: 1px solid var(--line); }
+.bar .num { padding-top: 1.6mm; }
+.bar h2 { font-size: 13.5pt; font-weight: 800; letter-spacing: -.015em; margin-bottom: 1mm; }
+.bar h2 .area { font-weight: 400; margin-left: 2mm; letter-spacing: .08em; }
+.bar .tag { justify-self: end; margin-top: 1mm; }
+
+.night { margin-top: 9mm; background: var(--ink); color: var(--paper); border-radius: 3mm; padding: 7mm; }
+.night .eyebrow { color: var(--brand); }
+.night ol { list-style: none; padding: 0; }
+.night li { display: grid; grid-template-columns: 20mm 1fr; padding: 2.6mm 0; border-top: 1px solid #3A332E; font-size: 10pt; }
+.night .t { color: var(--brand); font-weight: 500; }
+
+/* ---------- logistics ---------- */
+.logis { display: grid; grid-template-columns: 1fr 1fr; gap: 0 8mm; border-top: 1px solid var(--line); }
+.logi { padding: 5mm 0; border-bottom: 1px solid var(--line); }
+.logi h3 { font-size: 13pt; font-weight: 600; margin-bottom: 1.6mm; }
+.logi p { color: #3A332E; }
+.contact { margin-top: 8mm; background: var(--brand); color: var(--ink); border-radius: 3mm; padding: 7mm; }
+.contact .eyebrow { color: var(--ink); }
+.contact p:last-child { font-size: 12.5pt; font-weight: 500; line-height: 1.45; }
+</style></head>
+<body><section class="page cover">
+  <img class="cover-mark" src="img/days-wordmark.png" alt="DAYS">
+  <p class="cover-kicker">Seven DAYS in Sunny June</p>
+  <div class="cover-main">
+    <p class="eyebrow">The handbook · Barcelona · June 2026</p>
+    <h1>Prima&shy;vera<span class="dot">.</span></h1>
+    <p class="cover-lede">You booked this trip because of the lineup.<br>You'll stay because of the city.<br>Barcelona in June is something else entirely.</p>
+  </div>
+  <dl class="facts">
+    <div><dt>Festival</dt><dd>Primavera Sound 2026</dd></div>
+    <div><dt>Location</dt><dd>Parc del Fòrum, BCN</dd></div>
+    <div><dt>Vibe</dt><dd>Mediterranean chaos</dd></div>
+  </dl>
+</section><section class="page "><header class="run">
+  <img class="mark" src="img/days-wordmark.png" alt="DAYS">
+  <span>Primavera Sound · Barcelona · 2026</span>
+  <span class="pg">02</span>
+</header><div class="body"><div class="opener"><p class="eyebrow">Inside</p><h1>The guide.</h1>
+<p class="lede">Everything we'd tell a friend flying in for the festival — where to eat, where to drink, which neighbourhood to wander, and how to get to the Fòrum and back. Built by DAYS so you spend zero time searching and all of it being there.</p></div>
+<ol class="toc"><li><span class="num">03</span><span class="t">Before you land</span><span class="s">Quick tips</span></li><li><span class="num">04</span><span class="t">Barcelona, decoded</span><span class="s">The city</span></li><li><span class="num">05</span><span class="t">Where to eat</span><span class="s">Restaurants</span></li><li><span class="num">09</span><span class="t">The real Barcelona</span><span class="s">Tapas bars</span></li><li><span class="num">11</span><span class="t">Stay out late</span><span class="s">Bars &amp; drinks</span></li><li><span class="num">13</span><span class="t">Primavera Sound</span><span class="s">The festival</span></li><li><span class="num">14</span><span class="t">On the ground</span><span class="s">Logistics</span></li></ol></div></section><section class="page "><header class="run">
+  <img class="mark" src="img/days-wordmark.png" alt="DAYS">
+  <span>Primavera Sound · Barcelona · 2026</span>
+  <span class="pg">03</span>
+</header><div class="body"><div class="opener">
+  <p class="eyebrow">Quick tips</p>
+  <h1>Before you land.</h1>
+  <p class="lede">Everything you need to know before you touch down in Barcelona.</p>
+</div><div class="tips"><div class="tip"><span class="code">TIME</span>
+<h3>Barcelona eats late</h3><p>Lunch is 2–4pm. Dinner kicks off at 9pm. Don&#x27;t be the table asking for dinner at 7.</p></div><div class="tip"><span class="code">BOOK</span>
+<h3>Book or queue</h3><p>For Paradiso, Sips, Disfrutar and El Xampanyet — either book weeks in advance or arrive when they open.</p></div><div class="tip"><span class="code">FEST</span>
+<h3>Festival hours</h3><p>Primavera runs afternoon through 3am. Pace yourself. The best sets are always after midnight.</p></div><div class="tip"><span class="code">MOVE</span>
+<h3>Getting around</h3><p>Metro until midnight weekdays, 2am Fri, all night Sat. After that: Uber or taxi. Poblenou to El Born is 30 minutes.</p></div><div class="tip"><span class="code">CASH</span>
+<h3>Cash is still king</h3><p>Smaller tapas bars and old-school spots often prefer cash. Keep €50–€100 on you at all times.</p></div><div class="tip"><span class="code">WEAR</span>
+<h3>Dress for two climates</h3><p>Barcelona in June: warm sunny days (24–28°C), balmy evenings. Light layers for the coastal breeze at the beach stage.</p></div></div></div></section><section class="page "><header class="run">
+  <img class="mark" src="img/days-wordmark.png" alt="DAYS">
+  <span>Primavera Sound · Barcelona · 2026</span>
+  <span class="pg">04</span>
+</header><div class="body"><div class="opener">
+  <p class="eyebrow">The city</p>
+  <h1>Barcelona, decoded.</h1>
+  <p class="lede">Barcelona rewards the curious and punishes the timid. It&#x27;s a city of neighbourhoods that feel like separate cities — each with its own pace, its own regulars, its own rules.</p>
+</div><div class="hoods"><div class="hood"><div><h2>El Poblenou</h2><p class="kick">Where the festival lives</p></div><p class="desc">The old industrial district that grew into a creative hub. Parc del Fòrum is here. The Rambla del Poblenou is the neighbourhood&#x27;s spine — cafés, bars, easy energy. Henry&#x27;s Bar and el 58 are both here.</p></div><div class="hood"><div><h2>El Born</h2><p class="kick">Cocktails &amp; cava</p></div><p class="desc">Medieval streets, the Picasso Museum, and Barcelona&#x27;s best bar scene. Paradiso, El Xampanyet, Cal Pep, Bar del Pla. El Born is where most nights end up.</p></div><div class="hood"><div><h2>Barceloneta</h2><p class="kick">Seafood &amp; beach</p></div><p class="desc">The old fishing neighbourhood between the city and the sea. Back streets hold old-school tapas bars and fish that was in the water this morning. La Cova Fumada and Jai Ca are here.</p></div><div class="hood"><div><h2>Eixample</h2><p class="kick">Gaudí &amp; great bars</p></div><p class="desc">The city&#x27;s orderly grid neighbourhood. Casa Batlló and La Sagrada Família are here. So are Sips, Dry Martini, Bandini&#x27;s, Disfrutar, Mont Bar, and Gresca.</p></div><div class="hood"><div><h2>Poble Sec</h2><p class="kick">The local secret</p></div><p class="desc">Where Barcelona that hasn&#x27;t been gentrified yet survives. Quimet y Quimet and Xemei are here. The bar stools are small, the montaditos are brilliant.</p></div><div class="hood"><div><h2>Sant Antoni</h2><p class="kick">The creative quarter</p></div><p class="desc">A neighbourhood in transition — in the best way. Coffee shops, natural wine bars, and chef-driven bistros have clustered around the Sant Antoni market.</p></div><div class="hood"><div><h2>Gràcia</h2><p class="kick">Village within the city</p></div><p class="desc">Narrow streets, bohemian bars, square culture. Fonda Pepa and Brugarol are here. Great for aperitivo hour before heading further into the city.</p></div></div></div></section><section class="page "><header class="run">
+  <img class="mark" src="img/days-wordmark.png" alt="DAYS">
+  <span>Primavera Sound · Barcelona · 2026</span>
+  <span class="pg">05</span>
+</header><div class="body"><div class="opener">
+  <p class="eyebrow">Restaurants</p>
+  <h1>Where to eat.</h1>
+  <p class="lede">Twelve picks across every neighbourhood. Two are certified Dua Lipa favourites. All are worth your time.</p><p class="meta">12 picks · All neighbourhoods</p>
+</div><aside class="callout"><span class="code">DL</span><div><p class="k">Dua Lipa's Barcelona favourites</p>
+<p>Gresca and Xemei — she comes back every visit. Book these two before anything else.</p></div></aside><article class="eat feat">
+  <div class="txt">
+    <div class="top"><span class="num">01</span><span class="tag solid">Dua Lipa</span></div>
+    <h2>Gresca</h2>
+    <p class="area">Eixample · Modern Catalan</p>
+    <p class="line">Dua Lipa&#x27;s most-visited Barcelona restaurant</p>
+    <p class="desc">Chef Rafa Peña — winner of the Premi Nacional de Gastronomia 2023 — runs this intimate Eixample spot with an open kitchen and a bar counter where you watch everything happen. Marinated anchovies, scrambled eggs with wild garlic and prawns, octopus carpaccio, and a torrija dessert that&#x27;s become mythic. Dua Lipa has been back multiple times, sitting at the bar while the chef explains every dish.</p>
+  </div>
+</article><article class="eat feat">
+  <div class="txt">
+    <div class="top"><span class="num">02</span><span class="tag solid">Dua Lipa</span></div>
+    <h2>Xemei</h2>
+    <p class="area">Poble Sec · Venetian</p>
+    <p class="line">Dua Lipa&#x27;s other Barcelona obsession</p>
+    <p class="desc">Venetian twins Stefano and Max Colombo brought the real cooking of Venice to Barcelona — sarde in saor, baccalà mantecato, and grilled baby squid with polenta. Dua Lipa has returned here on multiple visits for the pasta and the tiramisu. Considered the best Italian restaurant in the city. Organic wine list, cozy terrace on Passeig de l&#x27;Exposició.</p>
+  </div>
+</article></div></section><section class="page "><header class="run">
+  <img class="mark" src="img/days-wordmark.png" alt="DAYS">
+  <span>Primavera Sound · Barcelona · 2026</span>
+  <span class="pg">06</span>
+</header><div class="body"><article class="eat has-pic">
+  <div class="txt">
+    <div class="top"><span class="num">03</span><span class="tag">Splurge</span></div>
+    <h2>Disfrutar</h2>
+    <p class="area">Eixample · Avant-garde Catalan</p>
+    <p class="line">Barcelona&#x27;s most creative kitchen, full stop</p>
+    <p class="desc">Three-Michelin-star restaurant run by alumni of elBulli. Each dish is a concept — from the signature caviar-filled panchino to the liquid salad. Playful yet precise, balancing technique and flavour in a way that feels inventive but genuinely satisfying. Book months ahead.</p>
+  </div><img class="pic" src="img/disfrutar.jpg" alt="Disfrutar">
+</article><article class="eat has-pic">
+  <div class="txt">
+    <div class="top"><span class="num">04</span><span class="tag">Must try</span></div>
+    <h2>Maleducat</h2>
+    <p class="area">Eixample · Modern Catalan</p>
+    <p class="line">A bold, no-rules kind of place</p>
+    <p class="desc">Seasonal Catalan dishes with punchy flavours, a bit unexpected, and the kind of spot you leave thinking about what you just ate. The cooking is confident without being showy — proper ingredients, properly treated.</p>
+  </div><img class="pic" src="img/maleducat.jpg" alt="Maleducat">
+</article><article class="eat has-pic">
+  <div class="txt">
+    <div class="top"><span class="num">05</span><span class="tag">Seafood</span></div>
+    <h2>Besta</h2>
+    <p class="area">El Born · Seafood</p>
+    <p class="line">Elevated yet effortless</p>
+    <p class="desc">A seafood-focused restaurant where Galician and Catalan influences come together in a way that&#x27;s refined but still warm and inviting. The arroz negro and the daily fish are the reasons you come. The reason you return is harder to name.</p>
+  </div><img class="pic" src="img/besta.jpg" alt="Besta">
+</article></div></section><section class="page "><header class="run">
+  <img class="mark" src="img/days-wordmark.png" alt="DAYS">
+  <span>Primavera Sound · Barcelona · 2026</span>
+  <span class="pg">07</span>
+</header><div class="body"><article class="eat has-pic">
+  <div class="txt">
+    <div class="top"><span class="num">06</span><span class="tag">Chef&#x27;s pick</span></div>
+    <h2>Brugarol</h2>
+    <p class="area">Gràcia · Fire &amp; produce</p>
+    <p class="line">Everything feels intentional</p>
+    <p class="desc">A beautifully designed space where produce-driven plates meet open-fire cooking that brings out deep, honest flavours. The scallop tartare with cured egg yolk is the kind of dish that redefines a single ingredient. Book ahead.</p>
+  </div><img class="pic" src="img/brugarol.jpg" alt="Brugarol">
+</article><article class="eat has-pic">
+  <div class="txt">
+    <div class="top"><span class="num">07</span><span class="tag">Local pick</span></div>
+    <h2>La Bonaigua</h2>
+    <p class="area">Eixample · Steakhouse</p>
+    <p class="line">The steak speaks for itself</p>
+    <p class="desc">Perfectly matured beef, simply executed, all about the quality of the product rather than anything overcomplicated. The kind of place carnivores bookmark and return to every trip. Go hungry.</p>
+  </div><img class="pic" src="img/la-bonaigua.jpg" alt="La Bonaigua">
+</article><article class="eat has-pic">
+  <div class="txt">
+    <div class="top"><span class="num">08</span><span class="tag">Casual</span></div>
+    <h2>Casa Amalia</h2>
+    <p class="area">Gràcia · Seafood &amp; paella</p>
+    <p class="line">Market-style Barcelona energy</p>
+    <p class="desc">Seafood-led dishes served with the kind of comforting, no-fuss warmth that makes you feel like a local. The real standout is the paella — rich, deeply flavourful, and the kind you&#x27;d come back for without overthinking the rest of the menu.</p>
+  </div><img class="pic" src="img/casa-amalia.jpg" alt="Casa Amalia">
+</article></div></section><section class="page "><header class="run">
+  <img class="mark" src="img/days-wordmark.png" alt="DAYS">
+  <span>Primavera Sound · Barcelona · 2026</span>
+  <span class="pg">08</span>
+</header><div class="body"><article class="eat has-pic">
+  <div class="txt">
+    <div class="top"><span class="num">09</span><span class="tag">Classic</span></div>
+    <h2>Cañete</h2>
+    <p class="area">Raval · Tapas counter</p>
+    <p class="line">Best experienced at the counter</p>
+    <p class="desc">Where everything moves fast and feels alive — the grilled carabineros are a standout, sweet and smoky with just enough char, alongside silky seafood dishes that keep it classic but never boring.</p>
+  </div><img class="pic" src="img/canete.jpg" alt="Cañete">
+</article><article class="eat">
+  <div class="txt">
+    <div class="top"><span class="num">10</span><span class="tag">Essential</span></div>
+    <h2>Estimar</h2>
+    <p class="area">El Born · Elevated seafood</p>
+    <p class="line">Where El Bulli lives on — in a marisquería</p>
+    <p class="desc">Head chef Rafa Zafra is an El Bulli graduate who transformed the traditional seafood restaurant into something refined and market-fresh. Galician razor clams, Cantabrian anchovies, the famous onion &amp; crayfish carpaccio. Book weeks ahead.</p>
+  </div>
+</article><article class="eat">
+  <div class="txt">
+    <div class="top"><span class="num">11</span><span class="tag">Must try</span></div>
+    <h2>Mont Bar</h2>
+    <p class="area">Eixample · Modern tapas</p>
+    <p class="line">Where the food critics eat on their nights off</p>
+    <p class="desc">A fresh take on fine dining without the ceremony. Mont Bar&#x27;s small plates rotate with the seasons. Intimate, excellent wine list, great energy at the bar.</p>
+  </div>
+</article><article class="eat">
+  <div class="txt">
+    <div class="top"><span class="num">12</span><span class="tag">Local pick</span></div>
+    <h2>Franca</h2>
+    <p class="area">Eixample Dreta · Modern Catalan</p>
+    <p class="line">Local and very current at the same time</p>
+    <p class="desc">Catalan dishes reworked in thrilling modern ways. The space is welcoming, the cooking always surprises in a good way. You never know what the dish will look like when it arrives. Roger de Llúria 46.</p>
+  </div>
+</article></div></section><section class="page "><header class="run">
+  <img class="mark" src="img/days-wordmark.png" alt="DAYS">
+  <span>Primavera Sound · Barcelona · 2026</span>
+  <span class="pg">09</span>
+</header><div class="body"><div class="opener">
+  <p class="eyebrow">Tapas bars</p>
+  <h1>The real Barcelona.</h1>
+  <p class="lede">The tapas bar is where Barcelona actually lives. Stand at the bar. Order two or three things. Move on. That&#x27;s how you do it.</p><p class="meta">12 picks · From legendary to local</p>
+</div><div class="tapas"><article class="tapa">
+  <div class="top"><span class="num">01</span><span class="tag">Iconic</span></div>
+  <h2>El Xampanyet</h2>
+  <p class="area">El Born</p>
+  <p class="order"><span>Order</span>House cava + anchovies</p>
+  <p class="desc">The original old-school cava bar, pouring since 1929. Always packed, always worth it. Order the house cava and whatever&#x27;s on the counter. This is Barcelona in a glass.</p>
+</article><article class="tapa">
+  <div class="top"><span class="num">02</span><span class="tag">Legendary</span></div>
+  <h2>Quimet y Quimet</h2>
+  <p class="area">Poble Sec</p>
+  <p class="order"><span>Order</span>Salmon montadito with honey</p>
+  <p class="desc">Standing room only, tins of conservas stacked floor to ceiling, brilliant montaditos. The salmon tapa with honey is the one. Go early — they close when they run out.</p>
+</article><article class="tapa">
+  <div class="top"><span class="num">03</span><span class="tag">Original</span></div>
+  <h2>La Cova Fumada</h2>
+  <p class="area">Barceloneta</p>
+  <p class="order"><span>Order</span>The original bomba</p>
+  <p class="desc">Dating back to 1944. No sign on the door, no menu — just a blackboard. This is where the bomba was invented. Worth every bit of the effort to find it.</p>
+</article><article class="tapa">
+  <div class="top"><span class="num">04</span><span class="tag">Seafood</span></div>
+  <h2>Cal Pep</h2>
+  <p class="area">El Born</p>
+  <p class="order"><span>Order</span>Whatever Pep is cooking that day</p>
+  <p class="desc">The legendary seafood counter where the bar seats are the best in the house and the kitchen decides what&#x27;s good that day. Trust the process.</p>
+</article><article class="tapa">
+  <div class="top"><span class="num">05</span><span class="tag">Festival zone</span></div>
+  <h2>el 58</h2>
+  <p class="area">Poblenou</p>
+  <p class="order"><span>Order</span>Razor clams, duck magret, pulpo</p>
+  <p class="desc">Right on the Rambla del Poblenou — walking distance from the festival. Menu on a blackboard, terrace out back. No reservations, so show up or miss out.</p>
+</article><article class="tapa">
+  <div class="top"><span class="num">06</span><span class="tag">Crowd pleaser</span></div>
+  <h2>Cerveceria Catalana</h2>
+  <p class="area">Eixample</p>
+  <p class="order"><span>Order</span>Montaditos, grilled prawns</p>
+  <p class="desc">The most-reviewed tapas bar in Barcelona. Long bar, wide selection, consistent quality. Fast service. No reservations — queue at peak hours but it moves quickly.</p>
+</article></div></div></section><section class="page "><header class="run">
+  <img class="mark" src="img/days-wordmark.png" alt="DAYS">
+  <span>Primavera Sound · Barcelona · 2026</span>
+  <span class="pg">10</span>
+</header><div class="body"><div class="tapas"><article class="tapa">
+  <div class="top"><span class="num">07</span><span class="tag">Natural wine</span></div>
+  <h2>Bar del Pla</h2>
+  <p class="area">El Born</p>
+  <p class="order"><span>Order</span>Natural wine + market special</p>
+  <p class="desc">Over 30 natural wines, brilliant tapas, and sommeliers who know their stuff. The go-to before a night in El Born. Sits just metres from El Xampanyet.</p>
+</article><article class="tapa">
+  <div class="top"><span class="num">08</span><span class="tag">Historic</span></div>
+  <h2>Bodega La Puntual</h2>
+  <p class="area">El Born</p>
+  <p class="order"><span>Order</span>Arroz de Pluma Ibérica</p>
+  <p class="desc">In an 1872 coffee roaster building on Carrer de Montcada. A casual oyster bar at the entrance; a larger room for groups further inside.</p>
+</article><article class="tapa">
+  <div class="top"><span class="num">09</span><span class="tag">Institution</span></div>
+  <h2>Paco Meralgo</h2>
+  <p class="area">Eixample Esquerra</p>
+  <p class="order"><span>Order</span>Ondarroa anchovies, Cíes clams</p>
+  <p class="desc">The seafood-tapas institution of the Eixample. Marinated anchovies from Ondarroa and razor clams from the Cíes Islands are the headliners.</p>
+</article><article class="tapa">
+  <div class="top"><span class="num">10</span><span class="tag">Old school</span></div>
+  <h2>Jai Ca</h2>
+  <p class="area">Barceloneta</p>
+  <p class="order"><span>Order</span>Bombas, bravas, cod fritters</p>
+  <p class="desc">Classic tapas bar in the old fishing district. Earthy, no-nonsense. The bombas here are the standard all others are judged against.</p>
+</article><article class="tapa">
+  <div class="top"><span class="num">11</span><span class="tag">All day</span></div>
+  <h2>Bar Bocata</h2>
+  <p class="area">Sarrià-Sant Gervasi</p>
+  <p class="order"><span>Order</span>Tortilla with caramelised onion</p>
+  <p class="desc">From breakfast through late dinner, Bar Bocata delivers all day. The tortilla with soft caramelised onion is non-negotiable. Book ahead.</p>
+</article><article class="tapa">
+  <div class="top"><span class="num">12</span><span class="tag">Classic</span></div>
+  <h2>Bar Cañete</h2>
+  <p class="area">Raval</p>
+  <p class="order"><span>Order</span>Fresh Catalan seafood, seasonal</p>
+  <p class="desc">Near the Gran Teatre del Liceu. Family-run kitchen using fish fresh from Catalan markets. Beautifully executed classics, lively room.</p>
+</article></div></div></section><section class="page "><header class="run">
+  <img class="mark" src="img/days-wordmark.png" alt="DAYS">
+  <span>Primavera Sound · Barcelona · 2026</span>
+  <span class="pg">11</span>
+</header><div class="body"><div class="opener">
+  <p class="eyebrow">Bars &amp; drinks</p>
+  <h1>Stay out late.</h1>
+  <p class="lede">Barcelona&#x27;s bar scene is world-class. The cocktail movement here is technical and serious, the natural wine scene is booming, the vermouth culture is real, and the old cava bars have been doing their thing for decades.</p><p class="meta">12 picks · Cocktails · Wine · Beer · Rooftop</p>
+</div><div class="bars"><article class="bar">
+  <span class="num">01</span>
+  <div><h2>Paradiso <span class="area">El Born</span></h2><p class="desc">Enter through a fake paella fridge in a sandwich shop. Inside: one of the world&#x27;s best cocktail bars. Conceptual menus, extraordinary technique. Also has a rooftop at Time Out Market. Queue early — no reservations at the original.</p></div>
+  <span class="tag solid">World&#x27;s best</span>
+</article><article class="bar">
+  <span class="num">02</span>
+  <div><h2>Sips <span class="area">Eixample</span></h2><p class="desc">Consistently top-50 in the world. Conceptual and precise cocktails in a sleek room on Carrer de Muntaner. Book ahead or queue. 45-minute sitting per round — make every drink count.</p></div>
+  <span class="tag solid">Top 50</span>
+</article><article class="bar">
+  <span class="num">03</span>
+  <div><h2>Dry Martini <span class="area">Eixample</span></h2><p class="desc">Founded in 1978. Wood, leather, brass — and over 1.5 million martinis served. Still the best classic bar in the city. Sophisticated but never stuffy.</p></div>
+  <span class="tag">Institution</span>
+</article><article class="bar">
+  <span class="num">04</span>
+  <div><h2>Dr. Stravinsky <span class="area">El Born</span></h2><p class="desc">Designed like the lab of a mad chemist, named after a character from The Master &amp; Margarita. Plants everywhere, drinks served in flower vases.</p></div>
+  <span class="tag">Eccentric</span>
+</article><article class="bar">
+  <span class="num">05</span>
+  <div><h2>Bandini&#x27;s <span class="area">Eixample</span></h2><p class="desc">The funkiest natural wine selection in the city, plus seasonal small plates. Try a local pet-nat from Catalonia. Young, local, knowing crowd.</p></div>
+  <span class="tag">Natty wine</span>
+</article><article class="bar">
+  <span class="num">06</span>
+  <div><h2>Henry&#x27;s Bar <span class="area">Poblenou</span></h2><p class="desc">Calls itself a dive bar, but the cocktails are considered and the sunny terrace is exactly right for a festival afternoon. Carrer de la Llacuna 92 — festival zone.</p></div>
+  <span class="tag">Festival zone</span>
+</article></div></div></section><section class="page "><header class="run">
+  <img class="mark" src="img/days-wordmark.png" alt="DAYS">
+  <span>Primavera Sound · Barcelona · 2026</span>
+  <span class="pg">12</span>
+</header><div class="body"><div class="bars"><article class="bar">
+  <span class="num">07</span>
+  <div><h2>Les Gens que J&#x27;aime <span class="area">Eixample Dreta</span></h2><p class="desc">Below street level, fringed lampshades, velvet sofas, jazz. Whiskey sours are the move. One of those bars you stumble into at 10pm and leave at 2am.</p></div>
+  <span class="tag">Late night</span>
+</article><article class="bar">
+  <span class="num">08</span>
+  <div><h2>Monvínic <span class="area">Eixample</span></h2><p class="desc">3,500 vintages, a vertical garden, a reference library, and a tablet wine list. Called &#x27;Wineworld&#x27; in Catalan for good reason.</p></div>
+  <span class="tag">Wine geek</span>
+</article><article class="bar">
+  <span class="num">09</span>
+  <div><h2>Garage Beer Co <span class="area">Poblenou</span></h2><p class="desc">Three locations: city-centre bar, a beachfront spot in Poblenou, and a brewery in Sant Andreu. The Poblenou outpost is the natural festival companion.</p></div>
+  <span class="tag">Craft beer</span>
+</article><article class="bar">
+  <span class="num">10</span>
+  <div><h2>Azimuth Rooftop <span class="area">Eixample</span></h2><p class="desc">Seasonal rooftop with a pool, panoramic Barcelona views, and an inventive cocktail menu. Open May–September. Exactly where you want to be on a warm afternoon.</p></div>
+  <span class="tag">Rooftop</span>
+</article><article class="bar">
+  <span class="num">11</span>
+  <div><h2>Libertine <span class="area">Eixample (Casa Bonay)</span></h2><p class="desc">A Top 50 Discovery bar inside Casa Bonay, open until 3am on weekends. Upstairs there&#x27;s a rooftop spa with sauna and hammam.</p></div>
+  <span class="tag">Late night</span>
+</article><article class="bar">
+  <span class="num">12</span>
+  <div><h2>El Quim de la Boqueria <span class="area">Raval</span></h2><p class="desc">A counter inside La Boqueria where the chef cooks eggs with baby squid and whatever is freshest. Opens early, closes when it&#x27;s done. Best breakfast in the city.</p></div>
+  <span class="tag">Morning</span>
+</article></div><div class="night"><p class="eyebrow">The classic Barcelona night</p><ol><li><span class="t">5pm</span><span>Vermouth and montaditos at Quimet y Quimet or Bar del Pla</span></li><li><span class="t">9pm</span><span>Dinner — tapas bar-hop El Born or a table at Gresca / Mont Bar</span></li><li><span class="t">11pm</span><span>Cocktails at Paradiso (queue) or Sips (book ahead)</span></li><li><span class="t">1am</span><span>Head to Poblenou for the festival&#x27;s late headliners</span></li><li><span class="t">3am</span><span>Whatever happens, happens</span></li></ol></div></div></section><section class="page "><header class="run">
+  <img class="mark" src="img/days-wordmark.png" alt="DAYS">
+  <span>Primavera Sound · Barcelona · 2026</span>
+  <span class="pg">13</span>
+</header><div class="body"><div class="opener">
+  <p class="eyebrow">The festival</p>
+  <h1>Primavera Sound.</h1>
+  <p class="lede">Parc del Fòrum is a concrete plaza jutting into the Mediterranean. At night, with the stages lit up and the sea behind everything, it&#x27;s one of the most striking festival settings in the world.</p>
+</div><div class="tips"><div class="tip"><span class="code">IN</span>
+<h3>Arrival</h3><p>Gates open from 4pm. The early sets are worth catching — smaller stages, fewer people, musicians who are genuinely happy to be there.</p></div><div class="tip"><span class="code">EAT</span>
+<h3>Eating &amp; drinking</h3><p>The food at Primavera is actually good. Pro move: eat a proper dinner before 8pm and graze inside.</p></div><div class="tip"><span class="code">STAGE</span>
+<h3>The main stage</h3><p>The main stage faces the sea. For big acts, get there 30 minutes early or accept a great view from further back. Both are valid.</p></div><div class="tip"><span class="code">SET</span>
+<h3>Stage logistics</h3><p>Multiple stages run simultaneously. Download the app, build your schedule, but leave gaps — the best moments are often accidental.</p></div><div class="tip"><span class="code">AM</span>
+<h3>The late hours</h3><p>11pm to 3am is when Primavera turns into something else entirely. The sets get longer, and the festival earns its reputation.</p></div><div class="tip"><span class="code">KIT</span>
+<h3>What to wear</h3><p>Comfortable shoes you won&#x27;t regret at 2am. A light jacket for the sea breeze. One bag with a secure pocket for your phone and wallet.</p></div></div></div></section><section class="page "><header class="run">
+  <img class="mark" src="img/days-wordmark.png" alt="DAYS">
+  <span>Primavera Sound · Barcelona · 2026</span>
+  <span class="pg">14</span>
+</header><div class="body"><div class="opener">
+  <p class="eyebrow">Logistics</p>
+  <h1>On the ground.</h1>
+  <p class="lede">Airport, metro, money and data — the practical bit, so the rest can be anything but.</p>
+</div><div class="logis"><div class="logi"><h3>From the airport</h3><p>Barcelona El Prat (BCN) is 30–40 minutes from the city centre. The Aerobus runs to Plaça Catalunya every 10 minutes. Taxi is a fixed fare (~€35). Uber also works.</p></div><div class="logi"><h3>Getting around</h3><p>The metro covers most of the city. T-Casual 10-trip card is the best value. Poblenou/El Fòrum is on the L4 line (yellow). Metro runs all night on Saturdays.</p></div><div class="logi"><h3>Festival transport</h3><p>Parc del Fòrum is right at El Maresme | Fòrum station on the L4. Walking from El Born takes about 30 minutes along the waterfront.</p></div><div class="logi"><h3>Money</h3><p>Spain is largely card-friendly, but old-school tapas bars prefer cash. Revolut or Wise cards are ideal — no foreign transaction fees. Keep €50–€100 in your wallet.</p></div><div class="logi"><h3>Phone &amp; data</h3><p>Indonesian SIMs won&#x27;t have EU roaming by default. Pick up a local SIM at the airport (Vodafone or Orange), or check your provider before you leave.</p></div></div><aside class="contact"><p class="eyebrow">DAYS contact</p><p>Your DAYS trip lead is on WhatsApp throughout the trip. If anything goes sideways — accommodation, tickets, logistics — that's your first call.</p></aside></div></section><section class="page closing">
+  <img class="cover-mark" src="img/days-wordmark.png" alt="DAYS">
+  <div class="letter">
+    <p class="eyebrow">Seven DAYS in Sunny June</p>
+    <p class="big">You didn't book this trip to tick a box. You booked it because the lineup hit different, because Barcelona in June is its own kind of argument, and because you know the difference between going somewhere and actually being there.</p>
+    <p>We built this guide so you spend zero time figuring out where to eat, drink, or be — and all your time doing exactly that. The rest is yours.</p>
+  </div>
+  <p class="sign">DAYS · Jakarta · June 2026 &nbsp;·&nbsp; talkaboutdays.com</p>
+</section></body></html>

@@ -1,0 +1,169 @@
+/* DAYS brand tokens — see DESIGN.md */
+:root {
+  --brand: #EC5B39;      /* DAYS Orange: logo, accents, large numerals */
+  --brand-ink: #C9431F;  /* orange for text */
+  --ink: #1B1714;
+  --paper: #FBF8F5;
+  --surface: #FFFFFF;
+  --muted: #6E655E;
+  --line: #E8E0D8;
+  --tint: #FDEEE9;
+}
+
+@page { size: A4; margin: 0; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font: 400 9.6pt/1.55 "Inter Tight", system-ui, sans-serif;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact;
+}
+h1, h2, h3, p, ol, dl, dd { margin: 0; }
+
+.num, .code, .tag, .meta, .run, .area, .order span, .night .t, .facts dt, .sign, .eyebrow {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+}
+
+/* ---------- page frame ---------- */
+.page {
+  width: 210mm; height: 297mm; overflow: hidden;
+  position: relative; page-break-after: always; break-after: page;
+  background: var(--paper);
+  padding: 0 18mm;
+}
+.page:last-child { page-break-after: auto; break-after: auto; }
+.run {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 22mm; border-bottom: 1px solid var(--line);
+  font-size: 7pt; letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
+}
+.run .mark { height: 5.2mm; width: auto; }
+.run .pg { color: var(--brand-ink); font-weight: 500; }
+.body { padding-top: 11mm; }
+
+/* ---------- section opener ---------- */
+.eyebrow {
+  font-size: 7.4pt; font-weight: 500; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--brand-ink); margin-bottom: 4mm;
+}
+.opener { margin-bottom: 9mm; }
+.opener h1 {
+  font-size: 40pt; line-height: 1; font-weight: 800; letter-spacing: -.025em;
+  padding-bottom: 5mm; border-bottom: 2.4pt solid var(--brand); margin-bottom: 5mm;
+}
+.lede { font-size: 11.5pt; line-height: 1.5; color: var(--ink); max-width: 150mm; }
+.meta { margin-top: 4mm; font-size: 7.2pt; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+
+.num { font-size: 8pt; font-weight: 500; color: var(--brand); letter-spacing: .02em; }
+.tag {
+  display: inline-block; font-size: 6.6pt; font-weight: 500; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--brand-ink); background: var(--tint); padding: 1.2mm 2.4mm; border-radius: 99px; white-space: nowrap;
+}
+.tag.solid { background: var(--brand); color: #fff; }
+.area { font-size: 7pt; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.desc { color: #3A332E; }
+
+/* ---------- cover & closing ---------- */
+.cover, .closing {
+  background: var(--ink); color: var(--paper);
+  padding: 20mm 18mm; display: flex; flex-direction: column;
+}
+.cover-mark { width: 42mm; height: auto; }
+.cover-kicker {
+  position: absolute; top: 22mm; right: 18mm;
+  font-size: 9pt; color: #BDB3AB; font-style: italic;
+}
+.cover-main { margin-top: auto; }
+.cover .eyebrow, .closing .eyebrow { color: var(--brand); }
+.cover h1 {
+  font-size: 104pt; line-height: .9; font-weight: 800; letter-spacing: -.045em;
+  margin: 2mm 0 10mm; hyphens: manual;
+}
+.cover h1 .dot { color: var(--brand); }
+.cover-lede { font-size: 14pt; line-height: 1.5; color: #E6DED7; max-width: 130mm; }
+.facts {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+  margin-top: 22mm; border-top: 1px solid #3A332E;
+}
+.facts div { padding: 5mm 4mm 0 0; }
+.facts dt { font-size: 6.8pt; letter-spacing: .14em; text-transform: uppercase; color: var(--brand); margin-bottom: 1.5mm; }
+.facts dd { font-size: 10.5pt; font-weight: 500; }
+
+.closing .letter { margin-top: auto; margin-bottom: auto; max-width: 150mm; }
+.closing .big { font-size: 19pt; line-height: 1.38; font-weight: 500; letter-spacing: -.01em; margin-bottom: 7mm; }
+.closing .letter p:not(.big):not(.eyebrow) { font-size: 12pt; color: #E6DED7; }
+.closing .sign { font-size: 7.4pt; letter-spacing: .12em; text-transform: uppercase; color: #BDB3AB; border-top: 1px solid #3A332E; padding-top: 5mm; }
+
+/* ---------- contents ---------- */
+.toc { list-style: none; padding: 0; border-top: 1px solid var(--line); }
+.toc li { display: grid; grid-template-columns: 14mm 1fr auto; align-items: baseline; padding: 5mm 0; border-bottom: 1px solid var(--line); }
+.toc .num { font-size: 11pt; }
+.toc .t { font-size: 17pt; font-weight: 600; letter-spacing: -.015em; }
+.toc .s { font-family: "JetBrains Mono", monospace; font-size: 7pt; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+
+/* ---------- tips (quick tips + festival) ---------- */
+.tips { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; }
+.tip { background: var(--surface); border: 1px solid var(--line); border-radius: 3mm; padding: 6mm; }
+.code {
+  display: inline-block; font-size: 6.8pt; font-weight: 500; letter-spacing: .12em;
+  color: var(--brand-ink); background: var(--tint); border-radius: 1.4mm; padding: 1mm 2mm; margin-bottom: 4mm;
+}
+.tip h3 { font-size: 13pt; font-weight: 600; letter-spacing: -.01em; margin-bottom: 2mm; }
+.tip p { color: #3A332E; }
+
+/* ---------- neighbourhoods ---------- */
+.hoods { border-top: 1px solid var(--line); }
+.hood { display: grid; grid-template-columns: 52mm 1fr; gap: 6mm; padding: 4.6mm 0; border-bottom: 1px solid var(--line); }
+.hood h2 { font-size: 15pt; font-weight: 800; letter-spacing: -.02em; line-height: 1.15; }
+.hood .kick { font-family: "JetBrains Mono", monospace; font-size: 6.8pt; letter-spacing: .1em; text-transform: uppercase; color: var(--brand-ink); margin-top: 1mm; }
+
+/* ---------- restaurants ---------- */
+.callout {
+  display: flex; gap: 5mm; align-items: flex-start;
+  background: var(--tint); border-left: 2.4pt solid var(--brand); padding: 5mm 6mm; margin-bottom: 6mm;
+}
+.callout .code { background: var(--brand); color: #fff; margin: 0; }
+.callout .k { font-weight: 600; margin-bottom: 1mm; }
+.eat {
+  display: grid; grid-template-columns: 1fr; gap: 6mm;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 3mm;
+  padding: 6mm; margin-bottom: 5mm;
+}
+.eat.has-pic { grid-template-columns: 1fr 58mm; }
+.eat.feat { border-color: var(--brand); }
+.eat .top, .tapa .top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2mm; }
+.eat h2 { font-size: 21pt; font-weight: 800; letter-spacing: -.025em; line-height: 1.05; margin-bottom: 1.4mm; }
+.eat .line { font-style: italic; font-weight: 500; color: var(--brand-ink); margin: 2.5mm 0 2mm; }
+.eat .pic { width: 58mm; height: 58mm; object-fit: cover; border-radius: 2mm; display: block; }
+
+/* ---------- tapas ---------- */
+.tapas { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; }
+.tapa { background: var(--surface); border: 1px solid var(--line); border-radius: 3mm; padding: 4.6mm 5mm; }
+.tapa h2 { font-size: 14pt; font-weight: 800; letter-spacing: -.02em; line-height: 1.1; margin-bottom: 1mm; }
+.order { margin: 2.4mm 0; padding: 0 0 0 3mm; border-left: 2pt solid var(--brand); font-weight: 600; font-size: 9pt; line-height: 1.35; }
+.order span { font-size: 6.4pt; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--brand-ink); margin-right: 2mm; }
+.tapa .desc { font-size: 8.6pt; line-height: 1.5; }
+
+/* ---------- bars ---------- */
+.bars { border-top: 1px solid var(--line); }
+.bar { display: grid; grid-template-columns: 10mm 1fr 30mm; gap: 4mm; align-items: start; padding: 4.4mm 0; border-bottom: 1px solid var(--line); }
+.bar .num { padding-top: 1.6mm; }
+.bar h2 { font-size: 13.5pt; font-weight: 800; letter-spacing: -.015em; margin-bottom: 1mm; }
+.bar h2 .area { font-weight: 400; margin-left: 2mm; letter-spacing: .08em; }
+.bar .tag { justify-self: end; margin-top: 1mm; }
+
+.night { margin-top: 9mm; background: var(--ink); color: var(--paper); border-radius: 3mm; padding: 7mm; }
+.night .eyebrow { color: var(--brand); }
+.night ol { list-style: none; padding: 0; }
+.night li { display: grid; grid-template-columns: 20mm 1fr; padding: 2.6mm 0; border-top: 1px solid #3A332E; font-size: 10pt; }
+.night .t { color: var(--brand); font-weight: 500; }
+
+/* ---------- logistics ---------- */
+.logis { display: grid; grid-template-columns: 1fr 1fr; gap: 0 8mm; border-top: 1px solid var(--line); }
+.logi { padding: 5mm 0; border-bottom: 1px solid var(--line); }
+.logi h3 { font-size: 13pt; font-weight: 600; margin-bottom: 1.6mm; }
+.logi p { color: #3A332E; }
+.contact { margin-top: 8mm; background: var(--brand); color: var(--ink); border-radius: 3mm; padding: 7mm; }
+.contact .eyebrow { color: var(--ink); }
+.contact p:last-child { font-size: 12.5pt; font-weight: 500; line-height: 1.45; }
