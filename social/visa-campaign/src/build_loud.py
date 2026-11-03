@@ -94,7 +94,7 @@ svg{{position:absolute;overflow:visible}}
 """
 
 
-def foot(bottom, left="Buat visa sekarang", pill_style=""):
+def foot(bottom, left="Proses sekarang", pill_style=""):
     return (f'<div class="row" style="bottom:{bottom}"><span class="caps sm">{left}</span>'
             f'<span class="pill" style="{pill_style}">{TEL}</span></div>')
 
