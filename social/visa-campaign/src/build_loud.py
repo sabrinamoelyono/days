@@ -4,6 +4,7 @@ type, hand-drawn white doodles, yellow marker lettering + stars, solid red panel
 photo cut-out, sky-blue panels with underlined caps, tilted label boxes.
 Each concept renders at 1080x1350 (feed) and 1080x1920 (story)."""
 from pathlib import Path
+from au_art import draw as sydney
 
 TEL = "+62 812-2000-0185"
 RED, BLUE, YELLOW, INK = "#F94141", "#6DAAE5", "#F1E541", "#1B1714"
@@ -82,6 +83,14 @@ svg{{position:absolute;overflow:visible}}
 .c .lab span{{background:{YELLOW};color:{INK};font-weight:800;text-transform:uppercase;font-size:7.4cqw;
   line-height:1;padding:1.4cqw 2.6cqw 1.6cqw;border-radius:1.6cqw}}
 .c .lab span:nth-child(2){{margin-right:5cqw}}
+/* D: red + white line-drawn Sydney (Australia) */
+.dd{{background:{RED}}}
+.dd .kick{{left:0;right:0;text-align:center;top:var(--kt);font-size:2.8cqw;letter-spacing:.12em}}
+.dd .art{{left:4cqw;width:92cqw;top:var(--at);height:auto}}
+.dd .hand{{left:5cqw;top:var(--ht);font-size:11cqw;transform:rotate(-7deg);color:{YELLOW}}}
+.dd .big{{left:0;right:0;bottom:var(--bb);text-align:center;font-size:21cqw;white-space:nowrap;transform:scaleY(1.7);
+  transform-origin:bottom center}}
+.dd .bigsub{{left:0;right:0;text-align:center;font-size:3.6cqw;bottom:var(--bs)}}
 """
 
 
@@ -151,11 +160,32 @@ def post_c(fmt):
 </section>'''
 
 
+def post_d(fmt):
+    fd = fmt == "feed"
+    v = ("--kt:8.6cqh;--at:22cqh;--ht:13.4cqh;--bb:17cqh;--bs:12.6cqh" if fd
+         else "--kt:10cqh;--at:26cqh;--ht:16cqh;--bb:22cqh;--bs:17.4cqh;--mt:5.2cqh")
+    art = sydney(stroke="#fff", sail_fill="none", sun_fill=YELLOW, sw=5, cls="abs art")
+    return f'''
+<section class="post {"fd" if fd else "st"} dd" id="loud-australia-{fmt}" style="{v}">
+  <img class="mark" src="img/days-wordmark.png" alt="DAYS">
+  <p class="abs caps kick">Sydney · Melbourne · Perth</p>
+  {art}
+  <p class="abs marker hand">G'day, mate!</p>
+  {d(STAR_FILL, "yellow", "width:8cqw;right:7cqw;top:" + ("15cqh" if fd else "17cqh") + ";transform:rotate(14deg)")}
+  {d(STAR_OUT, "white", "width:10cqw;left:7cqw;top:" + ("52cqh" if fd else "55cqh") + ";transform:rotate(-12deg)")}
+  {d(ASTER, "white", "width:5cqw;right:9cqw;top:" + ("54cqh" if fd else "57cqh"))}
+  {d(TICKS, "white", "width:4cqw;right:22cqw;top:" + ("12cqh" if fd else "14cqh"))}
+  <h1 class="abs cond big">Australia</h1>
+  <p class="abs caps bigsub">Cuma satu visa jauhnya.</p>
+  {foot("4.2cqh" if fd else "6.5cqh", pill_style="color:#C9302F")}
+</section>'''
+
+
 html = f'''<!doctype html>
 <html lang="id"><head><meta charset="utf-8"><title>DAYS Visa Loud</title>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@600;700;800&family=Permanent+Marker&display=block" rel="stylesheet">
 <style>{CSS}</style></head><body>
-{"".join(f(fmt) for f in (post_a, post_b, post_c) for fmt in ("feed", "story"))}
+{"".join(f(fmt) for f in (post_a, post_b, post_c, post_d) for fmt in ("feed", "story"))}
 </body></html>'''
 Path(__file__).with_name("loud.html").write_text(html)
 print("ok")
