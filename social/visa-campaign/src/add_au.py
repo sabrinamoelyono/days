@@ -18,7 +18,7 @@ def section(fmt):
     sq = fmt == "square"
     art = draw()
     photo_style = "" if sq else ' style="height:760px"'
-    h1 = 'Australia, cuma <em>satu&nbsp;visa jauhnya.</em>' if not sq else 'Australia, cuma<br><em>satu visa jauhnya.</em>'
+    h1 = 'Ke Australia,<br><em>tinggal urus visanya.</em>' if not sq else 'Ke Australia,<br><em>tinggal urus visanya.</em>'
     sub = ('Visitor visa (subclass 600): dokumen sampai pengajuan di ImmiAccount, <strong>DAYS yang urus.</strong>'
            if not sq else 'Visitor visa 600: dokumen sampai ImmiAccount, <strong>DAYS yang urus.</strong>')
     return f'''

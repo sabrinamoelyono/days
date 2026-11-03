@@ -176,7 +176,7 @@ def post_d(fmt):
   {d(ASTER, "white", "width:5cqw;right:9cqw;top:" + ("54cqh" if fd else "57cqh"))}
   {d(TICKS, "white", "width:4cqw;right:22cqw;top:" + ("12cqh" if fd else "14cqh"))}
   <h1 class="abs cond big">Australia</h1>
-  <p class="abs caps bigsub">Cuma satu visa jauhnya.</p>
+  <p class="abs caps bigsub">Ke Australia, tinggal urus visanya.</p>
   {foot("4.2cqh" if fd else "6.5cqh", pill_style="color:#C9302F")}
 </section>'''
 
