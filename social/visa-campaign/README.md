@@ -9,6 +9,19 @@ These are the refreshed visa-service posts, rebuilt with the DAYS brand system f
 | `export/DAYS-visa-schengen-story.png` | 1080 × 1920 story | 02: Visa Schengen, editorial layout |
 | `export/DAYS-visa-shanghai-square.png` | 1080 × 1080 feed | 03: Shanghai boarding pass, with a WhatsApp QR |
 | `export/DAYS-visa-shanghai-story.png` | 1080 × 1920 story | 03: Shanghai boarding pass |
+| `export/DAYS-visa-china-story.png` | 1080 × 1920 story | 01: Visa Tiongkok, editorial layout |
+
+The editorial set above uses +62 812-2000-0495.
+
+### Boarding-pass set (v2), WhatsApp +62 812-2000-0185
+
+| File | Format |
+|---|---|
+| `export/DAYS-visa-pass-china-square.png` / `-story.png` | 01: Visa Tiongkok, CGK → PEK |
+| `export/DAYS-visa-pass-schengen-square.png` / `-story.png` | 02: Visa Schengen, CGK → PSA |
+| `export/DAYS-visa-pass-shanghai-square.png` / `-story.png` | 03: Shanghai, CGK → PVG |
+
+The v2 posts are generated into `posts.html` by `src/add_v2.py` (run it before `render.js`). Their QR (`src/img/qr-wa-0185.svg`) opens `https://wa.me/6281220000185`.
 
 ## Rebuild
 
