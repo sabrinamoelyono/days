@@ -1,6 +1,7 @@
 """Inject the China editorial story and the boarding-pass set (v2) into posts.html.
 Idempotent: everything between the V2 markers is regenerated."""
 from pathlib import Path
+from au_art import draw as sydney
 
 P = Path(__file__).with_name("posts.html")
 s = P.read_text()
@@ -85,6 +86,11 @@ SETS = [
          cap=None, code="PVG", city="Shanghai", visa="Tiongkok · L",
          h1='Shanghai, <em>bukan sekadar wishlist.</em>',
          sub="Apply visa Tiongkok sekarang — <strong>DAYS yang bantu</strong> dari awal sampai beres."),
+    dict(id="australia", no="04", img=None, art=True,
+         sq="height:760px", st="height:1240px",
+         cap="Sydney Harbour · Sydney", code="SYD", city="Sydney", visa="Australia · 600",
+         h1='Ke Australia,<br><em>tinggal urus visanya.</em>',
+         sub="Visitor visa 600: dokumen sampai ImmiAccount, <strong>DAYS yang urus.</strong>"),
 ]
 
 TEL = "+62 812-2000-0185"
@@ -98,10 +104,17 @@ def post(d, fmt):
     shade_bot = f"top:{h-260}px;height:262px"
     cap = f'<span class="caption">{d["cap"]}</span>' if d["cap"] else ""
     sub = "" if sq else f'<p class="sub">{d["sub"]}</p>'
+    if d.get("art"):
+        svg = sydney(stroke="#fff", sail_fill="none", sun_fill="#FBF8F5", sw=5,
+                     style="position:absolute;" + ("left:12%;width:76%;top:120px" if sq else "left:6%;width:88%;top:400px"))
+        hero = (f'<div class="bg" style="{bg};background:linear-gradient(180deg,#F7A784 0%,#EC5B39 62%,#C9431F 100%)">'
+                f'{svg}</div>')
+    else:
+        hero = f'<img class="bg" src="img/{d["img"]}" style="{bg}" alt="">'
     return f'''
 <!-- v2 · {d["id"]} · {fmt} -->
 <section class="post {"sq" if sq else "st"} bp" id="pass-{d["id"]}-{fmt}">
-  <img class="bg" src="img/{d["img"]}" style="{bg}" alt="">
+  {hero}
   <div class="shade" style="{shade_top};background:linear-gradient(180deg,rgba(27,23,20,.55),rgba(27,23,20,0))"></div>
   <div class="shade" style="{shade_bot};background:linear-gradient(180deg,rgba(27,23,20,0),var(--ink))"></div>
   <img class="mark" src="img/days-wordmark.png" alt="DAYS">

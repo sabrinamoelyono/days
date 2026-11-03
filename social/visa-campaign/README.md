@@ -20,6 +20,7 @@ The editorial set above uses +62 812-2000-0495.
 | `export/DAYS-visa-pass-china-square.png` / `-story.png` | 01: Visa Tiongkok, CGK → PEK |
 | `export/DAYS-visa-pass-schengen-square.png` / `-story.png` | 02: Visa Schengen, CGK → PSA |
 | `export/DAYS-visa-pass-shanghai-square.png` / `-story.png` | 03: Shanghai, CGK → PVG |
+| `export/DAYS-visa-pass-australia-square.png` / `-story.png` | 04: Australia, CGK → SYD (illustrated hero) |
 
 The v2 posts are generated into `posts.html` by `src/add_v2.py` (run it before `render.js`). Their QR (`src/img/qr-wa-0185.svg`) opens `https://wa.me/6281220000185`.
 
