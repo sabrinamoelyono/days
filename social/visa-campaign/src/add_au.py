@@ -27,9 +27,9 @@ def section(fmt):
     <img class="mark" src="img/days-wordmark.png" alt="DAYS">
     <span class="eyebrow">Visa Series — 04</span>
   </div>
-  <div class="photo illo"{photo_style}>
-    {art}
-    <span class="caption">Sydney Harbour · Sydney</span>
+  <div class="photo"{photo_style}>
+    <img src="img/plate-sydney-harbour.jpg" style="object-position:50% {"52%" if sq else "50%"}" alt="">
+    <span class="caption">Opera House &amp; Harbour Bridge · Sydney</span>
   </div>
   <div class="copy">
     <p class="eyebrow"><b>●</b>&nbsp; Visa Australia</p>

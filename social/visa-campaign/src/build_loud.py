@@ -88,7 +88,7 @@ svg{{position:absolute;overflow:visible}}
 .dd .kick{{left:0;right:0;text-align:center;top:var(--kt);font-size:2.8cqw;letter-spacing:.12em}}
 .dd .art{{left:4cqw;width:92cqw;top:var(--at);height:auto}}
 .dd .hand{{left:5cqw;top:var(--ht);font-size:11cqw;transform:rotate(-7deg);color:{YELLOW}}}
-.dd .big{{left:0;right:0;bottom:var(--bb);text-align:center;font-size:21cqw;white-space:nowrap;transform:scaleY(1.7);
+.dd .big{{left:0;right:0;bottom:var(--bb);text-align:center;font-size:21cqw;white-space:nowrap;transform:scaleY(1.7);text-shadow:0 .5cqw 2.4cqw rgba(0,0,0,.35);
   transform-origin:bottom center}}
 .dd .bigsub{{left:0;right:0;text-align:center;font-size:3.6cqw;bottom:var(--bs)}}
 """
@@ -164,20 +164,22 @@ def post_d(fmt):
     fd = fmt == "feed"
     v = ("--kt:8.6cqh;--at:22cqh;--ht:13.4cqh;--bb:17cqh;--bs:12.6cqh" if fd
          else "--kt:10cqh;--at:26cqh;--ht:16cqh;--bb:22cqh;--bs:17.4cqh;--mt:5.2cqh")
-    art = sydney(stroke="#fff", sail_fill="none", sun_fill=YELLOW, sw=5, cls="abs art")
+    art = (f'<img class="cover" src="img/plate-sydney-blue.jpg" style="object-position:50% {"50%" if fd else "45%"}" alt="">'
+           '<div class="abs" style="left:0;right:0;top:0;height:34cqh;background:linear-gradient(180deg,rgba(10,30,70,.55),rgba(10,30,70,0))"></div>'
+           '<div class="abs" style="left:0;right:0;bottom:0;height:52cqh;background:linear-gradient(180deg,rgba(6,24,30,0),rgba(6,24,30,.85))"></div>')
     return f'''
 <section class="post {"fd" if fd else "st"} dd" id="loud-australia-{fmt}" style="{v}">
+  {art}
   <img class="mark" src="img/days-wordmark.png" alt="DAYS">
   <p class="abs caps kick">Sydney · Melbourne · Perth</p>
-  {art}
   <p class="abs marker hand">G'day, mate!</p>
   {d(STAR_FILL, "yellow", "width:8cqw;right:7cqw;top:" + ("15cqh" if fd else "17cqh") + ";transform:rotate(14deg)")}
-  {d(STAR_OUT, "white", "width:10cqw;left:7cqw;top:" + ("52cqh" if fd else "55cqh") + ";transform:rotate(-12deg)")}
-  {d(ASTER, "white", "width:5cqw;right:9cqw;top:" + ("54cqh" if fd else "57cqh"))}
+  {d(STAR_OUT, "white", "width:10cqw;left:7cqw;top:" + ("54cqh" if fd else "56cqh") + ";transform:rotate(-12deg)")}
+  {d(ASTER, "white", "width:5cqw;right:9cqw;top:" + ("29cqh" if fd else "30cqh"))}
   {d(TICKS, "white", "width:4cqw;right:22cqw;top:" + ("12cqh" if fd else "14cqh"))}
   <h1 class="abs cond big">Australia</h1>
   <p class="abs caps bigsub">Ke Australia, tinggal urus visanya.</p>
-  {foot("4.2cqh" if fd else "6.5cqh", pill_style="color:#C9302F")}
+  {foot("4.2cqh" if fd else "6.5cqh", pill_style="color:#1F5FA8")}
 </section>'''
 
 

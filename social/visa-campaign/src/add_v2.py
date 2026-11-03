@@ -86,9 +86,9 @@ SETS = [
          cap=None, code="PVG", city="Shanghai", visa="Tiongkok · L",
          h1='Shanghai, <em>bukan sekadar wishlist.</em>',
          sub="Apply visa Tiongkok sekarang — <strong>DAYS yang bantu</strong> dari awal sampai beres."),
-    dict(id="australia", no="04", img=None, art=True,
-         sq="height:760px", st="height:1240px",
-         cap="Sydney Harbour · Sydney", code="SYD", city="Sydney", visa="Australia · 600",
+    dict(id="australia", no="04", img="plate-sydney-gold.jpg",
+         sq="height:760px;object-position:50% 22%", st="height:1240px;object-position:50% 30%",
+         cap="Sydney Opera House · Sydney", code="SYD", city="Sydney", visa="Australia · 600",
          h1='Ke Australia,<br><em>tinggal urus visanya.</em>',
          sub="Visitor visa 600: dokumen sampai ImmiAccount, <strong>DAYS yang urus.</strong>"),
 ]

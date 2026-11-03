@@ -31,7 +31,7 @@ The v2 posts are generated into `posts.html` by `src/add_v2.py` (run it before `
 | `export/DAYS-visa-australia-square.png` / `-story.png` | Clean editorial |
 | `export/DAYS-visa-loud-australia-feed.png` / `-story.png` | Loud, feed style |
 
-No usable Australia photo could be downloaded here, so both use a vector Sydney Harbour illustration (`src/au_art.py`). The clean posts are added to `posts.html` by `src/add_au.py`; the loud ones come from `build_loud.py`.
+Photos: clean uses `plate-sydney-harbour.jpg` (Opera House + Harbour Bridge at dusk), boarding pass uses `plate-sydney-gold.jpg` (golden-hour sails), loud uses `plate-sydney-blue.jpg` (blue sky). `src/au_art.py` keeps a vector Sydney illustration as a fallback. The clean posts are added to `posts.html` by `src/add_au.py`; the loud ones come from `build_loud.py`.
 
 ## Rebuild
 
