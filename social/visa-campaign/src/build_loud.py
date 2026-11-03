@@ -183,11 +183,20 @@ def post_d(fmt):
 </section>'''
 
 
+def post_d_gday(fmt):
+    """Variant: 'G'DAY, MATE!' as the big title, 'Australia' as the marker line."""
+    return (post_d(fmt)
+            .replace('id="loud-australia-', 'id="loud-australia-gday-')
+            .replace('<p class="abs marker hand">G\'day, mate!</p>', '<p class="abs marker hand">Australia!</p>')
+            .replace('<h1 class="abs cond big">Australia</h1>',
+                     '<h1 class="abs cond big" style="font-size:15.4cqw;transform:scaleY(2.05)">G\'day, mate!</h1>'))
+
+
 html = f'''<!doctype html>
 <html lang="id"><head><meta charset="utf-8"><title>DAYS Visa Loud</title>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@600;700;800&family=Permanent+Marker&display=block" rel="stylesheet">
 <style>{CSS}</style></head><body>
-{"".join(f(fmt) for f in (post_a, post_b, post_c, post_d) for fmt in ("feed", "story"))}
+{"".join(f(fmt) for f in (post_a, post_b, post_c, post_d, post_d_gday) for fmt in ("feed", "story"))}
 </body></html>'''
 Path(__file__).with_name("loud.html").write_text(html)
 print("ok")
