@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<title>DAYS Visa Campaign</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,800;1,500&family=JetBrains+Mono:wght@400;500&display=block" rel="stylesheet">
+<style>
+  :root{
+    --orange:#EC5B39; --brand-ink:#C9431F; --ink:#1B1714; --paper:#FBF8F5;
+    --muted:#6E655E; --line:#E8E0D8; --tint:#FDEEE9;
+    --sans:'Inter Tight',system-ui,sans-serif; --mono:'JetBrains Mono',ui-monospace,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#ccc;font-family:var(--sans);color:var(--ink);-webkit-font-smoothing:antialiased}
+  .post{position:relative;overflow:hidden;background:var(--paper);margin:40px}
+  .sq{width:1080px;height:1080px}
+  .st{width:1080px;height:1920px}
+
+  /* ---------- shared pieces ---------- */
+  .mark{display:block;height:var(--mh,40px);width:auto}
+  .eyebrow{font-family:var(--mono);font-size:var(--ef,16px);font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .eyebrow b{color:var(--brand-ink);font-weight:500}
+  h1{font-weight:800;letter-spacing:-.02em;line-height:.98;color:var(--ink)}
+  h1 em{font-style:normal;color:var(--orange)}
+  .sub{color:var(--muted);line-height:1.45;font-weight:400}
+  .sub strong{color:var(--ink);font-weight:600}
+  .rule{height:1px;background:var(--line)}
+  .cta{display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .cta .label{font-family:var(--mono);font-size:var(--lf,14px);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+  .cta .num{font-weight:600;letter-spacing:-.01em;font-size:var(--nf,34px);color:var(--ink);font-feature-settings:"tnum"}
+  .pill{display:inline-flex;align-items:center;gap:14px;background:var(--ink);color:var(--paper);border-radius:999px;font-weight:600;font-size:var(--pf,22px);padding:var(--pp,20px 30px);white-space:nowrap}
+  .pill i{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--orange)}
+  .caption{position:absolute;left:20px;bottom:20px;background:rgba(251,248,245,.92);backdrop-filter:blur(6px);
+    font-family:var(--mono);font-size:var(--cf,13px);letter-spacing:.12em;text-transform:uppercase;color:var(--ink);padding:9px 14px;border-radius:4px}
+  .photo{position:relative;overflow:hidden;border-radius:6px;background:#ddd}
+  .photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+  /* ---------- Editorial template (China / Schengen) ---------- */
+  .ed{padding:56px;display:flex;flex-direction:column}
+  .ed .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:36px}
+  .ed .photo{flex:none}
+  .ed .copy{margin-top:44px}
+  .ed .copy .eyebrow{margin-bottom:18px}
+  .ed .foot{margin-top:auto}
+  .ed .foot .rule{margin-bottom:28px}
+  .sq.ed .photo{height:480px}
+  .sq.ed h1{font-size:64px}
+  .sq.ed .sub{font-size:24px;margin-top:20px;max-width:900px}
+  .st.ed{padding:80px 64px 88px;--mh:52px;--ef:20px;--lf:17px;--nf:44px;--pf:28px;--pp:26px 38px;--cf:16px}
+  .st.ed .top{margin-bottom:56px}
+  .st.ed .photo{height:1000px}
+  .st.ed .copy{margin-top:64px}
+  .st.ed .copy .eyebrow{margin-bottom:26px}
+  .st.ed h1{font-size:96px}
+  .st.ed .sub{font-size:32px;margin-top:30px}
+  .st.ed .foot .rule{margin-bottom:40px}
+
+  /* ---------- Pass template (Shanghai) ---------- */
+  .ps{background:var(--ink)}
+  .ps .shot{position:absolute;left:0;width:100%;height:auto;display:block}
+  .ps .fade{position:absolute;left:0;right:0}
+  .ps .mark{position:absolute;left:var(--gx,56px);top:var(--gy,52px);z-index:2;filter:brightness(0) invert(1)}
+  .ps .tag{position:absolute;right:var(--gx,56px);top:calc(var(--gy,52px) + 10px);z-index:2;font-family:var(--mono);font-size:var(--ef,15px);letter-spacing:.14em;text-transform:uppercase;color:#fff}
+  .ps .pass{position:absolute;left:var(--px,40px);right:var(--px,40px);background:var(--paper);border-radius:14px;display:flex;box-shadow:0 40px 80px -30px rgba(0,0,0,.6)}
+  .ps .pass .main{flex:1;padding:var(--pad,36px 40px)}
+  .ps .pass .stub{width:var(--stubw,220px);border-left:2px dashed var(--line);padding:var(--pad,36px 30px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px}
+  .ps .stub img{width:100%;display:block}
+  .ps .stub .eyebrow{text-align:center;font-size:var(--sf,12px);line-height:1.5}
+  .route{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:28px}
+  .route .code{font-family:var(--mono);font-weight:500;font-size:var(--rf,44px);letter-spacing:.02em;line-height:1}
+  .route .city{font-family:var(--mono);font-size:var(--lf,13px);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+  .route .line{flex:1;margin:0 22px 18px;height:1px;background:repeating-linear-gradient(90deg,var(--muted) 0 6px,transparent 6px 12px);position:relative}
+  .route .line::after{content:"";position:absolute;right:-2px;top:-5px;width:11px;height:11px;border-radius:50%;background:var(--orange)}
+  .route .r{text-align:right}
+  .ps h1{font-size:var(--hf,54px)}
+  .ps .sub{font-size:var(--subf,22px);margin-top:14px}
+  .fields{display:grid;grid-template-columns:repeat(3,auto);justify-content:space-between;margin-top:26px;padding-top:22px;border-top:1px solid var(--line)}
+  .fields div{font-family:var(--mono);font-size:var(--ff,15px);font-weight:500;letter-spacing:.04em}
+  .fields span{display:block;font-size:var(--fl,11px);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;font-weight:400}
+  .ps .foot{position:absolute;left:56px;right:56px}
+  .ps .foot .label{color:rgba(251,248,245,.8)}
+  .ps .foot .num{color:#fff}
+  .ps .foot .pill{background:var(--orange);color:#fff}
+  .ps .foot .pill i{background:#fff}
+</style>
+</head>
+<body>
+
+<!-- 01 · China visa · square -->
+<section class="post sq ed" id="china-square">
+  <div class="top">
+    <img class="mark" src="img/days-wordmark.png" alt="DAYS">
+    <span class="eyebrow">Visa Series — 01</span>
+  </div>
+  <div class="photo">
+    <img src="img/plate-china.jpg" style="object-position:0 70%" alt="">
+    <span class="caption">Summer Palace · Beijing</span>
+  </div>
+  <div class="copy">
+    <p class="eyebrow"><b>●</b>&nbsp; Visa Tiongkok</p>
+    <h1>Sudah lama di wishlist.<br><em>Saatnya berangkat.</em></h1>
+    <p class="sub">Shanghai, Beijing, Chengdu — dokumen sampai jadwal, <strong>DAYS yang siapkan.</strong></p>
+  </div>
+  <div class="foot">
+    <div class="rule"></div>
+    <div class="cta">
+      <div><p class="label">Konsultasi via WhatsApp</p><p class="num">+62 812-2000-0495</p></div>
+      <span class="pill"><i></i>Mulai apply visa</span>
+    </div>
+  </div>
+</section>
+
+<!-- 02 · Schengen visa · square -->
+<section class="post sq ed" id="schengen-square">
+  <div class="top">
+    <img class="mark" src="img/days-wordmark.png" alt="DAYS">
+    <span class="eyebrow">Visa Series — 02</span>
+  </div>
+  <div class="photo">
+    <img src="img/plate-schengen.jpg" style="object-position:0 100%" alt="">
+    <span class="caption">Piazza dei Miracoli · Pisa</span>
+  </div>
+  <div class="copy">
+    <p class="eyebrow"><b>●</b>&nbsp; Visa Schengen</p>
+    <h1>Eropa dimulai dari<br><em>satu stempel.</em></h1>
+    <p class="sub">Dokumen, formulir, jadwal biometrik — <strong>DAYS yang urus.</strong> Kamu tinggal berangkat.</p>
+  </div>
+  <div class="foot">
+    <div class="rule"></div>
+    <div class="cta">
+      <div><p class="label">Konsultasi via WhatsApp</p><p class="num">+62 812-2000-0495</p></div>
+      <span class="pill"><i></i>Mulai apply visa</span>
+    </div>
+  </div>
+</section>
+
+<!-- 03 · Shanghai pass · square -->
+<section class="post sq ps" id="shanghai-square">
+  <img class="shot" src="img/plate-panda.jpg" style="top:-450px" alt="">
+  <div class="fade" style="top:0;height:200px;background:linear-gradient(180deg,rgba(27,23,20,.55),rgba(27,23,20,0))"></div>
+  <div class="fade" style="top:470px;height:192px;background:linear-gradient(180deg,rgba(27,23,20,0),var(--ink))"></div>
+  <img class="mark" src="img/days-wordmark.png" alt="DAYS">
+  <span class="tag">Visa Series — 03</span>
+  <div class="pass" style="top:560px">
+    <div class="main">
+      <div class="route">
+        <div><p class="code">CGK</p><p class="city">Jakarta</p></div>
+        <div class="line"></div>
+        <div class="r"><p class="code">PVG</p><p class="city">Shanghai</p></div>
+      </div>
+      <h1>Shanghai, <em>bukan sekadar wishlist.</em></h1>
+      <p class="sub">Apply visa Tiongkok sekarang — <strong>DAYS yang bantu</strong> sampai beres.</p>
+    </div>
+    <div class="stub">
+      <img src="img/qr-wa.svg" alt="QR WhatsApp DAYS">
+      <p class="eyebrow">Scan untuk<br>WhatsApp</p>
+    </div>
+  </div>
+  <div class="foot cta" style="bottom:48px">
+    <div><p class="label">Buat visa sekarang</p><p class="num">+62 812-2000-0495</p></div>
+    <span class="pill"><i></i>Chat DAYS</span>
+  </div>
+</section>
+
+<!-- 04 · Shanghai pass · story -->
+<section class="post st ps" id="shanghai-story" style="--gx:64px;--gy:96px;--px:48px;--mh:52px;--ef:19px;--hf:76px;--subf:30px;--rf:60px;--lf:17px;--nf:46px;--pf:28px;--pp:26px 38px;--ff:20px;--fl:14px;--pad:52px 52px">
+  <img class="shot" src="img/plate-panda.jpg" style="top:-200px" alt="">
+  <div class="fade" style="top:0;height:320px;background:linear-gradient(180deg,rgba(27,23,20,.55),rgba(27,23,20,0))"></div>
+  <div class="fade" style="top:740px;height:172px;background:linear-gradient(180deg,rgba(27,23,20,0),var(--ink))"></div>
+  <img class="mark" src="img/days-wordmark.png" alt="DAYS">
+  <span class="tag">Visa Series — 03</span>
+  <div class="pass" style="top:930px;flex-direction:column">
+    <div class="main">
+      <div class="route">
+        <div><p class="code">CGK</p><p class="city">Jakarta</p></div>
+        <div class="line"></div>
+        <div class="r"><p class="code">PVG</p><p class="city">Shanghai</p></div>
+      </div>
+      <h1>Shanghai, <em>bukan sekadar wishlist.</em></h1>
+      <p class="sub">Apply visa Tiongkok sekarang — <strong>DAYS yang bantu</strong> dari awal sampai beres.</p>
+      <div class="fields">
+        <div><span>Dokumen</span>Dicek DAYS</div>
+        <div><span>Formulir</span>Diisi DAYS</div>
+        <div><span>Kamu</span>Pilih tanggal</div>
+      </div>
+    </div>
+  </div>
+  <div class="foot cta" style="bottom:120px;left:64px;right:64px">
+    <div><p class="label">Buat visa sekarang</p><p class="num">+62 812-2000-0495</p></div>
+    <span class="pill"><i></i>Chat DAYS</span>
+  </div>
+</section>
+
+<!-- 05 · Schengen · story -->
+<section class="post st ed" id="schengen-story">
+  <div class="top">
+    <img class="mark" src="img/days-wordmark.png" alt="DAYS">
+    <span class="eyebrow">Visa Series — 02</span>
+  </div>
+  <div class="photo">
+    <img src="img/plate-pisa-tall.jpg" style="object-position:50% 0%" alt="">
+    <span class="caption">Piazza dei Miracoli · Pisa</span>
+  </div>
+  <div class="copy">
+    <p class="eyebrow"><b>●</b>&nbsp; Visa Schengen</p>
+    <h1>Eropa dimulai dari <em>satu stempel.</em></h1>
+    <p class="sub">Cek dokumen, isi formulir, sampai jadwal biometrik — <strong>DAYS yang urus prosesnya.</strong></p>
+  </div>
+  <div class="foot">
+    <div class="rule"></div>
+    <div class="cta">
+      <div><p class="label">Konsultasi via WhatsApp</p><p class="num">+62 812-2000-0495</p></div>
+      <span class="pill"><i></i>Apply visa</span>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
