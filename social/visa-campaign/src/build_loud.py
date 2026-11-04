@@ -192,11 +192,18 @@ def post_d_gday(fmt):
                      '<h1 class="abs cond big" style="font-size:15.4cqw;transform:scaleY(2.05)">G\'day, mate!</h1>'))
 
 
+def post_d_gday_0495(fmt):
+    """Same as the G'DAY, MATE! variant, with +62 812-2000-0495."""
+    return (post_d_gday(fmt)
+            .replace('id="loud-australia-gday-', 'id="loud-australia-gday-0495-')
+            .replace(TEL, "+62 812-2000-0495"))
+
+
 html = f'''<!doctype html>
 <html lang="id"><head><meta charset="utf-8"><title>DAYS Visa Loud</title>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@600;700;800&family=Permanent+Marker&display=block" rel="stylesheet">
 <style>{CSS}</style></head><body>
-{"".join(f(fmt) for f in (post_a, post_b, post_c, post_d, post_d_gday) for fmt in ("feed", "story"))}
+{"".join(f(fmt) for f in (post_a, post_b, post_c, post_d, post_d_gday, post_d_gday_0495) for fmt in ("feed", "story"))}
 </body></html>'''
 Path(__file__).with_name("loud.html").write_text(html)
 print("ok")

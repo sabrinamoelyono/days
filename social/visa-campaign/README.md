@@ -33,6 +33,13 @@ The v2 posts are generated into `posts.html` by `src/add_v2.py` (run it before `
 
 Photos: clean uses `plate-sydney-harbour.jpg` (Opera House + Harbour Bridge at dusk), boarding pass uses `plate-sydney-gold.jpg` (golden-hour sails), loud uses `plate-sydney-blue.jpg` (blue sky). `src/au_art.py` keeps a vector Sydney illustration as a fallback. The clean posts are added to `posts.html` by `src/add_au.py`; the loud ones come from `build_loud.py`.
 
+### Australia "G'DAY, MATE!" loud variant
+
+| File | Phone |
+|---|---|
+| `export/DAYS-visa-loud-australia-gday-feed.png` / `-story.png` | +62 812-2000-0185 |
+| `export/DAYS-visa-loud-australia-gday-0495-feed.png` / `-story.png` | +62 812-2000-0495 |
+
 ## Rebuild
 
 ```bash
