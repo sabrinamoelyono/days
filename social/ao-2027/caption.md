@@ -15,7 +15,7 @@ Upload each folder's files in filename order.
 **Fonts:** titles in Sequel 100 Wide 85, everything else in Sharp Sans No. 2 Bold. These are licensed fonts and this repository is public, so they are not committed: put `Sequel100Wide-85.ttf` and `SharpSans-No2-Bold.otf` in `fonts/` (git-ignored) before rendering.
 **To edit the DAYS slides:** change `slides.html`, then run `node render.js` (pass `2` for 2× exports). This rebuilds both post folders and re-copies the approved assets.
 
-**Caption language:** use the English captions. The slides are in English, it's the DAYS brand voice, and the audience follows international sport in English. Don't stack both languages in one caption: it doubles the length and pushes the prices below "more". The Bahasa versions are ready for WhatsApp broadcasts, Stories or partner reposts.
+**Caption language:** each post has one bilingual caption, English first and Bahasa Indonesia below, separated by a dash line. Both fit under Instagram's 2,200-character limit.
 
 ---
 
@@ -29,7 +29,7 @@ Upload each folder's files in filename order.
 | 04 | *Make a trip out of it.* (Melbourne) | DAYS |
 | 05 | *Choose your round.* (the four packages + enquiry) | DAYS |
 
-## Caption (English)
+## Caption (English + Bahasa Indonesia, ready to post)
 
 For those who want to experience the game closer.
 
@@ -43,7 +43,7 @@ Four packages, from the quarterfinals to finals weekend. Full details in our nex
 
 DM us or WhatsApp +62 812-2000-0185.
 
-## Caption (Bahasa Indonesia)
+—
 
 Untuk kamu yang ingin merasakan pertandingan lebih dekat.
 
@@ -71,7 +71,7 @@ DM kami atau WhatsApp +62 812-2000-0185.
 
 **Post 2 cover logos:** the AO Travel & Experiences × DAYS lockup is copied pixel-for-pixel from the approved cover (`place_lockup.py`): same pixels, same size and position, on its original black background. The cover is exported at 1485 × 1856, the same size as the approved assets. Because the cover itself is new and carries AO imagery and the AO logo, send it to AO for approval before posting.
 
-## Caption (English)
+## Caption (English + Bahasa Indonesia, ready to post)
 
 Australian Open 2027. Choose your round.
 
@@ -95,7 +95,7 @@ IDR 159.800.000 / person
 
 DAYS is an AO Travel & Experiences official reseller. To book, DM us or WhatsApp +62 812-2000-0185.
 
-## Caption (Bahasa Indonesia)
+—
 
 Australian Open 2027. Pilih babakmu.
 
