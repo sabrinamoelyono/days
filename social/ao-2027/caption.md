@@ -1,13 +1,13 @@
 # DAYS × Australian Open 2027 — launch carousel
 
 **Format:** 9-slide Instagram carousel, 4:5. Upload the files in `export/` in filename order.
-**Logo rule:** the AO Travel & Experiences logo appears only on the AO-approved assets (`approved/`), which are copied byte-for-byte and never edited. DAYS-made slides carry the DAYS wordmark only.
+**Approved assets:** slides 01 and 06–09 are AO-approved and must not be revised or altered in any way: no cropping, resizing, re-exporting, overlays or added text. `render.js` copies them byte-for-byte from `approved/`. The AO Travel & Experiences logo appears only on these. DAYS-made slides carry the DAYS wordmark only.
 **To edit the DAYS slides:** change `slides.html`, then run `node render.js` (pass `2` for 2× exports). This also re-copies the approved assets into `export/`.
 
 | # | Slide | Source |
 |---|---|---|
 | 01 | Cover: 11–31 January 2027, Melbourne | AO-approved |
-| 02 | *Not all seats are created equal.* | DAYS |
+| 02 | *For those who want to experience the game closer.* (key line) | DAYS |
 | 03 | *Closer, officially.* (Rod Laver Arena seating) | DAYS |
 | 04 | *Make a trip out of it.* (Melbourne) | DAYS |
 | 05 | *Choose your round.* (the four packages + enquiry) | DAYS |
@@ -20,9 +20,9 @@
 
 ## Caption (English)
 
-Now official.
+For those who want to experience the game closer.
 
-DAYS is an official AO Travel & Experiences reseller for the Australian Open 2027. That means seats from the official channel, chosen for one thing: how close they put you to the court.
+Now official: DAYS is an AO Travel & Experiences Official Reseller for the Australian Open 2027. That means seats from the official channel, chosen for one thing: how close they put you to the court.
 
 Lower level at Rod Laver Arena. Night sessions under the lights. Access to AO Reserve — The Gallery. And Melbourne in late January around it all: laneway coffee, long summer evenings, a whole city tuned to one tournament.
 
@@ -40,9 +40,9 @@ DM us or WhatsApp +62 812-2000-0185 to enquire.
 
 ## Caption (Bahasa Indonesia)
 
-Resmi.
+Untuk kamu yang ingin merasakan pertandingan lebih dekat.
 
-DAYS kini resmi menjadi official reseller AO Travel & Experiences untuk Australian Open 2027. Kursi dari jalur resmi, dipilih untuk satu hal: seberapa dekat kamu dengan lapangan.
+Kini resmi: DAYS adalah AO Travel & Experiences Official Reseller untuk Australian Open 2027. Kursi dari jalur resmi, dipilih untuk satu hal: seberapa dekat kamu dengan lapangan.
 
 Lower level di Rod Laver Arena. Night session di bawah lampu stadion. Akses ke AO Reserve — The Gallery. Dan Melbourne di akhir Januari: kopi di laneway, sore musim panas yang panjang, satu kota yang larut dalam satu turnamen.
 
