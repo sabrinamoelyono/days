@@ -54,7 +54,7 @@ h1,h2{font-weight:800;letter-spacing:-.025em;line-height:.95}
 
 /* ---------- 03 access ---------- */
 .s3{background:radial-gradient(120% 90% at 85% 100%,var(--ao-cyan) 0,var(--ao-court) 28%,var(--ao-mid) 55%,var(--ao-deep) 82%,#050726 100%)}
-.s3 .map{position:absolute;left:50%;top:205px;transform:translateX(-50%)}
+.s3 .map{position:absolute;left:50%;top:196px;transform:translateX(-50%)}
 .s3 .copy{position:absolute;left:72px;right:72px;top:740px}
 .s3 h2{font-size:118px;margin:22px 0 30px}
 .s3 .lede{color:rgba(255,255,255,.9)}
@@ -132,22 +132,25 @@ h1,h2{font-weight:800;letter-spacing:-.025em;line-height:.95}
 <!-- 03 — The access -->
 <section class="slide s3">
   <header class="hdr"><img class="ao" src="img/ao-lockup-white.png" alt=""><span class="rule"></span><img class="days" src="img/days-wordmark.png" alt="DAYS"><span class="n">03/05</span></header>
-  <svg class="map" width="900" height="500" viewBox="0 0 900 500" aria-hidden="true">
-    <!-- stylised bowl: upper tiers -->
-    <ellipse cx="450" cy="250" rx="440" ry="240" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="2"/>
-    <ellipse cx="450" cy="250" rx="380" ry="206" fill="none" stroke="rgba(255,255,255,.26)" stroke-width="2"/>
-    <ellipse cx="450" cy="250" rx="320" ry="172" fill="none" stroke="rgba(255,255,255,.32)" stroke-width="2" stroke-dasharray="3 9"/>
-    <!-- lower level highlighted -->
-    <ellipse cx="450" cy="250" rx="265" ry="140" fill="#EC5B39"/>
-    <!-- court -->
-    <rect x="300" y="162" width="300" height="176" rx="24" fill="#1F7FC9"/>
-    <rect x="345" y="196" width="210" height="108" fill="none" stroke="#fff" stroke-width="2.5"/>
-    <line x1="345" y1="250" x2="555" y2="250" stroke="#fff" stroke-width="1.5"/>
-    <line x1="450" y1="188" x2="450" y2="312" stroke="#fff" stroke-width="3.5"/>
-    <!-- labels -->
-    <line x1="640" y1="172" x2="760" y2="60" stroke="#fff" stroke-width="2"/><circle cx="640" cy="172" r="7" fill="#fff"/>
-    <text x="768" y="52" font-family="JetBrains Mono" font-weight="500" font-size="17" letter-spacing="2" fill="#fff">YOUR SEAT</text>
-    <text x="4" y="488" font-family="JetBrains Mono" font-weight="500" font-size="17" letter-spacing="2" fill="rgba(255,255,255,.7)">ROD LAVER ARENA · LOWER LEVEL · NIGHT SESSION</text>
+  <svg class="map" width="900" height="520" viewBox="0 0 900 520" aria-hidden="true">
+    <g transform="translate(450 260) scale(.8)">
+      <rect x="-350" y="-310" width="700" height="620" rx="280" fill="none" stroke="rgba(255,255,255,.22)" stroke-width="2"/>
+      <rect x="-291.0" y="-252.0" width="582" height="504" rx="189" fill="none" stroke="rgba(255,255,255,.16)" stroke-width="64" pathLength="36" stroke-dasharray="0.93 0.07"/>
+      <rect x="-212.5" y="-173.5" width="425.0" height="347.0" rx="115" fill="none" stroke="rgba(236,91,57,.45)" stroke-width="33" pathLength="18" stroke-dasharray="0.95 0.05"/>
+      <rect x="-180.0" y="-141.0" width="360" height="282" rx="84" fill="none" stroke="rgba(236,91,57,.72)" stroke-width="32" pathLength="18" stroke-dasharray="0.95 0.05"/>
+      <rect x="-152.0" y="-113.0" width="304" height="226" rx="57" fill="none" stroke="#EC5B39" stroke-width="24" pathLength="18" stroke-dasharray="0.95 0.05"/>
+      <rect x="-137.0" y="-98.0" width="274" height="196" rx="43" fill="none" stroke="#FFB49F" stroke-width="6" pathLength="18" stroke-dasharray="1 0"/>
+      <rect x="-134" y="-95" width="268" height="190" rx="40" fill="#1F7FC9"/>
+      <rect x="-80" y="-34" width="160" height="68" fill="none" stroke="#fff" stroke-width="2.5"/>
+      <line x1="-80" y1="-24" x2="80" y2="-24" stroke="#fff" stroke-width="1.5"/><line x1="-80" y1="24" x2="80" y2="24" stroke="#fff" stroke-width="1.5"/>
+      <line x1="-44" y1="-24" x2="-44" y2="24" stroke="#fff" stroke-width="1.5"/><line x1="44" y1="-24" x2="44" y2="24" stroke="#fff" stroke-width="1.5"/><line x1="-44" y1="0" x2="44" y2="0" stroke="#fff" stroke-width="1.5"/>
+      <line x1="0" y1="-42" x2="0" y2="42" stroke="#fff" stroke-width="3.5"/>
+    </g>
+    <line x1="572" y1="226" x2="740" y2="56" stroke="#fff" stroke-width="2"/><circle cx="572" cy="226" r="7" fill="#fff"/>
+    <text x="900" y="44" text-anchor="end" font-family="JetBrains Mono" font-weight="500" font-size="17" letter-spacing="2" fill="#fff">LOWER LEVEL · YOUR SEAT</text>
+    <line x1="218" y1="150" x2="120" y2="56" stroke="rgba(255,255,255,.6)" stroke-width="2"/><circle cx="218" cy="150" r="6" fill="rgba(255,255,255,.6)"/>
+    <text x="0" y="44" font-family="JetBrains Mono" font-weight="500" font-size="17" letter-spacing="2" fill="rgba(255,255,255,.6)">UPPER LEVEL</text>
+    <text x="900" y="512" text-anchor="end" font-family="JetBrains Mono" font-weight="500" font-size="15" letter-spacing="2" fill="rgba(255,255,255,.55)">ROD LAVER ARENA · SEATING</text>
   </svg>
   <div class="copy">
     <p class="eyebrow" style="color:#FFB49F">Official access</p>
