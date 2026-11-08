@@ -37,6 +37,10 @@ Every package is named and curated, not sold off a shelf.
 - Don't stretch, skew or rotate it.
 - Don't place it on a background that drops its contrast (busy photography, low-contrast tints).
 
+### Partner logos
+
+**AO Travel & Experiences:** whenever the AO Travel & Experiences (Official Reseller) logo appears, use the file exactly as supplied in the official asset pack. Don't redraw, recolour, re-cut or extract it from another graphic, and don't change its background or proportions.
+
 ## Colour
 
 | Token | Hex | Use | Contrast |
