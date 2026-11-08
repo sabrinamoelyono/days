@@ -19,28 +19,6 @@
 | 08 | Finals · 29 Jan – 1 Feb · IDR 119.800.000 | AO-approved |
 | 09 | Semifinal + Final · flights included · IDR 159.800.000 | AO-approved |
 
----|---|---|---|
-| 01 | Cover: 11–31 January 2027, Melbourne | same | AO-approved |
-| 02 | *For those who want to experience the game closer.* over the arena photo | *For those who want to experience the game closer.* type only | DAYS |
-| 03 | *Closer, officially.* + seating map | *Not all seats are created equal.* + seating map | DAYS |
-| 04 | *Make a trip out of it.* (Melbourne) | same | DAYS |
-| 05 | *Choose your round.* (the four packages + enquiry) | same | DAYS |
-| 06 | Quarterfinals · 25–28 Jan · IDR 49.800.000 | same | AO-approved |
-| 07 | Semifinals · 28–31 Jan · IDR 69.800.000 | same | AO-approved |
-| 08 | Finals · 29 Jan – 1 Feb · IDR 119.800.000 | same | AO-approved |
-| 09 | Semifinal + Final · flights included · IDR 159.800.000 | same | AO-approved |
-
----|---|---|
-| 01 | Cover: 11–31 January 2027, Melbourne | AO-approved |
-| 02 | *For those who want to experience the game closer.* (key line) | DAYS |
-| 03 | *Closer, officially.* (Rod Laver Arena seating) | DAYS |
-| 04 | *Make a trip out of it.* (Melbourne) | DAYS |
-| 05 | *Choose your round.* (the four packages + enquiry) | DAYS |
-| 06 | Quarterfinals · 25–28 Jan · IDR 49.800.000 | AO-approved |
-| 07 | Semifinals · 28–31 Jan · IDR 69.800.000 | AO-approved |
-| 08 | Finals · 29 Jan – 1 Feb · IDR 119.800.000 | AO-approved |
-| 09 | Semifinal + Final · flights included · IDR 159.800.000 | AO-approved |
-
 ---
 
 ## Caption (English)
