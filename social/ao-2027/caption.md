@@ -33,9 +33,9 @@ Upload each folder's files in filename order.
 
 For those who want to experience the game closer.
 
-DAYS is now an AO Travel & Experiences official reseller for the Australian Open 2027. Our seats come through the official channel, and we choose them for one thing: how close they put you to the court.
+DAYS is now an AO Travel & Experiences official reseller for the Australian Open 2027. That means access to the best seats in the house: the lower level at Rod Laver Arena, close enough to hear the ball come off the strings.
 
-Lower level at Rod Laver Arena. Night sessions under the lights. Access to AO Reserve — The Gallery. And around it all, Melbourne in late January: laneway coffee, long summer evenings, a whole city tuned to one tournament.
+Night sessions under the lights. Access to AO Reserve — The Gallery. And around it all, Melbourne in late January: laneway coffee, long summer evenings, a whole city tuned to one tournament.
 
 You're not just watching tennis. You're experiencing the Australian Open differently.
 
@@ -47,9 +47,9 @@ DM us or WhatsApp +62 812-2000-0185.
 
 Untuk kamu yang ingin merasakan pertandingan lebih dekat.
 
-DAYS kini resmi menjadi AO Travel & Experiences official reseller untuk Australian Open 2027. Kursi kami datang dari jalur resmi, dan kami pilih untuk satu hal: seberapa dekat kamu dengan lapangan.
+DAYS kini resmi menjadi AO Travel & Experiences official reseller untuk Australian Open 2027. Artinya, akses ke kursi terbaik: lower level di Rod Laver Arena, cukup dekat untuk mendengar bola memantul dari senar raket.
 
-Lower level di Rod Laver Arena. Night session di bawah lampu stadion. Akses ke AO Reserve — The Gallery. Dan di sekelilingnya, Melbourne di akhir Januari: kopi di laneway, sore musim panas yang panjang, satu kota yang larut dalam satu turnamen.
+Night session di bawah lampu stadion. Akses ke AO Reserve — The Gallery. Dan di sekelilingnya, Melbourne di akhir Januari: kopi di laneway, sore musim panas yang panjang, satu kota yang larut dalam satu turnamen.
 
 Bukan sekadar nonton tenis. Ini cara lain merasakan Australian Open.
 
