@@ -4,24 +4,30 @@
   *{margin:0;padding:0;box-sizing:border-box}
   body{background:#fff}
   .poster{position:relative;width:2061px;height:2576px;background:url(price-clean.png) 0 0/2061px 2576px no-repeat;
-    font-family:'Inter',sans-serif;font-weight:700;color:#0b0b0b;text-transform:uppercase;text-align:center}
-  .abs{position:absolute;left:0;right:0}
-  .meta{top:1835px;font-size:54px;letter-spacing:.04em;word-spacing:.15em}
-  .tiers{top:1975px;left:150px;right:150px;display:grid;grid-template-columns:1fr 4px 1fr;align-items:center}
-  .tiers .rule{height:250px;background:#0b0b0b}
-  .tier .name{font-size:44px;letter-spacing:.08em}
-  .tier .price{font-size:94px;letter-spacing:-.01em;line-height:1;margin-top:18px;font-weight:800}
-  .tier .price small{font-size:42px;font-weight:700;letter-spacing:0}
-  .tier .what{font-size:36px;letter-spacing:.04em;margin-top:22px;font-weight:600}
-  .note{top:2350px;font-size:32px;letter-spacing:.06em}
+    font-family:'Inter',sans-serif;font-weight:700;color:#0b0b0b;text-transform:uppercase}
+  /* price table: one left edge, one right edge, equal rows */
+  .table{position:absolute;left:170px;right:170px;top:1880px}
+  .row{display:flex;justify-content:space-between;align-items:center;border-bottom:4px solid #0b0b0b}
+  .head{padding-bottom:30px;font-size:46px;letter-spacing:.05em}
+  .tier{padding:38px 0 40px}
+  .tier .name{font-size:58px;font-weight:800;letter-spacing:.01em;line-height:1}
+  .tier .what{font-size:34px;font-weight:600;letter-spacing:.05em;margin-top:16px}
+  .tier .price{font-size:78px;font-weight:800;letter-spacing:-.01em;line-height:1;font-variant-numeric:tabular-nums;text-align:right}
+  .tier .price small{font-size:34px;font-weight:700;letter-spacing:.04em;margin-left:6px}
+  .note{margin-top:30px;font-size:30px;letter-spacing:.06em}
 </style></head><body>
 <div class="poster" id="poster">
-  <p class="abs meta">6 Days / 5 Nights &nbsp;|&nbsp; 2–7 June 2027</p>
-  <div class="abs tiers">
-    <div class="tier"><p class="name">The Fòrum Edit</p><p class="price">Rp 47,500,000<small>/pax</small></p><p class="what">Regular pass · 3-star hotel</p></div>
-    <div class="rule"></div>
-    <div class="tier"><p class="name">VIP</p><p class="price">Rp 59,500,000<small>/pax</small></p><p class="what">VIP pass · 4-star hotel</p></div>
+  <div class="table">
+    <div class="row head"><span>6 Days / 5 Nights</span><span>2–7 June 2027</span></div>
+    <div class="row tier">
+      <div><p class="name">The Fòrum Edit</p><p class="what">Regular pass · 3-star hotel</p></div>
+      <p class="price">Rp 47,500,000<small>/pax</small></p>
+    </div>
+    <div class="row tier">
+      <div><p class="name">VIP</p><p class="what">VIP pass · 4-star hotel</p></div>
+      <p class="price">Rp 59,500,000<small>/pax</small></p>
+    </div>
+    <p class="note">*Flights not included</p>
   </div>
-  <p class="abs note">*Flights not included</p>
 </div>
 </body></html>
