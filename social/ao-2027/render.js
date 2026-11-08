@@ -1,6 +1,6 @@
 // Builds the two AO 2027 launch posts into ./export:
 //   post-1-announcement/  01 = AO-approved cover, 02–05 = DAYS slides rendered from slides.html
-//   post-2-packages/      01–04 = the four AO-approved package cards
+//   post-2-packages/      01 = DAYS cover (player cutouts), 02–05 = the four AO-approved package cards
 // Approved assets are copied byte-for-byte and never edited.
 // Usage: node render.js [deviceScaleFactor]   (needs the licensed fonts in ./fonts — see caption.md)
 const { chromium } = require('playwright');
@@ -11,12 +11,12 @@ const posts = {
   'post-1-announcement': { approved: { '01': 'AO27-cover.webp' }, days: { '02': '2', '03': '3', '04': '4', '05': '5' } },
   'post-2-packages': {
     approved: {
-      '01': 'AO27-quarterfinals.png',
-      '02': 'AO27-semifinals.png',
-      '03': 'AO27-finals.png',
-      '04': 'AO27-semifinal-final.png',
+      '02': 'AO27-quarterfinals.png',
+      '03': 'AO27-semifinals.png',
+      '04': 'AO27-finals.png',
+      '05': 'AO27-semifinal-final.png',
     },
-    days: {},
+    days: { '01': 'c2' }, // cover: needs the official AO × DAYS lockup added before posting
   },
 };
 

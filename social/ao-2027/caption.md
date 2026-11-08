@@ -5,7 +5,7 @@ Two Instagram posts, both 4:5 carousels. Post the announcement first, then the p
 | Post | Folder | Slides |
 |---|---|---|
 | 1. Announcement | `export/post-1-announcement/` | 5 |
-| 2. Packages | `export/post-2-packages/` | 4 |
+| 2. Packages | `export/post-2-packages/` | 5 |
 
 Upload each folder's files in filename order.
 
@@ -62,10 +62,13 @@ DM kami atau WhatsApp +62 812-2000-0185.
 
 | # | Slide | Source |
 |---|---|---|
-| 01 | Quarterfinals · Men & Women · 25–28 Jan 2027 | AO-approved |
-| 02 | Semifinals · Men & Women · 28–31 Jan 2027 | AO-approved |
-| 03 | Finals · Men & Women · 29 Jan – 1 Feb 2027 | AO-approved |
-| 04 | Semifinal + Final · Men & Women | AO-approved |
+| 01 | Cover: *Choose your round*, player cutouts over the crowd | DAYS, built from official AO imagery |
+| 02 | Quarterfinals · Men & Women · 25–28 Jan 2027 | AO-approved |
+| 03 | Semifinals · Men & Women · 28–31 Jan 2027 | AO-approved |
+| 04 | Finals · Men & Women · 29 Jan – 1 Feb 2027 | AO-approved |
+| 05 | Semifinal + Final · Men & Women | AO-approved |
+
+**Before posting the Post 2 cover:** the top of the cover is left clear for the AO Travel & Experiences × DAYS logo lockup. It must be the official lockup file, placed unedited. Because the cover is new and carries the AO logo and AO imagery, send it to AO for approval like the other assets.
 
 ## Caption (English)
 
