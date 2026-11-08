@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>DAYS × AO 2027 — Instagram carousel</title>
+<title>DAYS × AO 2027 — DAYS slides</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,800;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -94,21 +94,23 @@ h1,h2{font-weight:800;letter-spacing:-.025em;line-height:.95}
 .s5 .cta{position:absolute;left:72px;right:72px;bottom:56px;display:flex;justify-content:space-between;align-items:center;padding-top:22px;border-top:2px solid var(--brand);
   font:500 20px/1.4 "JetBrains Mono",monospace;letter-spacing:.08em;color:#fff}
 .s5 .cta b{font-weight:500;color:var(--brand-dk)}
+
+/* ---------- 05 menu ---------- */
+.s6{background:linear-gradient(160deg,#050726 0,var(--ao-deep) 35%,var(--ao-mid) 75%,var(--ao-court) 100%)}
+.s6 .copy{position:absolute;left:72px;right:72px;top:220px}
+.s6 h2{font-size:120px;margin:22px 0 30px}
+.s6 ol{list-style:none;margin-top:48px;border-top:1.5px solid rgba(255,255,255,.28)}
+.s6 li{display:grid;grid-template-columns:120px 1fr auto;align-items:center;padding:26px 0;border-bottom:1.5px solid rgba(255,255,255,.28);font-size:36px;font-weight:600;line-height:1.2}
+.s6 li span{font:500 22px/1 "JetBrains Mono",monospace;color:var(--brand-dk);letter-spacing:.06em}
+.s6 li small{display:block;font:500 18px/1.4 "JetBrains Mono",monospace;letter-spacing:.08em;color:rgba(255,255,255,.7);margin-top:8px;text-transform:uppercase}
+.s6 li em{font-style:normal;font-size:34px;font-weight:800;letter-spacing:-.02em}
+.s6 .cta{position:absolute;left:72px;right:72px;bottom:56px;display:flex;justify-content:space-between;align-items:center;padding-top:22px;border-top:2px solid var(--brand);font:500 20px/1.4 "JetBrains Mono",monospace;letter-spacing:.08em}
+.s6 .cta b{font-weight:500;color:var(--brand-dk)}
+.s6 .cta .swipe{text-transform:uppercase;letter-spacing:.14em}
+.s6 .cta .swipe::after{content:" →";color:var(--brand)}
 </style>
 </head>
 <body>
-
-<!-- 01 — The announcement -->
-<section class="slide s1">
-  <div class="bg"></div><div class="shade"></div>
-  <header class="hdr"><img class="ao" src="img/ao-lockup-white.png" alt="AO Travel &amp; Experiences Official Reseller"><span class="rule"></span><img class="days" src="img/days-wordmark.png" alt="DAYS"><span class="n">01/05</span></header>
-  <div class="badge"><i></i>Now official</div>
-  <div class="copy">
-    <p class="eyebrow">Australian Open 2027 · Melbourne</p>
-    <h1>Experience the game <em>closer.</em></h1>
-  </div>
-  <footer class="ftr"><span>11–31 Jan 2027</span><span class="swipe">Swipe</span></footer>
-</section>
 
 <!-- 02 — The positioning -->
 <section class="slide s2">
@@ -120,7 +122,7 @@ h1,h2{font-weight:800;letter-spacing:-.025em;line-height:.95}
     <rect x="770" y="186" width="250" height="56" rx="28" fill="#EC5B39"/>
     <text x="895" y="222" text-anchor="middle" font-family="JetBrains Mono" font-weight="500" font-size="19" letter-spacing="2.5" fill="#fff">LOWER LEVEL</text>
   </svg>
-  <header class="hdr"><img class="ao" src="img/ao-lockup-white.png" alt=""><span class="rule"></span><img class="days" src="img/days-wordmark.png" alt="DAYS"><span class="n">02/05</span></header>
+  <header class="hdr"><img class="days" src="img/days-wordmark.png" alt="DAYS"><span class="n">02/09</span></header>
   <div class="copy">
     <p class="eyebrow">Rod Laver Arena · Night session</p>
     <h2>Not all seats are created <span>equal.</span></h2>
@@ -131,7 +133,7 @@ h1,h2{font-weight:800;letter-spacing:-.025em;line-height:.95}
 
 <!-- 03 — The access -->
 <section class="slide s3">
-  <header class="hdr"><img class="ao" src="img/ao-lockup-white.png" alt=""><span class="rule"></span><img class="days" src="img/days-wordmark.png" alt="DAYS"><span class="n">03/05</span></header>
+  <header class="hdr"><img class="days" src="img/days-wordmark.png" alt="DAYS"><span class="n">03/09</span></header>
   <svg class="map" width="900" height="520" viewBox="0 0 900 520" aria-hidden="true">
     <g transform="translate(450 260) scale(.8)">
       <rect x="-350" y="-310" width="700" height="620" rx="280" fill="none" stroke="rgba(255,255,255,.22)" stroke-width="2"/>
@@ -167,7 +169,7 @@ h1,h2{font-weight:800;letter-spacing:-.025em;line-height:.95}
 <!-- 04 — Beyond the court -->
 <section class="slide s4">
   <div class="photo"></div>
-  <header class="hdr"><img class="ao" src="img/ao-lockup-white.png" alt=""><span class="rule"></span><img class="days" src="img/days-wordmark.png" alt="DAYS"><span class="n">04/05</span></header>
+  <header class="hdr"><img class="days" src="img/days-wordmark.png" alt="DAYS"><span class="n">04/09</span></header>
   <div class="copy">
     <p class="eyebrow">Beyond the court</p>
     <h2>Make a trip out of it.</h2>
@@ -181,27 +183,21 @@ h1,h2{font-weight:800;letter-spacing:-.025em;line-height:.95}
   <footer class="ftr"><span>Melbourne, Australia</span><span class="swipe">Swipe</span></footer>
 </section>
 
-<!-- 05 — The package -->
-<section class="slide s5">
-  <div class="band"></div>
-  <header class="hdr"><img class="ao" src="img/ao-lockup-white.png" alt=""><span class="rule"></span><img class="days" src="img/days-wordmark.png" alt="DAYS"><span class="n">05/05</span></header>
+<!-- 05 — Choose your round (leads into the four approved package cards) -->
+<section class="slide s6">
+  <header class="hdr"><img class="days" src="img/days-wordmark.png" alt="DAYS"><span class="n">05/09</span></header>
   <div class="copy">
-    <p class="eyebrow">Quarterfinals · Men &amp; Women</p>
-    <h2>The Quarterfinal Nights</h2>
-    <p class="dates">25–28 JAN 2027 · TWO MATCHES. BOTH DRAWS.</p>
+    <p class="eyebrow">Australian Open 2027 · Packages</p>
+    <h2>Choose your round.</h2>
+    <p class="lede">Four ways in. Every one with a <b>lower level seat</b> at Rod Laver Arena and access to <b>AO Reserve — The Gallery.</b></p>
     <ol>
-      <li><span>01</span><div>Two night sessions at Rod Laver Arena<small>One men's and one women's quarterfinal</small></div></li>
-      <li><span>02</span><div>Lower level seat, close to the court</div></li>
-      <li><span>03</span><div>Exclusive access to AO Reserve — The Gallery</div></li>
-      <li><span>04</span><div>4 days, 3 nights at Hilton Melbourne<small>Five-star stay, between sessions</small></div></li>
+      <li><span>QF</span><div>Quarterfinals<small>Men &amp; Women · 25–28 Jan</small></div><em>IDR 49.8 jt</em></li>
+      <li><span>SF</span><div>Semifinals<small>Men &amp; Women · 28–31 Jan</small></div><em>IDR 69.8 jt</em></li>
+      <li><span>F</span><div>Finals<small>Men &amp; Women · 29 Jan – 1 Feb</small></div><em>IDR 119.8 jt</em></li>
+      <li><span>SF+F</span><div>Semifinal + Final<small>Men &amp; Women · flights from Jakarta included</small></div><em>IDR 159.8 jt</em></li>
     </ol>
-    <div class="price">
-      <div class="k">Per person<br>Package price</div>
-      <div class="v">IDR 49.800.000<small>/ PERSON</small></div>
-    </div>
   </div>
-  <div class="cta"><span>Enquire via DM or <b>WhatsApp +62 812-2000-0185</b></span><span>talkaboutdays.com</span></div>
+  <div class="cta"><span>Enquire via DM or <b>WhatsApp +62 812-2000-0185</b></span><span class="swipe">Details</span></div>
 </section>
-
 </body>
 </html>

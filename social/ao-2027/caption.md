@@ -1,15 +1,20 @@
-# DAYS × Australian Open 2027 — Instagram carousel
+# DAYS × Australian Open 2027 — launch carousel
 
-**Format:** 5-slide carousel, 1080 × 1350 (4:5). Final PNGs are in `export/`.
-**To edit:** change `slides.html`, then run `node render.js` (pass `2` for 2× exports).
+**Format:** 9-slide Instagram carousel, 4:5. Upload the files in `export/` in filename order.
+**Logo rule:** the AO Travel & Experiences logo appears only on the AO-approved assets (`approved/`), which are copied byte-for-byte and never edited. DAYS-made slides carry the DAYS wordmark only.
+**To edit the DAYS slides:** change `slides.html`, then run `node render.js` (pass `2` for 2× exports). This also re-copies the approved assets into `export/`.
 
-| # | Slide | Job | Image |
-|---|---|---|---|
-| 01 | *Experience the game closer.* | The announcement: official reseller, now live | Overhead court shot (official asset) |
-| 02 | *Not all seats are created equal.* | The positioning: proximity is the product | Rod Laver Arena at sunset, lower level marked |
-| 03 | *Closer, officially.* | The access: official AO Travel & Experiences reseller | New graphic: lower bowl seating diagram |
-| 04 | *Make a trip out of it.* | Beyond the court: Melbourne in January | Degraves Street |
-| 05 | *The Quarterfinal Nights* | The package: inclusions, price, enquiry | Courtside from the stands |
+| # | Slide | Source |
+|---|---|---|
+| 01 | Cover: 11–31 January 2027, Melbourne | AO-approved |
+| 02 | *Not all seats are created equal.* | DAYS |
+| 03 | *Closer, officially.* (Rod Laver Arena seating) | DAYS |
+| 04 | *Make a trip out of it.* (Melbourne) | DAYS |
+| 05 | *Choose your round.* (the four packages + enquiry) | DAYS |
+| 06 | Quarterfinals · 25–28 Jan · IDR 49.800.000 | AO-approved |
+| 07 | Semifinals · 28–31 Jan · IDR 69.800.000 | AO-approved |
+| 08 | Finals · 29 Jan – 1 Feb · IDR 119.800.000 | AO-approved |
+| 09 | Semifinal + Final · flights included · IDR 159.800.000 | AO-approved |
 
 ---
 
@@ -23,8 +28,11 @@ Lower level at Rod Laver Arena. Night sessions under the lights. Access to AO Re
 
 You're not just watching tennis. You're experiencing the Australian Open differently.
 
-The Quarterfinal Nights · 25–28 Jan 2027
-Two matches. Both draws. IDR 49.800.000 / person.
+Four ways in, from the quarterfinals to finals weekend:
+Quarterfinals · 25–28 Jan · IDR 49.800.000
+Semifinals · 28–31 Jan · IDR 69.800.000
+Finals · 29 Jan – 1 Feb · IDR 119.800.000
+Semifinal + Final, flights from Jakarta included · IDR 159.800.000
 
 DM us or WhatsApp +62 812-2000-0185 to enquire.
 
@@ -40,22 +48,12 @@ Lower level di Rod Laver Arena. Night session di bawah lampu stadion. Akses ke A
 
 Bukan sekadar nonton tenis. Ini cara lain merasakan Australian Open.
 
-The Quarterfinal Nights · 25–28 Jan 2027
-Dua pertandingan. Dua draw. IDR 49.800.000 / orang.
+Empat pilihan, dari perempat final sampai final:
+Quarterfinals · 25–28 Jan · IDR 49.800.000
+Semifinals · 28–31 Jan · IDR 69.800.000
+Finals · 29 Jan – 1 Feb · IDR 119.800.000
+Semifinal + Final, termasuk tiket pesawat dari Jakarta · IDR 159.800.000
 
 DM atau WhatsApp +62 812-2000-0185 untuk info lebih lanjut.
 
 ---
-
-## Package name options
-
-Slide 05 uses **The Quarterfinal Nights**. Alternatives:
-
-- **The Quarterfinal Nights**: says exactly what it is (two QF night sessions) and still reads like a poster.
-- **Closer: AO27**: ties the package name to the campaign line; works as a series name if more AO packages follow.
-- **Lower Level**: borrows the seat itself as the name. Confident and a bit insider.
-- **After Dark: Melbourne**: matches the *After Hours: Amsterdam* naming family; leans on the night sessions.
-
-## Stories
-
-The official assets are 9:16. Slides 01 and 05 adapt cleanly to stories if needed.
