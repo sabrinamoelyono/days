@@ -10,6 +10,7 @@ Two Instagram posts, both 4:5 carousels. Post the announcement first, then the p
 Upload each folder's files in filename order.
 
 **Wording:** always "AO Travel & Experiences official reseller", exactly as written.
+**Photos:** never covered and never placed over text or another photo, including the player cut-outs. Photos and type sit in separate areas.
 **Approved assets:** the AO cover and the four package cards are AO-approved and must not be revised or altered in any way: no cropping, resizing, re-exporting, overlays or added text. `render.js` copies them byte-for-byte from `approved/`. The AO Travel & Experiences logo appears only on these. DAYS-made slides carry no logos: the DAYS logo only appears alongside the AO logo, on the approved assets.
 **Fonts:** titles in Sequel 100 Wide 85, everything else in Sharp Sans No. 2 Bold. These are licensed fonts and this repository is public, so they are not committed: put `Sequel100Wide-85.ttf` and `SharpSans-No2-Bold.otf` in `fonts/` (git-ignored) before rendering.
 **To edit the DAYS slides:** change `slides.html`, then run `node render.js` (pass `2` for 2× exports). This rebuilds both post folders and re-copies the approved assets.
@@ -62,7 +63,7 @@ DM kami atau WhatsApp +62 812-2000-0185.
 
 | # | Slide | Source |
 |---|---|---|
-| 01 | Cover: *Choose your round*, player cutouts over the crowd | DAYS, built from official AO imagery |
+| 01 | Cover: *Choose your round*, two player cut-outs, nothing overlapping | DAYS, built from official AO imagery |
 | 02 | Quarterfinals · Men & Women · 25–28 Jan 2027 | AO-approved |
 | 03 | Semifinals · Men & Women · 28–31 Jan 2027 | AO-approved |
 | 04 | Finals · Men & Women · 29 Jan – 1 Feb 2027 | AO-approved |

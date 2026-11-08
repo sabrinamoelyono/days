@@ -41,6 +41,8 @@ Every package is named and curated, not sold off a shelf.
 
 **AO Travel & Experiences:** whenever the AO Travel & Experiences (Official Reseller) logo appears, use the file exactly as supplied in the official asset pack. Don't redraw, recolour, re-cut or extract it from another graphic, and don't change its background or proportions. In copy, the status is always written exactly as **"AO Travel & Experiences official reseller"**.
 
+**Photos:** photos (including player cut-outs) are never covered. No text, graphics, gradients or other images on top of them, and they are never placed over text or over another photo. Keep photos and type in separate areas of the layout.
+
 ## Colour
 
 | Token | Hex | Use | Contrast |
