@@ -2,6 +2,7 @@
 
 **Format:** 9-slide Instagram carousel, 4:5. Upload the files in `export/` in filename order.
 **Approved assets:** slides 01 and 06–09 are AO-approved and must not be revised or altered in any way: no cropping, resizing, re-exporting, overlays or added text. `render.js` copies them byte-for-byte from `approved/`. The AO Travel & Experiences logo appears only on these. DAYS-made slides (02–05) carry no logos: the DAYS logo only appears alongside the AO logo, on the approved assets.
+**Fonts:** titles in Sequel 100 Wide 85, everything else in Sharp Sans No. 2 Bold. These are licensed fonts and this repository is public, so they are not committed: put `Sequel100Wide-85.ttf` and `SharpSans-No2-Bold.otf` in `fonts/` (git-ignored) before rendering.
 **To edit the DAYS slides:** change `slides.html`, then run `node render.js` (pass `2` for 2× exports). This also re-copies the approved assets into `export/`.
 
 | # | Slide | Source |

@@ -64,6 +64,10 @@ Dark mode inverts Ink and Paper and lifts the orange slightly (`#F26A49` / `#FF8
 
 Headlines are set tight (letter-spacing −0.01 to −0.02em) and bold. Body copy stays at comfortable line height (1.5–1.6) — the brand is confident, not loud.
 
+### Campaign fonts: AO Travel & Experiences
+
+Content made with AO Travel & Experiences uses **Sequel 100 Wide 85** for titles and **Sharp Sans No. 2 Bold** for all other text, matching the approved AO assets. Both are licensed fonts: keep the files out of this public repository.
+
 ## Voice
 
 **Personality:**
