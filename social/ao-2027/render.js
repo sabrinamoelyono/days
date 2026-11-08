@@ -6,6 +6,7 @@
 const { chromium } = require('playwright');
 const path = require('path');
 const fs = require('fs');
+const { execFileSync } = require('child_process');
 
 const posts = {
   'post-1-announcement': { approved: { '01': 'AO27-cover.webp' }, days: { '02': '2', '03': '3', '04': '4', '05': '5' } },
@@ -16,7 +17,8 @@ const posts = {
       '04': 'AO27-finals.png',
       '05': 'AO27-semifinal-final.png',
     },
-    days: { '01': 'c2' }, // cover: needs the official AO × DAYS lockup added before posting
+    days: {},
+    cover: { '01': 'c2' }, // rendered at 1485×1856, then the official lockup is placed by place_lockup.py
   },
 };
 
@@ -42,6 +44,15 @@ const posts = {
       const el = await p.$(`.slide[data-id="${id}"]`);
       if (!el) throw new Error(`no slide with data-id="${id}"`);
       await el.screenshot({ path: path.join(out, `${n}-DAYS.png`) });
+    }
+    for (const [n, id] of Object.entries(post.cover || {})) {
+      const cp = await b.newPage({ viewport: { width: 1080, height: 1350 }, deviceScaleFactor: 1485 / 1080 });
+      await cp.goto('file://' + path.join(__dirname, 'slides.html'), { waitUntil: 'networkidle' });
+      await cp.evaluate(() => document.fonts.ready);
+      const file = path.join(out, `${n}-DAYS-cover.png`);
+      await (await cp.$(`.slide[data-id="${id}"]`)).screenshot({ path: file });
+      await cp.close();
+      execFileSync('python3', [path.join(__dirname, 'place_lockup.py'), file], { cwd: __dirname, stdio: 'inherit' });
     }
   }
   await b.close();

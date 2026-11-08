@@ -39,7 +39,7 @@ Every package is named and curated, not sold off a shelf.
 
 ### Partner logos
 
-**AO Travel & Experiences:** whenever the AO Travel & Experiences (Official Reseller) logo appears, use the file exactly as supplied in the official asset pack. Don't redraw, recolour, re-cut or extract it from another graphic, and don't change its background or proportions. In copy, the status is always written exactly as **"AO Travel & Experiences official reseller"**.
+**AO Travel & Experiences:** whenever the AO Travel & Experiences (Official Reseller) logo appears, use the file exactly as supplied in the official asset pack, or an unaltered pixel copy of the lockup from an AO-approved asset (same pixels, same size, with its original background). Don't redraw, recolour or scale it, and don't remove or change its background. In copy, the status is always written exactly as **"AO Travel & Experiences official reseller"**.
 
 **Photos:** photos (including player cut-outs) are never covered. No text, graphics, gradients or other images on top of them, and they are never placed over text or over another photo. Keep photos and type in separate areas of the layout.
 

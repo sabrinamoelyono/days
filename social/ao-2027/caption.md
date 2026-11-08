@@ -69,7 +69,7 @@ DM kami atau WhatsApp +62 812-2000-0185.
 | 04 | Finals · Men & Women · 29 Jan – 1 Feb 2027 | AO-approved |
 | 05 | Semifinal + Final · Men & Women | AO-approved |
 
-**Before posting the Post 2 cover:** the top of the cover is left clear for the AO Travel & Experiences × DAYS logo lockup. It must be the official lockup file, placed unedited. Because the cover is new and carries the AO logo and AO imagery, send it to AO for approval like the other assets.
+**Post 2 cover logos:** the AO Travel & Experiences × DAYS lockup is copied pixel-for-pixel from the approved cover (`place_lockup.py`): same pixels, same size and position, on its original black background. The cover is exported at 1485 × 1856, the same size as the approved assets. Because the cover itself is new and carries AO imagery and the AO logo, send it to AO for approval before posting.
 
 ## Caption (English)
 
