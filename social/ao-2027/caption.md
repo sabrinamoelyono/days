@@ -9,10 +9,17 @@ Two Instagram posts, both 4:5 carousels. Post the announcement first, then the p
 
 Upload each folder's files in filename order.
 
-**Wording:** always "AO Travel & Experiences official reseller", exactly as written.
-**Photos:** never covered and never placed over text or another photo, including the player cut-outs. Photos and type sit in separate areas.
-**Approved assets:** the AO cover and the four package cards are AO-approved and must not be revised or altered in any way: no cropping, resizing, re-exporting, overlays or added text. `render.js` copies them byte-for-byte from `approved/`. The AO Travel & Experiences logo appears only on these. DAYS-made slides carry no logos: the DAYS logo only appears alongside the AO logo, on the approved assets.
-**Fonts:** titles in Sequel 100 Wide 85, everything else in Sharp Sans No. 2 Bold. These are licensed fonts and this repository is public, so they are not committed: put `Sequel100Wide-85.ttf` and `SharpSans-No2-Bold.otf` in `fonts/` (git-ignored) before rendering.
+**AO rules** (AOTE Reseller Brand & Language Guidelines 2026 + AO feedback; summarised in `DESIGN.md`):
+- Every slide carries the AO Travel & Experiences Official Reseller logo with the DAYS logo. DAYS slides use AO's official white logo file, unaltered (`brand/`, extracted from the guidelines PDF).
+- Accent colour is AO Process Blue `#0091D2`. No DAYS orange.
+- Headings are capitalised, in Sequel 100 Wide. Body copy in Sharp Sans Bold.
+- Photos are shown whole: never cropped, covered, or placed over text or another photo.
+- No custom maps: slide 03 uses the official Rod Laver Arena seating map, whole and unaltered.
+- Wording: always "AO Travel & Experiences official reseller".
+- The AO cover and the four package cards are AO-approved and are never revised or altered. `render.js` copies them byte-for-byte from `approved/`.
+- Approval: submit all artwork and copy to AO Travel & Experiences via Hightail (copy as Word: `AO27-captions-for-approval.docx`) at least five business days before posting.
+
+**Licensed files are not committed** (this repository is public): put `Sequel100Wide-85.ttf` and `SharpSans-No2-Bold.otf` in `fonts/`, and AO's logo files `AOTE-official-reseller-white.png` and `AOTE-official-reseller-black.png` in `brand/`, before rendering. Both folders are git-ignored.
 **To edit the DAYS slides:** change `slides.html`, then run `node render.js` (pass `2` for 2× exports). This rebuilds both post folders and re-copies the approved assets.
 
 **Caption language:** each post has one bilingual caption, English first and Bahasa Indonesia below, separated by a dash line. Both fit under Instagram's 2,200-character limit.
@@ -24,10 +31,10 @@ Upload each folder's files in filename order.
 | # | Slide | Source |
 |---|---|---|
 | 01 | Cover: 11–31 January 2027, Melbourne | AO-approved |
-| 02 | *For those who want to experience the game closer.* over the Rod Laver Arena photo | DAYS |
-| 03 | *Not all seats are created equal.* + seating map + official reseller copy | DAYS |
-| 04 | *Make a trip out of it.* (Melbourne) | DAYS |
-| 05 | *Choose your round.* (the four packages + enquiry) | DAYS |
+| 02 | *FOR THOSE WHO WANT TO EXPERIENCE THE GAME CLOSER.* with the Rod Laver Arena photo | DAYS |
+| 03 | *NOT ALL SEATS ARE CREATED EQUAL.* with the official Rod Laver Arena seating map | DAYS |
+| 04 | *MAKE A TRIP OUT OF IT.* (Melbourne) | DAYS |
+| 05 | *CHOOSE YOUR ROUND.* (the four packages + enquiry) | DAYS |
 
 ## Caption (English + Bahasa Indonesia, ready to post)
 
@@ -63,13 +70,11 @@ DM kami atau WhatsApp +62 812-2000-0185.
 
 | # | Slide | Source |
 |---|---|---|
-| 01 | Cover: *Choose your round*, two player cut-outs, nothing overlapping | DAYS, built from official AO imagery |
+| 01 | Cover: *CHOOSE YOUR ROUND*, two player cut-outs, nothing overlapping | DAYS, built from official AO imagery |
 | 02 | Quarterfinals · Men & Women · 25–28 Jan 2027 | AO-approved |
 | 03 | Semifinals · Men & Women · 28–31 Jan 2027 | AO-approved |
 | 04 | Finals · Men & Women · 29 Jan – 1 Feb 2027 | AO-approved |
 | 05 | Semifinal + Final · Men & Women | AO-approved |
-
-**Post 2 cover logos:** the AO Travel & Experiences × DAYS lockup is copied pixel-for-pixel from the approved cover (`place_lockup.py`): same pixels, same size and position, on its original black background. The cover is exported at 1485 × 1856, the same size as the approved assets. Because the cover itself is new and carries AO imagery and the AO logo, send it to AO for approval before posting.
 
 ## Caption (English + Bahasa Indonesia, ready to post)
 

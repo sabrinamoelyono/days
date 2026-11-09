@@ -1,15 +1,17 @@
 // Builds the two AO 2027 launch posts into ./export:
 //   post-1-announcement/  01 = AO-approved cover, 02–05 = DAYS slides rendered from slides.html
-//   post-2-packages/      01 = DAYS cover (player cutouts), 02–05 = the four AO-approved package cards
+//   post-2-packages/      01 = DAYS cover (player cut-outs), 02–05 = the four AO-approved package cards
 // Approved assets are copied byte-for-byte and never edited.
 // Usage: node render.js [deviceScaleFactor]   (needs the licensed fonts in ./fonts — see caption.md)
 const { chromium } = require('playwright');
 const path = require('path');
 const fs = require('fs');
-const { execFileSync } = require('child_process');
 
 const posts = {
-  'post-1-announcement': { approved: { '01': 'AO27-cover.webp' }, days: { '02': '2', '03': '3', '04': '4', '05': '5' } },
+  'post-1-announcement': {
+    approved: { '01': 'AO27-cover.webp' },
+    days: { '02': '2', '03': '3', '04': '4', '05': '5' },
+  },
   'post-2-packages': {
     approved: {
       '02': 'AO27-quarterfinals.png',
@@ -17,8 +19,7 @@ const posts = {
       '04': 'AO27-finals.png',
       '05': 'AO27-semifinal-final.png',
     },
-    days: {},
-    cover: { '01': 'c2' }, // rendered at 1485×1856, then the official lockup is placed by place_lockup.py
+    days: { '01': 'c2' },
   },
 };
 
@@ -44,15 +45,6 @@ const posts = {
       const el = await p.$(`.slide[data-id="${id}"]`);
       if (!el) throw new Error(`no slide with data-id="${id}"`);
       await el.screenshot({ path: path.join(out, `${n}-DAYS.png`) });
-    }
-    for (const [n, id] of Object.entries(post.cover || {})) {
-      const cp = await b.newPage({ viewport: { width: 1080, height: 1350 }, deviceScaleFactor: 1485 / 1080 });
-      await cp.goto('file://' + path.join(__dirname, 'slides.html'), { waitUntil: 'networkidle' });
-      await cp.evaluate(() => document.fonts.ready);
-      const file = path.join(out, `${n}-DAYS-cover.png`);
-      await (await cp.$(`.slide[data-id="${id}"]`)).screenshot({ path: file });
-      await cp.close();
-      execFileSync('python3', [path.join(__dirname, 'place_lockup.py'), file], { cwd: __dirname, stdio: 'inherit' });
     }
   }
   await b.close();

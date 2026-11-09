@@ -37,11 +37,17 @@ Every package is named and curated, not sold off a shelf.
 - Don't stretch, skew or rotate it.
 - Don't place it on a background that drops its contrast (busy photography, low-contrast tints).
 
-### Partner logos
+### AO Travel & Experiences reseller content
 
-**AO Travel & Experiences:** whenever the AO Travel & Experiences (Official Reseller) logo appears, use the file exactly as supplied in the official asset pack, or an unaltered pixel copy of the lockup from an AO-approved asset (same pixels, same size, with its original background). Don't redraw, recolour or scale it, and don't remove or change its background. In copy, the status is always written exactly as **"AO Travel & Experiences official reseller"**.
+Anything DAYS makes as an AO Travel & Experiences official reseller follows the **AOTE Reseller Brand & Language Guidelines** and AO's feedback, which override the DAYS rules in this document wherever they differ:
 
-**Photos:** photos (including player cut-outs) are never covered. No text, graphics, gradients or other images on top of them, and they are never placed over text or over another photo. Keep photos and type in separate areas of the layout.
+- **Logo on everything.** No content goes out without the AO Travel & Experiences Official Reseller logo. Use the official file, unaltered (the white and black versions are embedded in the guidelines PDF). Place it in a clear area, never over the main content of a photo, and never below 100px wide on screen. Pair it with the DAYS logo as on AO's approved assets.
+- **Colour.** AO Process Blue `#0091D2` for accents. DAYS Orange is not used in AO content.
+- **Headings** in Sequel 100 Wide, always capitalised. Body copy in Sharp Sans Bold or Medium.
+- **Imagery.** Only images supplied in the AO kit. Don't crop, recolour or alter them. Photos (including player cut-outs) are never covered by text or graphics and never placed over text or another photo.
+- **Maps.** No custom seating maps or diagrams. Use the official Rod Laver Arena map as supplied, or none.
+- **Wording.** Write the status exactly as **"AO Travel & Experiences official reseller"**. Always "&", never "and", in "AO Travel & Experiences". "Quarterfinals" and "Semifinals" are one word.
+- **Approval.** All artwork and copy go to AO Travel & Experiences for approval via Hightail (copy as a Word document) at least five business days before posting.
 
 ## Colour
 
@@ -65,10 +71,6 @@ Dark mode inverts Ink and Paper and lifts the orange slightly (`#F26A49` / `#FF8
 - **Data / numbers / references:** JetBrains Mono, for registration numbers, decree references, dates and figures — anywhere precision matters more than warmth
 
 Headlines are set tight (letter-spacing −0.01 to −0.02em) and bold. Body copy stays at comfortable line height (1.5–1.6) — the brand is confident, not loud.
-
-### Campaign fonts: AO Travel & Experiences
-
-Content made with AO Travel & Experiences uses **Sequel 100 Wide 85** for titles and **Sharp Sans No. 2 Bold** for all other text, matching the approved AO assets. Both are licensed fonts: keep the files out of this public repository.
 
 ## Voice
 
