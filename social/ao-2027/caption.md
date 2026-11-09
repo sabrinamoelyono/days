@@ -4,8 +4,8 @@ Two Instagram posts, both 4:5 carousels. Post the announcement first, then the p
 
 | Post | Folder | Slides |
 |---|---|---|
-| 1. Announcement | `export/post-1-announcement/` | 5 |
-| 2. Packages | `export/post-2-packages/` | 5 |
+| 1. Announcement | `export/post-1-announcement/` | 6 |
+| 2. Packages | `export/post-2-packages/` | 6 |
 
 Upload each folder's files in filename order.
 
@@ -16,7 +16,7 @@ Upload each folder's files in filename order.
 - Photos are shown whole: never cropped, covered, or placed over text or another photo.
 - No custom maps: slide 03 uses the official Rod Laver Arena seating map, whole and unaltered.
 - Wording: always "AO Travel & Experiences official reseller".
-- The AO cover and the four package cards are AO-approved and are never revised or altered. `render.js` copies them byte-for-byte from `approved/`.
+- The AO cover, the four package cards and the end card are AO-approved and are never revised or altered. `render.js` copies them byte-for-byte from `approved/`.
 - Approval: submit all artwork and copy to AO Travel & Experiences via Hightail (copy as Word: `AO27-captions-for-approval.docx`) at least five business days before posting.
 
 **Licensed files are not committed** (this repository is public): put `Sequel100Wide-85.ttf` and `SharpSans-No2-Bold.otf` in `fonts/`, and AO's logo files `AOTE-official-reseller-white.png` and `AOTE-official-reseller-black.png` in `brand/`, before rendering. Both folders are git-ignored.
@@ -35,6 +35,7 @@ Upload each folder's files in filename order.
 | 03 | *NOT ALL SEATS ARE CREATED EQUAL.* with the official Rod Laver Arena seating map | DAYS |
 | 04 | *MAKE A TRIP OUT OF IT.* (Melbourne) | DAYS |
 | 05 | *CHOOSE YOUR ROUND.* (the four packages + enquiry) | DAYS |
+| 06 | End card: *EXPERIENCE AUSTRALIAN OPEN 2027* over the crowd | AO-approved |
 
 ## Caption (English + Bahasa Indonesia, ready to post)
 
@@ -75,6 +76,7 @@ DM kami atau WhatsApp +62 812-2000-0185.
 | 03 | Semifinals · Men & Women · 28–31 Jan 2027 | AO-approved |
 | 04 | Finals · Men & Women · 29 Jan – 1 Feb 2027 | AO-approved |
 | 05 | Semifinal + Final · Men & Women | AO-approved |
+| 06 | End card: *EXPERIENCE AUSTRALIAN OPEN 2027* over the crowd | AO-approved |
 
 ## Caption (English + Bahasa Indonesia, ready to post)
 
