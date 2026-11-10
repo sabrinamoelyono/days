@@ -44,7 +44,7 @@ Anything DAYS makes as an AO Travel & Experiences official reseller follows the 
 - **Logo on everything.** No content goes out without the AO Travel & Experiences Official Reseller logo. Use the official file, unaltered (the white and black versions are embedded in the guidelines PDF). Place it in a clear area, never over the main content of a photo, and never below 100px wide on screen. Pair it with the DAYS logo as on AO's approved assets.
 - **Colour.** AO Process Blue `#0091D2` for accents. DAYS Orange is not used in AO content.
 - **Headings** in Sequel 100 Wide, always capitalised. Body copy in Sharp Sans Bold or Medium.
-- **Imagery.** Only images supplied in the AO kit. Don't crop, recolour or alter them. Photos (including player cut-outs) are never covered by text or graphics and never placed over text or another photo.
+- **Imagery.** Only images supplied in the AO kit. Don't crop, recolour or alter them. Photos are never covered by text or graphics and never placed over text. Player cut-outs may overlap one another, as long as no text sits on them.
 - **Maps.** No custom seating maps or diagrams. Use the official Rod Laver Arena map as supplied, or none.
 - **Wording.** Write the status exactly as **"AO Travel & Experiences official reseller"**. Always "&", never "and", in "AO Travel & Experiences". "Quarterfinals" and "Semifinals" are one word.
 - **Approval.** All artwork and copy go to AO Travel & Experiences for approval via Hightail (copy as a Word document) at least five business days before posting.
