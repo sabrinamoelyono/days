@@ -13,7 +13,7 @@ Upload each folder's files in filename order.
 - Every slide carries the AO Travel & Experiences Official Reseller logo with the DAYS logo. DAYS slides use AO's official white logo file, unaltered (`brand/`, extracted from the guidelines PDF).
 - Accent colour is AO Process Blue `#0091D2`. No DAYS orange.
 - Headings are capitalised, in Sequel 100 Wide. Body copy in Sharp Sans Bold.
-- Photos are shown whole: never cropped, covered, or placed over text or another photo.
+- Photos are shown whole: never cropped, never covered by text, never placed over text. Player cut-outs may overlap one another.
 - No custom maps: slide 03 uses the official Rod Laver Arena seating map, whole and unaltered.
 - Wording: always "AO Travel & Experiences official reseller".
 - The AO cover, the four package cards and the end card are AO-approved and are never revised or altered. `render.js` copies them byte-for-byte from `approved/`.
