@@ -70,12 +70,11 @@ h2 em{font-style:normal;color:var(--blue)}
 
 /* ---------- post 2 cover ---------- */
 .c2{background:radial-gradient(70% 45% at 50% 66%,rgba(0,145,210,.30) 0,rgba(11,16,80,.25) 50%,rgba(0,0,0,0) 80%),#000}
-.c2 h1{position:absolute;left:72px;right:72px;top:290px;font-size:90px;line-height:1.04;text-align:center}
-.c2 .players{position:absolute;left:72px;right:72px;top:530px;height:650px;display:flex;justify-content:center;align-items:flex-end;gap:40px}
-.c2 .players img{display:block}
-.c2 .pa{height:650px}
-.c2 .pb{height:440px}
-.c2 .meta{position:absolute;left:72px;right:72px;top:1196px;display:flex;justify-content:space-between;align-items:flex-start;font-size:38px;line-height:1.12;padding-top:24px;border-top:2px solid rgba(255,255,255,.25)}
+.c2 h1{position:absolute;left:72px;right:72px;top:262px;font-size:80px;line-height:1.04;text-align:center}
+.c2 .players{position:absolute;left:40px;right:40px;top:470px;height:716px;display:flex;flex-direction:column;justify-content:space-between}
+.c2 .row{height:346px;display:flex;justify-content:center;align-items:flex-end;gap:14px;border-bottom:2px solid rgba(255,255,255,.25)}
+.c2 .row img{display:block;height:100%;width:auto}
+.c2 .meta{position:absolute;left:72px;right:72px;top:1210px;display:flex;justify-content:space-between;align-items:flex-start;font-size:36px;line-height:1.12}
 .c2 .meta .r{text-align:right}
 </style>
 </head>
@@ -85,7 +84,10 @@ h2 em{font-style:normal;color:var(--blue)}
 <section class="slide c2" data-id="c2">
   <div class="lockup"><img class="ao" src="brand/AOTE-official-reseller-white.png" alt="AO Travel &amp; Experiences Official Reseller"><img class="days" src="img/days-wordmark.png" alt="DAYS"></div>
   <h1>Choose<br>your round</h1>
-  <div class="players"><img class="pa" src="img/player-a-trim.png" alt=""><img class="pb" src="img/player-b-trim.png" alt=""></div>
+  <div class="players">
+    <div class="row"><img src="img/player-m-alcaraz.png" alt=""><img src="img/player-a-trim.png" alt=""><img src="img/player-m-sinner.png" alt=""><img src="img/player-w-gauff.png" alt=""></div>
+    <div class="row"><img src="img/player-m-shelton.png" alt=""><img src="img/player-b-trim.png" alt=""><img src="img/player-m-4.png" alt=""></div>
+  </div>
   <div class="meta"><span>Quarterfinals to Finals<br>25 Jan – 1 Feb 2027</span><span class="r">Melbourne,<br>Australia</span></div>
 </section>
 

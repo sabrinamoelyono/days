@@ -71,7 +71,7 @@ DM kami atau WhatsApp +62 812-2000-0185.
 
 | # | Slide | Source |
 |---|---|---|
-| 01 | Cover: *CHOOSE YOUR ROUND*, two player cut-outs, nothing overlapping | DAYS, built from official AO imagery |
+| 01 | Cover: *CHOOSE YOUR ROUND*, seven player cut-outs (four men, three women) in two rows, nothing overlapping | DAYS, built from official AO imagery |
 | 02 | Quarterfinals · Men & Women · 25–28 Jan 2027 | AO-approved |
 | 03 | Semifinals · Men & Women · 28–31 Jan 2027 | AO-approved |
 | 04 | Finals · Men & Women · 29 Jan – 1 Feb 2027 | AO-approved |
