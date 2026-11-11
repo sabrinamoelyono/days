@@ -1,0 +1,19 @@
+/* ---------- A4 portrait edition ----------
+   Design width stays 1080px; the page grows to A4 proportions (1080 x 1527)
+   and the whole document is zoomed to 794px wide (A4 at 96 dpi). */
+@page { size: A4; margin: 0; }
+body.a4 { zoom: 0.73519; }
+.a4 .page { height: 1527px; }
+
+.a4 .cover { grid-template-rows: 690px 1fr; }
+.a4 .wide.tall img { height: 620px; }
+.a4 .boat-grid { height: 930px; }
+.a4 .page4 .wide img { height: 400px; }
+.a4 .dives li { padding: 21px 0; }
+.a4 .wide.short img { height: 250px; }
+.a4 .inc { padding: 44px 0; }
+.a4 .inc li { font-size: 23px; padding: 7px 0 7px 26px; }
+.a4 .inc li::before { top: 20px; }
+.a4 .quote { margin-top: 80px; padding: 52px; }
+.a4 .q { font-size: 34px; }
+.a4 .contact div { padding: 22px 0; }

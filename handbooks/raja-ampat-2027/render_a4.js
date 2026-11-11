@@ -8,7 +8,7 @@ const path = require('path');
   await p.evaluate(() => document.fonts.ready);
   await p.pdf({ path: path.join(__dirname, 'DAYS_Raja_Ampat_2027_A4.pdf'), preferCSSPageSize: true, printBackground: true });
   if (process.argv[2]) {
-    await p.setViewportSize({ width: 1123, height: 794 });
+    await p.setViewportSize({ width: 794, height: 1123 });
     const pages = await p.$$('.page');
     for (let i = 0; i < pages.length; i++) await pages[i].screenshot({ path: `${process.argv[2]}/p${String(i + 1).padStart(2, '0')}.png` });
   }

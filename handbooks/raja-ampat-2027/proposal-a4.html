@@ -2,245 +2,311 @@
 <html lang="en"><head><meta charset="utf-8">
 <title>DAYS · Raja Ampat 2027 (A4)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,800;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>/* A4 landscape proposal — DAYS Brand Profile 2027 page system,
-   type pair from DESIGN.md (Inter Tight + JetBrains Mono). */
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,800;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>/* DAYS Brand Profile 2027 tokens (sampled from DAYS-Brand-Profile.pdf) */
 :root {
-  --orange: #EC5E30;
-  --navy: #2C2C65;
-  --nature: #9AB4D8;
-  --paper: #EDE3DE;
-  --lilac: #DFDCE4;
+  --orange: #EC5E30;     /* DAYS wordmark / City collection */
+  --navy: #2C2C65;       /* primary text, Music Festival collection */
+  --nature: #9AB4D8;     /* Nature collection */
+  --paper: #EFE4DF;      /* warm paper */
+  --peach: #EBA88E;      /* gradient glow */
   --text: #2C2C65;
-  --text-2: #4E4E7E;
-  --line: rgba(44, 44, 101, .25);
-  --card: rgba(250, 245, 242, .62);
-  --mono: "JetBrains Mono", ui-monospace, monospace;
+  --text-2: #55547F;     /* Bahasa / secondary lines */
+  --line: rgba(44, 44, 101, .22);
+  --card: rgba(255, 255, 255, .45);
 }
 
-@page { size: 1123px 794px; margin: 0; }
+@page { size: 1080px 1350px; margin: 0; }
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
-body { background: var(--paper); color: var(--text); font: 400 12.5px/1.6 "Inter Tight", system-ui, sans-serif; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-h1, h2, h3, p, ul, dl, dd, figure { margin: 0; }
-strong { font-weight: 600; }
+body {
+  background: var(--paper); color: var(--text);
+  font: 400 19px/1.6 "Inter Tight", system-ui, sans-serif;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact;
+}
+h1, h2, h3, p, ol, ul, dl, dd, figure { margin: 0; }
+/* Type: Inter Tight for display + body, JetBrains Mono for labels, dates and figures */
+h1, h2, h3, .q, .cover-sub { font-weight: 800; letter-spacing: -.025em; }
+.campaign { font-weight: 600; letter-spacing: -.01em; }
+.label, .run, .stops, .day-n, .amount, .fact-grid dt, .cover-facts dt, .contact dt, .foot { font-family: "JetBrains Mono", ui-monospace, monospace; }
 
-.page { width: 1123px; height: 794px; overflow: hidden; position: relative; page-break-after: always; break-after: page; padding: 40px 64px; background-color: var(--paper); }
+/* ---------- page frame: warm paper with soft collection-colour glows ---------- */
+.page {
+  width: 1080px; height: 1350px; overflow: hidden; position: relative;
+  page-break-after: always; break-after: page; padding: 0 80px;
+  background:
+    radial-gradient(60% 45% at 105% -5%, rgba(235,140,110,.55), transparent 70%),
+    radial-gradient(55% 45% at -10% 108%, rgba(154,180,216,.75), transparent 70%),
+    radial-gradient(40% 30% at 100% 100%, rgba(154,180,216,.35), transparent 70%),
+    var(--paper);
+}
 .page:last-child { page-break-after: auto; break-after: auto; }
-.page::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: url("img/grain.png"); }
-.page > * { position: relative; z-index: 1; }
+.run {
+  display: flex; justify-content: space-between; align-items: center; height: 104px;
+  font-size: 13px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase;
+}
+.body { padding-top: 40px; }
 
-.g-nature { background-color: var(--lilac); background-image: radial-gradient(40% 45% at 100% 100%, rgba(154,180,216,.9), transparent 70%); }
-.g-who    { background-image: radial-gradient(40% 55% at 100% 0%, rgba(236,120,90,.6), transparent 70%), radial-gradient(35% 45% at 0% 100%, rgba(154,180,216,.75), transparent 70%); }
-.g-arch   { background-color: var(--lilac); background-image: radial-gradient(35% 60% at 100% 40%, rgba(154,180,216,.9), transparent 70%), radial-gradient(30% 35% at 0% 100%, rgba(236,170,140,.55), transparent 70%); }
-.g-serv   { background-color: #EEE6DE; background-image: radial-gradient(30% 40% at 0% 0%, rgba(154,180,216,.7), transparent 70%), radial-gradient(35% 45% at 100% 100%, rgba(236,130,100,.6), transparent 70%); }
-.g-contact { background-image: linear-gradient(180deg, #E0663E 0%, #E8A88E 38%, #E8D4C6 62%, #E6D6CC 80%, #AEB5D8 100%); }
+.label { font-size: 13px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--text); margin-bottom: 18px; }
+.label span { color: var(--text-2); font-weight: 500; }
+.h { font-size: 68px; line-height: 1.02; letter-spacing: -.03em; margin-bottom: 26px; }
+.display { font-size: 108px; line-height: .95; letter-spacing: -.04em; }
+.campaign { font-size: 28px; margin: 18px 0 40px; }
+.lead { font-size: 25px; line-height: 1.5; margin-bottom: 22px; }
+.narrow { max-width: 840px; }
+p.id, .id { color: var(--text-2); font-size: 17px; line-height: 1.6; }
+p + p { margin-top: 0; }
 
-/* type */
-.topline { display: flex; justify-content: space-between; font-family: var(--mono); font-size: 8.5px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 28px; }
-.label { font-family: var(--mono); font-size: 8.5px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 10px; }
-.label span { color: var(--text-2); }
-.label.sm { font-size: 7.5px; margin-bottom: 4px; }
-.h { font-size: 32px; font-weight: 800; line-height: 1.05; letter-spacing: -.03em; margin-bottom: 12px; }
-.h.xl { font-size: 60px; line-height: .98; letter-spacing: -.04em; }
-.h3 { font-size: 22px; font-weight: 800; letter-spacing: -.025em; margin-bottom: 4px; }
-.sub { font-size: 13.5px; margin-bottom: 16px; }
-.lead { font-size: 15px; line-height: 1.5; margin-bottom: 10px; }
-p.id, .id { color: var(--text-2); font-size: 11px; }
-.card { background: var(--card); border-radius: 4px; }
-p + p { margin-top: 8px; }
+/* ---------- cover ---------- */
+.cover { padding: 0; display: grid; grid-template-rows: 560px 1fr; background: var(--nature); }
+.cover-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.cover-panel { padding: 64px 80px 72px; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto 1fr; gap: 0 60px; color: var(--navy); }
+.cover-panel .mark { width: 260px; grid-column: 1; }
+.cover-text { grid-column: 1; align-self: end; }
+.cover h1 { font-size: 128px; line-height: .9; letter-spacing: -.045em; margin: 6px 0 16px; }
+.cover-sub { font-size: 36px; line-height: 1.1; }
+.cover .id { color: #3B3F78; font-size: 19px; margin-top: 8px; }
+.cover-foot { grid-column: 2; grid-row: 1 / 3; display: flex; flex-direction: column; justify-content: space-between; }
+.waves { width: 280px; color: var(--navy); align-self: flex-end; }
+.cover-facts div { padding: 16px 0; border-top: 1.5px solid rgba(44,44,101,.35); }
+.cover-facts dt { font-size: 13px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; }
+.cover-facts dd { font-size: 24px; font-weight: 500; }
 
-/* 01 cover */
-.split { padding: 0; display: grid; grid-template-columns: 400px 1fr; }
-.panel { background: var(--nature); color: var(--navy); padding: 50px 62px 44px; display: flex; flex-direction: column; }
-.panel-mark { width: 216px; }
-.panel-line { margin-top: auto; font-size: 42px; font-weight: 800; letter-spacing: -.035em; line-height: 1.05; }
-.panel-motif { margin-top: auto; }
-.panel-motif svg { width: 242px; display: block; }
-.cover-r { display: grid; grid-template-rows: 470px 1fr; }
-.hero img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.cover-text { padding: 30px 56px 36px 50px; display: grid; grid-template-columns: 1fr 210px; gap: 30px; align-items: end; }
-.cover-text h1 { font-size: 64px; font-weight: 800; letter-spacing: -.045em; line-height: .95; }
-.cover-sub { font-size: 20px; font-weight: 600; letter-spacing: -.015em; margin: 6px 0 2px; }
-.mini div { padding: 6px 0; border-top: 1px solid var(--line); }
-.mini dt { font-family: var(--mono); font-size: 7.5px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; }
-.mini dd { font-weight: 600; font-size: 12px; }
+/* ---------- intro ---------- */
+.intro { display: grid; grid-template-columns: 1fr 340px; gap: 56px; padding-top: 48px; height: calc(1350px - 104px - 80px); }
+.intro p:not(.label):not(.campaign):not(.lead) { margin-bottom: 18px; }
+.intro .id { border-top: 1px solid var(--line); padding-top: 18px; }
+.intro-img img { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; display: block; }
 
-/* 02 */
-.two { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
-.two.wide-l { grid-template-columns: 1.05fr 1fr; gap: 48px; }
-.strip img { width: 100%; height: 300px; object-fit: cover; object-position: center 60%; border-radius: 4px; display: block; margin-top: 18px; }
-.route { font-size: 13px; font-weight: 500; margin-bottom: 16px; }
-.route i { color: var(--orange); font-style: normal; margin: 0 5px; }
-.facts { display: grid; grid-template-columns: 1fr 1fr; gap: 0 28px; }
-.facts div { padding: 11px 0; border-top: 1px solid var(--line); }
-.facts dt { font-family: var(--mono); font-size: 7.5px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 2px; }
-.facts dt span { color: var(--text-2); }
-.facts dd { font-size: 16px; font-weight: 600; letter-spacing: -.01em; }
-.price { display: grid; grid-template-columns: auto 1fr; gap: 26px; align-items: center; background: var(--navy); color: #F3EEF0; border-radius: 4px; padding: 22px 24px; margin-top: 18px; }
+/* ---------- package ---------- */
+.route { font-size: 22px; font-weight: 500; letter-spacing: .02em; margin-bottom: 36px; }
+.route i { color: var(--orange); font-style: normal; margin: 0 8px; }
+.fact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 48px; }
+.fact-grid div { padding: 20px 0; border-top: 1px solid var(--line); }
+.fact-grid dt { font-size: 13px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; margin-bottom: 4px; }
+.fact-grid dt span { color: var(--text-2); font-weight: 500; }
+.fact-grid dd { font-size: 28px; font-weight: 500; }
+.price { display: grid; grid-template-columns: auto 1fr; gap: 56px; align-items: center; background: var(--navy); color: #F3EEF0; border-radius: 8px; padding: 36px 44px; margin: 28px 0 32px; }
 .price .label, .price .label span { color: var(--nature); }
-.amount { font-family: var(--mono); font-size: 26px; font-weight: 500; letter-spacing: -.02em; }
-.price > p { font-size: 11.5px; }
-.price .id { display: block; color: #B9C3DD; font-size: 10px; margin-top: 4px; }
+.amount { font-size: 46px; line-height: 1; font-weight: 500; letter-spacing: -.02em; }
+.price > p { font-size: 18px; }
+.price .id { display: block; color: #B9C3DD; font-size: 15px; margin-top: 6px; }
+.wide img { width: 100%; height: 450px; object-fit: cover; border-radius: 8px; display: block; }
 
-/* 03 */
-.band img { width: 100%; height: 215px; object-fit: cover; border-radius: 4px; display: block; margin-bottom: 18px; }
-.days { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
-.day { border-top: 1.5px solid var(--navy); padding-top: 10px; }
-.dn { font-family: var(--mono); font-size: 8px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: #C9431F; margin-bottom: 4px; }
-.dn span { color: var(--text); }
-.day h3 { font-size: 20px; font-weight: 800; letter-spacing: -.025em; line-height: 1.1; }
-.ti { font-size: 11px; color: var(--text-2); margin: 0 0 6px !important; }
-.stops { font-family: var(--mono); font-size: 7.5px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: #4A5C99; margin: 0 0 8px !important; line-height: 1.5; }
-.day p:not(.dn):not(.ti):not(.stops):not(.id) { font-size: 11.5px; line-height: 1.55; }
-.day .id { font-size: 10.5px; line-height: 1.5; }
+/* ---------- itinerary ---------- */
+.days { list-style: none; padding: 0; }
+.day { display: grid; grid-template-columns: 140px 1fr; gap: 28px; padding: 19px 0; border-top: 1px solid var(--line); }
+.day-n { display: flex; flex-direction: column; padding-top: 8px; }
+.day-n .n { font-size: 13px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--orange); }
+.day-n .date { font-size: 15px; font-weight: 500; }
+.day h3 { font-size: 30px; line-height: 1.1; }
+.day h3 span { color: var(--text-2); font-size: 22px; font-weight: 500; letter-spacing: -.01em; }
+.stops { font-size: 12.5px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; margin: 6px 0 10px; color: #4A5C99; }
+.day p:not(.stops):not(.id) { font-size: 17px; line-height: 1.55; }
+.day .id { font-size: 15px; margin-top: 4px; }
 
-/* 04 */
-.gallery { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 250px 160px; gap: 8px; margin-top: 16px; }
-.gallery img { width: 100%; height: 100%; object-fit: cover; border-radius: 4px; display: block; }
+/* ---------- stay ---------- */
+.gallery { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 470px 320px; gap: 16px; margin-top: 36px; }
+.gallery img { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; display: block; }
 .gallery .g-main { grid-column: 1 / -1; }
-.incs { display: grid; grid-template-columns: 1fr 1fr; gap: 0 26px; }
-.inc { padding: 12px 0; border-top: 1px solid var(--line); }
-.inc .label { margin-bottom: 6px; }
-.inc ul { list-style: none; padding: 0; }
-.inc li { font-size: 12px; font-weight: 500; padding: 2px 0 2px 16px; position: relative; }
-.inc li::before { content: ""; position: absolute; left: 0; top: 8px; width: 7px; height: 7px; border-radius: 50%; background: var(--nature); box-shadow: inset 0 0 0 1.5px var(--navy); }
-.why { padding: 20px 22px; margin-top: 16px; }
-.why .quote { font-size: 15px; font-weight: 800; letter-spacing: -.02em; line-height: 1.3; margin-bottom: 8px; }
-.why p:last-child { font-size: 11px; }
 
-/* 05 */
-.contact-grid { display: grid; grid-template-columns: 1fr 410px; gap: 60px; padding-top: 6px; }
-.recap { padding: 16px 18px; margin-top: 30px; max-width: 420px; }
-.recap p { font-size: 12px; }
-.contact { border-top: 1px solid var(--navy); }
-.contact div { display: grid; grid-template-columns: 124px 1fr; align-items: center; padding: 13px 0; border-bottom: 1px solid var(--line); }
-.contact dt { font-family: var(--mono); font-size: 7.5px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; }
-.contact dd { font-size: 12px; font-weight: 600; line-height: 1.55; }
-.foot { position: absolute; left: 64px; right: 64px; bottom: 150px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--line); padding-top: 12px; font-family: var(--mono); font-size: 8px; letter-spacing: .12em; text-transform: uppercase; }
-.foot img { width: 44px; }
-.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 22px; }
-.steps > div { border-top: 1px solid var(--orange); padding-top: 10px; }
-.steps .step { color: #C9431F; }
-.steps h4 { font-size: 12.5px; font-weight: 600; margin: 4px 0; }
-.steps p:not(.label) { font-size: 10.5px; line-height: 1.55; }
+/* ---------- included ---------- */
+.incs { display: grid; grid-template-columns: 1fr 1fr; gap: 0 48px; margin-top: 20px; }
+.inc { padding: 24px 0; border-top: 1px solid var(--line); }
+.inc .label { margin-bottom: 10px; }
+.inc ul { list-style: none; padding: 0; }
+.inc li { font-size: 21px; font-weight: 500; padding: 4px 0 4px 24px; position: relative; }
+.inc li::before { content: ""; position: absolute; left: 0; top: 17px; width: 10px; height: 10px; border-radius: 50%; background: var(--nature); box-shadow: inset 0 0 0 2px var(--navy); }
+.quote { margin-top: 40px; background: var(--card); border: 1px solid rgba(255,255,255,.6); border-radius: 8px; padding: 36px 44px; }
+.q { font-size: 28px; line-height: 1.3; margin-bottom: 16px; }
+
+/* ---------- closing ---------- */
+.closing {
+  display: flex; flex-direction: column; padding: 80px;
+  background:
+    radial-gradient(70% 55% at 100% 0%, rgba(236,94,48,.75), transparent 70%),
+    radial-gradient(60% 50% at 0% 105%, rgba(154,180,216,.8), transparent 70%),
+    var(--paper);
+}
+.closing .mark { width: 240px; }
+.closing-main { margin-top: auto; }
+.contact { margin-top: 8px; border-top: 1px solid var(--line); }
+.contact div { display: grid; grid-template-columns: 240px 1fr; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.contact dt { font-size: 13px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; padding-top: 4px; }
+.contact dd { font-size: 21px; font-weight: 500; }
+.foot { margin-top: 48px; font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--text-2); }
+
+/* ---------- A4 portrait edition ----------
+   Design width stays 1080px; the page grows to A4 proportions (1080 x 1527)
+   and the whole document is zoomed to 794px wide (A4 at 96 dpi). */
+@page { size: A4; margin: 0; }
+body.a4 { zoom: 0.73519; }
+.a4 .page { height: 1527px; }
+
+.a4 .cover { grid-template-rows: 690px 1fr; }
+.a4 .intro { height: calc(1527px - 104px - 80px); }
+.a4 .wide img { height: 620px; }
+.a4 .day { padding: 30px 0; }
+.a4 .gallery { grid-template-rows: 580px 400px; }
+.a4 .inc { padding: 36px 0; }
+.a4 .quote { margin-top: 60px; }
+.a4 .contact div { padding: 22px 0; }
+.a4 .intro > div:first-child { display: flex; flex-direction: column; }
+.a4 .intro .display { font-size: 124px; }
+.a4 .intro .lead { font-size: 28px; }
+.a4 .intro p.id { margin-top: auto; }
+.a4 .day { padding: 44px 0; }
+.a4 .day h3 { font-size: 34px; }
+.a4 .day p:not(.stops):not(.id) { font-size: 19px; }
+.a4 .day .id { font-size: 16.5px; }
+.a4 .inc li { font-size: 23px; padding: 7px 0 7px 26px; }
+.a4 .inc li::before { top: 20px; }
+.a4 .quote { margin-top: 80px; padding: 48px 48px; }
+.a4 .intro p:not(.label):not(.campaign):not(.lead):not(.id) { font-size: 21px; }
+.a4 .day { padding: 36px 0; }
+.a4 .inc { padding: 52px 0; }
+.a4 .inc li { font-size: 25px; }
+.a4 .inc li::before { top: 22px; }
+.a4 .quote { margin-top: 100px; padding: 56px; }
+.a4 .q { font-size: 36px; }
+.a4 .quote p:last-child { font-size: 22px; }
 </style></head>
-<body><section class="page split g-nature">
-  <div class="panel">
-    <img class="panel-mark" src="img/days-wordmark-navy.png" alt="DAYS">
-    <p class="panel-line">Room to<br>breathe.</p>
-    <span class="panel-motif"><svg viewBox="0 0 240 90" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M2 8 C 60 -4, 100 22, 150 8 S 210 -2, 238 10"/><path d="M2 25 C 60 13, 100 39, 150 25 S 210 15, 238 27"/><path d="M2 42 C 60 30, 100 56, 150 42 S 210 32, 238 44"/><path d="M2 59 C 60 47, 100 73, 150 59 S 210 49, 238 61"/><path d="M2 76 C 60 64, 100 90, 150 76 S 210 66, 238 78"/></svg></span>
-  </div>
-  <div class="cover-r">
-    <figure class="hero"><img src="img/piaynemo.jpg" alt="Speedboat through the Piaynemo islands"></figure>
+<body class="a4"><section class="page cover">
+  <div class="cover-photo"><img src="img/piaynemo.jpg" alt="Speedboat through the Piaynemo islands, Raja Ampat"></div>
+  <div class="cover-panel">
+    <img class="mark" src="img/days-wordmark-navy.png" alt="DAYS">
     <div class="cover-text">
-      <div>
-        <p class="label">Collection · Nature <span>· Proposal</span></p>
-        <h1>Raja Ampat</h1>
-        <p class="cover-sub">Beyond the Postcard</p>
-        <p class="id">Lebih dari sekadar kartu pos. Ruang untuk menikmati alam.</p>
-      </div>
-      <dl class="mini"><div><dt>Dates</dt><dd>21–25 February 2027</dd></div><div><dt>Length</dt><dd>5 days, 4 nights</dd></div><div><dt>Flights</dt><dd>Bali – Sorong – Bali</dd></div></dl>
+      <p class="label">Collection · Nature</p>
+      <h1>Raja Ampat</h1>
+      <p class="cover-sub">Beyond the Postcard</p>
+      <p class="id">Lebih dari sekadar kartu pos.</p>
+    </div>
+    <div class="cover-foot">
+      <svg class="waves" viewBox="0 0 310 112" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" aria-hidden="true"><path d="M2 8 C 60 -4, 100 22, 155 10 S 250 -4, 308 10"/><path d="M2 30 C 60 18, 100 44, 155 32 S 250 18, 308 32"/><path d="M2 52 C 60 40, 100 66, 155 54 S 250 40, 308 54"/><path d="M2 74 C 60 62, 100 88, 155 76 S 250 62, 308 76"/><path d="M2 96 C 60 84, 100 110, 155 98 S 250 84, 308 98"/></svg>
+      <dl class="cover-facts"><div><dt>Dates</dt><dd>21–25 February 2027</dd></div><div><dt>Length</dt><dd>5 days, 4 nights</dd></div><div><dt>Flights</dt><dd>Bali – Sorong – Bali</dd></div></dl>
     </div>
   </div>
-</section><section class="page g-who">
-  <div class="topline"><span>DAYS / Nature · Raja Ampat</span><span>Proposal · February 2027 · 02</span></div>
-  <div class="two">
+</section><section class="page">
+  <header class="run">
+  <span>DAYS / Nature · Raja Ampat</span>
+  <span>Proposal · February 2027 · 02</span>
+</header>
+  <div class="intro">
     <div>
       <p class="label">Why Raja Ampat <span>· Mengapa Raja Ampat</span></p>
-      <h2 class="h">Where the landscape is the reason to go.</h2>
-      <p class="lead">At the far western tip of Papua, Raja Ampat is turquoise water, limestone islands, quiet lagoons and some of the richest reefs on earth.</p>
-      <p>Most people know it from one photo, the view from Piaynemo. We’ve planned five days to see it properly, with time to take in the view. The route takes in Piaynemo, Batanta, Kabui and Kalibiru, and February brings calm seas and clear water.</p>
-      <p class="id">Di ujung barat Papua, Raja Ampat adalah tempat di mana alam menjadi alasan utama untuk berangkat. Lima hari, dengan waktu untuk benar-benar menikmatinya.</p>
-      <figure class="strip"><img src="img/viewpoint.jpg" alt="The Piaynemo lookout"></figure>
+      <h2 class="display">Room to<br>breathe.</h2>
+      <p class="campaign">Ruang untuk menikmati alam.</p>
+      <p class="lead">At the far western tip of Papua, Raja Ampat is a place where the landscape is the reason to go: turquoise water, limestone islands, quiet lagoons and some of the richest reefs on earth.</p>
+      <p>Most people know it from one photo, the view from Piaynemo. We've planned five days to see it properly, with time to take in the view. The route takes in Piaynemo, Batanta, Kabui and Kalibiru, and February brings calm seas and clear water.</p>
+      <p class="id">Di ujung barat Papua, Raja Ampat adalah tempat di mana alam menjadi alasan utama untuk berangkat: air biru toska, pulau karst, laguna yang tenang, dan terumbu karang terkaya di dunia. Lima hari, dengan waktu untuk benar-benar menikmatinya.</p>
     </div>
-    <div>
-      <p class="label">The package <span>· Paket perjalanan</span></p>
-      <h3 class="h3">Beyond the Postcard</h3>
-      <p class="route">Piaynemo <i>·</i> Batanta <i>·</i> Kabui <i>·</i> Kalibiru</p>
-      <dl class="facts"><div><dt>Dates <span>· Tanggal</span></dt><dd>21–25 February 2027</dd></div><div><dt>Length <span>· Durasi</span></dt><dd>5 days, 4 nights</dd></div><div><dt>Flights <span>· Penerbangan</span></dt><dd>Bali – Sorong – Bali</dd></div><div><dt>Group <span>· Peserta</span></dt><dd>Minimum 2 guests</dd></div></dl>
-      <div class="price">
-        <div><p class="label">Per person <span>· Per orang</span></p><p class="amount">IDR 55,000,000</p></div>
-        <p>Flights, accommodation, meals, a private car and every transfer in between, in one clear price.<span class="id">Tiket pesawat, akomodasi, makan, mobil pribadi, dan semua transfer dalam satu harga.</span></p>
-      </div>
-      <div class="steps"><div><p class="label sm step">Step 1</p><h4>Start with the reason</h4><p>Tell us your dates and who&#x27;s coming. The package runs with a minimum of two guests.</p></div><div><p class="label sm step">Step 2</p><h4>Plan the details</h4><p>We confirm flights, your stay at Dcoral and every transfer, with room for personal preferences.</p></div><div><p class="label sm step">Step 3</p><h4>Travel with a clear plan</h4><p>Before you fly, you get a bilingual A4 itinerary with confirmed bookings and meeting points.</p></div></div>
+    <figure class="intro-img"><img src="img/viewpoint.jpg" alt="The Piaynemo lookout over the karst islands"></figure>
+  </div>
+</section><section class="page">
+  <header class="run">
+  <span>DAYS / Nature · Raja Ampat</span>
+  <span>Proposal · February 2027 · 03</span>
+</header>
+  <div class="body">
+    <p class="label">The package <span>· Paket perjalanan</span></p>
+    <h2 class="h">Beyond the Postcard</h2>
+    <p class="route">Piaynemo <i>·</i> Batanta <i>·</i> Kabui <i>·</i> Kalibiru</p>
+    <dl class="fact-grid"><div><dt>Dates <span>· Tanggal</span></dt><dd>21–25 February 2027</dd></div><div><dt>Length <span>· Durasi</span></dt><dd>5 days, 4 nights</dd></div><div><dt>Flights <span>· Penerbangan</span></dt><dd>Bali – Sorong – Bali</dd></div><div><dt>Group <span>· Peserta</span></dt><dd>Minimum 2 guests</dd></div></dl>
+    <div class="price">
+      <div><p class="label">Per person <span>· Per orang</span></p><p class="amount">IDR 55,000,000</p></div>
+      <p>Flights, accommodation, meals, a private car and every transfer in between, in one clear price.<span class="id">Tiket pesawat, akomodasi, makan, mobil pribadi, dan semua transfer dalam satu harga.</span></p>
+    </div>
+    <figure class="wide"><img src="img/lagoon.jpg" alt="A lagoon among the karst islands"></figure>
+  </div>
+</section><section class="page">
+  <header class="run">
+  <span>DAYS / Nature · Raja Ampat</span>
+  <span>Proposal · February 2027 · 04</span>
+</header>
+  <div class="body">
+    <p class="label">Day by day <span>· Rencana harian</span></p>
+    <h2 class="h">Five days in the islands</h2>
+    <ol class="days"><li class="day">
+  <div class="day-n"><span class="n">Day 1</span><span class="date">21 Feb</span></div>
+  <div>
+    <h3>Arrival <span>· Kedatangan</span></h3>
+    <p class="stops">Sorong · Raja Ampat</p>
+    <p>Fly from Bali to Sorong, then cross the water into the islands. The afternoon is yours to settle in and catch the first sunset.</p>
+    <p class="id">Terbang dari Bali ke Sorong, lalu menyeberang ke kepulauan. Sore hari bebas untuk beristirahat dan menikmati senja pertama.</p>
+  </div>
+</li><li class="day">
+  <div class="day-n"><span class="n">Day 2</span><span class="date">22 Feb</span></div>
+  <div>
+    <h3>Piaynemo</h3>
+    <p class="stops">Piaynemo · Arborek · Pasir Timbul</p>
+    <p>Climb to the Piaynemo lookout for the view of the karst islands. Then visit Arborek, a village that lives alongside the reef, and Pasir Timbul, a sandbar that appears with the tide.</p>
+    <p class="id">Mendaki ke puncak Piaynemo untuk pemandangan pulau karst, mengunjungi Desa Arborek, dan singgah di Pasir Timbul saat air surut.</p>
+  </div>
+</li><li class="day">
+  <div class="day-n"><span class="n">Day 3</span><span class="date">23 Feb</span></div>
+  <div>
+    <h3>The reefs <span>· Hari di laut</span></h3>
+    <p class="stops">Waringkabom · Sawandarek · Yenbuba · Friwen Monda</p>
+    <p>A day in the water, snorkelling jetty reefs and channels in one of the richest marine regions on earth.</p>
+    <p class="id">Seharian di laut: snorkeling di dermaga dan selat, di salah satu kawasan laut terkaya di dunia.</p>
+  </div>
+</li><li class="day">
+  <div class="day-n"><span class="n">Day 4</span><span class="date">24 Feb</span></div>
+  <div>
+    <h3>Kabui</h3>
+    <p class="stops">Kabui Bay · Marindal Hill · Mayalibit · Kalibiru</p>
+    <p>Weave between limestone walls in Kabui Bay, trek up Marindal Hill, take in the calm of Mayalibit Bay and end the last full day at Kalibiru.</p>
+    <p class="id">Menyusuri tebing kapur Teluk Kabui, trekking ke Bukit Marindal, menikmati tenangnya Teluk Mayalibit, dan menutup hari di Kalibiru.</p>
+  </div>
+</li><li class="day">
+  <div class="day-n"><span class="n">Day 5</span><span class="date">25 Feb</span></div>
+  <div>
+    <h3>Departure <span>· Kepulangan</span></h3>
+    <p class="stops">Raja Ampat · Sorong · Bali</p>
+    <p>A last swim if the morning allows, then back to Sorong for the flight home to Bali.</p>
+    <p class="id">Berenang sekali lagi bila waktu memungkinkan, lalu kembali ke Sorong untuk penerbangan pulang ke Bali.</p>
+  </div>
+</li></ol>
+  </div>
+</section><section class="page">
+  <header class="run">
+  <span>DAYS / Nature · Raja Ampat</span>
+  <span>Proposal · February 2027 · 05</span>
+</header>
+  <div class="body">
+    <p class="label">Where you stay <span>· Tempat menginap</span></p>
+    <h2 class="h">Dcoral Raja Ampat</h2>
+    <p class="lead narrow">Four nights by the water, with the reef close enough for a swim before breakfast.</p>
+    <p class="id narrow">Empat malam di tepi laut, dengan terumbu karang yang cukup dekat untuk berenang sebelum sarapan.</p>
+    <div class="gallery">
+      <img class="g-main" src="img/stay-aerial.jpg" alt="Aerial view of the resort">
+      <img src="img/stay-bed.jpg" alt="Room interior">
+      <img src="img/stay-room.jpg" alt="Room interior">
     </div>
   </div>
-</section><section class="page g-arch">
-  <div class="topline"><span>DAYS / Nature · Raja Ampat</span><span>Proposal · February 2027 · 03</span></div>
-  <p class="label">Day by day <span>· Rencana harian</span></p>
-  <h2 class="h">Five days in the islands.</h2>
-  <p class="sub">21–25 February 2027 · Bali – Sorong – Raja Ampat – Sorong – Bali</p>
-  <figure class="band"><img src="img/lagoon.jpg" alt="A lagoon among the karst islands"></figure>
-  <div class="days"><article class="day">
-  <p class="dn">Day 1 <span>· 21 Feb</span></p>
-  <h3>Arrival</h3><p class="ti">Kedatangan</p>
-  <p class="stops">Sorong · Raja Ampat</p>
-  <p>Fly from Bali to Sorong, then cross the water into the islands. The afternoon is yours to settle in and catch the first sunset.</p>
-  <p class="id">Terbang dari Bali ke Sorong, lalu menyeberang ke kepulauan. Sore hari bebas untuk beristirahat dan menikmati senja pertama.</p>
-</article><article class="day">
-  <p class="dn">Day 2 <span>· 22 Feb</span></p>
-  <h3>Piaynemo</h3><p class="ti">&nbsp;</p>
-  <p class="stops">Piaynemo · Arborek · Pasir Timbul</p>
-  <p>Climb to the Piaynemo lookout for the view of the karst islands. Then visit Arborek, a village that lives alongside the reef, and Pasir Timbul, a sandbar that appears with the tide.</p>
-  <p class="id">Mendaki ke puncak Piaynemo untuk pemandangan pulau karst, mengunjungi Desa Arborek, dan singgah di Pasir Timbul saat air surut.</p>
-</article><article class="day">
-  <p class="dn">Day 3 <span>· 23 Feb</span></p>
-  <h3>The reefs</h3><p class="ti">Hari di laut</p>
-  <p class="stops">Waringkabom · Sawandarek · Yenbuba · Friwen Monda</p>
-  <p>A day in the water, snorkelling jetty reefs and channels in one of the richest marine regions on earth.</p>
-  <p class="id">Seharian di laut: snorkeling di dermaga dan selat, di salah satu kawasan laut terkaya di dunia.</p>
-</article><article class="day">
-  <p class="dn">Day 4 <span>· 24 Feb</span></p>
-  <h3>Kabui</h3><p class="ti">&nbsp;</p>
-  <p class="stops">Kabui Bay · Marindal Hill · Mayalibit · Kalibiru</p>
-  <p>Weave between limestone walls in Kabui Bay, trek up Marindal Hill, take in the calm of Mayalibit Bay and end the last full day at Kalibiru.</p>
-  <p class="id">Menyusuri tebing kapur Teluk Kabui, trekking ke Bukit Marindal, menikmati tenangnya Teluk Mayalibit, dan menutup hari di Kalibiru.</p>
-</article><article class="day">
-  <p class="dn">Day 5 <span>· 25 Feb</span></p>
-  <h3>Departure</h3><p class="ti">Kepulangan</p>
-  <p class="stops">Raja Ampat · Sorong · Bali</p>
-  <p>A last swim if the morning allows, then back to Sorong for the flight home to Bali.</p>
-  <p class="id">Berenang sekali lagi bila waktu memungkinkan, lalu kembali ke Sorong untuk penerbangan pulang ke Bali.</p>
-</article></div>
-</section><section class="page g-serv">
-  <div class="topline"><span>DAYS / Nature · Raja Ampat</span><span>Proposal · February 2027 · 04</span></div>
-  <div class="two wide-l">
-    <div>
-      <p class="label">Where you stay <span>· Tempat menginap</span></p>
-      <h2 class="h">Dcoral Raja Ampat</h2>
-      <p>Four nights by the water, with the reef close enough for a swim before breakfast.</p>
-      <p class="id">Empat malam di tepi laut, dengan terumbu karang yang cukup dekat untuk berenang sebelum sarapan.</p>
-      <div class="gallery">
-        <img class="g-main" src="img/stay-aerial.jpg" alt="Aerial view of the resort">
-        <img src="img/stay-bed.jpg" alt="Room interior">
-        <img src="img/stay-room.jpg" alt="Room interior">
-      </div>
-    </div>
-    <div>
-      <p class="label">What&#x27;s included <span>· Termasuk dalam paket</span></p>
-      <h2 class="h">We take care of the details.</h2>
-      <div class="incs"><div class="inc"><p class="label">Getting there <span>· Perjalanan</span></p><ul><li>Return flights, Bali – Sorong</li><li>Airport transfers</li><li>Destination transfers</li></ul></div><div class="inc"><p class="label">Staying <span>· Menginap</span></p><ul><li>4 nights&#x27; accommodation</li><li>Meals throughout the trip</li></ul></div><div class="inc"><p class="label">Experiences <span>· Pengalaman</span></p><ul><li>Snorkelling</li><li>Trekking</li><li>Arborek Village visit</li></ul></div><div class="inc"><p class="label">On the ground <span>· Selama di lokasi</span></p><ul><li>Private car with driver (basic English)</li><li>10 hours of service per day</li><li>Fuel and parking fees</li></ul></div></div>
-      <aside class="card why">
-        <p class="label">Why book with DAYS <span>· Mengapa DAYS</span></p>
-        <p class="quote">“We are not just agents; we’ve tested and vetted every aspect of the places we suggest.”</p>
-        <p>Your DAYS travel expert is on WhatsApp before and during the trip, for boat times, weather calls or a change of plan.</p>
-      </aside>
-    </div>
+</section><section class="page">
+  <header class="run">
+  <span>DAYS / Nature · Raja Ampat</span>
+  <span>Proposal · February 2027 · 06</span>
+</header>
+  <div class="body">
+    <p class="label">What&#x27;s included <span>· Termasuk dalam paket</span></p>
+    <h2 class="h">We take care of the details.</h2>
+    <p class="lead narrow">From landing in Sorong to flying home to Bali, the planning is ours, so you have room for the moments that make the trip yours.</p>
+    <div class="incs"><div class="inc"><p class="label">Getting there <span>· Perjalanan</span></p><ul><li>Return flights, Bali – Sorong</li><li>Airport transfers</li><li>Destination transfers</li></ul></div><div class="inc"><p class="label">Staying <span>· Menginap</span></p><ul><li>4 nights&#x27; accommodation</li><li>Meals throughout the trip</li></ul></div><div class="inc"><p class="label">Experiences <span>· Pengalaman</span></p><ul><li>Snorkelling</li><li>Trekking</li><li>Arborek Village visit</li></ul></div><div class="inc"><p class="label">On the ground <span>· Selama di lokasi</span></p><ul><li>Private car with driver (basic English)</li><li>10 hours of service per day</li><li>Fuel and parking fees</li></ul></div></div>
+    <aside class="quote">
+      <p class="label">Why book with DAYS <span>· Mengapa DAYS</span></p>
+      <p class="q">“We are not just agents; we’ve tested and vetted every aspect of the places we suggest.”</p>
+      <p>Your DAYS travel expert is on WhatsApp before and during the trip, for boat times, weather calls or a change of plan.</p>
+    </aside>
   </div>
-</section><section class="page g-contact">
-  <div class="contact-grid">
-    <div>
-      <p class="label">Get in touch <span>· Hubungi kami</span></p>
-      <h2 class="h xl">Let’s plan your next DAYS.</h2>
-      <p class="sub">Yuk, rencanakan perjalananmu.</p>
-      <div class="recap card">
-        <p class="label sm">Your trip</p>
-        <p><strong>Raja Ampat · Beyond the Postcard</strong></p>
-        <p>21–25 February 2027 · 5 days, 4 nights · from IDR 55,000,000 per person</p>
-      </div>
-    </div>
+</section><section class="page closing">
+  <img class="mark" src="img/days-wordmark-orange.png" alt="DAYS">
+  <div class="closing-main">
+    <p class="label">Get in touch <span>· Hubungi kami</span></p>
+    <h2 class="display">Let’s plan your<br>next DAYS.</h2>
+    <p class="campaign">Yuk, rencanakan perjalananmu.</p>
     <dl class="contact"><div><dt>WhatsApp / Phone</dt><dd>+62 812 2000 0185</dd></div><div><dt>Email</dt><dd>lets@talkaboutdays.com</dd></div><div><dt>Instagram</dt><dd>@talkaboutdays</dd></div><div><dt>Website</dt><dd>talkaboutdays.com</dd></div><div><dt>Studio</dt><dd>Jl. Tebet Barat IX No. 2, Jakarta Selatan</dd></div><div><dt>Hours</dt><dd>Mon–Fri · 09.00–18.00<br>Sat · 11.00–14.00<br>Sun · Closed</dd></div></dl>
   </div>
-  <div class="foot"><img src="img/days-wordmark-orange.png" alt="DAYS"><span>PT Vakansi Media Global · Licensed travel agency · Tebet, Jakarta Selatan</span></div>
+  <p class="foot">PT Vakansi Media Global · Licensed travel agency · Tebet, Jakarta Selatan</p>
 </section></body></html>
