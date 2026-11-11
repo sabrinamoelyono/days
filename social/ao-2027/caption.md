@@ -125,3 +125,22 @@ Tiket pesawat Jakarta – Melbourne, 4 hari 3 malam di hotel bintang 4–5, dan 
 IDR 159.800.000 / orang
 
 DAYS adalah AO Travel & Experiences official reseller. Untuk booking, DM kami atau WhatsApp +62 812-2000-0185.
+
+---
+
+# Instagram stories (1080 × 1920)
+
+Folder: `export/stories/`, built by `node render-stories.js` from `stories.html`. Post in filename order. Key content stays between y 250 and y 1580, clear of Instagram's top bar and reply area; add link or mention stickers in the empty lower area, never over a photo or the map.
+
+| # | Story | Source |
+|---|---|---|
+| 01 | Cover: MELBO, 11–31 January 2027 | AO-approved (9:16), unaltered |
+| 02 | *FOR THOSE WHO WANT TO EXPERIENCE THE GAME CLOSER.* with the Rod Laver Arena photo | DAYS |
+| 03 | *NOT ALL SEATS ARE CREATED EQUAL.* with the official Rod Laver Arena seating map | DAYS |
+| 04 | *MAKE A TRIP OUT OF IT.* (Melbourne) | DAYS |
+| 05 | Quarterfinals · Men & Women · IDR 49.800.000 | AO-approved (9:16), unaltered |
+| 06 | *CHOOSE YOUR ROUND.* (the four packages + enquiry) | DAYS |
+
+`template-choose-your-round-no-players.png` is the story version of the Post 2 cover, with the player area left empty for you to place the cut-outs.
+
+AO has only supplied 9:16 versions of the cover and the Quarterfinals card. The Semifinals, Finals, Semifinal + Final and end card exist only at 4:5, and approved assets can't be cropped or resized, so ask AO for 9:16 versions before posting those as stories.

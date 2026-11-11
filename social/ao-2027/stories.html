@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>DAYS × AO 2027 — stories</title>
+<style>
+/* AO Travel & Experiences reseller rules (AOTE Reseller Brand Guidelines 2026 + AO feedback):
+   - every slide carries the AO Travel & Experiences Official Reseller logo (official file, unaltered)
+   - colour: AO Process Blue #0091D2 for accents; no DAYS orange
+   - headings: Sequel 100 Wide, capitalised; body: Sharp Sans Bold
+   - photos: supplied images only, never cropped, covered or placed over text
+   - no custom seating maps: the official Rod Laver Arena map only, as supplied */
+@font-face{font-family:"Sequel 100 Wide";src:url(fonts/Sequel100Wide-85.ttf) format("truetype");font-weight:400 900}
+@font-face{font-family:"Sharp Sans No2";src:url(fonts/SharpSans-No2-Bold.otf) format("opentype");font-weight:100 900}
+:root{
+  --blue:#0091D2;            /* AO Process Blue */
+  --night:#000;
+  --ao-deep:#0B1050; --ao-mid:#1D3FA0; --ao-court:#1F7FC9;
+  --muted:rgba(255,255,255,.66);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#222;font-family:"Sharp Sans No2",sans-serif;font-weight:700;color:#fff}
+.slide{width:1080px;height:1920px;position:relative;overflow:hidden;background:var(--night);margin:0 auto 40px}
+
+/* AO Travel & Experiences × DAYS lockup, sized and spaced as on the approved assets */
+.lockup{position:absolute;left:0;right:0;top:170px;height:110px;display:flex;justify-content:center;align-items:center;gap:80px}
+.lockup .ao{height:110px;width:auto}
+.lockup .days{height:52px;width:auto;filter:brightness(0) invert(1)}
+
+h1,h2{font-family:"Sequel 100 Wide",sans-serif;font-weight:400;line-height:1.1;text-transform:uppercase}
+h2 em{font-style:normal;color:var(--blue)}
+.eyebrow{font-size:22px;line-height:1.2;letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.lede{font-size:30px;line-height:1.4;color:var(--muted)}
+.lede b{font-weight:700;color:#fff}
+.ftr{position:absolute;left:72px;right:72px;bottom:56px;display:flex;justify-content:space-between;align-items:center;
+  font-size:18px;line-height:1;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+.ftr .swipe::after{content:" →";color:var(--blue)}
+.copy{position:absolute;left:72px;right:72px}
+
+
+/* Instagram story safe zones: keep key content between y=250 and y=1580 */
+.ftr{bottom:360px}
+.st .copy{left:72px;right:72px}
+.st h2{font-size:66px;margin:22px 0 28px}
+.st .lede{font-size:36px}
+.st .eyebrow{font-size:26px}
+
+.t1 .photo{position:absolute;left:0;top:400px;width:1080px;display:block}
+.t1 .copy{top:1080px}
+.t2 .map{position:absolute;top:380px;left:50%;transform:translateX(-50%);height:820px;width:auto;display:block}
+.t2 .copy{top:1250px}
+.t2 h2{font-size:60px}
+.t3 .photo{position:absolute;left:0;top:400px;width:1080px;display:block}
+.t3 .copy{top:1110px}
+.t3 h2{font-size:58px}
+.lockup{height:140px;gap:100px}
+.lockup .ao{height:140px}
+.lockup .days{height:66px}
+.t4{background:linear-gradient(180deg,#000 0,#000 360px,var(--ao-deep) 1920px)}
+.t4 .copy{top:380px}
+.t4 h2{font-size:76px}
+.t4 ol{list-style:none;margin-top:44px;border-top:1.5px solid rgba(255,255,255,.28)}
+.t4 li{display:grid;grid-template-columns:120px 1fr auto;align-items:center;padding:28px 0;border-bottom:1.5px solid rgba(255,255,255,.28);font-size:40px;line-height:1.2}
+.t4 li span{font-size:26px;color:var(--blue);letter-spacing:.06em}
+.t4 li small{display:block;font-size:20px;line-height:1.4;letter-spacing:.08em;color:rgba(255,255,255,.72);margin-top:8px;text-transform:uppercase}
+.t4 li em{font-style:normal;font-family:"Sequel 100 Wide",sans-serif;font-size:30px}
+.t4 .cta{position:absolute;left:72px;right:72px;top:1460px;padding-top:26px;border-top:2px solid #fff;font-size:26px;line-height:1.5;letter-spacing:.04em}
+.t5{background:linear-gradient(180deg,#050726 0,#0B1050 34%,#1D3FA0 68%,#0091D2 100%)}
+.t5 h1{position:absolute;left:72px;right:72px;top:380px;font-size:92px;line-height:1.04;text-align:center}
+.t5 .base{position:absolute;left:40px;right:40px;top:1440px;border-top:2px solid rgba(255,255,255,.5)}
+.t5 .meta{position:absolute;left:72px;right:72px;top:1462px;display:flex;justify-content:space-between;font-size:40px;line-height:1.12}
+.t5 .meta .r{text-align:right}
+</style>
+</head>
+<body>
+
+<section class="slide st t1" data-id="t1"><div class="lockup"><img class="ao" src="brand/AOTE-official-reseller-white.png" alt="AO Travel &amp; Experiences Official Reseller"><img class="days" src="img/days-wordmark.png" alt="DAYS"></div>
+  <img class="photo" src="img/rla-sunset.jpg" alt="">
+  <div class="copy"><p class="eyebrow">Australian Open 2027 · Rod Laver Arena</p>
+  <h2>For those who want to experience the game <em>closer.</em></h2>
+  <p class="lede"><b>Lower level at Rod Laver Arena.</b> Close enough to hear the ball come off the strings.</p></div>
+</section>
+<section class="slide st t2" data-id="t2"><div class="lockup"><img class="ao" src="brand/AOTE-official-reseller-white.png" alt="AO Travel &amp; Experiences Official Reseller"><img class="days" src="img/days-wordmark.png" alt="DAYS"></div>
+  <img class="map" src="img/rla-seating-map.png" alt="Rod Laver Arena seating map">
+  <div class="copy"><p class="eyebrow">Rod Laver Arena · Lower level</p>
+  <h2>Not all seats are created equal.</h2>
+  <p class="lede">As an <b>AO Travel &amp; Experiences official reseller,</b> DAYS has access to <b>the best seats in the house.</b></p></div>
+</section>
+<section class="slide st t3" data-id="t3"><div class="lockup"><img class="ao" src="brand/AOTE-official-reseller-white.png" alt="AO Travel &amp; Experiences Official Reseller"><img class="days" src="img/days-wordmark.png" alt="DAYS"></div>
+  <img class="photo" src="img/degraves.jpg" alt="">
+  <div class="copy"><p class="eyebrow">Beyond the court</p>
+  <h2>Make a trip out of it.</h2>
+  <p class="lede">Melbourne in late January: <b>flat whites in the laneways</b>, summer light until almost nine, a whole city tuned to one tournament.</p></div>
+</section>
+<section class="slide st t4" data-id="t4"><div class="lockup"><img class="ao" src="brand/AOTE-official-reseller-white.png" alt="AO Travel &amp; Experiences Official Reseller"><img class="days" src="img/days-wordmark.png" alt="DAYS"></div>
+  <div class="copy"><p class="eyebrow">Australian Open 2027 · Packages</p>
+  <h2>Choose your round.</h2>
+  <ol>
+    <li><span>QF</span><div>Quarterfinals<small>Men &amp; Women · 25–28 Jan</small></div><em>IDR 49.8 jt</em></li>
+    <li><span>SF</span><div>Semifinals<small>Men &amp; Women · 28–31 Jan</small></div><em>IDR 69.8 jt</em></li>
+    <li><span>F</span><div>Finals<small>Men &amp; Women · 29 Jan – 1 Feb</small></div><em>IDR 119.8 jt</em></li>
+    <li><span>SF+F</span><div>Semifinal + Final<small>Men &amp; Women · flights included</small></div><em>IDR 159.8 jt</em></li>
+  </ol></div>
+  <div class="cta">Enquire via DM or WhatsApp +62 812-2000-0185</div>
+</section>
+<section class="slide st t5" data-id="t5"><div class="lockup"><img class="ao" src="brand/AOTE-official-reseller-white.png" alt="AO Travel &amp; Experiences Official Reseller"><img class="days" src="img/days-wordmark.png" alt="DAYS"></div>
+  <h1>Choose<br>your round</h1>
+  <div class="base"></div>
+  <div class="meta"><span>Quarterfinals to Finals<br>25 Jan – 1 Feb 2027</span><span class="r">Melbourne,<br>Australia</span></div>
+</section>
+</body></html>
