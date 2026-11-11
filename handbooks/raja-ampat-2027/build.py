@@ -1,7 +1,8 @@
 """Build the DAYS Raja Ampat 2027 package proposal as print-ready HTML.
 
 Rebuilt from the original Canva draft (RAJA_AMPAT_PACKAGE.pdf) in the DAYS
-Brand Profile system (2027): DM Serif Display + DM Sans, navy on warm
+Brand Profile system (2027), set in the DAYS type pair (Inter Tight +
+JetBrains Mono), navy on warm
 gradient paper, and the Nature collection colour + wave motif, since the
 landscape is the reason for this trip. English leads, Bahasa Indonesia
 follows. Page size matches the original 4:5 format (1080 x 1350 px) so pages
@@ -199,7 +200,7 @@ html = f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8">
 <title>DAYS · Raja Ampat 2027</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,800;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>{css}</style></head>
 <body>{"".join(pages)}</body></html>'''
 (HERE / "proposal.html").write_text(html)
