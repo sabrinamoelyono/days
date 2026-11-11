@@ -16,7 +16,7 @@ Upload each folder's files in filename order.
 - Photos are shown whole: never cropped, never covered by text, never placed over text. Player cut-outs may overlap one another.
 - No custom maps: slide 03 uses the official Rod Laver Arena seating map, whole and unaltered.
 - Wording: always "AO Travel & Experiences official reseller".
-- The AO cover, the four package cards and the end card are AO-approved and are never revised or altered. `render.js` copies them byte-for-byte from `approved/`.
+- The AO cover, the four package cards and the end card are AO-approved and are never revised or altered. `render.js` copies them from `approved/`: PNGs byte-for-byte, WebPs converted to PNG with every pixel unchanged.
 - Approval: submit all artwork and copy to AO Travel & Experiences via Hightail (copy as Word: `AO27-captions-for-approval.docx`) at least five business days before posting.
 
 **Licensed files are not committed** (this repository is public): put `Sequel100Wide-85.ttf` and `SharpSans-No2-Bold.otf` in `fonts/`, and AO's logo files `AOTE-official-reseller-white.png` and `AOTE-official-reseller-black.png` in `brand/`, before rendering. Both folders are git-ignored.

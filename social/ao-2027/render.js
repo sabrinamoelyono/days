@@ -7,6 +7,14 @@ const { chromium } = require('playwright');
 const path = require('path');
 const fs = require('fs');
 
+const { execFileSync } = require('child_process');
+// Approved assets are delivered as PNG. A .webp is converted losslessly (pixel-identical); anything else is copied byte-for-byte.
+function copyApproved(f, dest) {
+  const src = path.join(__dirname, 'approved', f);
+  if (f.endsWith('.webp')) execFileSync('python3', ['-c', 'import sys; from PIL import Image; Image.open(sys.argv[1]).save(sys.argv[2])', src, dest.replace(/\.webp$/, '.png')]);
+  else fs.copyFileSync(src, dest);
+}
+
 const posts = {
   'post-1-announcement': {
     approved: { '01': 'AO27-cover.webp', '06': 'AO27-end-card.webp' },
@@ -40,7 +48,7 @@ const posts = {
     const out = path.join(root, name);
     fs.mkdirSync(out, { recursive: true });
     for (const [n, f] of Object.entries(post.approved)) {
-      fs.copyFileSync(path.join(__dirname, 'approved', f), path.join(out, `${n}-${f}`));
+      copyApproved(f, path.join(out, `${n}-${f}`));
     }
     for (const [n, id] of Object.entries(post.days)) {
       const el = await p.$(`.slide[data-id="${id}"]`);
