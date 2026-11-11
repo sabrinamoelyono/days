@@ -58,6 +58,8 @@ Dark mode inverts Ink and Paper and lifts the orange slightly (`#F26A49` / `#FF8
 - **Display / body:** Inter Tight (400 body, 500 medium, 600 semibold, 800 for headlines)
 - **Data / numbers / references:** JetBrains Mono, for registration numbers, decree references, dates and figures — anywhere precision matters more than warmth
 
+This type pair applies to every DAYS material, including the 2027 Brand Profile (`company-profile/brand-profile/`), where it replaces the DM Serif Display / DM Sans of the first draft.
+
 Headlines are set tight (letter-spacing −0.01 to −0.02em) and bold. Body copy stays at comfortable line height (1.5–1.6) — the brand is confident, not loud.
 
 ## Voice
