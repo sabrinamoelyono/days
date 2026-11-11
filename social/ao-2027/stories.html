@@ -73,8 +73,9 @@ h2 em{font-style:normal;color:var(--blue)}
 .t6{background:#000}
 .t6 h1{position:absolute;left:72px;right:72px;top:560px;font-size:96px;line-height:1.12;text-align:center}
 .t6 .photo{position:absolute;left:0;bottom:0;width:1080px;display:block}   /* full image, uncropped */
-.t7 .photo{left:50%;width:auto;height:1060px;transform:translateX(-50%)}   /* fills the lower frame; crops the photo's sides */
 .t7 h1{top:470px}
+.t7 .box{position:absolute;left:0;right:0;bottom:0;height:960px;overflow:hidden}   /* bottom half of the story */
+.t7 .box img{position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:1950px;width:auto;display:block}   /* crowd fills the lower half; crops the photo's sides and dark top */
 </style>
 </head>
 <body>
@@ -119,6 +120,6 @@ h2 em{font-style:normal;color:var(--blue)}
 </section>
 <section class="slide st t6 t7" data-id="t7"><div class="lockup"><img class="ao" src="brand/AOTE-official-reseller-white.png" alt="AO Travel &amp; Experiences Official Reseller"><img class="days" src="img/days-wordmark.png" alt="DAYS"></div>
   <h1>Experience<br>Australian<br>Open 2027</h1>
-  <img class="photo" src="img/crowd-sun.jpg" alt="">
+  <div class="box"><img src="img/crowd-sun.jpg" alt=""></div>
 </section>
 </body></html>
