@@ -140,7 +140,8 @@ Folder: `export/stories/`, built by `node render-stories.js` from `stories.html`
 | 04 | *MAKE A TRIP OUT OF IT.* (Melbourne) | DAYS |
 | 05 | Quarterfinals · Men & Women · IDR 49.800.000 | AO-approved (9:16), unaltered |
 | 06 | *CHOOSE YOUR ROUND.* (the four packages + enquiry) | DAYS |
+| 07 | End card: *EXPERIENCE AUSTRALIAN OPEN 2027* with the crowd photo | DAYS, rebuilt at 9:16 from the AO end card's parts (official logo, kit photo uncropped); needs AO approval |
 
 `template-choose-your-round-no-players.png` is the story version of the Post 2 cover, with the player area left empty for you to place the cut-outs.
 
-AO has only supplied 9:16 versions of the cover and the Quarterfinals card. The Semifinals, Finals, Semifinal + Final and end card exist only at 4:5, and approved assets can't be cropped or resized, so ask AO for 9:16 versions before posting those as stories.
+AO has only supplied 9:16 versions of the cover and the Quarterfinals card. The Semifinals, Finals and Semifinal + Final cards exist only at 4:5, and approved assets can't be cropped or resized, so ask AO for 9:16 versions before posting those as stories.
