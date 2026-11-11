@@ -12,7 +12,7 @@ function copyApproved(f, dest) {
 const out = path.join(__dirname, 'export', 'stories');
 const approved = { '01': 'AO27-story-cover.webp', '05': 'AO27-story-quarterfinals.png' };
 const days = { '02': 't1', '03': 't2', '04': 't3', '06': 't4', '07': 't6' };
-const templates = { 'template-choose-your-round-no-players': 't5' };
+const templates = { 'option-07-end-card-larger-photo-crops-sides': 't7', 'template-choose-your-round-no-players': 't5' };
 (async () => {
   fs.rmSync(out, { recursive: true, force: true });
   fs.mkdirSync(out, { recursive: true });
