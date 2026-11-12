@@ -79,7 +79,9 @@ p.id, .id { color: var(--text-2); font-size: 11.5px; }
 .tile { height: 70px; border-radius: 3px; padding: 10px 11px 9px; display: flex; flex-direction: column; justify-content: space-between; }
 .tile .motif svg { height: 28px; width: auto; display: block; }
 .tile .lbl { font-family: var(--mono); font-size: 7.5px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; line-height: 1.25; }
-.cover-photos { display: grid; grid-template-columns: 2fr 1fr 1fr 1.42fr; gap: 9px; height: 134px; }
+.cover-photos { display: grid; grid-template-columns: 2fr 1fr 1.6fr; gap: 9px; height: 170px; }
+.photos-label { margin: 18px 0 10px; }
+.photos-label span { color: var(--text-2); }
 .ph { position: relative; border-radius: 3px; overflow: hidden; }
 .ph img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .ph figcaption { position: absolute; left: 11px; bottom: 9px; font-family: var(--mono); font-size: 8px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: #fff; }

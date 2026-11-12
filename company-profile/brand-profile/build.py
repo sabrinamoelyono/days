@@ -62,15 +62,18 @@ COLLECTIONS = [
      "Ikuti musiknya. Nikmati momennya."),
 ]
 
-TILE_LABEL = {"city": "City", "nature": "Nature", "sports": "Sports",
-              "culinary": "Culinary, Leisure &amp; Wellbeing", "music": "Music Festival"}
+TILE_LABEL = {"music": "Music Festival", "city": "City", "nature": "Nature", "sports": "Sports",
+              "culinary": "Culinary, Leisure &amp; Wellbeing"}
+
+# Music Festival is the lead collection: it comes first everywhere.
+COLLECTIONS = COLLECTIONS[-1:] + COLLECTIONS[:-1]
 
 pages = []
 
 # ---------------------------------------------------------------- 01 cover
 tiles = "".join(f'<div class="tile t-{k}"><span class="motif">{MOTIF[k]}</span><span class="lbl">{TILE_LABEL[k]}</span></div>' for k in TILE_LABEL)
 pages.append(f'''<section class="page g-cover">
-  <div class="topline"><span>DAYS / Company profile</span><span>Tebet, Jakarta Selatan · 2027</span></div>
+  <div class="topline"><span>DAYS / Company profile</span><span>Jakarta · 2027</span></div>
   <img class="cover-mark" src="img/wordmark-orange.png" alt="DAYS">
   <div class="cover-grid">
     <div>
@@ -81,16 +84,16 @@ pages.append(f'''<section class="page g-cover">
   </div>
   <p class="label">One brand. Five ways to go.</p>
   <div class="tiles">{tiles}</div>
+  <p class="label photos-label">Highlights in Europe <span>· Sorotan di Eropa</span></p>
   <div class="cover-photos">
     <figure class="ph w2"><img src="img/primavera.jpg" alt=""><figcaption>Primavera Sound · Barcelona</figcaption></figure>
-    <figure class="ph"><img src="img/newyork.jpg" alt=""></figure>
-    <figure class="ph"><img src="img/barcelona.jpg" alt=""></figure>
+    <figure class="ph"><img src="img/barcelona.jpg" alt=""><figcaption>Barcelona</figcaption></figure>
     <figure class="ph w15"><img src="img/ade.jpg" alt=""><figcaption>ADE · Amsterdam</figcaption></figure>
   </div>
 </section>''')
 
 # ---------------------------------------------------------------- 02 who we are
-side = [("Based in", "Tebet, Jakarta Selatan"), ("Who we travel with", "Families, friends, solo travelers and groups"),
+side = [("Based in", "Jakarta Selatan"), ("Who we travel with", "Families, friends, solo travelers and groups"),
         ("What we plan", "Five collections, four services"), ("Languages", "English and Bahasa Indonesia"),
         ("Personality", "Curious · Warm · Confident · Considered"),
         ("Company", "PT Vakansi Media Global · est. 2024 · licensed travel agency")]
@@ -125,9 +128,9 @@ pages.append(f'''<section class="page g-who">
 </section>''')
 
 # ---------------------------------------------------------------- 03 architecture
-arch = [("Skiing, surfing or a hiking-focused trip", "sports", "Sports", "The activity is the reason to travel."),
+arch = [("A festival trip with restaurants and sightseeing", "music", "Music Festival", "Music is the anchor; City and Culinary are secondary."),
+        ("Skiing, surfing or a hiking-focused trip", "sports", "Sports", "The activity is the reason to travel."),
         ("A mountain or coastal scenery escape", "nature", "Nature", "The landscape and slower discovery lead."),
-        ("A festival trip with restaurants and sightseeing", "music", "Music Festival", "Music is the anchor; City and Culinary are secondary."),
         ("A food-led city break or a spa retreat", "culinary", "Culinary, Leisure &amp; Wellbeing", "Food, rest or restoration shapes the itinerary."),
         ("A city break that includes one concert", "city", "City", "The city experience remains the main draw.")]
 pages.append(f'''<section class="page g-arch">
