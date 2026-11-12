@@ -102,9 +102,9 @@ pages.append(f'''<section class="page g-cover">
 side = [("Based in", "Jakarta Selatan"), ("Who we travel with", "Families, friends, solo travelers and groups"),
         ("What we plan", "Five collections, four services"), ("Languages", "English and Bahasa Indonesia"),
         ("Official reseller", "Australian Open Travel & Experiences"),
-        ("Company", "PT Vakansi Media Global · est. 2024 · licensed travel agency")]
+        ("Company", "Founded 2022 · PT Vakansi Media Global · licensed travel agency")]
 stats = [("5×", "Amsterdam Dance Event, every year 2022–2026"), ("1,000+", "visa applications processed since 2024"),
-         ("97–98%", "visa approval rate"), ("2018", "the year we started handling visas and travel")]
+         ("97–98%", "visa approval rate"), ("2022", "the year DAYS was founded")]
 pages.append(f'''<section class="page g-who">
   <p class="label">Who we are</p>
   <div class="who-grid">
