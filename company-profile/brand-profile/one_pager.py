@@ -34,7 +34,7 @@ HIGHLIGHTS = [
     ("img", "ade", "ADE, Amsterdam", "Five editions in a row, 2022–2026, and the ADE 2026 Asia Hub panel."),
     ("img", "primavera", "Primavera Sound", "Barcelona, with a DAYS group three years running, 2024–2026."),
     ("img", "niseko", "Niseko, Japan", "Ski open trip for all levels, winter 2024–25."),
-    ("motif", "culinary", "Italy, 2025", "Seven places in one year, from the Dolomites and Positano to Florence and Rome."),
+    ("img", "dolomites", "Italy, 2025", "Seven places in one year, from the Dolomites and Positano to Florence and Rome."),
 ]
 
 # Timeline: what DAYS has done, year by year.
