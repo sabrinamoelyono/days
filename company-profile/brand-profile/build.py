@@ -201,10 +201,10 @@ trips = [("music", "Music Festival", "ade", "ADE 2022–2026", "Amsterdam, Nethe
           "Five days and five nights when the city never sleeps: more than 1,000 events in nearly 200 locations. DAYS has taken a group every year since 2022, five editions running."),
          ("music", "Music Festival", "primavera", "Primavera Sound 2024–2026", "Barcelona, Spain · 2024, 2025, 2026",
           "Barcelona’s early-summer festival by the sea at Parc del Fòrum. DAYS has taken a group three years running."),
-         ("music", "Music Festival", None, "Dekmantel 2026", "Amsterdam, Netherlands · 2026",
-          "Amsterdam’s festival for electronic music, held in the Amsterdamse Bos. DAYS took a group in 2026."),
          ("city", "City", "seoul", "Seoul: Soft Days", "Seoul, South Korea · 5 days 4 nights",
           "A girls trip to Seoul: shopping in Seongsu-dong and Hannam-dong, cafés worth the queue, a facial and skin consultation, and good food every night."),
+         ("sports", "Sports", None, "Australian Open", "Melbourne, Australia · every January",
+          "Grand Slam tennis at Melbourne Park. As an Official Reseller of Australian Open Travel & Experiences, DAYS books the tickets and the trip around them."),
          ("sports", "Sports", "niseko", "Ski Trip 2024–25", "Niseko, Japan · Dec 2024 – Feb 2025",
           "Led by an avid skier who has arranged snow trips in Japan since 2018. Open to all ski levels.")]
 journal = [("Japan with Home Gravity", "Japan"), ("Jakarta through Reikko’s sound", "Jakarta"), ("Amsterdam through ADE", "Amsterdam"),
@@ -213,7 +213,7 @@ pages.append(f'''<section class="page g-trips">
   <p class="label">Selected open trips</p>
   <h2 class="h">Days we’ve already talked about.</h2>
   <p class="sub">Open trips combine flexibility with curated experiences, and travelers join as a group.</p>
-  <div class="trips">{"".join(f'<article class="card trip">' + (f'<img src="img/{img}.jpg" alt="">' if img else f'<span class="noimg t-music">{MOTIF["music"]}</span>') + f'<div><span class="chip t-{k}">{c}</span><h3 class="h4">{e(t)}</h3><p class="where">{e(w)}</p><p>{e(d)}</p></div></article>' for k, c, img, t, w, d in trips)}</div>
+  <div class="trips">{"".join(f'<article class="card trip">' + (f'<img src="img/{img}.jpg" alt="">' if img else f'<span class="noimg t-{k}">{MOTIF[k]}</span>') + f'<div><span class="chip t-{k}">{c}</span><h3 class="h4">{e(t)}</h3><p class="where">{e(w)}</p><p>{e(d)}</p></div></article>' for k, c, img, t, w, d in trips)}</div>
   <div class="journal">
     <div><p class="label sm">Travel journal</p><h3 class="h4">Cities Unwrapped</h3><p>Destinations told through the people, sounds and craft that shape them.</p></div>
     <ul>{"".join(f'<li><span>{e(t)}</span><span class="label sm">{e(p)}</span></li>' for t, p in journal)}</ul>
