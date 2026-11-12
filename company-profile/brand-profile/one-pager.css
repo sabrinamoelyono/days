@@ -54,3 +54,47 @@
 .op-tl .yr { display: block; font-family: var(--mono); font-size: 22px; font-weight: 500; letter-spacing: -.03em; margin-bottom: 4px; }
 .op-tl p { font-size: 10.5px; line-height: 1.45; }
 .hl img[src$="dolomites.jpg"] { object-position: center 18%; }
+
+/* ---------- A4 portrait ---------- */
+@page { size: 794px 1123px; margin: 0; }
+.page.one { width: 794px; height: 1123px; padding: 40px 48px 32px; }
+.one .topline { margin-bottom: 18px; }
+.op-head { grid-template-columns: 1fr; gap: 16px; }
+.op-mark { width: 360px; }
+.op-h { font-size: 24px; }
+.op-idea { font-size: 16px; margin: 22px 0 18px; }
+.op-proofs { grid-template-columns: 1fr 1fr 1fr 1.2fr; gap: 7px; margin-bottom: 24px; }
+.op-proofs .card { padding: 11px 12px 12px; }
+.op-proofs .stat { font-size: 21px; }
+.op-proofs .card p:last-child { font-size: 9.5px; }
+.op-ao .ao-badge img { height: 42px; }
+
+/* collections as rows: colour tile on the left, line and proof on the right */
+.op-cols { grid-template-columns: 1fr; gap: 7px; margin-bottom: 24px; }
+.op-col { display: grid; grid-template-columns: 200px 1fr; grid-template-rows: auto auto; column-gap: 16px; align-content: center; }
+.op-col .op-tile { grid-row: 1 / 3; height: 50px; margin: 0; flex-direction: row; align-items: center; justify-content: space-between; }
+.op-col .op-tile .motif svg { height: 22px; }
+.op-col .op-tile .lbl { text-align: right; max-width: 110px; }
+.op-col .op-line { align-self: end; font-size: 12.5px; margin: 0 0 2px; }
+.op-col .op-proof { align-self: start; font-size: 8.5px; }
+
+/* highlights, then logos, stacked */
+.op-bottom { grid-template-columns: 1fr; gap: 20px; padding-top: 16px; }
+.hl img, .hl .hl-panel { height: 92px; }
+.hl p { font-size: 9.5px; }
+.op-logos { grid-template-columns: repeat(6, 1fr); gap: 12px; margin-top: 4px; }
+.op-logos img { max-width: 96px; max-height: 30px; }
+.op-foot { flex-wrap: wrap; gap: 6px 18px; }
+.op-foot strong { flex-basis: 100%; margin: 0 0 2px; }
+/* portrait fit: wordmark and title side by side, tighter rows */
+.op-head { grid-template-columns: 300px 1fr; gap: 28px; align-items: end; }
+.op-mark { width: 300px; }
+.op-h { font-size: 19px; }
+.op-head .id { font-size: 9.5px; }
+.op-col .op-tile { height: 46px; }
+.op-cols { gap: 6px; margin-bottom: 22px; }
+.op-logos { margin-bottom: 18px; }
+.op-col .op-tile { height: 52px; }
+.op-cols { gap: 8px; margin-bottom: 26px; }
+.hl img, .hl .hl-panel { height: 104px; }
+.op-bottom { gap: 24px; }

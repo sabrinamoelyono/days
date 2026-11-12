@@ -99,7 +99,7 @@ All four are registered at the Tebet office for preparation, operations and comm
 | `company-profile/DAYS-Company-Profile.pdf` | Company profile, 6-page A4 PDF |
 | `company-profile/index.html` | Company profile as a single self-contained web page |
 | `company-profile/brand-profile/DAYS-Brand-Profile.pdf` | Brand Profile 2027, 13-page A4 landscape PDF (collections, services, team, contact); source in `brand-profile.html` |
-| `company-profile/brand-profile/DAYS-One-Pager.pdf` | Partner one-pager, A4 landscape; built from the Brand Profile by `one_pager.py` |
+| `company-profile/brand-profile/DAYS-One-Pager.pdf` | Partner one-pager, A4 portrait; built from the Brand Profile by `one_pager.py` |
 | `DESIGN.md` | Brand identity: logo use, colour, type, voice and naming |
 
 ---
