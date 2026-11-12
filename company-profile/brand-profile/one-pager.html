@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DAYS One-Pager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,800;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>/* DAYS Brand Profile 2027 — colours sampled from DAYS-Brand-Profile.pdf,
+   type from DESIGN.md: Inter Tight (display + body), JetBrains Mono (labels, figures). */
+:root {
+  --orange: #EC5E30;    /* wordmark · City */
+  --navy: #2C2C65;      /* text · Music Festival */
+  --nature: #9AB4D8;
+  --yellow: #FCE501;    /* Sports */
+  --culinary: #E8CBA6;
+  --paper: #EDE3DE;
+  --lilac: #DFDCE4;
+  --text: #2C2C65;
+  --text-2: #4E4E7E;
+  --line: rgba(44, 44, 101, .25);
+  --card: rgba(250, 245, 242, .62);
+  --mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+@page { size: 1123px 794px; margin: 0; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--paper); color: var(--text);
+  font: 400 12.5px/1.6 "Inter Tight", system-ui, sans-serif;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact;
+}
+h1, h2, h3, h4, p, ul, dl, dd, figure, table { margin: 0; }
+strong { font-weight: 600; }
+a { color: #C9431F; text-decoration: underline; text-underline-offset: 3px; }
+
+/* ---------- page + grainy gradient ---------- */
+.page {
+  width: 1123px; height: 794px; overflow: hidden; position: relative;
+  page-break-after: always; break-after: page; padding: 44px 70px;
+  background-color: var(--paper);
+}
+.page:last-child { page-break-after: auto; break-after: auto; }
+.page::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: url("img/grain.png");
+}
+.page > * { position: relative; z-index: 1; }
+
+.g-cover   { background-image: radial-gradient(45% 65% at 92% 8%, rgba(236,120,90,.75), transparent 70%), radial-gradient(35% 40% at 0% 100%, rgba(154,180,216,.8), transparent 70%); }
+.g-who     { background-image: radial-gradient(40% 55% at 100% 0%, rgba(236,120,90,.7), transparent 70%), radial-gradient(30% 40% at 0% 100%, rgba(250,230,120,.6), transparent 70%); }
+.g-arch    { background-color: var(--lilac); background-image: radial-gradient(35% 60% at 100% 45%, rgba(154,180,216,.95), transparent 70%), radial-gradient(30% 35% at 0% 100%, rgba(236,170,140,.6), transparent 70%); }
+.g-serv    { background-color: #EEE3D6; background-image: radial-gradient(25% 35% at 0% 0%, rgba(250,230,90,.8), transparent 70%), radial-gradient(35% 45% at 100% 100%, rgba(236,130,100,.7), transparent 70%); }
+.g-trips   { background-image: radial-gradient(40% 40% at 45% 0%, rgba(236,150,120,.55), transparent 70%), radial-gradient(40% 40% at 60% 100%, rgba(154,180,216,.7), transparent 70%); }
+.g-trust, .g-team { background-color: var(--lilac); background-image: radial-gradient(35% 40% at 0% 0%, rgba(154,180,216,.9), transparent 70%), radial-gradient(30% 35% at 100% 100%, rgba(236,190,150,.7), transparent 70%); }
+.g-contact { background-image: linear-gradient(180deg, #E0663E 0%, #E8A88E 38%, #E8D4C6 60%, #E6D6CC 80%, #AEB5D8 100%); }
+
+/* ---------- type ---------- */
+.label { font-family: var(--mono); font-size: 8.5px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 12px; }
+.label.sm { font-size: 7.5px; margin-bottom: 4px; }
+.h { font-size: 36px; font-weight: 800; line-height: 1.05; letter-spacing: -.03em; margin-bottom: 8px; }
+.h.xl { font-size: 62px; line-height: .98; letter-spacing: -.04em; }
+.h2 { font-size: 32px; font-weight: 800; letter-spacing: -.03em; line-height: 1.05; margin-bottom: 18px; }
+.h3 { font-size: 20px; font-weight: 800; letter-spacing: -.02em; margin: 30px 0 6px; }
+.h4 { font-size: 16px; font-weight: 800; letter-spacing: -.02em; line-height: 1.2; margin-bottom: 8px; }
+.sub { font-size: 13.5px; margin-bottom: 22px; }
+.narrow { max-width: 560px; }
+p.id, .id { color: var(--text-2); font-size: 11.5px; }
+.card { background: var(--card); border-radius: 4px; }
+
+/* ---------- collection colours ---------- */
+.t-city { background: var(--orange); color: #F6EEE6; }
+.t-nature { background: var(--nature); color: var(--navy); }
+.t-sports { background: var(--yellow); color: var(--navy); }
+.t-culinary { background: var(--culinary); color: var(--navy); }
+.t-music { background: var(--navy); color: var(--yellow); }
+
+/* ---------- 01 cover ---------- */
+.topline { display: flex; justify-content: space-between; font-family: var(--mono); font-size: 8.5px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; }
+.cover-mark { width: 512px; margin: 12px 0 18px -4px; display: block; }
+.cover-grid { display: grid; grid-template-columns: 470px 1fr; gap: 50px; margin-bottom: 20px; }
+.cover-h { font-size: 25px; font-weight: 800; line-height: 1.15; letter-spacing: -.025em; margin-bottom: 10px; }
+.cover-id { font-size: 12.5px; color: var(--text); }
+.cover-body { font-size: 12.5px; line-height: 1.7; }
+.tiles { display: grid; grid-template-columns: repeat(5, 1fr); gap: 7px; margin-bottom: 12px; }
+.tile { height: 70px; border-radius: 3px; padding: 10px 11px 9px; display: flex; flex-direction: column; justify-content: space-between; }
+.tile .motif svg { height: 28px; width: auto; display: block; }
+.tile .lbl { font-family: var(--mono); font-size: 7.5px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; line-height: 1.25; }
+.cover-photos { display: grid; grid-template-columns: 2fr 1fr 1fr 1.42fr; gap: 9px; height: 134px; }
+.ph { position: relative; border-radius: 3px; overflow: hidden; }
+.ph img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.ph figcaption { position: absolute; left: 11px; bottom: 9px; font-family: var(--mono); font-size: 8px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: #fff; }
+
+/* ---------- 02 who ---------- */
+.who-grid { display: grid; grid-template-columns: 1fr 350px; gap: 56px; }
+.who-grid p:not(.label):not(.sub):not(.promise):not(.stat) { margin-bottom: 10px; }
+.side { border-top: 1px solid var(--navy); margin-top: 70px; }
+.side div { padding: 10px 0; border-bottom: 1px solid var(--line); }
+.side dt { font-family: var(--mono); font-size: 7.5px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 2px; }
+.side dd { font-weight: 600; font-size: 12px; }
+.promise { font-size: 16px; font-weight: 800; letter-spacing: -.02em; line-height: 1.3; border-top: 1px solid var(--line); padding-top: 18px; margin: 16px 0 12px; }
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+.stats .card { padding: 10px 11px 12px; }
+.stat { font-family: var(--mono); font-size: 19px; font-weight: 500; letter-spacing: -.03em; margin-bottom: 4px; }
+.stats .card p:last-child { font-size: 9.5px; line-height: 1.4; }
+.why { display: grid; grid-template-columns: 120px 1fr 1fr; gap: 26px; padding: 20px 22px; margin-top: 16px; }
+.why p { font-size: 11px; margin-bottom: 6px; }
+.why .quote { font-size: 15px; font-weight: 800; letter-spacing: -.02em; line-height: 1.3; margin-bottom: 10px; }
+
+/* ---------- 03 architecture ---------- */
+.arch { width: 100%; border-collapse: collapse; margin-top: 28px; }
+.arch th { text-align: left; font-family: var(--mono); font-size: 7.5px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; padding: 0 0 8px; border-bottom: 1.5px solid var(--navy); }
+.arch td { padding: 11px 0; border-bottom: 1px solid var(--line); font-size: 11.5px; }
+.arch th:first-child, .arch td:first-child { width: 35%; }
+.arch th:nth-child(2), .arch td:nth-child(2) { width: 25%; }
+.sq { display: inline-block; width: 8px; height: 8px; margin-right: 8px; vertical-align: 0; }
+
+/* ---------- 04–08 collections ---------- */
+.coll { padding: 0; display: grid; grid-template-columns: 400px 1fr; }
+.g-city   { background-image: radial-gradient(45% 45% at 100% 0%, rgba(236,120,90,.6), transparent 70%); }
+.g-nature { background-color: var(--lilac); background-image: radial-gradient(40% 45% at 100% 40%, rgba(154,180,216,.95), transparent 70%); }
+.g-sports { background-color: #EEE4D8; background-image: radial-gradient(40% 45% at 100% 100%, rgba(236,140,110,.75), transparent 70%); }
+.g-culinary { background-image: radial-gradient(45% 40% at 100% 0%, rgba(236,140,110,.7), transparent 70%); }
+.g-music  { background-color: var(--lilac); background-image: radial-gradient(40% 40% at 100% 100%, rgba(236,200,170,.6), transparent 70%); }
+.panel { padding: 50px 62px 44px; display: flex; flex-direction: column; position: relative; }
+.panel-mark { width: 216px; }
+.panel-line { position: absolute; left: 62px; right: 40px; top: 330px; font-size: 42px; font-weight: 800; letter-spacing: -.035em; line-height: 1.05; }
+.panel-motif { margin-top: auto; }
+.panel-motif svg { width: 242px; height: auto; display: block; }
+.coll-body { padding: 66px 62px 40px 50px; }
+.coll-body > p:not(.label) { font-size: 12.5px; margin-bottom: 10px; max-width: 490px; }
+.coll-meta { border-top: 1px solid var(--line); padding-top: 12px; margin-top: 18px; max-width: 490px; }
+.coll-meta p:not(.label) { font-size: 12px; margin-bottom: 10px; }
+.coll-meta .camp { font-size: 14px; font-weight: 800; letter-spacing: -.015em; }
+
+/* ---------- 09 services ---------- */
+.services { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1.5px solid var(--navy); }
+.svc { padding: 16px 16px 14px 0; }
+.svc + .svc { border-left: 1px solid var(--line); padding-left: 14px; }
+.svc > p:not(.label) { font-size: 10.5px; line-height: 1.55; margin-bottom: 10px; }
+.svc ul { padding-left: 13px; font-size: 10.5px; line-height: 1.5; }
+.svc li { margin-bottom: 3px; }
+.visa { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 9px; margin: 6px 0 16px; }
+.visa .card { padding: 12px 14px 14px; font-size: 10.5px; }
+.visa .big { font-family: var(--mono); font-size: 14px; font-weight: 500; margin: 4px 0 2px; }
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.steps > div { border-top: 1px solid var(--orange); padding-top: 12px; }
+.steps .step { color: #C9431F; }
+.steps h4 { font-size: 12.5px; font-weight: 600; margin: 4px 0 4px; }
+.steps p:not(.label) { font-size: 10.5px; line-height: 1.55; }
+
+/* ---------- 10 open trips ---------- */
+.trips { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+.trip { overflow: hidden; }
+.trip img, .trip .noimg { width: 100%; height: 100px; object-fit: cover; display: block; }
+.trip > div { padding: 11px 12px 12px; }
+.trip .noimg { display: flex; align-items: center; justify-content: center; }
+.trip .noimg svg { width: 120px; }
+.trip .h4 { font-size: 14px; }
+.trip p { font-size: 10px; line-height: 1.5; }
+.trip .where { font-weight: 600; font-size: 10px; margin: -4px 0 6px; }
+.chip { display: inline-block; font-family: var(--mono); font-size: 6.5px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; padding: 2px 6px; border-radius: 2px; margin-bottom: 8px; }
+.journal { display: grid; grid-template-columns: 340px 1fr; gap: 30px; border-top: 1.5px solid var(--navy); margin-top: 18px; padding-top: 14px; }
+.journal p:not(.label) { font-size: 11px; }
+.journal ul { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0 24px; grid-auto-flow: column; grid-template-rows: repeat(3, auto); }
+.journal li { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 8px 0; border-bottom: 1px solid var(--line); font-size: 11.5px; font-weight: 600; letter-spacing: -.01em; }
+.journal li .label { margin: 0; white-space: nowrap; }
+
+/* ---------- 11 trusted ---------- */
+.logos { display: grid; grid-template-columns: repeat(5, 1fr); gap: 60px 30px; margin-top: 90px; align-items: center; }
+.logo { display: flex; align-items: center; justify-content: center; gap: 10px; height: 64px; }
+.logo img { max-width: 150px; max-height: 60px; object-fit: contain; }
+.logo span { font-size: 10px; font-weight: 500; line-height: 1.25; }
+
+/* ---------- 12 team ---------- */
+.team { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; margin-top: 6px; }
+.team img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; }
+.team figcaption { padding-top: 10px; }
+.team strong { display: block; font-size: 16px; font-weight: 800; letter-spacing: -.02em; margin-bottom: 2px; }
+
+/* ---------- 13 contact ---------- */
+.contact-grid { display: grid; grid-template-columns: 1fr 410px; gap: 60px; }
+.contact-grid .label { margin-top: 8px; }
+.contact { border-top: 1px solid var(--navy); }
+.contact div { display: grid; grid-template-columns: 124px 1fr; align-items: center; padding: 13px 0; border-bottom: 1px solid var(--line); }
+.contact dt { font-family: var(--mono); font-size: 7.5px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; }
+.contact dd { font-size: 12px; font-weight: 600; line-height: 1.55; }
+.foot { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--line); margin-top: 84px; padding-top: 12px; font-size: 9px; }
+.foot img { width: 44px; }
+
+/* AO Travel & Experiences Official Reseller badge (white artwork on navy) */
+.ao-badge { display: inline-flex; align-items: center; background: var(--navy); border-radius: 4px; padding: 12px 16px; margin: 2px 0 4px; }
+.ao-badge img { height: 46px; width: auto; display: block; }
+.trip .noimg.ao { background: var(--navy); }
+.trip .noimg.ao .ao-badge { padding: 0; margin: 0; background: none; }
+.trip .noimg.ao .ao-badge img { height: 52px; }
+
+/* DAYS partner one-pager — extends brand-profile.css */
+.one { padding: 34px 56px 30px; display: flex; flex-direction: column; }
+.one .topline { margin-bottom: 14px; }
+.one .label { margin-bottom: 8px; }
+
+.op-head { display: grid; grid-template-columns: 330px 1fr; gap: 44px; align-items: end; }
+.op-mark { width: 330px; display: block; }
+.op-h { font-size: 23px; font-weight: 800; line-height: 1.15; letter-spacing: -.025em; margin-bottom: 4px; }
+.op-head .id { font-size: 10.5px; }
+
+.op-idea { font-size: 17px; line-height: 1.45; letter-spacing: -.01em; margin: 24px 0 16px; max-width: 900px; }
+.op-idea strong { font-weight: 800; }
+
+.op-proofs { display: grid; grid-template-columns: 1fr 1fr 1fr 1.25fr; gap: 8px; margin-bottom: 24px; }
+.op-proofs .card { padding: 13px 14px 14px; }
+.op-proofs .stat { font-family: var(--mono); font-size: 24px; font-weight: 500; letter-spacing: -.03em; margin-bottom: 2px; }
+.op-proofs .card p:last-child { font-size: 10.5px; line-height: 1.35; }
+.op-proofs .op-ao { background: var(--navy); display: flex; align-items: center; justify-content: center; padding: 6px; }
+.op-ao .ao-badge { padding: 0; margin: 0; }
+.op-ao .ao-badge img { height: 52px; }
+
+.op-cols { display: grid; grid-template-columns: repeat(5, 1fr); gap: 9px; margin-bottom: 22px; }
+.op-tile { height: 72px; border-radius: 3px; padding: 8px 10px 7px; display: flex; flex-direction: column; justify-content: space-between; margin-bottom: 7px; }
+.op-tile .motif svg { height: 26px; width: auto; display: block; }
+.op-tile .lbl { font-family: var(--mono); font-size: 7px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; line-height: 1.25; }
+.op-line { font-size: 11.5px; font-weight: 600; line-height: 1.35; margin-bottom: 3px; }
+.op-proof { font-family: var(--mono); font-size: 8px; letter-spacing: .04em; line-height: 1.45; color: var(--text-2); }
+
+.op-bottom { display: grid; grid-template-columns: 1fr 340px; gap: 40px; border-top: 1px solid var(--line); padding-top: 16px; }
+.op-why { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 26px; }
+.op-why h4 { font-size: 13px; font-weight: 800; letter-spacing: -.01em; margin: 0 0 1px; }
+.op-why p { font-size: 10.5px; line-height: 1.45; }
+.op-logos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px 16px; margin-top: 6px; align-items: center; justify-items: center; }
+.op-logos img { max-width: 100px; max-height: 34px; object-fit: contain; }
+
+.op-foot { margin-top: auto; display: flex; gap: 22px; align-items: baseline; border-top: 1px solid var(--navy); padding-top: 10px; font-size: 10.5px; font-weight: 500; }
+.op-foot strong { font-size: 14px; font-weight: 800; letter-spacing: -.02em; margin-right: auto; }
+</style></head>
+<body><section class="page g-cover one">
+  <div class="topline"><span>DAYS / Partner one-pager</span><span>Jakarta · since 2022</span></div>
+  <div class="op-head">
+    <img class="op-mark" src="img/wordmark-orange.png" alt="DAYS">
+    <div>
+      <h1 class="op-h">Experience-driven travel media<br>and global connector between<br>Indonesia and Europe.</h1>
+      <p class="id">Media perjalanan berbasis pengalaman dan penghubung global antara Indonesia dan Eropa.</p>
+    </div>
+  </div>
+  <p class="op-idea"><strong>It starts with the music.</strong> DAYS takes Indonesian travelers to Europe’s festivals, and no one else in Indonesia does it the way we do. Around that core, we plan cities, nature, sport and slow travel.</p>
+  <div class="op-proofs">
+    <div class="card"><p class="stat">5×</p><p>Amsterdam Dance Event, every year 2022–2026</p></div>
+    <div class="card"><p class="stat">2,000+</p><p>visa applications processed since 2022</p></div>
+    <div class="card"><p class="stat">97–98%</p><p>visa approval rate</p></div>
+    <div class="card op-ao"><span class="ao-badge"><img src="img/ao-official-reseller.png" alt="AO Travel &amp; Experiences Official Reseller"></span></div>
+  </div>
+  <p class="label">One brand. Five ways to go.</p>
+  <div class="op-cols"><div class="op-col">
+  <div class="op-tile t-city"><span class="motif"><svg viewBox="0 0 240 90" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M2 2H238V30"/><path d="M12 12H226V40"/><path d="M12 12V88"/><path d="M40 12V88"/><path d="M68 12V88"/><path d="M96 12V88"/><path d="M124 12V88"/><path d="M152 12V88"/><path d="M180 12V88"/><path d="M208 12V88"/><path d="M2 2V88"/></svg></span><span class="lbl">City</span></div>
+  <p class="op-line">A city the way locals live it.</p>
+  <p class="op-proof">Seoul: Soft Days</p>
+</div><div class="op-col">
+  <div class="op-tile t-music"><span class="motif"><svg viewBox="0 0 240 110" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"><path d="M6 45 V65"/><path d="M28 33 V77"/><path d="M50 41 V69"/><path d="M72 29 V81"/><path d="M94 19 V91"/><path d="M116 33 V77"/><path d="M138 43 V67"/><path d="M160 25 V85"/><path d="M182 35 V75"/><path d="M204 21 V89"/><path d="M226 43 V67"/></svg></span><span class="lbl">Music Festival</span></div>
+  <p class="op-line">Europe’s festivals, planned around the lineup. Our core.</p>
+  <p class="op-proof">ADE 2022–2026 · Primavera Sound 2024–2026 · Dekmantel 2026</p>
+</div><div class="op-col">
+  <div class="op-tile t-nature"><span class="motif"><svg viewBox="0 0 240 90" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M2 8 C 60 -4, 100 22, 150 8 S 210 -2, 238 10"/><path d="M2 25 C 60 13, 100 39, 150 25 S 210 15, 238 27"/><path d="M2 42 C 60 30, 100 56, 150 42 S 210 32, 238 44"/><path d="M2 59 C 60 47, 100 73, 150 59 S 210 49, 238 61"/><path d="M2 76 C 60 64, 100 90, 150 76 S 210 66, 238 78"/></svg></span><span class="lbl">Nature</span></div>
+  <p class="op-line">Journeys where the landscape is the reason to go.</p>
+  <p class="op-proof">Dolomites · Positano · Sorrento, 2025</p>
+</div><div class="op-col">
+  <div class="op-tile t-sports"><span class="motif"><svg viewBox="0 0 240 90" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M4 88 L40 2"/><path d="M40 88 L76 2"/><path d="M76 88 L112 2"/><path d="M112 88 L148 2"/><path d="M148 88 L184 2"/><path d="M184 88 L220 2"/></svg></span><span class="lbl">Sports</span></div>
+  <p class="op-line">Formula 1, Grand Slams and active escapes.</p>
+  <p class="op-proof">Australian Open · Niseko 2024–25</p>
+</div><div class="op-col">
+  <div class="op-tile t-culinary"><span class="motif"><svg viewBox="0 0 240 130" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M6 128 V120 A 114 114 0 0 1 234 120 V128"/><path d="M22 128 V120 A 98 98 0 0 1 218 120 V128"/><path d="M38 128 V120 A 82 82 0 0 1 202 120 V128"/></svg></span><span class="lbl">Culinary, Leisure &amp; Wellbeing</span></div>
+  <p class="op-line">Slow travel for food, wine and rest.</p>
+  <p class="op-proof">Tuscany · Florence · Bologna · Rome, 2025</p>
+</div></div>
+  <div class="op-bottom">
+    <div>
+      <p class="label">Why partner with DAYS</p>
+      <div class="op-why"><div><h4>A festival-first audience</h4><p>Indonesian travelers aged 25–55 who plan their year around lineups, race weekends and Grand Slams.</p></div><div><h4>Group departures, year after year</h4><p>Five editions of ADE in a row, and Primavera Sound three years running.</p></div><div><h4>Voice in the scene</h4><p>ADE 2026 Asia Hub panel in Amsterdam, and the Cities Unwrapped travel journal, in English and Bahasa Indonesia.</p></div><div><h4>End to end, documents included</h4><p>Itineraries, tickets, stays and transfers, with in-house visa and passport handling.</p></div></div>
+    </div>
+    <div>
+      <p class="label">Trusted by</p>
+      <div class="op-logos"><img src="img/logo-bni.png" alt=""><img src="img/logo-cikal.png" alt=""><img src="img/logo-mozio.png" alt=""><img src="img/logo-terralogiq.png" alt=""><img src="img/logo-superstars.png" alt=""><img src="img/logo-imagineka.png" alt=""></div>
+    </div>
+  </div>
+  <div class="op-foot">
+    <strong>Let’s plan your next DAYS.</strong>
+    <span>+62 812 2000 0185</span><span>lets@talkaboutdays.com</span><span>@talkaboutdays</span><span>talkaboutdays.com</span>
+  </div>
+</section></body></html>
