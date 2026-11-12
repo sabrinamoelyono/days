@@ -231,6 +231,24 @@ p.id, .id { color: var(--text-2); font-size: 11.5px; }
 
 .op-foot { margin-top: auto; display: flex; gap: 22px; align-items: baseline; border-top: 1px solid var(--navy); padding-top: 10px; font-size: 10.5px; font-weight: 500; }
 .op-foot strong { font-size: 14px; font-weight: 800; letter-spacing: -.02em; margin-right: auto; }
+
+/* Our highlights */
+.op-hl { display: grid; grid-template-columns: repeat(4, 1fr); gap: 9px; }
+.hl img, .hl .hl-panel { width: 100%; height: 66px; object-fit: cover; border-radius: 3px; display: block; margin-bottom: 7px; }
+.hl .hl-panel { display: flex; align-items: center; justify-content: center; }
+.hl .hl-panel svg { height: 34px; width: auto; }
+.hl .hl-panel.ao { background: var(--navy); }
+.hl .hl-panel.ao .ao-badge { padding: 0; margin: 0; background: none; }
+.hl .hl-panel.ao .ao-badge img { height: 40px; width: auto; margin: 0; }
+.hl h4 { font-size: 11.5px; font-weight: 800; letter-spacing: -.01em; margin: 0 0 2px; }
+.hl p { font-size: 9.5px; line-height: 1.4; }
+
+/* Our story so far */
+.op-tl { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; border-top: 2px solid var(--orange); }
+.op-tl li { position: relative; padding-top: 12px; }
+.op-tl li::before { content: ""; position: absolute; top: -6px; left: 0; width: 10px; height: 10px; border-radius: 50%; background: var(--orange); }
+.op-tl .yr { display: block; font-family: var(--mono); font-size: 22px; font-weight: 500; letter-spacing: -.03em; margin-bottom: 4px; }
+.op-tl p { font-size: 10.5px; line-height: 1.45; }
 </style></head>
 <body><section class="page g-cover one">
   <div class="topline"><span>DAYS / Partner one-pager</span><span>Jakarta · since 2022</span></div>
@@ -272,8 +290,8 @@ p.id, .id { color: var(--text-2); font-size: 11.5px; }
 </div></div>
   <div class="op-bottom">
     <div>
-      <p class="label">Why partner with DAYS</p>
-      <div class="op-why"><div><h4>A festival-first audience</h4><p>Indonesian travelers aged 25–55 who plan their year around lineups, race weekends and Grand Slams.</p></div><div><h4>Group departures, year after year</h4><p>Five editions of ADE in a row, and Primavera Sound three years running.</p></div><div><h4>Voice in the scene</h4><p>ADE 2026 Asia Hub panel in Amsterdam, and the Cities Unwrapped travel journal, in English and Bahasa Indonesia.</p></div><div><h4>End to end, documents included</h4><p>Itineraries, tickets, stays and transfers, with in-house visa and passport handling.</p></div></div>
+      <p class="label">Our highlights</p>
+      <div class="op-hl"><div class="hl"><img src="img/ade.jpg" alt=""><h4>ADE, Amsterdam</h4><p>Five editions in a row, 2022–2026, and the ADE 2026 Asia Hub panel.</p></div><div class="hl"><img src="img/primavera.jpg" alt=""><h4>Primavera Sound</h4><p>Barcelona, with a DAYS group three years running, 2024–2026.</p></div><div class="hl"><img src="img/niseko.jpg" alt=""><h4>Niseko, Japan</h4><p>Ski open trip for all levels, winter 2024–25.</p></div><div class="hl"><span class="hl-panel t-culinary"><svg viewBox="0 0 240 130" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M6 128 V120 A 114 114 0 0 1 234 120 V128"/><path d="M22 128 V120 A 98 98 0 0 1 218 120 V128"/><path d="M38 128 V120 A 82 82 0 0 1 202 120 V128"/></svg></span><h4>Italy, 2025</h4><p>Seven places in one year, from the Dolomites and Positano to Florence and Rome.</p></div></div>
     </div>
     <div>
       <p class="label">Trusted by</p>

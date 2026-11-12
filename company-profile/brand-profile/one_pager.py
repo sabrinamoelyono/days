@@ -29,6 +29,22 @@ WHY = [
     ("End to end, documents included", "Itineraries, tickets, stays and transfers, with in-house visa and passport handling."),
 ]
 
+# Highlights: four moments, each with an image or a collection panel.
+HIGHLIGHTS = [
+    ("img", "ade", "ADE, Amsterdam", "Five editions in a row, 2022–2026, and the ADE 2026 Asia Hub panel."),
+    ("img", "primavera", "Primavera Sound", "Barcelona, with a DAYS group three years running, 2024–2026."),
+    ("img", "niseko", "Niseko, Japan", "Ski open trip for all levels, winter 2024–25."),
+    ("motif", "culinary", "Italy, 2025", "Seven places in one year, from the Dolomites and Positano to Florence and Rome."),
+]
+
+# Timeline: what DAYS has done, year by year.
+TIMELINE = [
+    ("2022", "DAYS founded in Jakarta. First group to Amsterdam Dance Event."),
+    ("2024", "First group to Primavera Sound, Barcelona. Ski open trip to Niseko, winter 2024–25."),
+    ("2025", "Italy: Dolomites, Positano, Sorrento, Tuscany, Florence, Bologna and Rome."),
+    ("2026", "Fifth ADE, Dekmantel, and the ADE Asia Hub panel in Amsterdam."),
+]
+
 LOGOS = ["bni", "cikal", "mozio", "terralogiq", "superstars", "imagineka"]
 
 tiles = "".join(f'''<div class="op-col">
@@ -37,7 +53,25 @@ tiles = "".join(f'''<div class="op-col">
   <p class="op-proof">{LINES[k][1]}</p>
 </div>''' for k in ORDER)
 
-why = "".join(f'<div><h4>{h}</h4><p>{p}</p></div>' for h, p in WHY)
+import sys
+VARIANT = sys.argv[1] if len(sys.argv) > 1 else "highlights"
+
+def media(kind, ref):
+    if kind == "img":
+        return f'<img src="img/{ref}.jpg" alt="">'
+    if kind == "ao":
+        return f'<span class="hl-panel ao">{AO_BADGE}</span>'
+    return f'<span class="hl-panel t-{ref}">{MOTIF[ref]}</span>'
+
+SECTIONS = {
+    "why": ("Why partner with DAYS",
+            '<div class="op-why">' + "".join(f'<div><h4>{h}</h4><p>{p}</p></div>' for h, p in WHY) + "</div>"),
+    "highlights": ("Our highlights",
+            '<div class="op-hl">' + "".join(f'<div class="hl">{media(k, r)}<h4>{t}</h4><p>{d}</p></div>' for k, r, t, d in HIGHLIGHTS) + "</div>"),
+    "timeline": ("Our story so far",
+            '<ol class="op-tl">' + "".join(f'<li><span class="yr">{y}</span><p>{d}</p></li>' for y, d in TIMELINE) + "</ol>"),
+}
+section_label, section_html = SECTIONS[VARIANT]
 logos = "".join(f'<img src="img/logo-{l}.png" alt="">' for l in LOGOS)
 
 page = f'''<section class="page g-cover one">
@@ -60,8 +94,8 @@ page = f'''<section class="page g-cover one">
   <div class="op-cols">{tiles}</div>
   <div class="op-bottom">
     <div>
-      <p class="label">Why partner with DAYS</p>
-      <div class="op-why">{why}</div>
+      <p class="label">{section_label}</p>
+      {section_html}
     </div>
     <div>
       <p class="label">Trusted by</p>
@@ -83,5 +117,6 @@ html = f'''<!doctype html>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,800;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>{css}</style></head>
 <body>{page}</body></html>'''
-(HERE / "one-pager.html").write_text(html)
-print("wrote one-pager.html")
+out = HERE / ("one-pager.html" if len(sys.argv) < 3 else sys.argv[2])
+out.write_text(html)
+print("wrote", out.name, "·", VARIANT)
