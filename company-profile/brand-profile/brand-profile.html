@@ -151,11 +151,14 @@ p.id, .id { color: var(--text-2); font-size: 11.5px; }
 .steps p:not(.label) { font-size: 10.5px; line-height: 1.55; }
 
 /* ---------- 10 open trips ---------- */
-.trips { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; }
+.trips { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
 .trip { overflow: hidden; }
-.trip img { width: 100%; height: 108px; object-fit: cover; display: block; }
-.trip > div { padding: 12px 14px 14px; }
-.trip p { font-size: 10.5px; line-height: 1.55; }
+.trip img, .trip .noimg { width: 100%; height: 100px; object-fit: cover; display: block; }
+.trip > div { padding: 11px 12px 12px; }
+.trip .noimg { display: flex; align-items: center; justify-content: center; }
+.trip .noimg svg { width: 120px; }
+.trip .h4 { font-size: 14px; }
+.trip p { font-size: 10px; line-height: 1.5; }
 .trip .where { font-weight: 600; font-size: 10px; margin: -4px 0 6px; }
 .chip { display: inline-block; font-family: var(--mono); font-size: 6.5px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; padding: 2px 6px; border-radius: 2px; margin-bottom: 8px; }
 .journal { display: grid; grid-template-columns: 340px 1fr; gap: 30px; border-top: 1.5px solid var(--navy); margin-top: 18px; padding-top: 14px; }
@@ -210,13 +213,13 @@ p.id, .id { color: var(--text-2); font-size: 11.5px; }
     <div>
       <h2 class="h">Travel with personality.</h2>
       <p class="sub">Perjalanan dengan karakter.</p>
-      <p><strong>Exploring travel, culture, and the days worth talking about.</strong> DAYS plans premium, approachable journeys for Indonesian travelers aged 25–55. Every trip is designed around interests, thoughtful choices and the people you travel with.</p>
-      <p>Our voice is curious, warm, confident and considered: specific, useful language from people who have been there first.</p>
-      <p class="id">Keluarga, teman, solo traveler, dan grup. Gaya perjalanan boleh berbeda; perhatian terhadap pengalaman tetap sama.</p>
+      <p><strong>Music festivals are our core.</strong> DAYS is the only travel company in Indonesia built around festival journeys, and one of very few in the world. Around that core, we plan premium, approachable trips for Indonesian travelers aged 25–55: Formula 1 and Grand Slam weekends, cities, nature and slow travel.</p>
+      <p>Every trip is designed around interests, thoughtful choices and the people you travel with, in a voice that is curious, warm, confident and considered.</p>
+      <p class="id">Festival musik adalah inti DAYS: satu-satunya perusahaan perjalanan di Indonesia yang dibangun di sekitar perjalanan festival. Untuk keluarga, teman, solo traveler, dan grup.</p>
       <p class="promise">Our promise: make it feel personal, make the details clear, and leave room for the unexpected moments that make a trip yours.</p>
       <div class="stats"><div class="card"><p class="stat">5×</p><p>Amsterdam Dance Event, every year 2022–2026</p></div><div class="card"><p class="stat">1,000+</p><p>visa applications processed since 2024</p></div><div class="card"><p class="stat">97–98%</p><p>visa approval rate</p></div><div class="card"><p class="stat">2018</p><p>handling visas and travel since</p></div></div>
     </div>
-    <dl class="side"><div><dt>Based in</dt><dd>Jakarta Selatan</dd></div><div><dt>Who we travel with</dt><dd>Families, friends, solo travelers and groups</dd></div><div><dt>What we plan</dt><dd>Five collections, four services</dd></div><div><dt>Languages</dt><dd>English and Bahasa Indonesia</dd></div><div><dt>Personality</dt><dd>Curious · Warm · Confident · Considered</dd></div><div><dt>Company</dt><dd>PT Vakansi Media Global · est. 2024 · licensed travel agency</dd></div></dl>
+    <dl class="side"><div><dt>Based in</dt><dd>Jakarta Selatan</dd></div><div><dt>Who we travel with</dt><dd>Families, friends, solo travelers and groups</dd></div><div><dt>What we plan</dt><dd>Five collections, four services</dd></div><div><dt>Languages</dt><dd>English and Bahasa Indonesia</dd></div><div><dt>Official reseller</dt><dd>Australian Open Travel &amp; Experiences</dd></div><div><dt>Company</dt><dd>PT Vakansi Media Global · est. 2024 · licensed travel agency</dd></div></dl>
   </div>
   <div class="card why">
     <p class="label">Why book with DAYS</p>
@@ -238,7 +241,7 @@ p.id, .id { color: var(--text-2); font-size: 11.5px; }
   <p class="narrow">Every trip gets one primary collection, chosen by its main motivation. Other experiences on the itinerary appear as supporting interests.</p>
   <table class="arch">
     <thead><tr><th>The trip</th><th>Leading collection</th><th>Why</th></tr></thead>
-    <tbody><tr><td>A festival trip with restaurants and sightseeing</td><td><i class="sq t-music"></i><strong>Music Festival</strong></td><td>Music is the anchor; City and Culinary are secondary.</td></tr><tr><td>Skiing, surfing or a hiking-focused trip</td><td><i class="sq t-sports"></i><strong>Sports</strong></td><td>The activity is the reason to travel.</td></tr><tr><td>A mountain or coastal scenery escape</td><td><i class="sq t-nature"></i><strong>Nature</strong></td><td>The landscape and slower discovery lead.</td></tr><tr><td>A food-led city break or a spa retreat</td><td><i class="sq t-culinary"></i><strong>Culinary, Leisure &amp; Wellbeing</strong></td><td>Food, rest or restoration shapes the itinerary.</td></tr><tr><td>A city break that includes one concert</td><td><i class="sq t-city"></i><strong>City</strong></td><td>The city experience remains the main draw.</td></tr></tbody>
+    <tbody><tr><td>A trip built around a festival lineup</td><td><i class="sq t-music"></i><strong>Music Festival</strong></td><td>The lineup is the reason to travel. This is our core.</td></tr><tr><td>A city break that includes one concert</td><td><i class="sq t-city"></i><strong>City</strong></td><td>The city experience remains the main draw.</td></tr><tr><td>A mountain or coastal scenery escape</td><td><i class="sq t-nature"></i><strong>Nature</strong></td><td>The landscape and slower discovery lead.</td></tr><tr><td>An F1 weekend, a Grand Slam, or a ski, surf or hiking trip</td><td><i class="sq t-sports"></i><strong>Sports</strong></td><td>The event or the activity is the reason to travel.</td></tr><tr><td>A slow trip for food, wine or a spa retreat</td><td><i class="sq t-culinary"></i><strong>Culinary, Leisure &amp; Wellbeing</strong></td><td>Gastronomy, wineries or rest shape a slower itinerary.</td></tr></tbody>
   </table>
 </section><section class="page coll g-music">
   <div class="panel t-music">
@@ -249,11 +252,11 @@ p.id, .id { color: var(--text-2); font-size: 11.5px; }
   <div class="coll-body">
     <p class="label">Collection · Music Festival</p>
     <h2 class="h2">Music Festival</h2>
-    <p>For journeys shaped by music, from the first set to the last shared memory.</p>
-    <p class="id">Untuk perjalanan yang mengikuti irama musik, dari penampilan pertama hingga kenangan yang dibawa pulang.</p>
+    <p>Our core. Journeys built around the lineup, from the first set to the last shared memory. DAYS is the only travel company in Indonesia built around music festivals, and one of very few in the world.</p>
+    <p class="id">Inti dari DAYS. Perjalanan yang dibangun di sekitar lineup, dari penampilan pertama hingga kenangan yang dibawa pulang. Satu-satunya perusahaan perjalanan di Indonesia yang berfokus pada festival musik.</p>
     <div class="coll-meta">
-      <p class="label sm">Experiences</p><p>Festival weekend · Multi-stage discovery · Music and city journey</p>
-      <p class="label sm">Track record</p><p>Amsterdam Dance Event, every year since 2022 · Primavera Sound, Barcelona 2027</p>
+      <p class="label sm">Experiences</p><p>Festival weekend · Multi-day festival · Multi-stage discovery</p>
+      <p class="label sm">Track record</p><p>Amsterdam Dance Event, every year since 2022 · Primavera Sound, Barcelona, 2024–2026 · Dekmantel, Amsterdam, 2026</p>
       <p class="label sm">Campaign line</p><p class="camp">Ikuti musiknya. Nikmati momennya.</p>
     </div>
   </div>
@@ -300,11 +303,11 @@ p.id, .id { color: var(--text-2); font-size: 11.5px; }
   <div class="coll-body">
     <p class="label">Collection · Sports</p>
     <h2 class="h2">Sports</h2>
-    <p>For the thrill of being in the crowd or taking part: iconic events and active escapes.</p>
-    <p class="id">Untuk merasakan semangat dari tribun maupun ikut beraksi lewat perjalanan aktif.</p>
+    <p>For the thrill of being in the crowd or taking part. Sport tourism to the events that matter, from Formula 1 in Monza and Barcelona to Grand Slam tennis at the Australian Open, plus active escapes on snow, surf and trail.</p>
+    <p class="id">Untuk merasakan semangat dari tribun maupun ikut beraksi: dari Formula 1 di Monza dan Barcelona hingga Grand Slam tenis di Australian Open, juga perjalanan aktif ke salju, ombak, dan jalur pendakian.</p>
     <div class="coll-meta">
-      <p class="label sm">Experiences</p><p>F1 weekend · Australian Open · Ski trip · Surf escape · Hiking trip</p>
-      <p class="label sm">Track record</p><p>Niseko ski open trip, winter 2024–25</p>
+      <p class="label sm">Experiences</p><p>F1 Grand Prix weekend in Monza or Barcelona · Australian Open · Ski trip · Surf escape · Hiking trip</p>
+      <p class="label sm">Official reseller</p><p>Australian Open Travel &amp; Experiences</p><p class="label sm">Track record</p><p>Niseko ski open trip, winter 2024–25</p>
       <p class="label sm">Campaign line</p><p class="camp">Saksikan aksinya. Rasakan serunya.</p>
     </div>
   </div>
@@ -317,10 +320,10 @@ p.id, .id { color: var(--text-2); font-size: 11.5px; }
   <div class="coll-body">
     <p class="label">Collection · Culinary, Leisure &amp; Wellbeing</p>
     <h2 class="h2">Culinary, Leisure &amp; Wellbeing</h2>
-    <p>For good food, unhurried stays and time to feel restored. Discovery with a gentler pace.</p>
-    <p class="id">Untuk menikmati kuliner, bersantai, dan kembali segar. Menemukan hal baru dengan ritme yang lebih tenang.</p>
+    <p>Slow travel for good food, good wine and time to feel restored: gastronomic exploration, winery visits, spa retreats and stays at wellbeing hotels.</p>
+    <p class="id">Perjalanan yang lebih pelan untuk menikmati kuliner, anggur, dan waktu untuk kembali segar: eksplorasi gastronomi, kunjungan ke kebun anggur, spa retreat, dan menginap di hotel wellbeing.</p>
     <div class="coll-meta">
-      <p class="label sm">Experiences</p><p>Culinary journey · Slow resort stay · Spa and wellbeing escape</p>
+      <p class="label sm">Experiences</p><p>Gastronomic journey · Winery visit · Spa retreat · Wellbeing hotel stay</p>
       
       <p class="label sm">Campaign line</p><p class="camp">Nikmati tanpa terburu-buru.</p>
     </div>
@@ -340,7 +343,7 @@ p.id, .id { color: var(--text-2); font-size: 11.5px; }
   <p class="label">Selected open trips</p>
   <h2 class="h">Days we’ve already talked about.</h2>
   <p class="sub">Open trips combine flexibility with curated experiences, and travelers join as a group.</p>
-  <div class="trips"><article class="card trip"><img src="img/ade.jpg" alt=""><div><span class="chip t-music">Music Festival</span><h3 class="h4">ADE 2022–2026</h3><p class="where">Amsterdam, Netherlands · every October</p><p>Five days and five nights when the city never sleeps: more than 1,000 events in nearly 200 locations. DAYS has taken a group every year since 2022, five editions running.</p></div></article><article class="card trip"><img src="img/seoul.jpg" alt=""><div><span class="chip t-city">City</span><h3 class="h4">Seoul: Soft Days</h3><p class="where">Seoul, South Korea · 5 days 4 nights</p><p>A girls trip to Seoul: shopping in Seongsu-dong and Hannam-dong, cafés worth the queue, a facial and skin consultation, and good food every night.</p></div></article><article class="card trip"><img src="img/niseko.jpg" alt=""><div><span class="chip t-sports">Sports</span><h3 class="h4">Ski Trip 2024–25</h3><p class="where">Niseko, Japan · Dec 2024 – Feb 2025</p><p>Led by an avid skier who has arranged snow trips in Japan since 2018. Open to all ski levels.</p></div></article></div>
+  <div class="trips"><article class="card trip"><img src="img/ade.jpg" alt=""><div><span class="chip t-music">Music Festival</span><h3 class="h4">ADE 2022–2026</h3><p class="where">Amsterdam, Netherlands · every October</p><p>Five days and five nights when the city never sleeps: more than 1,000 events in nearly 200 locations. DAYS has taken a group every year since 2022, five editions running.</p></div></article><article class="card trip"><img src="img/primavera.jpg" alt=""><div><span class="chip t-music">Music Festival</span><h3 class="h4">Primavera Sound 2024–2026</h3><p class="where">Barcelona, Spain · 2024, 2025, 2026</p><p>Barcelona’s early-summer festival by the sea at Parc del Fòrum. DAYS has taken a group three years running.</p></div></article><article class="card trip"><span class="noimg t-music"><svg viewBox="0 0 240 110" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"><path d="M6 45 V65"/><path d="M28 33 V77"/><path d="M50 41 V69"/><path d="M72 29 V81"/><path d="M94 19 V91"/><path d="M116 33 V77"/><path d="M138 43 V67"/><path d="M160 25 V85"/><path d="M182 35 V75"/><path d="M204 21 V89"/><path d="M226 43 V67"/></svg></span><div><span class="chip t-music">Music Festival</span><h3 class="h4">Dekmantel 2026</h3><p class="where">Amsterdam, Netherlands · 2026</p><p>Amsterdam’s festival for electronic music, held in the Amsterdamse Bos. DAYS took a group in 2026.</p></div></article><article class="card trip"><img src="img/seoul.jpg" alt=""><div><span class="chip t-city">City</span><h3 class="h4">Seoul: Soft Days</h3><p class="where">Seoul, South Korea · 5 days 4 nights</p><p>A girls trip to Seoul: shopping in Seongsu-dong and Hannam-dong, cafés worth the queue, a facial and skin consultation, and good food every night.</p></div></article><article class="card trip"><img src="img/niseko.jpg" alt=""><div><span class="chip t-sports">Sports</span><h3 class="h4">Ski Trip 2024–25</h3><p class="where">Niseko, Japan · Dec 2024 – Feb 2025</p><p>Led by an avid skier who has arranged snow trips in Japan since 2018. Open to all ski levels.</p></div></article></div>
   <div class="journal">
     <div><p class="label sm">Travel journal</p><h3 class="h4">Cities Unwrapped</h3><p>Destinations told through the people, sounds and craft that shape them.</p></div>
     <ul><li><span>Japan with Home Gravity</span><span class="label sm">Japan</span></li><li><span>Jakarta through Reikko’s sound</span><span class="label sm">Jakarta</span></li><li><span>Amsterdam through ADE</span><span class="label sm">Amsterdam</span></li><li><span>Amsterdam through Goldie’s Craft</span><span class="label sm">Amsterdam</span></li><li><span>Los Angeles through Danny’s Mudshop</span><span class="label sm">Los Angeles</span></li></ul>

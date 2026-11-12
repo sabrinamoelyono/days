@@ -33,32 +33,33 @@ MOTIF = {
 }
 
 COLLECTIONS = [
-    # key, name, panel class, wordmark, line, desc, desc_id, experiences, extra (label, value), campaign
+    # key, name, panel class, wordmark, line, desc, desc_id, experiences, extras [(label, value)], campaign
     ("city", "City", "wordmark-cream", "A city.<br>Your pace.",
      "For travelers who follow their curiosity through neighborhoods, culture and the city after dark.",
      "Untuk penjelajah yang ingin mengenal sudut kota, budaya lokal, dan suasana selepas senja.",
      "Tokyo neighborhood walk · Bangkok after dark · Melbourne city break",
-     ("Featured places", "New York · Bangkok · Tokyo"), "Jelajahi kota, sesuai ritmemu."),
+     [("Featured places", "New York · Bangkok · Tokyo")], "Jelajahi kota, sesuai ritmemu."),
     ("nature", "Nature", "wordmark-navy", "Room to<br>breathe.",
      "For journeys where the landscape is the reason to go, with time to appreciate the view.",
      "Untuk perjalanan yang menjadikan keindahan alam sebagai tujuan utama, dengan waktu untuk menikmatinya.",
      "Lakeside escape · Mountain scenery · Coastal hideaway",
-     None, "Ruang untuk menikmati alam."),
+     [], "Ruang untuk menikmati alam."),
     ("sports", "Sports", "wordmark-navy", "Be there.<br>Be part of it.",
-     "For the thrill of being in the crowd or taking part: iconic events and active escapes.",
-     "Untuk merasakan semangat dari tribun maupun ikut beraksi lewat perjalanan aktif.",
-     "F1 weekend · Australian Open · Ski trip · Surf escape · Hiking trip",
-     ("Track record", "Niseko ski open trip, winter 2024–25"), "Saksikan aksinya. Rasakan serunya."),
+     "For the thrill of being in the crowd or taking part. Sport tourism to the events that matter, from Formula 1 in Monza and Barcelona to Grand Slam tennis at the Australian Open, plus active escapes on snow, surf and trail.",
+     "Untuk merasakan semangat dari tribun maupun ikut beraksi: dari Formula 1 di Monza dan Barcelona hingga Grand Slam tenis di Australian Open, juga perjalanan aktif ke salju, ombak, dan jalur pendakian.",
+     "F1 Grand Prix weekend in Monza or Barcelona · Australian Open · Ski trip · Surf escape · Hiking trip",
+     [("Official reseller", "Australian Open Travel &amp; Experiences"), ("Track record", "Niseko ski open trip, winter 2024–25")],
+     "Saksikan aksinya. Rasakan serunya."),
     ("culinary", "Culinary, Leisure &amp; Wellbeing", "wordmark-navy", "Take your<br>time.",
-     "For good food, unhurried stays and time to feel restored. Discovery with a gentler pace.",
-     "Untuk menikmati kuliner, bersantai, dan kembali segar. Menemukan hal baru dengan ritme yang lebih tenang.",
-     "Culinary journey · Slow resort stay · Spa and wellbeing escape",
-     None, "Nikmati tanpa terburu-buru."),
+     "Slow travel for good food, good wine and time to feel restored: gastronomic exploration, winery visits, spa retreats and stays at wellbeing hotels.",
+     "Perjalanan yang lebih pelan untuk menikmati kuliner, anggur, dan waktu untuk kembali segar: eksplorasi gastronomi, kunjungan ke kebun anggur, spa retreat, dan menginap di hotel wellbeing.",
+     "Gastronomic journey · Winery visit · Spa retreat · Wellbeing hotel stay",
+     [], "Nikmati tanpa terburu-buru."),
     ("music", "Music Festival", "wordmark-yellow", "Follow<br>the sound.",
-     "For journeys shaped by music, from the first set to the last shared memory.",
-     "Untuk perjalanan yang mengikuti irama musik, dari penampilan pertama hingga kenangan yang dibawa pulang.",
-     "Festival weekend · Multi-stage discovery · Music and city journey",
-     ("Track record", "Amsterdam Dance Event, every year since 2022 · Primavera Sound, Barcelona 2027"),
+     "Our core. Journeys built around the lineup, from the first set to the last shared memory. DAYS is the only travel company in Indonesia built around music festivals, and one of very few in the world.",
+     "Inti dari DAYS. Perjalanan yang dibangun di sekitar lineup, dari penampilan pertama hingga kenangan yang dibawa pulang. Satu-satunya perusahaan perjalanan di Indonesia yang berfokus pada festival musik.",
+     "Festival weekend · Multi-day festival · Multi-stage discovery",
+     [("Track record", "Amsterdam Dance Event, every year since 2022 · Primavera Sound, Barcelona, 2024–2026 · Dekmantel, Amsterdam, 2026")],
      "Ikuti musiknya. Nikmati momennya."),
 ]
 
@@ -95,7 +96,7 @@ pages.append(f'''<section class="page g-cover">
 # ---------------------------------------------------------------- 02 who we are
 side = [("Based in", "Jakarta Selatan"), ("Who we travel with", "Families, friends, solo travelers and groups"),
         ("What we plan", "Five collections, four services"), ("Languages", "English and Bahasa Indonesia"),
-        ("Personality", "Curious · Warm · Confident · Considered"),
+        ("Official reseller", "Australian Open Travel & Experiences"),
         ("Company", "PT Vakansi Media Global · est. 2024 · licensed travel agency")]
 stats = [("5×", "Amsterdam Dance Event, every year 2022–2026"), ("1,000+", "visa applications processed since 2024"),
          ("97–98%", "visa approval rate"), ("2018", "handling visas and travel since")]
@@ -105,9 +106,9 @@ pages.append(f'''<section class="page g-who">
     <div>
       <h2 class="h">Travel with personality.</h2>
       <p class="sub">Perjalanan dengan karakter.</p>
-      <p><strong>Exploring travel, culture, and the days worth talking about.</strong> DAYS plans premium, approachable journeys for Indonesian travelers aged 25–55. Every trip is designed around interests, thoughtful choices and the people you travel with.</p>
-      <p>Our voice is curious, warm, confident and considered: specific, useful language from people who have been there first.</p>
-      <p class="id">Keluarga, teman, solo traveler, dan grup. Gaya perjalanan boleh berbeda; perhatian terhadap pengalaman tetap sama.</p>
+      <p><strong>Music festivals are our core.</strong> DAYS is the only travel company in Indonesia built around festival journeys, and one of very few in the world. Around that core, we plan premium, approachable trips for Indonesian travelers aged 25–55: Formula 1 and Grand Slam weekends, cities, nature and slow travel.</p>
+      <p>Every trip is designed around interests, thoughtful choices and the people you travel with, in a voice that is curious, warm, confident and considered.</p>
+      <p class="id">Festival musik adalah inti DAYS: satu-satunya perusahaan perjalanan di Indonesia yang dibangun di sekitar perjalanan festival. Untuk keluarga, teman, solo traveler, dan grup.</p>
       <p class="promise">Our promise: make it feel personal, make the details clear, and leave room for the unexpected moments that make a trip yours.</p>
       <div class="stats">{"".join(f'<div class="card"><p class="stat">{e(n)}</p><p>{e(t)}</p></div>' for n, t in stats)}</div>
     </div>
@@ -128,11 +129,11 @@ pages.append(f'''<section class="page g-who">
 </section>''')
 
 # ---------------------------------------------------------------- 03 architecture
-arch = [("A festival trip with restaurants and sightseeing", "music", "Music Festival", "Music is the anchor; City and Culinary are secondary."),
-        ("Skiing, surfing or a hiking-focused trip", "sports", "Sports", "The activity is the reason to travel."),
+arch = [("A trip built around a festival lineup", "music", "Music Festival", "The lineup is the reason to travel. This is our core."),
+        ("A city break that includes one concert", "city", "City", "The city experience remains the main draw."),
         ("A mountain or coastal scenery escape", "nature", "Nature", "The landscape and slower discovery lead."),
-        ("A food-led city break or a spa retreat", "culinary", "Culinary, Leisure &amp; Wellbeing", "Food, rest or restoration shapes the itinerary."),
-        ("A city break that includes one concert", "city", "City", "The city experience remains the main draw.")]
+        ("An F1 weekend, a Grand Slam, or a ski, surf or hiking trip", "sports", "Sports", "The event or the activity is the reason to travel."),
+        ("A slow trip for food, wine or a spa retreat", "culinary", "Culinary, Leisure &amp; Wellbeing", "Gastronomy, wineries or rest shape a slower itinerary.")]
 pages.append(f'''<section class="page g-arch">
   <p class="label">Brand architecture</p>
   <h2 class="h">One DAYS. Five collections.</h2>
@@ -146,8 +147,8 @@ pages.append(f'''<section class="page g-arch">
 </section>''')
 
 # ---------------------------------------------------------------- 04–08 collections
-for key, name, mark, line, desc, desc_id, exp, extra, camp in COLLECTIONS:
-    extra_html = f'<p class="label sm">{e(extra[0])}</p><p>{e(extra[1])}</p>' if extra else ""
+for key, name, mark, line, desc, desc_id, exp, extras, camp in COLLECTIONS:
+    extra_html = "".join(f'<p class="label sm">{e(k)}</p><p>{v}</p>' for k, v in extras)
     pages.append(f'''<section class="page coll g-{key}">
   <div class="panel t-{key}">
     <img class="panel-mark" src="img/{mark}.png" alt="DAYS">
@@ -198,6 +199,10 @@ pages.append(f'''<section class="page g-serv">
 # ---------------------------------------------------------------- 10 open trips
 trips = [("music", "Music Festival", "ade", "ADE 2022–2026", "Amsterdam, Netherlands · every October",
           "Five days and five nights when the city never sleeps: more than 1,000 events in nearly 200 locations. DAYS has taken a group every year since 2022, five editions running."),
+         ("music", "Music Festival", "primavera", "Primavera Sound 2024–2026", "Barcelona, Spain · 2024, 2025, 2026",
+          "Barcelona’s early-summer festival by the sea at Parc del Fòrum. DAYS has taken a group three years running."),
+         ("music", "Music Festival", None, "Dekmantel 2026", "Amsterdam, Netherlands · 2026",
+          "Amsterdam’s festival for electronic music, held in the Amsterdamse Bos. DAYS took a group in 2026."),
          ("city", "City", "seoul", "Seoul: Soft Days", "Seoul, South Korea · 5 days 4 nights",
           "A girls trip to Seoul: shopping in Seongsu-dong and Hannam-dong, cafés worth the queue, a facial and skin consultation, and good food every night."),
          ("sports", "Sports", "niseko", "Ski Trip 2024–25", "Niseko, Japan · Dec 2024 – Feb 2025",
@@ -208,7 +213,7 @@ pages.append(f'''<section class="page g-trips">
   <p class="label">Selected open trips</p>
   <h2 class="h">Days we’ve already talked about.</h2>
   <p class="sub">Open trips combine flexibility with curated experiences, and travelers join as a group.</p>
-  <div class="trips">{"".join(f'<article class="card trip"><img src="img/{img}.jpg" alt=""><div><span class="chip t-{k}">{c}</span><h3 class="h4">{e(t)}</h3><p class="where">{e(w)}</p><p>{e(d)}</p></div></article>' for k, c, img, t, w, d in trips)}</div>
+  <div class="trips">{"".join(f'<article class="card trip">' + (f'<img src="img/{img}.jpg" alt="">' if img else f'<span class="noimg t-music">{MOTIF["music"]}</span>') + f'<div><span class="chip t-{k}">{c}</span><h3 class="h4">{e(t)}</h3><p class="where">{e(w)}</p><p>{e(d)}</p></div></article>' for k, c, img, t, w, d in trips)}</div>
   <div class="journal">
     <div><p class="label sm">Travel journal</p><h3 class="h4">Cities Unwrapped</h3><p>Destinations told through the people, sounds and craft that shape them.</p></div>
     <ul>{"".join(f'<li><span>{e(t)}</span><span class="label sm">{e(p)}</span></li>' for t, p in journal)}</ul>

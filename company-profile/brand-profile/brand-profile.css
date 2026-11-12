@@ -145,11 +145,14 @@ p.id, .id { color: var(--text-2); font-size: 11.5px; }
 .steps p:not(.label) { font-size: 10.5px; line-height: 1.55; }
 
 /* ---------- 10 open trips ---------- */
-.trips { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; }
+.trips { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
 .trip { overflow: hidden; }
-.trip img { width: 100%; height: 108px; object-fit: cover; display: block; }
-.trip > div { padding: 12px 14px 14px; }
-.trip p { font-size: 10.5px; line-height: 1.55; }
+.trip img, .trip .noimg { width: 100%; height: 100px; object-fit: cover; display: block; }
+.trip > div { padding: 11px 12px 12px; }
+.trip .noimg { display: flex; align-items: center; justify-content: center; }
+.trip .noimg svg { width: 120px; }
+.trip .h4 { font-size: 14px; }
+.trip p { font-size: 10px; line-height: 1.5; }
 .trip .where { font-weight: 600; font-size: 10px; margin: -4px 0 6px; }
 .chip { display: inline-block; font-family: var(--mono); font-size: 6.5px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; padding: 2px 6px; border-radius: 2px; margin-bottom: 8px; }
 .journal { display: grid; grid-template-columns: 340px 1fr; gap: 30px; border-top: 1.5px solid var(--navy); margin-top: 18px; padding-top: 14px; }
