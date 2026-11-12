@@ -85,9 +85,7 @@ p.id, .id { color: var(--text-2); font-size: 11.5px; }
 .tile { height: 70px; border-radius: 3px; padding: 10px 11px 9px; display: flex; flex-direction: column; justify-content: space-between; }
 .tile .motif svg { height: 28px; width: auto; display: block; }
 .tile .lbl { font-family: var(--mono); font-size: 7.5px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; line-height: 1.25; }
-.cover-photos { display: grid; grid-template-columns: 2fr 1fr 1.6fr; gap: 9px; height: 170px; }
-.photos-label { margin: 18px 0 10px; }
-.photos-label span { color: var(--text-2); }
+.cover-photos { display: grid; grid-template-columns: 2fr 1fr 1fr 1.42fr; gap: 9px; height: 134px; }
 .ph { position: relative; border-radius: 3px; overflow: hidden; }
 .ph img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .ph figcaption { position: absolute; left: 11px; bottom: 9px; font-family: var(--mono); font-size: 8px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: #fff; }
@@ -123,9 +121,9 @@ p.id, .id { color: var(--text-2); font-size: 11.5px; }
 .g-sports { background-color: #EEE4D8; background-image: radial-gradient(40% 45% at 100% 100%, rgba(236,140,110,.75), transparent 70%); }
 .g-culinary { background-image: radial-gradient(45% 40% at 100% 0%, rgba(236,140,110,.7), transparent 70%); }
 .g-music  { background-color: var(--lilac); background-image: radial-gradient(40% 40% at 100% 100%, rgba(236,200,170,.6), transparent 70%); }
-.panel { padding: 50px 62px 44px; display: flex; flex-direction: column; }
+.panel { padding: 50px 62px 44px; display: flex; flex-direction: column; position: relative; }
 .panel-mark { width: 216px; }
-.panel-line { margin-top: auto; font-size: 42px; font-weight: 800; letter-spacing: -.035em; line-height: 1.05; }
+.panel-line { position: absolute; left: 62px; right: 40px; top: 330px; font-size: 42px; font-weight: 800; letter-spacing: -.035em; line-height: 1.05; }
 .panel-motif { margin-top: auto; }
 .panel-motif svg { width: 242px; height: auto; display: block; }
 .coll-body { padding: 66px 62px 40px 50px; }
@@ -201,17 +199,17 @@ p.id, .id { color: var(--text-2); font-size: 11.5px; }
   <img class="cover-mark" src="img/wordmark-orange.png" alt="DAYS">
   <div class="cover-grid">
     <div>
-      <h1 class="cover-h">Experience-driven travel media and global connector between Indonesia and Europe.</h1>
+      <h1 class="cover-h">Experience-driven travel media<br>and global connector between<br>Indonesia and Europe.</h1>
       <p class="id cover-id">Media perjalanan berbasis pengalaman dan penghubung global antara Indonesia dan Eropa.</p>
     </div>
     <p class="cover-body">DAYS is a Jakarta travel company that plans journeys around the reason you want to go: a festival, a race weekend, a city, a view or a long lunch. We handle the details, including visas and passports, and leave room for the moments that make a trip yours.</p>
   </div>
   <p class="label">One brand. Five ways to go.</p>
-  <div class="tiles"><div class="tile t-music"><span class="motif"><svg viewBox="0 0 240 110" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"><path d="M6 45 V65"/><path d="M28 33 V77"/><path d="M50 41 V69"/><path d="M72 29 V81"/><path d="M94 19 V91"/><path d="M116 33 V77"/><path d="M138 43 V67"/><path d="M160 25 V85"/><path d="M182 35 V75"/><path d="M204 21 V89"/><path d="M226 43 V67"/></svg></span><span class="lbl">Music Festival</span></div><div class="tile t-city"><span class="motif"><svg viewBox="0 0 240 90" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M2 2H238V30"/><path d="M12 12H226V40"/><path d="M12 12V88"/><path d="M40 12V88"/><path d="M68 12V88"/><path d="M96 12V88"/><path d="M124 12V88"/><path d="M152 12V88"/><path d="M180 12V88"/><path d="M208 12V88"/><path d="M2 2V88"/></svg></span><span class="lbl">City</span></div><div class="tile t-nature"><span class="motif"><svg viewBox="0 0 240 90" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M2 8 C 60 -4, 100 22, 150 8 S 210 -2, 238 10"/><path d="M2 25 C 60 13, 100 39, 150 25 S 210 15, 238 27"/><path d="M2 42 C 60 30, 100 56, 150 42 S 210 32, 238 44"/><path d="M2 59 C 60 47, 100 73, 150 59 S 210 49, 238 61"/><path d="M2 76 C 60 64, 100 90, 150 76 S 210 66, 238 78"/></svg></span><span class="lbl">Nature</span></div><div class="tile t-sports"><span class="motif"><svg viewBox="0 0 240 90" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M4 88 L40 2"/><path d="M40 88 L76 2"/><path d="M76 88 L112 2"/><path d="M112 88 L148 2"/><path d="M148 88 L184 2"/><path d="M184 88 L220 2"/></svg></span><span class="lbl">Sports</span></div><div class="tile t-culinary"><span class="motif"><svg viewBox="0 0 240 130" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M6 128 V120 A 114 114 0 0 1 234 120 V128"/><path d="M22 128 V120 A 98 98 0 0 1 218 120 V128"/><path d="M38 128 V120 A 82 82 0 0 1 202 120 V128"/></svg></span><span class="lbl">Culinary, Leisure &amp; Wellbeing</span></div></div>
-  <p class="label photos-label">Highlights in Europe <span>· Sorotan di Eropa</span></p>
+  <div class="tiles"><div class="tile t-city"><span class="motif"><svg viewBox="0 0 240 90" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M2 2H238V30"/><path d="M12 12H226V40"/><path d="M12 12V88"/><path d="M40 12V88"/><path d="M68 12V88"/><path d="M96 12V88"/><path d="M124 12V88"/><path d="M152 12V88"/><path d="M180 12V88"/><path d="M208 12V88"/><path d="M2 2V88"/></svg></span><span class="lbl">City</span></div><div class="tile t-music"><span class="motif"><svg viewBox="0 0 240 110" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"><path d="M6 45 V65"/><path d="M28 33 V77"/><path d="M50 41 V69"/><path d="M72 29 V81"/><path d="M94 19 V91"/><path d="M116 33 V77"/><path d="M138 43 V67"/><path d="M160 25 V85"/><path d="M182 35 V75"/><path d="M204 21 V89"/><path d="M226 43 V67"/></svg></span><span class="lbl">Music Festival</span></div><div class="tile t-nature"><span class="motif"><svg viewBox="0 0 240 90" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M2 8 C 60 -4, 100 22, 150 8 S 210 -2, 238 10"/><path d="M2 25 C 60 13, 100 39, 150 25 S 210 15, 238 27"/><path d="M2 42 C 60 30, 100 56, 150 42 S 210 32, 238 44"/><path d="M2 59 C 60 47, 100 73, 150 59 S 210 49, 238 61"/><path d="M2 76 C 60 64, 100 90, 150 76 S 210 66, 238 78"/></svg></span><span class="lbl">Nature</span></div><div class="tile t-sports"><span class="motif"><svg viewBox="0 0 240 90" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M4 88 L40 2"/><path d="M40 88 L76 2"/><path d="M76 88 L112 2"/><path d="M112 88 L148 2"/><path d="M148 88 L184 2"/><path d="M184 88 L220 2"/></svg></span><span class="lbl">Sports</span></div><div class="tile t-culinary"><span class="motif"><svg viewBox="0 0 240 130" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M6 128 V120 A 114 114 0 0 1 234 120 V128"/><path d="M22 128 V120 A 98 98 0 0 1 218 120 V128"/><path d="M38 128 V120 A 82 82 0 0 1 202 120 V128"/></svg></span><span class="lbl">Culinary, Leisure &amp; Wellbeing</span></div></div>
   <div class="cover-photos">
     <figure class="ph w2"><img src="img/primavera.jpg" alt=""><figcaption>Primavera Sound · Barcelona</figcaption></figure>
-    <figure class="ph"><img src="img/barcelona.jpg" alt=""><figcaption>Barcelona</figcaption></figure>
+    <figure class="ph"><img src="img/newyork.jpg" alt=""></figure>
+    <figure class="ph"><img src="img/barcelona.jpg" alt=""></figure>
     <figure class="ph w15"><img src="img/ade.jpg" alt=""><figcaption>ADE · Amsterdam</figcaption></figure>
   </div>
 </section><section class="page g-who">
@@ -220,18 +218,18 @@ p.id, .id { color: var(--text-2); font-size: 11.5px; }
     <div>
       <h2 class="h">Travel with personality.</h2>
       <p class="sub">Perjalanan dengan karakter.</p>
-      <p><strong>Music festivals are our core.</strong> DAYS is the only travel company in Indonesia built around festival journeys, and one of very few in the world. Around that core, we plan premium, approachable trips for Indonesian travelers aged 25–55: Formula 1 and Grand Slam weekends, cities, nature and slow travel.</p>
-      <p>Every trip is designed around interests, thoughtful choices and the people you travel with, in a voice that is curious, warm, confident and considered.</p>
-      <p class="id">Festival musik adalah inti DAYS: satu-satunya perusahaan perjalanan di Indonesia yang dibangun di sekitar perjalanan festival. Untuk keluarga, teman, solo traveler, dan grup.</p>
+      <p><strong>It starts with the music.</strong> Taking Indonesian travelers to Europe’s festivals is what DAYS does best, and no one else in Indonesia does it the way we do. From there, we plan premium, approachable journeys for travelers aged 25–55: race and Grand Slam weekends, cities seen through local eyes, landscapes, and slow trips built around food, wine and rest.</p>
+      <p>Every trip begins with the reason you want to go, and is shaped around your interests and the people you travel with.</p>
+      <p class="id">Semuanya berawal dari musik. Membawa traveler Indonesia ke festival-festival di Eropa adalah keahlian utama DAYS, dan belum ada yang melakukannya seperti kami di Indonesia.</p>
       <p class="promise">Our promise: make it feel personal, make the details clear, and leave room for the unexpected moments that make a trip yours.</p>
-      <div class="stats"><div class="card"><p class="stat">5×</p><p>Amsterdam Dance Event, every year 2022–2026</p></div><div class="card"><p class="stat">1,000+</p><p>visa applications processed since 2024</p></div><div class="card"><p class="stat">97–98%</p><p>visa approval rate</p></div><div class="card"><p class="stat">2018</p><p>handling visas and travel since</p></div></div>
+      <div class="stats"><div class="card"><p class="stat">5×</p><p>Amsterdam Dance Event, every year 2022–2026</p></div><div class="card"><p class="stat">1,000+</p><p>visa applications processed since 2024</p></div><div class="card"><p class="stat">97–98%</p><p>visa approval rate</p></div><div class="card"><p class="stat">2018</p><p>the year we started handling visas and travel</p></div></div>
     </div>
     <dl class="side"><div><dt>Based in</dt><dd>Jakarta Selatan</dd></div><div><dt>Who we travel with</dt><dd>Families, friends, solo travelers and groups</dd></div><div><dt>What we plan</dt><dd>Five collections, four services</dd></div><div><dt>Languages</dt><dd>English and Bahasa Indonesia</dd></div><div><dt>Official reseller</dt><dd>Australian Open Travel &amp; Experiences</dd></div><div><dt>Company</dt><dd>PT Vakansi Media Global · est. 2024 · licensed travel agency</dd></div></dl>
   </div>
   <div class="card why">
     <p class="label">Why book with DAYS</p>
     <div>
-      <p class="quote">“We are not just agents; we’ve tested and vetted every aspect of the cities we suggest.”</p>
+      <p class="quote">“We are not just agents; we’ve tested and vetted every aspect of the places we suggest.”</p>
       <p>Our team has years of experience managing visa applications and has personally explored the destinations we recommend, so every suggestion comes from first-hand knowledge rather than a brochure.</p>
     </div>
     <div>
@@ -248,25 +246,8 @@ p.id, .id { color: var(--text-2); font-size: 11.5px; }
   <p class="narrow">Every trip gets one primary collection, chosen by its main motivation. Other experiences on the itinerary appear as supporting interests.</p>
   <table class="arch">
     <thead><tr><th>The trip</th><th>Leading collection</th><th>Why</th></tr></thead>
-    <tbody><tr><td>A trip built around a festival lineup</td><td><i class="sq t-music"></i><strong>Music Festival</strong></td><td>The lineup is the reason to travel. This is our core.</td></tr><tr><td>A city break that includes one concert</td><td><i class="sq t-city"></i><strong>City</strong></td><td>The city experience remains the main draw.</td></tr><tr><td>A mountain or coastal scenery escape</td><td><i class="sq t-nature"></i><strong>Nature</strong></td><td>The landscape and slower discovery lead.</td></tr><tr><td>An F1 weekend, a Grand Slam, or a ski, surf or hiking trip</td><td><i class="sq t-sports"></i><strong>Sports</strong></td><td>The event or the activity is the reason to travel.</td></tr><tr><td>A slow trip for food, wine or a spa retreat</td><td><i class="sq t-culinary"></i><strong>Culinary, Leisure &amp; Wellbeing</strong></td><td>Gastronomy, wineries or rest shape a slower itinerary.</td></tr></tbody>
+    <tbody><tr><td>Getting to know a city the way locals live it</td><td><i class="sq t-city"></i><strong>City</strong></td><td>Neighborhoods, culture and everyday life lead, not the usual tourist spots.</td></tr><tr><td>A trip built around a festival lineup in Europe</td><td><i class="sq t-music"></i><strong>Music Festival</strong></td><td>The lineup is the reason to travel. This is our core.</td></tr><tr><td>A mountain or coastal scenery escape</td><td><i class="sq t-nature"></i><strong>Nature</strong></td><td>The landscape and slower discovery lead.</td></tr><tr><td>An F1 weekend, a Grand Slam, or a ski, surf or hiking trip</td><td><i class="sq t-sports"></i><strong>Sports</strong></td><td>The event or the activity is the reason to travel.</td></tr><tr><td>A slow trip for food, wine or a spa retreat</td><td><i class="sq t-culinary"></i><strong>Culinary, Leisure &amp; Wellbeing</strong></td><td>Gastronomy, wineries or rest shape a slower itinerary.</td></tr></tbody>
   </table>
-</section><section class="page coll g-music">
-  <div class="panel t-music">
-    <img class="panel-mark" src="img/wordmark-yellow.png" alt="DAYS">
-    <p class="panel-line">Follow<br>the sound.</p>
-    <span class="panel-motif"><svg viewBox="0 0 240 110" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"><path d="M6 45 V65"/><path d="M28 33 V77"/><path d="M50 41 V69"/><path d="M72 29 V81"/><path d="M94 19 V91"/><path d="M116 33 V77"/><path d="M138 43 V67"/><path d="M160 25 V85"/><path d="M182 35 V75"/><path d="M204 21 V89"/><path d="M226 43 V67"/></svg></span>
-  </div>
-  <div class="coll-body">
-    <p class="label">Collection · Music Festival</p>
-    <h2 class="h2">Music Festival</h2>
-    <p>Our core. Journeys built around the lineup, from the first set to the last shared memory. DAYS is the only travel company in Indonesia built around music festivals, and one of very few in the world.</p>
-    <p class="id">Inti dari DAYS. Perjalanan yang dibangun di sekitar lineup, dari penampilan pertama hingga kenangan yang dibawa pulang. Satu-satunya perusahaan perjalanan di Indonesia yang berfokus pada festival musik.</p>
-    <div class="coll-meta">
-      <p class="label sm">Experiences</p><p>Festival weekend · Multi-day festival · Multi-stage discovery</p>
-      <p class="label sm">Track record</p><p>Amsterdam Dance Event, every year since 2022 · Primavera Sound, Barcelona, 2024–2026 · Dekmantel, Amsterdam, 2026</p>
-      <p class="label sm">Campaign line</p><p class="camp">Ikuti musiknya. Nikmati momennya.</p>
-    </div>
-  </div>
 </section><section class="page coll g-city">
   <div class="panel t-city">
     <img class="panel-mark" src="img/wordmark-cream.png" alt="DAYS">
@@ -276,12 +257,29 @@ p.id, .id { color: var(--text-2); font-size: 11.5px; }
   <div class="coll-body">
     <p class="label">Collection · City</p>
     <h2 class="h2">City</h2>
-    <p>For travelers who follow their curiosity through neighborhoods, culture and the city after dark.</p>
-    <p class="id">Untuk penjelajah yang ingin mengenal sudut kota, budaya lokal, dan suasana selepas senja.</p>
+    <p>For travelers who want to know a city the way locals do: its neighborhoods, its culture and its everyday life, away from the usual tourist spots.</p>
+    <p class="id">Untuk penjelajah yang ingin mengenal kota seperti warga lokal: lingkungannya, budayanya, dan keseharian warganya, jauh dari tempat wisata yang biasa.</p>
     <div class="coll-meta">
       <p class="label sm">Experiences</p><p>Tokyo neighborhood walk · Bangkok after dark · Melbourne city break</p>
       <p class="label sm">Featured places</p><p>New York · Bangkok · Tokyo</p>
       <p class="label sm">Campaign line</p><p class="camp">Jelajahi kota, sesuai ritmemu.</p>
+    </div>
+  </div>
+</section><section class="page coll g-music">
+  <div class="panel t-music">
+    <img class="panel-mark" src="img/wordmark-yellow.png" alt="DAYS">
+    <p class="panel-line">Follow<br>the sound.</p>
+    <span class="panel-motif"><svg viewBox="0 0 240 110" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"><path d="M6 45 V65"/><path d="M28 33 V77"/><path d="M50 41 V69"/><path d="M72 29 V81"/><path d="M94 19 V91"/><path d="M116 33 V77"/><path d="M138 43 V67"/><path d="M160 25 V85"/><path d="M182 35 V75"/><path d="M204 21 V89"/><path d="M226 43 V67"/></svg></span>
+  </div>
+  <div class="coll-body">
+    <p class="label">Collection · Music Festival</p>
+    <h2 class="h2">Music Festival</h2>
+    <p>Our core. Journeys to Europe’s festivals, planned around the lineup, from the first set to the last shared memory.</p>
+    <p class="id">Inti dari DAYS. Perjalanan ke festival-festival di Eropa, dirancang mengikuti lineup, dari penampilan pertama hingga kenangan yang dibawa pulang.</p>
+    <div class="coll-meta">
+      <p class="label sm">Experiences</p><p>Festival weekends · Multi-stage discovery · Itineraries planned around the lineup</p>
+      <p class="label sm">Track record</p><p>Amsterdam Dance Event, every year since 2022 · Primavera Sound, Barcelona, 2024–2026 · Dekmantel, Amsterdam, 2026</p>
+      <p class="label sm">Campaign line</p><p class="camp">Ikuti musiknya. Nikmati momennya.</p>
     </div>
   </div>
 </section><section class="page coll g-nature">
@@ -339,7 +337,7 @@ p.id, .id { color: var(--text-2); font-size: 11.5px; }
   <p class="label">Services</p>
   <h2 class="h">What we take care of.</h2>
   <p class="sub">Dari ide perjalanan sampai urusan dokumen.</p>
-  <div class="services"><div class="svc"><p class="label sm">Music Festival</p><h3 class="h4">Festival Experience</h3><p>Journeys to the world’s most iconic festivals, from high-energy dance events to laid-back classical programs.</p><ul><li>Front-row access to favorite artists and events</li><li>Exclusive offers and perks</li><li>Travel planned around the lineup</li></ul></div><div class="svc"><p class="label sm">Culinary, Leisure &amp; Wellbeing</p><h3 class="h4">Culinary &amp;<br>Leisure Journey</h3><p>Gourmet experiences paired with unhurried downtime, tailored to your taste.</p><ul><li>The finest local dining spots and exclusive food tours</li><li>Cooking classes led by renowned chefs</li><li>Optional wellness activities or a spa weekend</li></ul></div><div class="svc"><p class="label sm">Any collection</p><h3 class="h4">Personalized Itinerary</h3><p>Bespoke plans for adventures, cultural immersion or a simple getaway. Our travel expert handles everything from A to Z.</p><ul><li>Accommodation, activities and transport</li><li>Pre-departure arrangements</li><li>Already have a plan? We’ll perfect it, down to the brunch reservation</li></ul></div><div class="svc"><p class="label sm">Every trip</p><h3 class="h4">Visa &amp; Passport Services</h3><p>Guidance through every step of the visa application and passport renewal, so your documents are in order and you can focus on the trip.</p><ul><li>Visa application support</li><li>Passport renewals</li><li>Document checks before you fly</li></ul></div></div>
+  <div class="services"><div class="svc"><p class="label sm">Music Festival</p><h3 class="h4">Festival Experience</h3><p>Journeys to the world’s most iconic festivals, from high-energy dance events to laid-back classical programs.</p><ul><li>Front-row access to favorite artists and events</li><li>Exclusive offers and perks</li><li>Travel planned around the lineup</li></ul></div><div class="svc"><p class="label sm">Culinary, Leisure &amp; Wellbeing</p><h3 class="h4">Culinary &amp;<br>Leisure Journey</h3><p>Gourmet experiences paired with unhurried downtime, tailored to your taste.</p><ul><li>The finest local dining, food tours and winery visits</li><li>Cooking classes led by renowned chefs</li><li>Optional wellness activities or a spa weekend</li></ul></div><div class="svc"><p class="label sm">Any collection</p><h3 class="h4">Personalized Itinerary</h3><p>Bespoke plans for adventures, cultural immersion or a simple getaway. Our travel expert handles everything from A to Z.</p><ul><li>Accommodation, activities and transport</li><li>Pre-departure arrangements</li><li>Already have a plan? We’ll perfect it, down to the brunch reservation</li></ul></div><div class="svc"><p class="label sm">Every trip</p><h3 class="h4">Visa &amp; Passport Services</h3><p>Guidance through every step of the visa application and passport renewal, so your documents are in order and you can focus on the trip.</p><ul><li>Visa application support</li><li>Passport renewals</li><li>Document checks before you fly</li></ul></div></div>
   <div class="visa">
     <div class="card"><p class="label sm">Schengen Area</p><p class="big">~15 working days</p><p>Typical visa processing time</p></div>
     <div class="card"><p class="label sm">Australia</p><p class="big">48 hours – 3 months</p><p>Typical visa processing time</p></div>
@@ -350,7 +348,7 @@ p.id, .id { color: var(--text-2); font-size: 11.5px; }
   <p class="label">Selected open trips</p>
   <h2 class="h">Days we’ve already talked about.</h2>
   <p class="sub">Open trips combine flexibility with curated experiences, and travelers join as a group.</p>
-  <div class="trips"><article class="card trip"><img src="img/ade.jpg" alt=""><div><span class="chip t-music">Music Festival</span><h3 class="h4">ADE 2022–2026</h3><p class="where">Amsterdam, Netherlands · every October</p><p>Five days and five nights when the city never sleeps: more than 1,000 events in nearly 200 locations. DAYS has taken a group every year since 2022, five editions running.</p></div></article><article class="card trip"><img src="img/primavera.jpg" alt=""><div><span class="chip t-music">Music Festival</span><h3 class="h4">Primavera Sound 2024–2026</h3><p class="where">Barcelona, Spain · 2024, 2025, 2026</p><p>Barcelona’s early-summer festival by the sea at Parc del Fòrum. DAYS has taken a group three years running.</p></div></article><article class="card trip"><img src="img/seoul.jpg" alt=""><div><span class="chip t-city">City</span><h3 class="h4">Seoul: Soft Days</h3><p class="where">Seoul, South Korea · 5 days 4 nights</p><p>A girls trip to Seoul: shopping in Seongsu-dong and Hannam-dong, cafés worth the queue, a facial and skin consultation, and good food every night.</p></div></article><article class="card trip"><span class="noimg ao"><span class="ao-badge"><img src="img/ao-official-reseller.png" alt="AO Travel &amp; Experiences Official Reseller"></span></span><div><span class="chip t-sports">Sports</span><h3 class="h4">Australian Open</h3><p class="where">Melbourne, Australia · every January</p><p>Grand Slam tennis at Melbourne Park. As an Official Reseller of Australian Open Travel &amp; Experiences, DAYS books the tickets and the trip around them.</p></div></article><article class="card trip"><img src="img/niseko.jpg" alt=""><div><span class="chip t-sports">Sports</span><h3 class="h4">Ski Trip 2024–25</h3><p class="where">Niseko, Japan · Dec 2024 – Feb 2025</p><p>Led by an avid skier who has arranged snow trips in Japan since 2018. Open to all ski levels.</p></div></article></div>
+  <div class="trips"><article class="card trip"><img src="img/ade.jpg" alt=""><div><span class="chip t-music">Music Festival</span><h3 class="h4">ADE 2022–2026</h3><p class="where">Amsterdam, Netherlands · every October</p><p>Five days and five nights when the city never sleeps: more than 1,000 events in nearly 200 locations. DAYS has taken a group every year since 2022, five editions running.</p></div></article><article class="card trip"><img src="img/primavera.jpg" alt=""><div><span class="chip t-music">Music Festival</span><h3 class="h4">Primavera Sound 2024–2026</h3><p class="where">Barcelona, Spain · 2024, 2025, 2026</p><p>Barcelona’s early-summer festival by the sea at Parc del Fòrum. DAYS has taken a group three years running.</p></div></article><article class="card trip"><img src="img/seoul.jpg" alt=""><div><span class="chip t-city">City</span><h3 class="h4">Seoul: Soft Days</h3><p class="where">Seoul, South Korea · 5 days 4 nights</p><p>A girls’ trip to Seoul: shopping in Seongsu-dong and Hannam-dong, cafés worth the queue, a facial and skin consultation, and good food every night.</p></div></article><article class="card trip"><span class="noimg ao"><span class="ao-badge"><img src="img/ao-official-reseller.png" alt="AO Travel &amp; Experiences Official Reseller"></span></span><div><span class="chip t-sports">Sports</span><h3 class="h4">Australian Open</h3><p class="where">Melbourne, Australia · every January</p><p>Grand Slam tennis at Melbourne Park. As an Official Reseller of Australian Open Travel &amp; Experiences, DAYS books the tickets and the trip around them.</p></div></article><article class="card trip"><img src="img/niseko.jpg" alt=""><div><span class="chip t-sports">Sports</span><h3 class="h4">Ski Trip 2024–25</h3><p class="where">Niseko, Japan · Dec 2024 – Feb 2025</p><p>Led by an avid skier who has arranged snow trips in Japan since 2018. Open to all ski levels.</p></div></article></div>
   <div class="journal">
     <div><p class="label sm">Travel journal</p><h3 class="h4">Cities Unwrapped</h3><p>Destinations told through the people, sounds and craft that shape them.</p></div>
     <ul><li><span>Japan with Home Gravity</span><span class="label sm">Japan</span></li><li><span>Jakarta through Reikko’s sound</span><span class="label sm">Jakarta</span></li><li><span>Amsterdam through ADE</span><span class="label sm">Amsterdam</span></li><li><span>Amsterdam through Goldie’s Craft</span><span class="label sm">Amsterdam</span></li><li><span>Los Angeles through Danny’s Mudshop</span><span class="label sm">Los Angeles</span></li></ul>

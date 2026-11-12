@@ -39,8 +39,8 @@ AO_BADGE = '<span class="ao-badge"><img src="img/ao-official-reseller.png" alt="
 COLLECTIONS = [
     # key, name, panel class, wordmark, line, desc, desc_id, experiences, extras [(label, value)], campaign
     ("city", "City", "wordmark-cream", "A city.<br>Your pace.",
-     "For travelers who follow their curiosity through neighborhoods, culture and the city after dark.",
-     "Untuk penjelajah yang ingin mengenal sudut kota, budaya lokal, dan suasana selepas senja.",
+     "For travelers who want to know a city the way locals do: its neighborhoods, its culture and its everyday life, away from the usual tourist spots.",
+     "Untuk penjelajah yang ingin mengenal kota seperti warga lokal: lingkungannya, budayanya, dan keseharian warganya, jauh dari tempat wisata yang biasa.",
      "Tokyo neighborhood walk · Bangkok after dark · Melbourne city break",
      [("Featured places", "New York · Bangkok · Tokyo")], "Jelajahi kota, sesuai ritmemu."),
     ("nature", "Nature", "wordmark-navy", "Room to<br>breathe.",
@@ -60,18 +60,19 @@ COLLECTIONS = [
      "Gastronomic journey · Winery visit · Spa retreat · Wellbeing hotel stay",
      [], "Nikmati tanpa terburu-buru."),
     ("music", "Music Festival", "wordmark-yellow", "Follow<br>the sound.",
-     "Our core. Journeys built around the lineup, from the first set to the last shared memory. DAYS is the only travel company in Indonesia built around music festivals, and one of very few in the world.",
-     "Inti dari DAYS. Perjalanan yang dibangun di sekitar lineup, dari penampilan pertama hingga kenangan yang dibawa pulang. Satu-satunya perusahaan perjalanan di Indonesia yang berfokus pada festival musik.",
-     "Festival weekend · Multi-day festival · Multi-stage discovery",
+     "Our core. Journeys to Europe’s festivals, planned around the lineup, from the first set to the last shared memory.",
+     "Inti dari DAYS. Perjalanan ke festival-festival di Eropa, dirancang mengikuti lineup, dari penampilan pertama hingga kenangan yang dibawa pulang.",
+     "Festival weekends · Multi-stage discovery · Itineraries planned around the lineup",
      [("Track record", "Amsterdam Dance Event, every year since 2022 · Primavera Sound, Barcelona, 2024–2026 · Dekmantel, Amsterdam, 2026")],
      "Ikuti musiknya. Nikmati momennya."),
 ]
 
-TILE_LABEL = {"music": "Music Festival", "city": "City", "nature": "Nature", "sports": "Sports",
+# One order everywhere (cover tiles, architecture table, collection pages):
+# City opens in the wordmark's orange, Music Festival, our core, follows.
+ORDER = ["city", "music", "nature", "sports", "culinary"]
+TILE_LABEL = {"city": "City", "music": "Music Festival", "nature": "Nature", "sports": "Sports",
               "culinary": "Culinary, Leisure &amp; Wellbeing"}
-
-# Music Festival is the lead collection: it comes first everywhere.
-COLLECTIONS = COLLECTIONS[-1:] + COLLECTIONS[:-1]
+COLLECTIONS = sorted(COLLECTIONS, key=lambda c: ORDER.index(c[0]))
 
 pages = []
 
@@ -82,17 +83,17 @@ pages.append(f'''<section class="page g-cover">
   <img class="cover-mark" src="img/wordmark-orange.png" alt="DAYS">
   <div class="cover-grid">
     <div>
-      <h1 class="cover-h">Experience-driven travel media and global connector between Indonesia and Europe.</h1>
+      <h1 class="cover-h">Experience-driven travel media<br>and global connector between<br>Indonesia and Europe.</h1>
       <p class="id cover-id">Media perjalanan berbasis pengalaman dan penghubung global antara Indonesia dan Eropa.</p>
     </div>
     <p class="cover-body">DAYS is a Jakarta travel company that plans journeys around the reason you want to go: a festival, a race weekend, a city, a view or a long lunch. We handle the details, including visas and passports, and leave room for the moments that make a trip yours.</p>
   </div>
   <p class="label">One brand. Five ways to go.</p>
   <div class="tiles">{tiles}</div>
-  <p class="label photos-label">Highlights in Europe <span>· Sorotan di Eropa</span></p>
   <div class="cover-photos">
     <figure class="ph w2"><img src="img/primavera.jpg" alt=""><figcaption>Primavera Sound · Barcelona</figcaption></figure>
-    <figure class="ph"><img src="img/barcelona.jpg" alt=""><figcaption>Barcelona</figcaption></figure>
+    <figure class="ph"><img src="img/newyork.jpg" alt=""></figure>
+    <figure class="ph"><img src="img/barcelona.jpg" alt=""></figure>
     <figure class="ph w15"><img src="img/ade.jpg" alt=""><figcaption>ADE · Amsterdam</figcaption></figure>
   </div>
 </section>''')
@@ -103,16 +104,16 @@ side = [("Based in", "Jakarta Selatan"), ("Who we travel with", "Families, frien
         ("Official reseller", "Australian Open Travel & Experiences"),
         ("Company", "PT Vakansi Media Global · est. 2024 · licensed travel agency")]
 stats = [("5×", "Amsterdam Dance Event, every year 2022–2026"), ("1,000+", "visa applications processed since 2024"),
-         ("97–98%", "visa approval rate"), ("2018", "handling visas and travel since")]
+         ("97–98%", "visa approval rate"), ("2018", "the year we started handling visas and travel")]
 pages.append(f'''<section class="page g-who">
   <p class="label">Who we are</p>
   <div class="who-grid">
     <div>
       <h2 class="h">Travel with personality.</h2>
       <p class="sub">Perjalanan dengan karakter.</p>
-      <p><strong>Music festivals are our core.</strong> DAYS is the only travel company in Indonesia built around festival journeys, and one of very few in the world. Around that core, we plan premium, approachable trips for Indonesian travelers aged 25–55: Formula 1 and Grand Slam weekends, cities, nature and slow travel.</p>
-      <p>Every trip is designed around interests, thoughtful choices and the people you travel with, in a voice that is curious, warm, confident and considered.</p>
-      <p class="id">Festival musik adalah inti DAYS: satu-satunya perusahaan perjalanan di Indonesia yang dibangun di sekitar perjalanan festival. Untuk keluarga, teman, solo traveler, dan grup.</p>
+      <p><strong>It starts with the music.</strong> Taking Indonesian travelers to Europe’s festivals is what DAYS does best, and no one else in Indonesia does it the way we do. From there, we plan premium, approachable journeys for travelers aged 25–55: race and Grand Slam weekends, cities seen through local eyes, landscapes, and slow trips built around food, wine and rest.</p>
+      <p>Every trip begins with the reason you want to go, and is shaped around your interests and the people you travel with.</p>
+      <p class="id">Semuanya berawal dari musik. Membawa traveler Indonesia ke festival-festival di Eropa adalah keahlian utama DAYS, dan belum ada yang melakukannya seperti kami di Indonesia.</p>
       <p class="promise">Our promise: make it feel personal, make the details clear, and leave room for the unexpected moments that make a trip yours.</p>
       <div class="stats">{"".join(f'<div class="card"><p class="stat">{e(n)}</p><p>{e(t)}</p></div>' for n, t in stats)}</div>
     </div>
@@ -121,7 +122,7 @@ pages.append(f'''<section class="page g-who">
   <div class="card why">
     <p class="label">Why book with DAYS</p>
     <div>
-      <p class="quote">“We are not just agents; we’ve tested and vetted every aspect of the cities we suggest.”</p>
+      <p class="quote">“We are not just agents; we’ve tested and vetted every aspect of the places we suggest.”</p>
       <p>Our team has years of experience managing visa applications and has personally explored the destinations we recommend, so every suggestion comes from first-hand knowledge rather than a brochure.</p>
     </div>
     <div>
@@ -133,8 +134,8 @@ pages.append(f'''<section class="page g-who">
 </section>''')
 
 # ---------------------------------------------------------------- 03 architecture
-arch = [("A trip built around a festival lineup", "music", "Music Festival", "The lineup is the reason to travel. This is our core."),
-        ("A city break that includes one concert", "city", "City", "The city experience remains the main draw."),
+arch = [("Getting to know a city the way locals live it", "city", "City", "Neighborhoods, culture and everyday life lead, not the usual tourist spots."),
+        ("A trip built around a festival lineup in Europe", "music", "Music Festival", "The lineup is the reason to travel. This is our core."),
         ("A mountain or coastal scenery escape", "nature", "Nature", "The landscape and slower discovery lead."),
         ("An F1 weekend, a Grand Slam, or a ski, surf or hiking trip", "sports", "Sports", "The event or the activity is the reason to travel."),
         ("A slow trip for food, wine or a spa retreat", "culinary", "Culinary, Leisure &amp; Wellbeing", "Gastronomy, wineries or rest shape a slower itinerary.")]
@@ -177,7 +178,7 @@ services = [
     ("Music Festival", "Festival Experience", "Journeys to the world’s most iconic festivals, from high-energy dance events to laid-back classical programs.",
      ["Front-row access to favorite artists and events", "Exclusive offers and perks", "Travel planned around the lineup"]),
     ("Culinary, Leisure &amp; Wellbeing", "Culinary &amp;<br>Leisure Journey", "Gourmet experiences paired with unhurried downtime, tailored to your taste.",
-     ["The finest local dining spots and exclusive food tours", "Cooking classes led by renowned chefs", "Optional wellness activities or a spa weekend"]),
+     ["The finest local dining, food tours and winery visits", "Cooking classes led by renowned chefs", "Optional wellness activities or a spa weekend"]),
     ("Any collection", "Personalized Itinerary", "Bespoke plans for adventures, cultural immersion or a simple getaway. Our travel expert handles everything from A to Z.",
      ["Accommodation, activities and transport", "Pre-departure arrangements", "Already have a plan? We’ll perfect it, down to the brunch reservation"]),
     ("Every trip", "Visa &amp; Passport Services", "Guidance through every step of the visa application and passport renewal, so your documents are in order and you can focus on the trip.",
@@ -206,7 +207,7 @@ trips = [("music", "Music Festival", "ade", "ADE 2022–2026", "Amsterdam, Nethe
          ("music", "Music Festival", "primavera", "Primavera Sound 2024–2026", "Barcelona, Spain · 2024, 2025, 2026",
           "Barcelona’s early-summer festival by the sea at Parc del Fòrum. DAYS has taken a group three years running."),
          ("city", "City", "seoul", "Seoul: Soft Days", "Seoul, South Korea · 5 days 4 nights",
-          "A girls trip to Seoul: shopping in Seongsu-dong and Hannam-dong, cafés worth the queue, a facial and skin consultation, and good food every night."),
+          "A girls’ trip to Seoul: shopping in Seongsu-dong and Hannam-dong, cafés worth the queue, a facial and skin consultation, and good food every night."),
          ("sports", "Sports", "ao", "Australian Open", "Melbourne, Australia · every January",
           "Grand Slam tennis at Melbourne Park. As an Official Reseller of Australian Open Travel & Experiences, DAYS books the tickets and the trip around them."),
          ("sports", "Sports", "niseko", "Ski Trip 2024–25", "Niseko, Japan · Dec 2024 – Feb 2025",

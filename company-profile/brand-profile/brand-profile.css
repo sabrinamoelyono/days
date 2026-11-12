@@ -79,9 +79,7 @@ p.id, .id { color: var(--text-2); font-size: 11.5px; }
 .tile { height: 70px; border-radius: 3px; padding: 10px 11px 9px; display: flex; flex-direction: column; justify-content: space-between; }
 .tile .motif svg { height: 28px; width: auto; display: block; }
 .tile .lbl { font-family: var(--mono); font-size: 7.5px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; line-height: 1.25; }
-.cover-photos { display: grid; grid-template-columns: 2fr 1fr 1.6fr; gap: 9px; height: 170px; }
-.photos-label { margin: 18px 0 10px; }
-.photos-label span { color: var(--text-2); }
+.cover-photos { display: grid; grid-template-columns: 2fr 1fr 1fr 1.42fr; gap: 9px; height: 134px; }
 .ph { position: relative; border-radius: 3px; overflow: hidden; }
 .ph img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .ph figcaption { position: absolute; left: 11px; bottom: 9px; font-family: var(--mono); font-size: 8px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: #fff; }
@@ -117,9 +115,9 @@ p.id, .id { color: var(--text-2); font-size: 11.5px; }
 .g-sports { background-color: #EEE4D8; background-image: radial-gradient(40% 45% at 100% 100%, rgba(236,140,110,.75), transparent 70%); }
 .g-culinary { background-image: radial-gradient(45% 40% at 100% 0%, rgba(236,140,110,.7), transparent 70%); }
 .g-music  { background-color: var(--lilac); background-image: radial-gradient(40% 40% at 100% 100%, rgba(236,200,170,.6), transparent 70%); }
-.panel { padding: 50px 62px 44px; display: flex; flex-direction: column; }
+.panel { padding: 50px 62px 44px; display: flex; flex-direction: column; position: relative; }
 .panel-mark { width: 216px; }
-.panel-line { margin-top: auto; font-size: 42px; font-weight: 800; letter-spacing: -.035em; line-height: 1.05; }
+.panel-line { position: absolute; left: 62px; right: 40px; top: 330px; font-size: 42px; font-weight: 800; letter-spacing: -.035em; line-height: 1.05; }
 .panel-motif { margin-top: auto; }
 .panel-motif svg { width: 242px; height: auto; display: block; }
 .coll-body { padding: 66px 62px 40px 50px; }
