@@ -1,0 +1,37 @@
+/* ---------- A4 portrait edition ----------
+   Design width stays 1080px; the page grows to A4 proportions (1080 x 1527)
+   and the whole document is zoomed to 794px wide (A4 at 96 dpi). */
+@page { size: A4; margin: 0; }
+body.a4 { zoom: 0.73519; }
+.a4 .page { height: 1527px; }
+
+.a4 .cover { grid-template-rows: 690px 1fr; }
+.a4 .intro { height: calc(1527px - 104px - 80px); }
+.a4 .wide img { height: 620px; }
+.a4 .day { padding: 30px 0; }
+.a4 .gallery { grid-template-rows: 580px 400px; }
+.a4 .inc { padding: 36px 0; }
+.a4 .quote { margin-top: 60px; }
+.a4 .contact div { padding: 22px 0; }
+.a4 .intro > div:first-child { display: flex; flex-direction: column; }
+.a4 .intro .display { font-size: 124px; }
+.a4 .intro .lead { font-size: 28px; }
+.a4 .intro p.id { margin-top: auto; }
+.a4 .day { padding: 44px 0; }
+.a4 .day h3 { font-size: 34px; }
+.a4 .day p:not(.stops):not(.id) { font-size: 19px; }
+.a4 .day .id { font-size: 16.5px; }
+.a4 .inc li { font-size: 23px; padding: 7px 0 7px 26px; }
+.a4 .inc li::before { top: 20px; }
+.a4 .quote { margin-top: 80px; padding: 48px 48px; }
+.a4 .intro p:not(.label):not(.campaign):not(.lead):not(.id) { font-size: 21px; }
+.a4 .day { padding: 36px 0; }
+.a4 .inc { padding: 52px 0; }
+.a4 .inc li { font-size: 25px; }
+.a4 .inc li::before { top: 22px; }
+.a4 .quote { margin-top: 100px; padding: 56px; }
+.a4 .q { font-size: 36px; }
+.a4 .quote p:last-child { font-size: 22px; }
+.a4 .boat-grid { height: 930px; }
+.a4 .pkg .wide img { height: 470px; }
+.a4 .itin-img img { height: 330px; }
