@@ -49,8 +49,8 @@ DAYS_ = [
 HIGHLIGHTS = [
     ("img", "paisupok-boat", "Paisupok", "Crystal-clear water hidden in the green of Banggai. A place to swim, explore and slow right down."),
     ("img", "pulo-dua", "Pulo Dua", "Green hills meet deep blue sea. Trek to the viewpoint for the whole panorama from above."),
-    ("panel", None, "Piala &amp; Laumarang", "Waterfalls tucked into tropical forest, on the wild side of Sulawesi."),
-    ("panel", None, "Kamumu Waterfall", "One more glimpse of Banggai’s nature before you fly home."),
+    ("img", "piala", "Piala &amp; Laumarang", "Waterfalls tucked into tropical forest, on the wild side of Sulawesi."),
+    ("img", "kamumu", "Kamumu Waterfall", "One more glimpse of Banggai’s nature before you fly home."),
 ]
 
 INCLUDED = [
