@@ -19,7 +19,7 @@ FACTS = [
     ("Destination", "Tujuan", "Luwuk, Banggai, Central Sulawesi"),
     ("Length", "Durasi", "4 days, 3 nights"),
     ("Stay", "Menginap", "Santika Luwuk, 3 nights"),
-    ("Flights", "Penerbangan", "Return flights included"),
+    ("Flights", "Penerbangan", "Jakarta – Luwuk – Jakarta"),
 ]
 PRICE = "IDR 21,950,000"
 
@@ -54,7 +54,7 @@ HIGHLIGHTS = [
 ]
 
 INCLUDED = [
-    ("Getting there", "Perjalanan", ["Return flight tickets", "Private transportation throughout", "Private local guide"]),
+    ("Getting there", "Perjalanan", ["Return flights from Jakarta", "Private transportation throughout", "Private local guide"]),
     ("Staying &amp; eating", "Menginap &amp; makan", ["3 nights at Santika Luwuk", "Breakfast, lunch and dinner daily"]),
     ("On the water", "Di laut", ["Speedboat to Paisupok", "Boat at Paisupok", "Boat to Pulo Dua"]),
     ("Documentation", "Dokumentasi", ["Drone and mirrorless camera (minimum 8 participants)"]),
@@ -141,7 +141,7 @@ pages.append(f'''<section class="page pkg">
     <dl class="fact-grid">{"".join(f'<div><dt>{k} <span>· {i}</span></dt><dd>{e(v)}</dd></div>' for k, i, v in FACTS)}</dl>
     <div class="price">
       <div>{label("Per person", "Per orang")}<p class="amount">{e(PRICE)}</p></div>
-      <p>Return flights, three nights at Santika Luwuk, every meal, the boats, a private car and a private local guide, in one clear price.<span class="id">Tiket pesawat pulang-pergi, tiga malam di Santika Luwuk, semua makan, kapal, mobil pribadi, dan pemandu lokal dalam satu harga.</span></p>
+      <p>Return flights from Jakarta, three nights at Santika Luwuk, every meal, the boats, a private car and a private local guide, in one clear price.<span class="id">Tiket pesawat pulang-pergi dari Jakarta, tiga malam di Santika Luwuk, semua makan, kapal, mobil pribadi, dan pemandu lokal dalam satu harga.</span></p>
     </div>
     {label("Highlights", "Sorotan")}
     <div class="hls">{hl}</div>
