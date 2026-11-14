@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>DAYS · Luwuk Banggai 2027 (A4)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,800;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>/* DAYS Brand Profile 2027 tokens (sampled from DAYS-Brand-Profile.pdf) */
+:root {
+  --orange: #EC5E30;     /* DAYS wordmark / City collection */
+  --navy: #2C2C65;       /* primary text, Music Festival collection */
+  --nature: #9AB4D8;     /* Nature collection */
+  --paper: #EFE4DF;      /* warm paper */
+  --peach: #EBA88E;      /* gradient glow */
+  --text: #2C2C65;
+  --text-2: #55547F;     /* Bahasa / secondary lines */
+  --line: rgba(44, 44, 101, .22);
+  --card: rgba(255, 255, 255, .45);
+}
+
+@page { size: 1080px 1350px; margin: 0; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--paper); color: var(--text);
+  font: 400 19px/1.6 "Inter Tight", system-ui, sans-serif;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact;
+}
+h1, h2, h3, p, ol, ul, dl, dd, figure { margin: 0; }
+/* Type: Inter Tight for display + body, JetBrains Mono for labels, dates and figures */
+h1, h2, h3, .q, .cover-sub { font-weight: 800; letter-spacing: -.025em; }
+.campaign { font-weight: 600; letter-spacing: -.01em; }
+.label, .run, .stops, .day-n, .amount, .fact-grid dt, .cover-facts dt, .contact dt, .foot { font-family: "JetBrains Mono", ui-monospace, monospace; }
+
+/* ---------- page frame: warm paper with soft collection-colour glows ---------- */
+.page {
+  width: 1080px; height: 1350px; overflow: hidden; position: relative;
+  page-break-after: always; break-after: page; padding: 0 80px;
+  background:
+    radial-gradient(60% 45% at 105% -5%, rgba(235,140,110,.55), transparent 70%),
+    radial-gradient(55% 45% at -10% 108%, rgba(154,180,216,.75), transparent 70%),
+    radial-gradient(40% 30% at 100% 100%, rgba(154,180,216,.35), transparent 70%),
+    var(--paper);
+}
+.page:last-child { page-break-after: auto; break-after: auto; }
+.run {
+  display: flex; justify-content: space-between; align-items: center; height: 104px;
+  font-size: 13px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase;
+}
+.body { padding-top: 40px; }
+
+.label { font-size: 13px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--text); margin-bottom: 18px; }
+.label span { color: var(--text-2); font-weight: 500; }
+.h { font-size: 68px; line-height: 1.02; letter-spacing: -.03em; margin-bottom: 26px; }
+.display { font-size: 108px; line-height: .95; letter-spacing: -.04em; }
+.campaign { font-size: 28px; margin: 18px 0 40px; }
+.lead { font-size: 25px; line-height: 1.5; margin-bottom: 22px; }
+.narrow { max-width: 840px; }
+p.id, .id { color: var(--text-2); font-size: 17px; line-height: 1.6; }
+p + p { margin-top: 0; }
+
+/* ---------- cover ---------- */
+.cover { padding: 0; display: grid; grid-template-rows: 560px 1fr; background: var(--nature); }
+.cover-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.cover-panel { padding: 64px 80px 72px; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto 1fr; gap: 0 60px; color: var(--navy); }
+.cover-panel .mark { width: 260px; grid-column: 1; }
+.cover-text { grid-column: 1; align-self: end; }
+.cover h1 { font-size: 128px; line-height: .9; letter-spacing: -.045em; margin: 6px 0 16px; }
+.cover-sub { font-size: 36px; line-height: 1.1; }
+.cover .id { color: #3B3F78; font-size: 19px; margin-top: 8px; }
+.cover-foot { grid-column: 2; grid-row: 1 / 3; display: flex; flex-direction: column; justify-content: space-between; }
+.waves { width: 280px; color: var(--navy); align-self: flex-end; }
+.cover-facts div { padding: 16px 0; border-top: 1.5px solid rgba(44,44,101,.35); }
+.cover-facts dt { font-size: 13px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; }
+.cover-facts dd { font-size: 24px; font-weight: 500; }
+
+/* ---------- intro ---------- */
+.intro { display: grid; grid-template-columns: 1fr 340px; gap: 56px; padding-top: 48px; height: calc(1350px - 104px - 80px); }
+.intro p:not(.label):not(.campaign):not(.lead) { margin-bottom: 18px; }
+.intro .id { border-top: 1px solid var(--line); padding-top: 18px; }
+.intro-img img { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; display: block; }
+
+/* ---------- package ---------- */
+.route { font-size: 22px; font-weight: 500; letter-spacing: .02em; margin-bottom: 36px; }
+.route i { color: var(--orange); font-style: normal; margin: 0 8px; }
+.fact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 48px; }
+.fact-grid div { padding: 20px 0; border-top: 1px solid var(--line); }
+.fact-grid dt { font-size: 13px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; margin-bottom: 4px; }
+.fact-grid dt span { color: var(--text-2); font-weight: 500; }
+.fact-grid dd { font-size: 28px; font-weight: 500; }
+.price { display: grid; grid-template-columns: auto 1fr; gap: 56px; align-items: center; background: var(--navy); color: #F3EEF0; border-radius: 8px; padding: 36px 44px; margin: 28px 0 32px; }
+.price .label, .price .label span { color: var(--nature); }
+.amount { font-size: 46px; line-height: 1; font-weight: 500; letter-spacing: -.02em; }
+.price > p { font-size: 18px; }
+.price .id { display: block; color: #B9C3DD; font-size: 15px; margin-top: 6px; }
+.wide img { width: 100%; height: 450px; object-fit: cover; border-radius: 8px; display: block; }
+
+/* ---------- itinerary ---------- */
+.days { list-style: none; padding: 0; }
+.day { display: grid; grid-template-columns: 140px 1fr; gap: 28px; padding: 19px 0; border-top: 1px solid var(--line); }
+.day-n { display: flex; flex-direction: column; padding-top: 8px; }
+.day-n .n { font-size: 13px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--orange); }
+.day-n .date { font-size: 15px; font-weight: 500; }
+.day h3 { font-size: 30px; line-height: 1.1; }
+.day h3 span { color: var(--text-2); font-size: 22px; font-weight: 500; letter-spacing: -.01em; }
+.stops { font-size: 12.5px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; margin: 6px 0 10px; color: #4A5C99; }
+.day p:not(.stops):not(.id) { font-size: 17px; line-height: 1.55; }
+.day .id { font-size: 15px; margin-top: 4px; }
+
+/* ---------- stay ---------- */
+.gallery { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 470px 320px; gap: 16px; margin-top: 36px; }
+.gallery img { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; display: block; }
+.gallery .g-main { grid-column: 1 / -1; }
+
+/* ---------- included ---------- */
+.incs { display: grid; grid-template-columns: 1fr 1fr; gap: 0 48px; margin-top: 20px; }
+.inc { padding: 24px 0; border-top: 1px solid var(--line); }
+.inc .label { margin-bottom: 10px; }
+.inc ul { list-style: none; padding: 0; }
+.inc li { font-size: 21px; font-weight: 500; padding: 4px 0 4px 24px; position: relative; }
+.inc li::before { content: ""; position: absolute; left: 0; top: 17px; width: 10px; height: 10px; border-radius: 50%; background: var(--nature); box-shadow: inset 0 0 0 2px var(--navy); }
+.quote { margin-top: 40px; background: var(--card); border: 1px solid rgba(255,255,255,.6); border-radius: 8px; padding: 36px 44px; }
+.q { font-size: 28px; line-height: 1.3; margin-bottom: 16px; }
+
+/* ---------- closing ---------- */
+.closing {
+  display: flex; flex-direction: column; padding: 80px;
+  background:
+    radial-gradient(70% 55% at 100% 0%, rgba(236,94,48,.75), transparent 70%),
+    radial-gradient(60% 50% at 0% 105%, rgba(154,180,216,.8), transparent 70%),
+    var(--paper);
+}
+.closing .mark { width: 240px; }
+.closing-main { margin-top: auto; }
+.contact { margin-top: 8px; border-top: 1px solid var(--line); }
+.contact div { display: grid; grid-template-columns: 240px 1fr; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.contact dt { font-size: 13px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; padding-top: 4px; }
+.contact dd { font-size: 21px; font-weight: 500; }
+.foot { margin-top: 48px; font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--text-2); }
+
+/* ---------- Labuan Bajo: boat grid ---------- */
+.boat-grid { display: grid; gap: 14px; margin-top: 30px; height: 760px;
+  grid-template-columns: 1.4fr 1fr; grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: "b1 b2" "b1 b3" "b4 b4"; }
+.boat-grid img { width: 100%; height: 100%; min-height: 0; object-fit: cover; border-radius: 8px; display: block; }
+.boat-grid .b1 { grid-area: b1; } .boat-grid .b2 { grid-area: b2; } .boat-grid .b3 { grid-area: b3; } .boat-grid .b4 { grid-area: b4; }
+.fact-grid div:nth-child(5) dd { font-size: 22px; }
+.pkg .wide img { height: 300px; }
+.itin-img { margin-top: 28px; }
+.itin-img img { height: 300px; }
+
+/* Good to know box: English first, Bahasa secondary */
+.quote p.gtk-en, .a4 .quote p.gtk-en { font-size: 21px; line-height: 1.5; color: var(--text); }
+.quote p.id, .a4 .quote p.id { font-size: 16px; line-height: 1.55; margin-top: 10px; color: var(--text-2); }
+
+/* ---------- Luwuk Banggai ---------- */
+.pkg .price { margin: 26px 0 30px; }
+.hls { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.hl-card { display: grid; grid-template-columns: 170px 1fr; gap: 18px; align-items: center; background: var(--card); border-radius: 8px; padding: 12px; }
+.hl-card img, .hl-card .hl-panel { width: 170px; height: 130px; object-fit: cover; border-radius: 6px; display: block; }
+.hl-card .hl-panel { background: var(--nature); color: var(--navy); display: flex; align-items: center; justify-content: center; }
+.hl-card .hl-panel svg { width: 110px; height: auto; }
+.hl-card h3 { font-size: 22px; line-height: 1.15; margin-bottom: 6px; }
+.hl-card p { font-size: 15.5px; line-height: 1.45; }
+.day-n .date { font-family: "JetBrains Mono", monospace; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; line-height: 1.5; }
+.excl { margin-top: 26px; }
+.excl p:not(.label) { font-size: 18px; color: var(--text-2); }
+.day { padding: 30px 0; }
+.inc { padding: 34px 0; }
+.quote { margin-top: 60px; }
+
+/* ---------- A4 portrait edition ----------
+   Design width stays 1080px; the page grows to A4 proportions (1080 x 1527)
+   and the whole document is zoomed to 794px wide (A4 at 96 dpi). */
+@page { size: A4; margin: 0; }
+body.a4 { zoom: 0.73519; }
+.a4 .page { height: 1527px; }
+
+.a4 .cover { grid-template-rows: 690px 1fr; }
+.a4 .intro { height: calc(1527px - 104px - 80px); }
+.a4 .wide img { height: 620px; }
+.a4 .day { padding: 30px 0; }
+.a4 .gallery { grid-template-rows: 580px 400px; }
+.a4 .inc { padding: 36px 0; }
+.a4 .quote { margin-top: 60px; }
+.a4 .contact div { padding: 22px 0; }
+.a4 .intro > div:first-child { display: flex; flex-direction: column; }
+.a4 .intro .display { font-size: 124px; }
+.a4 .intro .lead { font-size: 28px; }
+.a4 .intro p.id { margin-top: auto; }
+.a4 .day { padding: 44px 0; }
+.a4 .day h3 { font-size: 34px; }
+.a4 .day p:not(.stops):not(.id) { font-size: 19px; }
+.a4 .day .id { font-size: 16.5px; }
+.a4 .inc li { font-size: 23px; padding: 7px 0 7px 26px; }
+.a4 .inc li::before { top: 20px; }
+.a4 .quote { margin-top: 80px; padding: 48px 48px; }
+.a4 .intro p:not(.label):not(.campaign):not(.lead):not(.id) { font-size: 21px; }
+.a4 .day { padding: 36px 0; }
+.a4 .inc { padding: 52px 0; }
+.a4 .inc li { font-size: 25px; }
+.a4 .inc li::before { top: 22px; }
+.a4 .quote { margin-top: 100px; padding: 56px; }
+.a4 .q { font-size: 36px; }
+.a4 .quote p:last-child { font-size: 22px; }
+.a4 .boat-grid { height: 930px; }
+.a4 .pkg .wide img { height: 470px; }
+.a4 .itin-img img { height: 330px; }
+.a4 .hl-card img, .a4 .hl-card .hl-panel { height: 170px; }
+.a4 .hls { gap: 18px; }
+.a4 .excl { margin-top: 36px; }
+.a4 .day { padding: 36px 0; }
+.a4 .inc { padding: 40px 0; }
+</style></head>
+<body class="a4"><section class="page cover">
+  <div class="cover-photo"><img src="img/cover-aerial.jpg" alt="Aerial view of a boat over the reef, Banggai"></div>
+  <div class="cover-panel">
+    <img class="mark" src="img/days-wordmark-navy.png" alt="DAYS">
+    <div class="cover-text">
+      <p class="label">Collection · Nature <span>· Central Sulawesi</span></p>
+      <h1>Luwuk<br>Banggai</h1>
+      <p class="cover-sub">Where the Wild<br>Meets the Blue</p>
+      <p class="id">Tempat alam liar bertemu birunya laut.</p>
+    </div>
+    <div class="cover-foot">
+      <svg class="waves" viewBox="0 0 310 112" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" aria-hidden="true"><path d="M2 8 C 60 -4, 100 22, 155 10 S 250 -4, 308 10"/><path d="M2 30 C 60 18, 100 44, 155 32 S 250 18, 308 32"/><path d="M2 52 C 60 40, 100 66, 155 54 S 250 40, 308 54"/><path d="M2 74 C 60 62, 100 88, 155 76 S 250 62, 308 76"/><path d="M2 96 C 60 84, 100 110, 155 98 S 250 84, 308 98"/></svg>
+      <dl class="cover-facts">
+        <div><dt>Where</dt><dd>Luwuk, Central Sulawesi</dd></div>
+        <div><dt>Length</dt><dd>4 days, 3 nights</dd></div>
+        <div><dt>Stay</dt><dd>Santika Luwuk</dd></div>
+      </dl>
+    </div>
+  </div>
+</section><section class="page">
+  <header class="run">
+  <span>DAYS / Nature · Luwuk, Banggai</span>
+  <span>Proposal · 2027 · 02</span>
+</header>
+  <div class="intro">
+    <div>
+      <p class="label">Why Luwuk, Banggai <span>· Mengapa Luwuk, Banggai</span></p>
+      <h2 class="display">Room to<br>breathe.</h2>
+      <p class="campaign">Ruang untuk menikmati alam.</p>
+      <p class="lead">On the eastern arm of Central Sulawesi, Banggai is still a quiet secret: clear lakes under a canopy of green, islands rising out of deep blue water, and waterfalls hidden in the forest.</p>
+      <p>Four days to see the best of it at an easy pace. A speedboat to Paisupok, a lake so clear the boats seem to float. A trek to the top of Pulo Dua. Three waterfalls, from Piala and Laumarang to Kamumu. Every evening back to a comfortable room at Santika Luwuk.</p>
+      <p>Clear water. Wild islands. Good stories.</p>
+      <p class="id">Di lengan timur Sulawesi Tengah, Banggai masih menjadi rahasia: danau sebening kaca, pulau-pulau di tengah laut biru, dan air terjun di dalam hutan. Empat hari untuk menikmatinya dengan santai.</p>
+    </div>
+    <figure class="intro-img"><img src="img/paisupok-canoe.jpg" alt="A canoe on the clear water of Paisupok"></figure>
+  </div>
+</section><section class="page pkg">
+  <header class="run">
+  <span>DAYS / Nature · Luwuk, Banggai</span>
+  <span>Proposal · 2027 · 03</span>
+</header>
+  <div class="body">
+    <p class="label">The package <span>· Paket perjalanan</span></p>
+    <h2 class="h">Luwuk, Banggai</h2>
+    <p class="route">Piala <i>·</i> Laumarang <i>·</i> Paisupok <i>·</i> Pulo Dua <i>·</i> Kamumu</p>
+    <dl class="fact-grid"><div><dt>Destination <span>· Tujuan</span></dt><dd>Luwuk, Banggai, Central Sulawesi</dd></div><div><dt>Length <span>· Durasi</span></dt><dd>4 days, 3 nights</dd></div><div><dt>Stay <span>· Menginap</span></dt><dd>Santika Luwuk, 3 nights</dd></div><div><dt>Flights <span>· Penerbangan</span></dt><dd>Return flights included</dd></div></dl>
+    <div class="price">
+      <div><p class="label">Per person <span>· Per orang</span></p><p class="amount">IDR 21,950,000</p></div>
+      <p>Return flights, three nights at Santika Luwuk, every meal, the boats, a private car and a private local guide, in one clear price.<span class="id">Tiket pesawat pulang-pergi, tiga malam di Santika Luwuk, semua makan, kapal, mobil pribadi, dan pemandu lokal dalam satu harga.</span></p>
+    </div>
+    <p class="label">Highlights <span>· Sorotan</span></p>
+    <div class="hls"><article class="hl-card"><img src="img/paisupok-boat.jpg" alt=""><div><h3>Paisupok</h3><p>Crystal-clear water hidden in the green of Banggai. A place to swim, explore and slow right down.</p></div></article><article class="hl-card"><img src="img/pulo-dua.jpg" alt=""><div><h3>Pulo Dua</h3><p>Green hills meet deep blue sea. Trek to the viewpoint for the whole panorama from above.</p></div></article><article class="hl-card"><span class="hl-panel"><svg class="waves" viewBox="0 0 310 112" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" aria-hidden="true"><path d="M2 8 C 60 -4, 100 22, 155 10 S 250 -4, 308 10"/><path d="M2 30 C 60 18, 100 44, 155 32 S 250 18, 308 32"/><path d="M2 52 C 60 40, 100 66, 155 54 S 250 40, 308 54"/><path d="M2 74 C 60 62, 100 88, 155 76 S 250 62, 308 76"/><path d="M2 96 C 60 84, 100 110, 155 98 S 250 84, 308 98"/></svg></span><div><h3>Piala &amp; Laumarang</h3><p>Waterfalls tucked into tropical forest, on the wild side of Sulawesi.</p></div></article><article class="hl-card"><span class="hl-panel"><svg class="waves" viewBox="0 0 310 112" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" aria-hidden="true"><path d="M2 8 C 60 -4, 100 22, 155 10 S 250 -4, 308 10"/><path d="M2 30 C 60 18, 100 44, 155 32 S 250 18, 308 32"/><path d="M2 52 C 60 40, 100 66, 155 54 S 250 40, 308 54"/><path d="M2 74 C 60 62, 100 88, 155 76 S 250 62, 308 76"/><path d="M2 96 C 60 84, 100 110, 155 98 S 250 84, 308 98"/></svg></span><div><h3>Kamumu Waterfall</h3><p>One more glimpse of Banggai’s nature before you fly home.</p></div></article></div>
+  </div>
+</section><section class="page">
+  <header class="run">
+  <span>DAYS / Nature · Luwuk, Banggai</span>
+  <span>Proposal · 2027 · 04</span>
+</header>
+  <div class="body">
+    <p class="label">Day by day <span>· Rencana harian</span></p>
+    <h2 class="h">Four days in Banggai</h2>
+    <p class="lead narrow">Every night at Santika Luwuk, with meals noted under each day.</p>
+    <ol class="days"><li class="day">
+  <div class="day-n"><span class="n">Day 1</span><span class="date">Dinner</span></div>
+  <div>
+    <h3>Piala &amp; Laumarang Waterfalls <span>· Air Terjun Piala &amp; Laumarang</span></h3>
+    <p class="stops">Luwuk Airport · Piala Waterfall · Laumarang Waterfall · Santika Luwuk</p>
+    <p>Our local team meets you at Luwuk Airport and takes you straight into the forest: Piala Waterfall first, then Laumarang. Check in at Santika Luwuk in the afternoon, then dinner.</p>
+    <p class="id">Disambut tim lokal di Bandara Luwuk, lalu menuju Air Terjun Piala dan Laumarang. Check-in di Santika Luwuk dan makan malam.</p>
+  </div>
+</li><li class="day">
+  <div class="day-n"><span class="n">Day 2</span><span class="date">Breakfast · Lunch · Dinner</span></div>
+  <div>
+    <h3>Paisupok</h3>
+    <p class="stops">Harbour · Paisupok · Paisubatango · Pantai Poganda</p>
+    <p>A speedboat from the harbour to Paisupok, the lake so clear the boats seem to float on air. Swim and explore Paisubatango, lunch and slow beach time at Pantai Poganda, then back to Luwuk.</p>
+    <p class="id">Speedboat menuju Paisupok yang airnya sebening kaca, berenang di Paisubatango, makan siang dan bersantai di Pantai Poganda, lalu kembali ke Luwuk.</p>
+  </div>
+</li><li class="day">
+  <div class="day-n"><span class="n">Day 3</span><span class="date">Breakfast · Lunch · Dinner</span></div>
+  <div>
+    <h3>Pulo Dua</h3>
+    <p class="stops">Harbour · Pulo Dua · Luwuk</p>
+    <p>By boat to Pulo Dua. Trek up to the viewpoint for the panorama of green hills and deep blue water, then come down to snorkel. Lunch on the island and sail back to Luwuk.</p>
+    <p class="id">Naik kapal ke Pulo Dua, trekking ke puncak untuk melihat panorama pulau dan laut, lalu snorkeling. Makan siang dan kembali berlayar ke Luwuk.</p>
+  </div>
+</li><li class="day">
+  <div class="day-n"><span class="n">Day 4</span><span class="date">Breakfast</span></div>
+  <div>
+    <h3>Kamumu &amp; departure <span>· Kamumu &amp; kepulangan</span></h3>
+    <p class="stops">Santika Luwuk · Kamumu Waterfall · Luwuk Airport</p>
+    <p>Breakfast and check-out, then one last waterfall at Kamumu before the transfer to Luwuk Airport.</p>
+    <p class="id">Sarapan dan check-out, mampir ke Air Terjun Kamumu, lalu diantar ke Bandara Luwuk.</p>
+  </div>
+</li></ol>
+  </div>
+</section><section class="page">
+  <header class="run">
+  <span>DAYS / Nature · Luwuk, Banggai</span>
+  <span>Proposal · 2027 · 05</span>
+</header>
+  <div class="body">
+    <p class="label">What’s included <span>· Termasuk dalam paket</span></p>
+    <h2 class="h">We take care of the details.</h2>
+    <p class="lead narrow">From the airport on day one to the airport on day four: the flights, the boats, the car and the guide are arranged.</p>
+    <div class="incs"><div class="inc"><p class="label">Getting there <span>· Perjalanan</span></p><ul><li>Return flight tickets</li><li>Private transportation throughout</li><li>Private local guide</li></ul></div><div class="inc"><p class="label">Staying &amp; eating <span>· Menginap &amp; makan</span></p><ul><li>3 nights at Santika Luwuk</li><li>Breakfast, lunch and dinner daily</li></ul></div><div class="inc"><p class="label">On the water <span>· Di laut</span></p><ul><li>Speedboat to Paisupok</li><li>Boat at Paisupok</li><li>Boat to Pulo Dua</li></ul></div><div class="inc"><p class="label">Documentation <span>· Dokumentasi</span></p><ul><li>Drone and mirrorless camera (minimum 8 participants)</li></ul></div></div>
+    <div class="excl">
+      <p class="label">Not included <span>· Tidak termasuk</span></p>
+      <p>Personal expenses · Meals and drinks outside the package · Tips for guide and crew · Anything not listed as included</p>
+    </div>
+    <aside class="quote">
+      <p class="label">Good to know <span>· Perlu diketahui</span></p>
+      <p class="gtk-en" style="font-size:21px;line-height:1.5;color:#2C2C65;margin:0">Your DAYS contact is on WhatsApp before and during the trip. Boat crossings and timings can shift with the weather; the local team decides on the day.</p>
+      <p class="id" style="font-size:16px;line-height:1.55;color:#55547F;margin:10px 0 0">Tim DAYS dapat dihubungi lewat WhatsApp sebelum dan selama perjalanan. Jadwal kapal dapat berubah mengikuti cuaca.</p>
+    </aside>
+  </div>
+</section><section class="page closing">
+  <img class="mark" src="img/days-wordmark-orange.png" alt="DAYS">
+  <div class="closing-main">
+    <p class="label">Get in touch <span>· Hubungi kami</span></p>
+    <h2 class="display">Let’s plan your<br>next DAYS.</h2>
+    <p class="campaign">Yuk, rencanakan perjalananmu.</p>
+    <dl class="contact"><div><dt>WhatsApp / Phone</dt><dd>+62 812 2000 0185</dd></div><div><dt>Email</dt><dd>lets@talkaboutdays.com</dd></div><div><dt>Instagram</dt><dd>@talkaboutdays</dd></div><div><dt>Website</dt><dd>talkaboutdays.com</dd></div><div><dt>Studio</dt><dd>Jl. Tebet Barat IX No. 2, Jakarta Selatan</dd></div><div><dt>Hours</dt><dd>Mon–Fri · 09.00–18.00<br>Sat · 11.00–14.00<br>Sun · Closed</dd></div></dl>
+  </div>
+  <p class="foot">PT Vakansi Media Global · Licensed travel agency · Jakarta Selatan</p>
+</section></body></html>
