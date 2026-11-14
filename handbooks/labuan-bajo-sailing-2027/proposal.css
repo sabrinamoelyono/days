@@ -141,3 +141,7 @@ p + p { margin-top: 0; }
 .pkg .wide img { height: 300px; }
 .itin-img { margin-top: 28px; }
 .itin-img img { height: 300px; }
+
+/* Good to know box: English first, Bahasa secondary */
+.quote p.gtk-en, .a4 .quote p.gtk-en { font-size: 21px; line-height: 1.5; color: var(--text); }
+.quote p.id, .a4 .quote p.id { font-size: 16px; line-height: 1.55; margin-top: 10px; color: var(--text-2); }

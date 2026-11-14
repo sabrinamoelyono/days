@@ -188,9 +188,9 @@ pages.append(f'''<section class="page">
     <p class="lead narrow">You bring your certification and logbook. The boat, the crew and the plan are ours.</p>
     <div class="incs">{cols}</div>
     <aside class="quote">
-      {label("Why book with DAYS", "Mengapa DAYS")}
-      <p class="q">“We are not just agents; we’ve tested and vetted every aspect of the places we suggest.”</p>
-      <p>Your DAYS travel expert is on WhatsApp before and during the trip, from flights to Sorong to the last transfer home.</p>
+      {label("Good to know", "Perlu diketahui")}
+      <p class="gtk-en" style="font-size:21px;line-height:1.5;color:#2C2C65;margin:0">Your DAYS contact is on WhatsApp before and during the trip. Dive sites can change with conditions; the cruise director decides on the day.</p>
+      <p class="id" style="font-size:16px;line-height:1.55;color:#55547F;margin:10px 0 0">Tim DAYS dapat dihubungi lewat WhatsApp sebelum dan selama perjalanan. Titik selam dapat berubah mengikuti kondisi laut.</p>
     </aside>
   </div>
 </section>''')

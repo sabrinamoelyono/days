@@ -194,9 +194,9 @@ pages.append(f'''<section class="page">
     <p class="lead narrow">From pick-up at Komodo Airport to drop-off three days later, the plan is ours. Even the photos: the crew shoots on camera, drone and GoPro.</p>
     <div class="incs">{cols}</div>
     <aside class="quote">
-      {label("Why book with DAYS", "Mengapa DAYS")}
-      <p class="q">“We are not just agents; we’ve tested and vetted every aspect of the places we suggest.”</p>
-      <p>Your DAYS travel expert is on WhatsApp before and during the trip, for flights, weather calls or a change of plan.</p>
+      {label("Good to know", "Perlu diketahui")}
+      <p class="gtk-en" style="font-size:21px;line-height:1.5;color:#2C2C65;margin:0">Your DAYS contact is on WhatsApp before and during the trip. Islands and timings can shift with the tide and weather; the guide and crew decide on the day.</p>
+      <p class="id" style="font-size:16px;line-height:1.55;color:#55547F;margin:10px 0 0">Tim DAYS dapat dihubungi lewat WhatsApp sebelum dan selama perjalanan. Urutan pulau dan waktu dapat berubah mengikuti pasang surut dan cuaca.</p>
     </aside>
   </div>
 </section>''')

@@ -175,9 +175,9 @@ pages.append(f'''<section class="page">
     <p class="lead narrow">From landing in Sorong to flying home to Bali, the planning is ours, so you have room for the moments that make the trip yours.</p>
     <div class="incs">{cols}</div>
     <aside class="quote">
-      {label("Why book with DAYS", "Mengapa DAYS")}
-      <p class="q">“We are not just agents; we’ve tested and vetted every aspect of the places we suggest.”</p>
-      <p>Your DAYS travel expert is on WhatsApp before and during the trip, for boat times, weather calls or a change of plan.</p>
+      {label("Good to know", "Perlu diketahui")}
+      <p class="gtk-en" style="font-size:21px;line-height:1.5;color:#2C2C65;margin:0">Your DAYS contact is on WhatsApp before and during the trip. Boat times and stops can shift with the weather; your driver and guide decide on the day.</p>
+      <p class="id" style="font-size:16px;line-height:1.55;color:#55547F;margin:10px 0 0">Tim DAYS dapat dihubungi lewat WhatsApp sebelum dan selama perjalanan. Jadwal kapal dan tujuan dapat berubah mengikuti cuaca.</p>
     </aside>
   </div>
 </section>''')
