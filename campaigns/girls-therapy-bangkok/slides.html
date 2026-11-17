@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Girls Therapy — Bangkok After Dark</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,500;125,700;125,800&family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* Girls Therapy — Bangkok After Dark. 1600×2000 (4:5) social slides.
+   Palette kept from the original set (DAYS red + butter) so it reads as the same campaign;
+   the new visual language is clinical paperwork: intake forms, prescriptions, session notes. */
+:root {
+  --red: #EB1C3A;
+  --butter: #FEF49B;
+  --ink: #17100F;
+  --night: #120A0C;
+  --blush: #F7C6C9;
+  --rule-on-red: rgba(254,244,155,.55);
+  --rule-on-butter: rgba(23,16,15,.45);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #444; font-family: "Inter Tight", sans-serif; }
+.slide {
+  width: 1600px; height: 2000px; position: relative; overflow: hidden;
+  margin: 0 auto 40px;
+}
+.slide.red { background: var(--red); color: var(--butter); --rule: var(--rule-on-red); }
+.slide.butter { background: var(--butter); color: var(--ink); --rule: var(--rule-on-butter); }
+.slide.night { background: var(--night); color: var(--butter); --rule: rgba(254,244,155,.4); }
+
+/* film grain over every slide, like the originals */
+.slide::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 50;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: .22; mix-blend-mode: multiply;
+}
+
+/* wordmark, pre-tinted from assets/days-wordmark.png */
+.logo {
+  position: absolute; top: 92px; left: 50%; transform: translateX(-50%);
+  width: 244px; height: 70px; z-index: 20;
+  background: url(img/days-butter.png) center / contain no-repeat;
+}
+.butter .logo { background-image: url(img/days-red.png); }
+
+/* form chrome: the running header + footer that make every slide feel like a page in a file */
+.chrome {
+  position: absolute; left: 110px; right: 110px; z-index: 20;
+  display: flex; justify-content: space-between; align-items: center;
+  font: 500 22px/1 "JetBrains Mono", monospace; letter-spacing: .08em; text-transform: uppercase;
+}
+.chrome.top { top: 112px; }
+.chrome.bot { bottom: 92px; border-top: 2px solid var(--rule); padding-top: 26px; }
+
+.mono { font-family: "JetBrains Mono", monospace; text-transform: uppercase; letter-spacing: .08em; }
+.wide { font-family: "Archivo", sans-serif; font-stretch: 125%; font-weight: 700; text-transform: uppercase; letter-spacing: .01em; }
+.it { font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; text-transform: none; letter-spacing: -.01em; }
+
+.photo { position: absolute; background-size: cover; background-position: center; }
+
+/* hand-drawn line, an echo of the original set */
+svg.line { position: absolute; inset: 0; z-index: 15; pointer-events: none; }
+svg.line path { fill: none; stroke-width: 3; }
+
+/* rubber stamp */
+.stamp {
+  position: absolute; z-index: 30; border: 6px solid currentColor; border-radius: 14px;
+  padding: 18px 26px 14px; text-align: center; mix-blend-mode: multiply;
+  font: 700 30px/1.15 "JetBrains Mono", monospace; letter-spacing: .12em; text-transform: uppercase;
+}
+.stamp::before { content: ""; position: absolute; inset: 6px; border: 2px solid currentColor; border-radius: 8px; }
+.stamp b { display: block; font: 800 50px/1 "Archivo", sans-serif; font-stretch: 125%; letter-spacing: .02em; margin: 6px 0; }
+
+/* ---------- 01 · COVER ---------- */
+.s1 .photo { inset: 0; filter: saturate(1.15) contrast(1.05); }
+.s1 .shade { position: absolute; inset: 0; z-index: 2;
+  background: linear-gradient(180deg, rgba(18,10,12,.92) 0%, rgba(18,10,12,.25) 38%, rgba(18,10,12,.15) 55%, rgba(18,10,12,.94) 100%); }
+.s1 .title { position: absolute; left: 0; right: 0; top: 270px; text-align: center; z-index: 20; }
+.s1 .title .kicker { font: 600 36px/1 "JetBrains Mono", monospace; letter-spacing: .3em; text-transform: uppercase; }
+.s1 .title h1 { font-size: 300px; line-height: .8; color: var(--butter); margin-top: 40px; }
+.s1 .title h1 .wide { display: block; font-size: 168px; letter-spacing: .02em; }
+.s1 .title h1 .it { display: block; font-size: 330px; margin-top: -26px; }
+.rx {
+  position: absolute; z-index: 25; left: 150px; bottom: 300px; width: 760px;
+  background: var(--butter); color: var(--ink); padding: 44px 50px 46px;
+  transform: rotate(-3deg); box-shadow: 0 30px 60px rgba(0,0,0,.45);
+}
+.rx .hd { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 3px solid var(--ink); padding-bottom: 18px; }
+.rx .hd .sym { font: 400 120px/0.8 "Instrument Serif", serif; font-style: italic; color: var(--red); }
+.rx .hd .who { font: 500 18px/1.4 "JetBrains Mono", monospace; letter-spacing: .08em; text-transform: uppercase; text-align: right; }
+.rx dl { display: grid; grid-template-columns: 210px 1fr; margin-top: 10px; }
+.rx dt, .rx dd { padding: 16px 0 13px; border-bottom: 1.5px dashed rgba(23,16,15,.45); }
+.rx dt { font: 500 18px/1.6 "JetBrains Mono", monospace; letter-spacing: .1em; text-transform: uppercase; }
+.rx dd { font: 400 42px/1 "Instrument Serif", serif; font-style: italic; }
+.s1 .stamp { color: var(--butter); right: 150px; bottom: 380px; transform: rotate(9deg); mix-blend-mode: normal; background: var(--red); }
+.s1 .tag { position: absolute; z-index: 20; left: 0; right: 0; bottom: 160px; text-align: center; font-size: 40px; line-height: 1.25; letter-spacing: .03em; }
+
+/* ---------- 02 · THE SAFE SPACE ---------- */
+.s2 .photo { left: 110px; right: 110px; top: 340px; height: 860px; }
+.s2 .note {
+  position: absolute; z-index: 25; right: 150px; top: 1080px; width: 470px;
+  background: var(--butter); color: var(--ink); padding: 30px 34px 34px; transform: rotate(2.5deg);
+  box-shadow: 0 20px 40px rgba(0,0,0,.25);
+}
+.s2 .note .mono { font-size: 17px; color: var(--red); font-weight: 700; }
+.s2 .note p { font: 400 40px/1.08 "Instrument Serif", serif; font-style: italic; margin-top: 14px; }
+.s2 h2 { position: absolute; left: 110px; top: 1300px; width: 1080px; font: 500 92px/1.02 "Inter Tight", sans-serif; letter-spacing: -.025em; }
+.s2 h2 .it { font-size: 120px; line-height: .8; }
+.s2 .sub { position: absolute; left: 110px; top: 1660px; width: 900px; font-size: 44px; line-height: 1.22; }
+
+/* ---------- 03 · THE TREATMENT ---------- */
+.s3 .eyebrow { position: absolute; left: 110px; top: 300px; font-size: 24px; color: var(--red); font-weight: 700; }
+.s3 h2 { position: absolute; left: 110px; top: 350px; font-size: 104px; line-height: 1; }
+.s3 h2 .it { font-size: 168px; line-height: .7; color: var(--red); }
+.s3 .bar { left: 110px; top: 720px; width: 640px; height: 1060px; }
+.s3 .plan { position: absolute; left: 830px; top: 720px; right: 110px; }
+.s3 .plan .mono.h { font-size: 20px; padding-bottom: 18px; border-bottom: 3px solid var(--ink); font-weight: 700; display: flex; justify-content: space-between; }
+.s3 .plan li { list-style: none; display: grid; grid-template-columns: 62px 1fr; gap: 0 14px; padding: 26px 0 26px; border-bottom: 1.5px dashed var(--rule); }
+.s3 .plan li .box { width: 46px; height: 46px; border: 3px solid var(--ink); position: relative; margin-top: 2px; }
+.s3 .plan li .box::after { content: "✓"; position: absolute; left: 4px; top: -26px; font: 400 70px/1 "Instrument Serif", serif; color: var(--red); }
+.s3 .plan li b { font: 600 22px/1 "JetBrains Mono", monospace; letter-spacing: .08em; text-transform: uppercase; display: block; margin-bottom: 10px; }
+.s3 .plan li span { font-size: 33px; line-height: 1.24; }
+.s3 .street { left: 830px; right: 110px; top: 1480px; height: 300px; }
+
+/* ---------- 04 · TWO SESSIONS A DAY ---------- */
+.s4 h2 { position: absolute; left: 110px; top: 290px; font-size: 100px; line-height: 1.04; }
+.s4 h2 .it { font-size: 156px; line-height: .7; }
+.s4 .cols { position: absolute; left: 110px; right: 110px; top: 700px; display: grid; grid-template-columns: 1fr 1fr; gap: 0 60px; }
+.s4 .col .lbl { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 3px solid var(--butter); padding-bottom: 18px; }
+.s4 .col .lbl .wide { font-size: 44px; }
+.s4 .col .lbl .mono { font-size: 20px; }
+.s4 .pics { display: grid; gap: 18px; margin-top: 30px; height: 620px; }
+.s4 .pics.two { grid-template-columns: 1fr 1fr; }
+.s4 .pics div { background-size: cover; background-position: center; }
+.s4 .col p { font-size: 36px; line-height: 1.24; margin-top: 34px; }
+.s4 .col p em { font: 400 44px/1 "Instrument Serif", serif; font-style: italic; }
+
+/* ---------- 05 · THE COOL-DOWN ---------- */
+.s5 .eyebrow { position: absolute; left: 0; right: 0; top: 300px; text-align: center; font-size: 24px; font-weight: 700; color: var(--red); }
+.s5 h2 { position: absolute; left: 0; right: 0; top: 350px; text-align: center; font-size: 92px; line-height: 1; }
+.s5 h2 .it { font-size: 190px; line-height: .78; display: block; color: var(--red); }
+.s5 .label {
+  position: absolute; left: 190px; right: 190px; top: 740px; background: #fff; color: var(--ink);
+  border: 3px solid var(--ink); padding: 26px 26px 0;
+}
+.s5 .label .photo { position: relative; height: 760px; }
+.s5 .label .rows { display: grid; grid-template-columns: 1fr 1fr 1fr; }
+.s5 .label .rows div { padding: 20px 4px 22px; border-top: 2px solid var(--ink); }
+.s5 .label .rows div + div { border-left: 2px solid var(--ink); padding-left: 20px; }
+.s5 .label .rows small { display: block; font: 500 16px/1 "JetBrains Mono", monospace; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 10px; color: #6E655E; }
+.s5 .label .rows span { font: 400 38px/1 "Instrument Serif", serif; font-style: italic; }
+.s5 .label .top { display: flex; justify-content: space-between; padding-bottom: 20px; font: 700 20px/1 "JetBrains Mono", monospace; letter-spacing: .1em; text-transform: uppercase; }
+.s5 .label .top .r { color: var(--red); }
+.s5 .copy { position: absolute; left: 0; right: 0; top: 1690px; text-align: center; font-size: 38px; line-height: 1.35; }
+.s5 .stamp { color: var(--red); right: 120px; top: 1420px; transform: rotate(-8deg); background: var(--butter); mix-blend-mode: normal; }
+</style>
+</head>
+<body>
+
+<!-- 01 · COVER -->
+<section class="slide night s1">
+  <div class="photo" style="background-image:url(img/chinatown.jpg)"></div>
+  <div class="shade"></div>
+  <div class="logo"></div>
+  <div class="title">
+    <div class="kicker">Bangkok · After Dark</div>
+    <h1><span class="wide">Girls</span><span class="it">Therapy</span></h1>
+  </div>
+  <svg class="line" viewBox="0 0 1600 2000"><path stroke="#FEF49B" d="M-20 1180 C 300 1060, 520 1250, 700 1150 S 1180 820, 1620 980"/></svg>
+  <div class="rx">
+    <div class="hd"><span class="sym">Rx</span><span class="who">Patient: you + the girls<br>Ref. BKK-04</span></div>
+    <dl>
+      <dt>Prescribed</dt><dd>Four days in Bangkok</dd>
+      <dt>Dosage</dt><dd>Taken nightly, after dark</dd>
+      <dt>Side effects</dt><dd>Sore feet, no regrets</dd>
+      <dt>Refills</dt><dd>As many as you need</dd>
+    </dl>
+  </div>
+  <div class="stamp">Prescribed by<b>DAYS</b>No appointment needed</div>
+  <div class="tag wide">A culinary city by day.<br>An underground scene after dark.</div>
+  <div class="chrome bot" style="color:var(--butter)"><span>Girls Therapy</span><span>Intake form · 01 / 05</span></div>
+</section>
+
+<!-- 02 · SESSION 01 · THE SAFE SPACE -->
+<section class="slide red s2">
+  <div class="chrome top"><span>Session 01</span><span>The safe space</span></div>
+  <div class="logo"></div>
+  <div class="photo" style="background-image:url(img/room.jpg)"></div>
+  <div class="note"><div class="mono">Therapist's note</div><p>Patient reports sleeping better than she has all year.</p></div>
+  <h2>Your <span class="it">safe space</span> is central, design-driven, and close to everything</h2>
+  <p class="sub">The kind of room you actually want to come back to at 3am.</p>
+  <div class="chrome bot"><span>Girls Therapy · Bangkok</span><span>02 / 05</span></div>
+</section>
+
+<!-- 03 · SESSION 02 · THE TREATMENT -->
+<section class="slide butter s3">
+  <div class="chrome top"><span>Session 02</span><span>Treatment plan</span></div>
+  <div class="logo"></div>
+  <div class="eyebrow mono">The main course of treatment</div>
+  <h2 class="wide">The nights are<br>the <span class="it">treatment</span></h2>
+  <div class="photo bar" style="background-image:url(img/bar.jpg)"></div>
+  <ul class="plan">
+    <li class="mono h" style="display:flex"><span>Prescribed nightly</span><span>✓ = done</span></li>
+    <li><i class="box"></i><div><b>Group work</b><span>A bar crawl every night.</span></div></li>
+    <li><i class="box"></i><div><b>Exposure therapy</b><span>A well-curated route across the best neighbourhoods — the under-the-radar places.</span></div></li>
+    <li><i class="box"></i><div><b>Sound therapy</b><span>One club night. One room, one sound system, one reason to stay until the end.</span></div></li>
+  </ul>
+  <div class="photo street" style="background-image:url(img/street.jpg)"></div>
+  <div class="chrome bot"><span>Girls Therapy · Bangkok</span><span>03 / 05</span></div>
+</section>
+
+<!-- 04 · SESSION 03 · TWO SESSIONS A DAY -->
+<section class="slide red s4">
+  <div class="chrome top"><span>Session 03</span><span>Daily schedule</span></div>
+  <div class="logo"></div>
+  <h2 class="wide">Four days.<br>Two <span class="it">sessions</span> a day.</h2>
+  <div class="cols">
+    <div class="col">
+      <div class="lbl"><span class="wide">Day</span><span class="mono">10:00 — 18:00</span></div>
+      <div class="pics two"><div style="background-image:url(img/market.jpg)"></div><div style="background-image:url(img/grill.jpg)"></div></div>
+      <p><em>Talk it out over food —</em> street stalls, neighbourhood restaurants, and the tables worth booking.</p>
+    </div>
+    <div class="col">
+      <div class="lbl"><span class="wide">Night</span><span class="mono">21:00 — late</span></div>
+      <div class="pics"><div style="background-image:url(img/cocktail.jpg)"></div></div>
+      <p><em>Let it all out —</em> the bars, the rooftops, and the one club night worth staying for.</p>
+    </div>
+  </div>
+  <div class="chrome bot"><span>Girls Therapy · Bangkok</span><span>04 / 05</span></div>
+</section>
+
+<!-- 05 · SESSION 04 · THE COOL-DOWN -->
+<section class="slide butter s5">
+  <div class="chrome top"><span>Session 04</span><span>Optional add-on</span></div>
+  <div class="logo"></div>
+  <div class="eyebrow mono">The extra escape · Toscana Valley, Khao Yai</div>
+  <h2 class="wide">After the nights,<span class="it">the cool-down</span></h2>
+  <div class="label">
+    <div class="top"><span>Rx · Fresh air</span><span class="r">Take as needed</span></div>
+    <div class="photo" style="background-image:url(img/windmill.jpg)"></div>
+    <div class="rows">
+      <div><small>Active ingredient</small><span>Rolling hills</span></div>
+      <div><small>Dosage</small><span>One slow day</span></div>
+      <div><small>Distance</small><span>3 hrs from BKK</span></div>
+    </div>
+  </div>
+  <div class="stamp">Doctor's<b>ORDERS</b>Slow down</div>
+  <p class="copy">Rolling hills, fresh air, and a slower pace.<br>The side of Thailand most travellers never get to.</p>
+  <div class="chrome bot"><span>Girls Therapy · Bangkok</span><span>05 / 05</span></div>
+</section>
+
+</body>
+</html>
