@@ -73,8 +73,7 @@ svg.line path { fill: none; stroke-width: 3; }
 .s1 .title .kicker { font: 600 36px/1 "DM Mono", monospace; letter-spacing: .3em; text-transform: uppercase; }
 .s1 .title h1 { font-size: 300px; line-height: .8; color: var(--champ); margin-top: 40px; }
 .s1 .title h1 .c1 { display: block; font: 800 290px/.82 "Bricolage Grotesque", sans-serif; font-stretch: 100%; font-variation-settings: "opsz" 96; letter-spacing: -.035em; }
-.s1 .title h1 .c2 { display: block; font: italic 600 170px/1 "Playfair Display", serif; color: var(--butter); margin-top: 14px; }
-.s1 .title h1 .c2a { font: 800 92px/1 "Bricolage Grotesque", sans-serif; font-style: normal; font-stretch: 80%; letter-spacing: .04em; text-transform: uppercase; vertical-align: 22px; margin-right: 18px; }
+.s1 .title h1 .c2 { display: block; font: 500 66px/1 "DM Mono", monospace; letter-spacing: .14em; text-transform: uppercase; color: var(--butter); margin-top: 44px; }
 .rx {
   position: absolute; z-index: 25; left: 150px; bottom: 420px; width: 760px; transform-origin: left bottom;
   background: var(--butter); color: var(--ink); padding: 44px 50px 46px;
@@ -157,3 +156,6 @@ svg.line path { fill: none; stroke-width: 3; }
 .s5 .label .top .r { color: var(--accent); }
 .s5 .copy { position: absolute; left: 0; right: 0; top: 1716px; text-align: center; font-size: 38px; line-height: 1.35; }
 .s5 .stamp { color: var(--accent); right: 120px; top: 1420px; transform: rotate(-8deg); background: var(--butter); mix-blend-mode: normal; }
+
+/* cover without film grain (background options) */
+.slide.clean::after { display: none; }
