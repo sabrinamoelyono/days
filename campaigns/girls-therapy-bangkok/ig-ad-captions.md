@@ -50,7 +50,7 @@ Instagram cuts the primary text off at roughly 125 characters with "…more", so
 
 > Diagnosis: you've had a year.
 >
-> Treatment: four nights in Bangkok with your girls, New Year's Eve included.
+> Treatment: four days in Bangkok with your girls, New Year's Eve included.
 >
 > Dosage — taken nightly, after dark.
 > Side effects — sore feet, no regrets.
