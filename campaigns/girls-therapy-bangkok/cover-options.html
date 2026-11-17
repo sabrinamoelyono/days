@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Girls Therapy — cover options</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,500..800&family=DM+Sans:opsz,wght@9..40,400..600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="slides.css">
+<style>
+/* Cover explorations: three title typefaces × three line ideas. Shared parts (Rx slip, badge,
+   tagline, footer) come from slides.css; only the title and the lines change. */
+.s1 .photo { background-image: url(img/chinatown-clean.jpg); }
+.s1 .title h1 { margin-top: 30px; }
+svg.line { z-index: 18; }
+svg.line.behind { z-index: 10; }
+svg.line path { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+
+/* A · All Bodoni + streamer */
+.optA .title h1 .a1 { display: block; font: italic 400 400px/.8 "Bodoni Moda", serif; font-variation-settings: "opsz" 96; letter-spacing: -.03em; }
+.optA .title h1 .a2 { display: block; font: 500 120px/1 "Bodoni Moda", serif; font-variation-settings: "opsz" 96; letter-spacing: .32em; margin: 26px 0 0 .32em; }
+
+/* B · Soft serif + pen annotations */
+.optB .title h1 .b1 { display: block; font: 800 250px/.86 "Bricolage Grotesque", sans-serif; font-stretch: 80%; font-variation-settings: "opsz" 96; letter-spacing: 0; }
+.optB .title h1 .b2 { display: block; font: italic 400 320px/.8 "Bodoni Moda", serif; font-variation-settings: "opsz" 96; letter-spacing: -.03em; margin-top: -30px; }
+
+/* C · Grotesk caps + fireworks */
+.optC .title h1 { line-height: .8; }
+.optC .title h1 .c1 { display: block; font: 800 290px/.82 "Bricolage Grotesque", sans-serif; font-stretch: 100%; font-variation-settings: "opsz" 96; letter-spacing: -.035em; }
+.optC .title h1 .c2 { display: block; font: italic 400 160px/1 "Bodoni Moda", serif; font-variation-settings: "opsz" 96; color: var(--butter); margin-top: -6px; }
+
+.opt-label { position: absolute; z-index: 60; left: 24px; top: 24px; background: #fff; color: #000; font: 600 22px/1 "DM Sans"; padding: 10px 14px; }
+</style>
+</head>
+<body>
+
+<!-- A -->
+<section class="slide night s1 optA">
+  <div class="photo"></div><div class="shade"></div>
+  <div class="logo"></div>
+  <svg class="line behind" viewBox="0 0 1600 2000">
+    <!-- one champagne streamer: drops in top-right, loops behind the title, unspools down to the slip -->
+    <path stroke="#F1DDAE" stroke-width="3.5" d="M1640 230 C 1420 300, 1330 520, 1420 650 C 1520 790, 1640 640, 1530 560 C 1400 470, 1180 760, 980 860 C 760 970, 360 900, 180 1000 C 40 1080, 60 1180, 180 1215"/>
+    <path stroke="#F1DDAE" stroke-width="2" opacity=".7" d="M-40 560 C 120 600, 160 700, 120 760 C 80 820, 20 780, 60 730 C 110 670, 260 720, 330 800"/>
+  </svg>
+  <div class="title">
+    <div class="kicker">New Year's Eve · Bangkok After Dark</div>
+    <h1><span class="a1">Girls</span><span class="a2">Therapy</span></h1>
+  </div>
+  <div class="rx">
+    <div class="hd"><span class="sym">Rx</span><span class="who">Patient: you + the girls<br>30 Dec 2026 — 02 Jan 2027</span></div>
+    <dl><dt>Prescribed</dt><dd>New Year's in Bangkok</dd><dt>Dosage</dt><dd>Taken nightly, after dark</dd><dt>Side effects</dt><dd>Sore feet, no regrets</dd><dt>Duration</dt><dd>Four days, two years</dd></dl>
+  </div>
+  <div class="badge"><small>New Year's Eve</small><b>26→27</b><i>Bangkok</i></div>
+  <div class="tag wide">A culinary city by day.<br>An underground scene after dark.</div>
+  <div class="chrome bot" style="color:var(--butter)"><span>Girls Therapy · NYE Bangkok</span><span>Intake form · 01 / 05</span></div>
+  <div class="opt-label">A · All Bodoni + streamer</div>
+</section>
+
+<!-- B -->
+<section class="slide night s1 optB">
+  <div class="photo"></div><div class="shade"></div>
+  <div class="logo"></div>
+  <div class="title">
+    <div class="kicker">New Year's Eve · Bangkok After Dark</div>
+    <h1><span class="b1">GIRLS</span><span class="b2">Therapy</span></h1>
+  </div>
+  <svg class="line" viewBox="0 0 1600 2000">
+    <!-- the therapist's pen: a loose loop around "Therapy", and a tick-and-arrow to the badge -->
+    <path stroke="#D7195A" stroke-width="7" d="M300 600 C 420 500, 1000 480, 1290 530 C 1480 565, 1500 760, 1360 850 C 1200 950, 700 960, 420 905 C 220 865, 160 740, 240 650 C 290 595, 380 560, 500 545"/>
+    <path stroke="#D7195A" stroke-width="6" d="M1010 1030 C 1120 1060, 1210 1130, 1240 1205"/>
+    <path stroke="#D7195A" stroke-width="6" d="M1205 1185 L 1243 1210 L 1262 1166"/>
+    <path stroke="#F1DDAE" stroke-width="4" d="M440 1868 C 640 1858, 960 1862, 1160 1852"/>
+  </svg>
+  <div class="opt-note" style="position:absolute;z-index:20;left:860px;top:960px;color:var(--butter);font:italic 400 54px/1 'Bodoni Moda';transform:rotate(-4deg)">doctor's orders</div>
+  <div class="rx">
+    <div class="hd"><span class="sym">Rx</span><span class="who">Patient: you + the girls<br>30 Dec 2026 — 02 Jan 2027</span></div>
+    <dl><dt>Prescribed</dt><dd>New Year's in Bangkok</dd><dt>Dosage</dt><dd>Taken nightly, after dark</dd><dt>Side effects</dt><dd>Sore feet, no regrets</dd><dt>Duration</dt><dd>Four days, two years</dd></dl>
+  </div>
+  <div class="badge"><small>New Year's Eve</small><b>26→27</b><i>Bangkok</i></div>
+  <div class="tag wide">A culinary city by day.<br>An underground scene after dark.</div>
+  <div class="chrome bot" style="color:var(--butter)"><span>Girls Therapy · NYE Bangkok</span><span>Intake form · 01 / 05</span></div>
+  <div class="opt-label">B · Grotesk + Bodoni italic, pen marks</div>
+</section>
+
+<!-- C -->
+<section class="slide night s1 optC">
+  <div class="photo"></div><div class="shade"></div>
+  <div class="logo"></div>
+  <svg class="line behind" viewBox="0 0 1600 2000" id="fw"></svg>
+  <div class="title">
+    <div class="kicker">New Year's Eve · Bangkok After Dark</div>
+    <h1><span class="c1">GIRLS<br>THERAPY</span><span class="c2">after dark</span></h1>
+  </div>
+  <div class="rx">
+    <div class="hd"><span class="sym">Rx</span><span class="who">Patient: you + the girls<br>30 Dec 2026 — 02 Jan 2027</span></div>
+    <dl><dt>Prescribed</dt><dd>New Year's in Bangkok</dd><dt>Dosage</dt><dd>Taken nightly, after dark</dd><dt>Side effects</dt><dd>Sore feet, no regrets</dd><dt>Duration</dt><dd>Four days, two years</dd></dl>
+  </div>
+  <div class="badge"><small>New Year's Eve</small><b>26→27</b><i>Bangkok</i></div>
+  <div class="tag wide">A culinary city by day.<br>An underground scene after dark.</div>
+  <div class="chrome bot" style="color:var(--butter)"><span>Girls Therapy · NYE Bangkok</span><span>Intake form · 01 / 05</span></div>
+  <div class="opt-label">C · Grotesk caps + fireworks</div>
+</section>
+
+<script>
+// fireworks for option C: fine champagne/blush rays with a gap at the centre
+const svg = document.getElementById('fw');
+function burst(cx, cy, r0, r1, n, color, w, rot = 0) {
+  for (let i = 0; i < n; i++) {
+    const a = rot + i * 2 * Math.PI / n, j = (i % 3 === 0) ? 1 : (i % 3 === 1 ? .78 : .62);
+    const p = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    const x0 = cx + Math.cos(a) * r0, y0 = cy + Math.sin(a) * r0, x1 = cx + Math.cos(a) * r1 * j, y1 = cy + Math.sin(a) * r1 * j;
+    // slight droop, like a real shell falling
+    const mx = (x0 + x1) / 2, my = (y0 + y1) / 2 + r1 * .06;
+    p.setAttribute('d', `M${x0} ${y0} Q ${mx} ${my} ${x1} ${y1}`);
+    p.setAttribute('stroke', color); p.setAttribute('stroke-width', w);
+    svg.appendChild(p);
+  }
+}
+burst(1450, 190, 40, 175, 26, '#F1DDAE', 3);
+burst(150, 860, 30, 130, 20, '#F6D7DF', 2.5, .2);
+burst(1420, 1000, 30, 150, 18, '#F6D7DF', 2.5, .1);
+</script>
+</body>
+</html>
