@@ -1,6 +1,6 @@
 # Girls Therapy: After Dark, Bangkok — Instagram ad copy
 
-New Year's Eve trip · 30 Dec 2026 – 02 Jan 2027 · 4 days, 3 nights
+New Year's Eve trip · 30 Dec 2026 – 02 Jan 2027 · 4 days, 3 nights · from Rp 18,900,000/pax
 
 Instagram cuts the primary text off at roughly 125 characters with "…more", so the first line of each version has to work on its own.
 
@@ -19,12 +19,12 @@ Instagram cuts the primary text off at roughly 125 characters with "…more", so
 >
 > Then a slow day in Khao Yai, because even therapy needs a cool-down.
 >
-> A design-led hotel in the middle of it all. Every reservation handled. You just show up.
+> Return flights from Jakarta, a design-led hotel in the middle of it all, private transport, every table and every door handled. You just show up.
 >
-> Prescribed by your group chat. Curated by DAYS.
+> From Rp 18,900,000/pax. Prescribed by your group chat. Curated by DAYS.
 
 **Headline:** Girls Therapy: After Dark, Bangkok
-**Description:** 30 Dec – 02 Jan · 4 days, 3 nights
+**Description:** 30 Dec – 02 Jan · From Rp 18,9jt/pax
 **CTA button:** Send Message
 
 ---
@@ -37,7 +37,7 @@ Instagram cuts the primary text off at roughly 125 characters with "…more", so
 >
 > Girls Therapy · New Year's Eve after dark.
 > Street food by day, bars by night, one countdown worth staying up for.
-> 30 Dec – 2 Jan. Small group, fully curated.
+> 30 Dec – 2 Jan. Flights, hotel and every night planned — from Rp 18,9jt.
 
 **Headline:** New Year's, after dark
 **CTA button:** Learn More
@@ -56,6 +56,7 @@ Instagram cuts the primary text off at roughly 125 characters with "…more", so
 > Side effects — sore feet, no regrets.
 >
 > Girls Therapy by DAYS. 30 Dec 2026 – 2 Jan 2027.
+> From Rp 18,900,000/pax, flights from Jakarta included.
 
 **Headline:** Book your session
 **CTA button:** Send Message
