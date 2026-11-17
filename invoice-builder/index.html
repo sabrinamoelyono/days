@@ -127,12 +127,24 @@
   .item-row .row2 { margin-bottom: 8px; }
   .item-amount { font-size: 12px; color: var(--muted); text-align: right; }
   .item-amount b { color: var(--ink); font-family: "JetBrains Mono", ui-monospace, monospace; font-weight: 500; }
-  .items-total {
-    display: flex; justify-content: space-between; align-items: baseline;
-    background: var(--sand); color: var(--navy); border-radius: 10px;
-    margin-top: 14px; padding: 10px 14px; font-weight: 700;
-  }
-  .items-total b { font-family: "JetBrains Mono", ui-monospace, monospace; }
+  .discount { border-top: 1px solid var(--line); margin-top: 14px; padding-top: 12px; }
+  .discount .row2 { margin-bottom: 0; }
+  .disc-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
+  .disc-title { font-size: 12px; font-weight: 700; color: var(--muted); }
+  .disc-title .opt { font-weight: 400; }
+  .seg { display: inline-flex; border: 1px solid #CFCDE2; border-radius: 999px; padding: 2px; background: var(--surface); }
+  .seg label { position: relative; cursor: pointer; }
+  .seg input { position: absolute; inset: 0; margin: 0; opacity: 0; cursor: pointer; }
+  .seg span { display: block; padding: 4px 14px; border-radius: 999px; font-size: 12px; font-weight: 700; color: var(--navy); }
+  .seg input:checked + span { background: var(--navy); color: var(--yellow); }
+  .seg input:focus-visible + span { outline: 2px solid var(--navy); outline-offset: 2px; }
+  .items-total { background: var(--sand); color: var(--navy); border-radius: 10px; margin-top: 14px; padding: 10px 14px; }
+  .sum-line { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; font-size: 14px; }
+  .sum-line + .sum-line { margin-top: 4px; }
+  .sum-line .mono { font-family: "JetBrains Mono", ui-monospace, monospace; }
+  .sum-line.grand { font-size: 16px; font-weight: 700; }
+  .sum-line.grand b { font-family: "JetBrains Mono", ui-monospace, monospace; }
+  .sum-line:not([hidden]) + .sum-line.grand { border-top: 1px solid rgba(46, 45, 107, .25); padding-top: 6px; margin-top: 6px; }
 
   .term-row { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px; }
   .term-row textarea { flex: 1; font-size: 14px; }
@@ -219,6 +231,10 @@
   .p-table .mono-cell, .p-total .mono-cell { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: .93em; white-space: nowrap; }
   /* White top padding keeps the navy bar off the slice line if the PDF breaks here. */
   .p-total-wrap { display: flex; justify-content: flex-end; padding-top: 3px; }
+  .p-sums { min-width: 40%; }
+  .p-sum { display: flex; justify-content: space-between; align-items: baseline; gap: 24px; padding: 9px 14px; font-size: 14px; }
+  .p-sum + .p-sum { border-top: 1px solid var(--line-cool); }
+  .p-sum .mono-cell { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: .93em; white-space: nowrap; }
   .p-total {
     display: flex; justify-content: space-between; align-items: baseline; gap: 24px;
     min-width: 40%; background: var(--navy); color: var(--yellow); font-weight: 700; padding: 14px;
@@ -267,7 +283,7 @@
       <span class="autosave-note">Draft autosaves in this browser</span>
     </div>
     <div class="confirm-bar" id="new-confirm" role="alertdialog" aria-labelledby="new-confirm-text" hidden>
-      <p id="new-confirm-text"><b>Start a new invoice?</b> The client, date and line items are cleared and the payment account goes back to BCA. Company details and terms stay as they are.</p>
+      <p id="new-confirm-text"><b>Start a new invoice?</b> The client, date, line items and discount are cleared and the payment account goes back to BCA. Company details and terms stay as they are.</p>
       <div class="confirm-actions">
         <button type="button" class="btn btn-primary" id="new-yes">Start new invoice</button>
         <button type="button" class="btn btn-line" id="new-no">Keep editing</button>
@@ -288,7 +304,24 @@
       <h2><span class="step">2</span>Line items</h2>
       <div id="items"></div>
       <button type="button" class="btn btn-line btn-block" id="add-item">+ Add item</button>
-      <div class="items-total"><span>Total</span><b id="e-total"></b></div>
+      <div class="discount">
+        <div class="disc-head">
+          <span class="disc-title">Discount <span class="opt">(optional)</span></span>
+          <div class="seg" role="radiogroup" aria-label="Discount type">
+            <label><input type="radio" name="discType" id="disc-amount" value="amount"><span>Rp</span></label>
+            <label><input type="radio" name="discType" id="disc-percent" value="percent"><span>%</span></label>
+          </div>
+        </div>
+        <div class="row2">
+          <div class="field"><label for="f-disc-value" id="disc-value-label">Amount (Rp)</label><input type="number" id="f-disc-value" class="mono" min="0" inputmode="decimal" placeholder="0"></div>
+          <div class="field"><label for="f-disc-label">Label <span class="opt">(optional)</span></label><input type="text" id="f-disc-label" placeholder="e.g. Early bird"></div>
+        </div>
+      </div>
+      <div class="items-total">
+        <div class="sum-line" id="e-sub-line" hidden><span>Subtotal</span><span class="mono" id="e-subtotal"></span></div>
+        <div class="sum-line" id="e-disc-line" hidden><span id="e-disc-name">Discount</span><span class="mono" id="e-disc"></span></div>
+        <div class="sum-line grand"><span>Total</span><b id="e-total"></b></div>
+      </div>
     </section>
 
     <section class="card">
@@ -408,7 +441,13 @@
               <tbody id="p-items"></tbody>
             </table>
             <div class="p-total-wrap">
-              <div class="p-total"><span>TOTAL</span><span class="mono-cell" id="p-total"></span></div>
+              <div class="p-sums">
+                <div id="p-sum-rows" hidden>
+                  <div class="p-sum"><span>Subtotal</span><span class="mono-cell" id="p-subtotal"></span></div>
+                  <div class="p-sum"><span id="p-disc-name">Discount</span><span class="mono-cell" id="p-disc"></span></div>
+                </div>
+                <div class="p-total"><span>TOTAL</span><span class="mono-cell" id="p-total"></span></div>
+              </div>
             </div>
 
             <div class="p-foot" id="p-terms-block">
@@ -460,7 +499,10 @@
     bank: "BCA",
     accountName: "PT Vakansi Media Global",
     accountNo: "2914100185",
-    payTo: "company"
+    payTo: "company",
+    discType: "amount",
+    discValue: "",
+    discLabel: ""
   };
 
   // Optional per-invoice alternative to the default company account above.
@@ -472,7 +514,8 @@
     "f-client": "client", "f-client-details": "clientDetails", "f-date": "date",
     "f-cat": "category", "f-seq": "seq",
     "f-company": "company", "f-addr1": "addr1", "f-addr2": "addr2", "f-phone": "phone",
-    "f-bank": "bank", "f-accname": "accountName", "f-accno": "accountNo"
+    "f-bank": "bank", "f-accname": "accountName", "f-accno": "accountNo",
+    "f-disc-value": "discValue", "f-disc-label": "discLabel"
   };
 
   const $ = (id) => document.getElementById(id);
@@ -504,7 +547,21 @@
   }
   const lineAmount = (it) => (Number(it.price) || 0) * (Number(it.qty) || 0);
   const isBlankItem = (it) => !String(it.desc || "").trim() && !(Number(it.price) > 0);
-  const total = () => state.items.reduce((sum, it) => sum + lineAmount(it), 0);
+  const subtotal = () => state.items.reduce((sum, it) => sum + lineAmount(it), 0);
+  // Out-of-range values are flagged by problems(); here they're clamped so the preview stays sane.
+  function discountAmount() {
+    const v = Number(state.discValue) || 0;
+    if (v <= 0) return 0;
+    const sub = subtotal();
+    const d = state.discType === "percent" ? Math.round(sub * Math.min(v, 100) / 100) : Math.round(v);
+    return Math.min(d, sub);
+  }
+  const total = () => subtotal() - discountAmount();
+  function discountName() {
+    const label = String(state.discLabel || "").trim();
+    const pct = state.discType === "percent" ? ` (${Number(state.discValue) || 0}%)` : "";
+    return `Discount${label ? " – " + label : ""}${pct}`;
+  }
 
   function autoInvoiceNo() {
     const m = Number((state.date || "").split("-")[1]) - 1;
@@ -611,6 +668,12 @@
     if (!items.length) {
       tbody.innerHTML = `<tr class="empty"><td colspan="4">No line items yet</td></tr>`;
     }
+    const disc = discountAmount();
+    const discText = "− " + formatRp(disc);
+    $("p-sum-rows").hidden = $("e-sub-line").hidden = $("e-disc-line").hidden = disc <= 0;
+    $("p-subtotal").textContent = $("e-subtotal").textContent = formatRp(subtotal());
+    $("p-disc").textContent = $("e-disc").textContent = discText;
+    $("p-disc-name").textContent = $("e-disc-name").textContent = discountName();
     $("p-total").textContent = formatRp(total());
     $("e-total").textContent = formatRp(total());
 
@@ -663,8 +726,17 @@
     renderPreview();
   }
 
+  function renderDiscountType() {
+    const pct = state.discType === "percent";
+    $("disc-amount").checked = !pct;
+    $("disc-percent").checked = pct;
+    $("disc-value-label").textContent = pct ? "Percent (%)" : "Amount (Rp)";
+    $("f-disc-value").step = pct ? "0.5" : "1000";
+  }
+
   function fullRender() {
     renderEditorStatic();
+    renderDiscountType();
     renderItemsEditor();
     renderTermsEditor();
     renderPayOptions();
@@ -693,6 +765,10 @@
       else if (!(Number(it.price) > 0)) out.push(`Item ${i + 1} has no unit price (step 2).`);
       else if (!(Number(it.qty) > 0)) out.push(`Item ${i + 1} has no quantity (step 2).`);
     });
+    const dv = Number(state.discValue) || 0;
+    if (dv < 0) out.push("The discount can't be negative (step 2).");
+    else if (state.discType === "percent" && dv > 100) out.push("A percentage discount can't be more than 100% (step 2).");
+    else if (state.discType !== "percent" && dv > subtotal()) out.push("The discount is larger than the subtotal (step 2).");
     if (!String(state.invoiceNo).trim()) out.push("Add an invoice number (step 3).");
     return out;
   }
@@ -722,6 +798,9 @@
     state.invoiceNoManual = true;
     refreshInvoiceNo();
     sync();
+  });
+  document.querySelectorAll('input[name="discType"]').forEach((radio) => {
+    radio.addEventListener("change", () => { state.discType = radio.value; renderDiscountType(); sync(); });
   });
   document.querySelectorAll('input[name="payTo"]').forEach((radio) => {
     radio.addEventListener("change", () => { state.payTo = radio.value; sync(); });
@@ -763,7 +842,7 @@
     const next = String((parseInt(digits || "0", 10) || 0) + 1).padStart(Math.max(6, digits.length), "0");
     Object.assign(state, {
       client: "", clientDetails: "", date: todayIso(), seq: next, invoiceNoManual: false, payTo: "company",
-      items: [{ desc: "", price: "", qty: 1 }]
+      items: [{ desc: "", price: "", qty: 1 }], discType: "amount", discValue: "", discLabel: ""
     });
     fullRender();
     sync();
