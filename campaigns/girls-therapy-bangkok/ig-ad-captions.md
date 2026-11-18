@@ -17,7 +17,7 @@ Instagram cuts the primary text off at roughly 125 characters with "…more", so
 > Days are for the food: street stalls, neighbourhood kitchens, the tables worth booking.
 > Nights are the treatment: a bar crawl every night, a route through the neighbourhoods most people miss, and one New Year's Eve worth staying past midnight for.
 >
-> Then a slow day in Khao Yai, because even therapy needs a cool-down.
+> And before the countdown, a day of fresh air in Khao Yai — because even therapy needs a breather.
 >
 > Return flights from Jakarta, a design-led hotel in the middle of it all, private transport, every table and every door handled. You just show up.
 >
