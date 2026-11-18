@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Girls Therapy — Instagram Stories</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,500..800&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..800;1,6..96,400..800&family=DM+Sans:opsz,wght@9..40,400..600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Girls Therapy — native 9:16 Story layouts (1080×1920).
+   Same tokens and type as slides.css, re-laid out for the tall frame.
+   Instagram safe zones: keep text out of the top ~250px and bottom ~340px;
+   only the logo and the small footer labels sit near those edges. */
+:root {
+  --plum: #2E0B33; --blush: #F6D7DF; --champ: #F1DDAE; --accent: #D7195A;
+  --ink: #22091F; --night: #14060F;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #444; font-family: "DM Sans", sans-serif; }
+.st { width: 1080px; height: 1920px; position: relative; overflow: hidden; margin: 0 auto 30px; }
+.st.dark { background: var(--plum); color: var(--blush); --rule: rgba(241,221,174,.5); }
+.st.light { background: var(--blush); color: var(--ink); --rule: rgba(34,9,31,.4); }
+.st.night { background: var(--night); color: var(--blush); --rule: rgba(241,221,174,.4); }
+.st::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 50;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: .2; mix-blend-mode: multiply;
+}
+.logo { position: absolute; top: 190px; left: 50%; transform: translateX(-50%); width: 180px; height: 52px; z-index: 20;
+  background: url(img/days-champ.png) center / contain no-repeat; }
+.light .logo { background-image: url(img/days-cherry.png); }
+
+/* running header / footer */
+.hd, .ft { position: absolute; left: 80px; right: 80px; z-index: 20; display: flex; justify-content: space-between;
+  font: 500 19px/1 "DM Mono", monospace; letter-spacing: .1em; text-transform: uppercase; }
+.hd { top: 300px; }
+.ft { bottom: 300px; border-top: 2px solid var(--rule); padding-top: 20px; }
+
+.mono { font-family: "DM Mono", monospace; text-transform: uppercase; letter-spacing: .1em; }
+.wide { font-family: "Bricolage Grotesque", sans-serif; font-stretch: 80%; font-weight: 800; font-variation-settings: "opsz" 96; text-transform: uppercase; letter-spacing: .005em; }
+.it { font-family: "Bodoni Moda", serif; font-style: italic; font-weight: 400; text-transform: none; letter-spacing: -.01em; }
+.dark .it, .night .it { color: var(--champ); }
+.light .it { color: var(--accent); }
+.ph { position: absolute; background-size: cover; background-position: center; }
+.box { width: 34px; height: 34px; border: 3px solid currentColor; position: relative; flex: none; margin-top: 2px; }
+.box::after { content: "✓"; position: absolute; left: 2px; top: -21px; font: 400 54px/1 "Bodoni Moda", serif; color: var(--accent); }
+.dark .box::after { color: var(--champ); }
+
+/* ---------- 01 · COVER ---------- */
+.s1 .ph { inset: 0; filter: saturate(1.15) contrast(1.05); }
+.s1 .shade { position: absolute; inset: 0; z-index: 2;
+  background: linear-gradient(180deg, rgba(20,6,15,.95) 0%, rgba(20,6,15,.45) 26%, rgba(20,6,15,.25) 48%, rgba(20,6,15,.55) 66%, rgba(20,6,15,.96) 88%); }
+.s1 .title { position: absolute; left: 0; right: 0; top: 330px; text-align: center; z-index: 20; }
+.s1 .kick { font: 500 26px/1 "DM Mono", monospace; letter-spacing: .3em; text-transform: uppercase; }
+.s1 h1 { color: var(--champ); margin-top: 34px; font-weight: 800; }
+.s1 h1 .t { display: block; font: 800 214px/.84 "Bricolage Grotesque", sans-serif; font-stretch: 100%; font-variation-settings: "opsz" 96; letter-spacing: -.035em; }
+.s1 h1 .sub { display: block; font: 500 44px/1 "DM Mono", monospace; letter-spacing: .14em; text-transform: uppercase; color: var(--blush); margin-top: 40px; }
+.rx { position: absolute; z-index: 25; left: 70px; top: 1050px; width: 600px; background: var(--blush); color: var(--ink);
+  padding: 30px 34px 32px; transform: rotate(-3deg); box-shadow: 0 24px 50px rgba(0,0,0,.45); }
+.rx .top { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 3px solid var(--ink); padding-bottom: 12px; }
+.rx .sym { font: italic 400 84px/.8 "Bodoni Moda", serif; color: var(--accent); }
+.rx .who { font: 500 14px/1.45 "DM Mono", monospace; letter-spacing: .08em; text-transform: uppercase; text-align: right; }
+.rx dl { display: grid; grid-template-columns: 150px 1fr; margin-top: 6px; }
+.rx dt, .rx dd { padding: 12px 0 10px; border-bottom: 1.5px dashed rgba(34,9,31,.45); }
+.rx dt { font: 500 13px/1.9 "DM Mono", monospace; letter-spacing: .1em; text-transform: uppercase; }
+.rx dd { font: italic 500 29px/1 "Bodoni Moda", serif; font-variation-settings: "opsz" 28; }
+.badge { position: absolute; z-index: 26; right: 60px; top: 1170px; width: 280px; height: 280px; border-radius: 50%;
+  background: var(--champ); color: var(--ink); transform: rotate(10deg); display: flex; flex-direction: column; align-items: center; justify-content: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,.45); }
+.badge::before { content: ""; position: absolute; inset: 11px; border-radius: 50%; border: 2px dashed rgba(34,9,31,.5); }
+.badge small { font: 500 15px/1.3 "DM Mono", monospace; letter-spacing: .14em; text-transform: uppercase; }
+.badge small:first-child { margin-bottom: 8px; } .badge small:last-child { margin-top: 10px; }
+.badge b { font: 800 62px/.9 "Bricolage Grotesque", sans-serif; font-stretch: 80%; text-transform: uppercase; }
+.badge i { font: italic 400 27px/1.1 "Bodoni Moda", serif; color: var(--accent); }
+.s1 .tag { position: absolute; z-index: 20; left: 0; right: 0; top: 1475px; text-align: center; font-size: 40px; line-height: 1.2; color: var(--blush); }
+
+/* ---------- 02 · SAFE SPACE ---------- */
+.s2 .ph { left: 80px; right: 80px; top: 380px; height: 640px; }
+.s2 .note { position: absolute; z-index: 25; right: 100px; top: 940px; width: 360px; background: var(--blush); color: var(--ink);
+  padding: 22px 26px 26px; transform: rotate(2.5deg); box-shadow: 0 16px 34px rgba(0,0,0,.3); }
+.s2 .note .mono { font-size: 14px; font-weight: 500; color: var(--accent); }
+.s2 .note p { font: italic 400 31px/1.1 "Bodoni Moda", serif; margin-top: 10px; }
+.s2 h2 { position: absolute; left: 80px; right: 80px; top: 1150px; font: 500 74px/1.04 "DM Sans", sans-serif; letter-spacing: -.025em; }
+.s2 h2 .it { font-size: 92px; line-height: .8; }
+.s2 .sub { position: absolute; left: 80px; right: 140px; top: 1440px; font-size: 36px; line-height: 1.25; }
+
+/* ---------- 03 · TREATMENT ---------- */
+.s3 .eb, .s5 .eb, .s6 .eb { position: absolute; left: 80px; right: 80px; top: 380px; font-size: 20px; font-weight: 500; }
+.s3 .eb, .s5 .eb { color: var(--accent); }
+.s3 h2 { position: absolute; left: 80px; top: 420px; font-size: 118px; line-height: .95; }
+.s3 h2 .it { font-size: 150px; line-height: .7; }
+.s3 .plan { position: absolute; left: 80px; right: 80px; top: 690px; list-style: none; }
+.s3 .plan .h { display: flex; justify-content: space-between; font: 500 18px/1 "DM Mono", monospace; letter-spacing: .1em; text-transform: uppercase; padding-bottom: 14px; border-bottom: 3px solid var(--ink); }
+.s3 .plan li { display: flex; gap: 22px; padding: 20px 0 18px; border-bottom: 1.5px dashed var(--rule); }
+.s3 .plan b { display: block; font: 500 18px/1 "DM Mono", monospace; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 8px; }
+.s3 .plan span { font-size: 30px; line-height: 1.22; }
+.s3 .bar { left: 80px; top: 1150px; width: 500px; height: 420px; background-position: center 30%; }
+.s3 .street { left: 610px; right: 80px; top: 1150px; height: 420px; }
+
+/* ---------- 04 · TWO SESSIONS ---------- */
+.s4 h2 { position: absolute; left: 80px; top: 380px; font-size: 112px; line-height: .98; color: var(--blush); }
+.s4 h2 .it { font-size: 136px; line-height: .7; }
+.s4 .blk { position: absolute; left: 80px; right: 80px; }
+.s4 .blk.d { top: 640px; } .s4 .blk.n { top: 1110px; }
+.s4 .lbl { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 3px solid var(--blush); padding-bottom: 12px; }
+.s4 .lbl .wide { font-size: 40px; }
+.s4 .lbl .mono { font-size: 18px; }
+.s4 .pics { display: grid; gap: 14px; margin-top: 20px; height: 280px; }
+.s4 .pics.two { grid-template-columns: 1fr 1fr; }
+.s4 .pics div { background-size: cover; background-position: center; }
+.s4 p { font-size: 29px; line-height: 1.24; margin-top: 18px; }
+.s4 p em { font: italic 400 35px/1 "Bodoni Moda", serif; color: var(--champ); }
+
+/* ---------- 05 · COOL-DOWN ---------- */
+.s5 .eb { text-align: center; }
+.s5 h2 { position: absolute; left: 0; right: 0; top: 420px; text-align: center; font-size: 86px; line-height: 1; }
+.s5 h2 .it { display: block; font-size: 128px; line-height: .85; }
+.s5 .label { position: absolute; left: 80px; right: 80px; top: 680px; background: #fff; color: var(--ink); border: 3px solid var(--ink); padding: 20px 20px 0; }
+.s5 .label .top { display: flex; justify-content: space-between; padding-bottom: 16px; font: 500 17px/1 "DM Mono", monospace; letter-spacing: .1em; text-transform: uppercase; }
+.s5 .label .top .r { color: var(--accent); }
+.s5 .label .ph { position: relative; height: 560px; }
+.s5 .rows { display: grid; grid-template-columns: 1fr 1fr 1fr; }
+.s5 .rows div { padding: 16px 4px 18px; border-top: 2px solid var(--ink); }
+.s5 .rows div + div { border-left: 2px solid var(--ink); padding-left: 16px; }
+.s5 .rows small { display: block; font: 500 13px/1 "DM Mono", monospace; letter-spacing: .1em; text-transform: uppercase; color: #6E655E; margin-bottom: 8px; }
+.s5 .rows span { font: italic 400 30px/1 "Bodoni Moda", serif; }
+.s5 .stamp { position: absolute; z-index: 30; right: 60px; top: 1180px; color: var(--accent); background: var(--blush); border: 5px solid currentColor; border-radius: 12px;
+  padding: 14px 20px 10px; text-align: center; transform: rotate(-8deg); font: 500 22px/1.15 "DM Mono", monospace; letter-spacing: .12em; text-transform: uppercase; }
+.s5 .stamp b { display: block; font: 800 40px/1 "Bricolage Grotesque", sans-serif; font-stretch: 80%; margin: 4px 0; }
+.s5 .copy { position: absolute; left: 80px; right: 80px; top: 1440px; text-align: center; font-size: 33px; line-height: 1.32; }
+
+/* ---------- 06 · FINE PRINT ---------- */
+.s6 .eb { color: var(--champ); }
+.s6 h2 { position: absolute; left: 80px; top: 420px; font-size: 128px; line-height: .92; color: var(--champ); }
+.s6 h2 .arr { font: 400 100px/1 "DM Sans", sans-serif; margin-left: 20px; }
+.s6 .incl { position: absolute; left: 80px; right: 80px; top: 690px; list-style: none; }
+.s6 .incl .h { display: flex; justify-content: space-between; font: 500 18px/1 "DM Mono", monospace; letter-spacing: .1em; text-transform: uppercase; padding-bottom: 14px; border-bottom: 3px solid var(--blush); }
+.s6 .incl li { display: flex; gap: 22px; padding: 17px 0 15px; border-bottom: 1.5px dashed var(--rule); }
+.s6 .incl b { display: block; font: 500 17px/1 "DM Mono", monospace; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 7px; color: var(--champ); }
+.s6 .incl span { font-size: 28px; line-height: 1.22; }
+.s6 .price { position: absolute; left: 80px; right: 80px; top: 1310px; background: var(--accent); color: var(--blush); padding: 22px 32px 24px;
+  display: flex; align-items: flex-end; justify-content: space-between; }
+.s6 .price small { display: block; font: 500 17px/1 "DM Mono", monospace; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; }
+.s6 .price b { font: 800 84px/1 "Bricolage Grotesque", sans-serif; font-stretch: 80%; font-variation-settings: "opsz" 96; }
+.s6 .price em { font: italic 400 38px/1.5 "Bodoni Moda", serif; }
+.s6 .cta { position: absolute; left: 80px; right: 80px; top: 1490px; display: flex; justify-content: space-between; font: 500 26px/1 "DM Mono", monospace; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--blush); border-bottom: 3px solid var(--blush); padding-bottom: 12px; }
+</style>
+</head>
+<body>
+
+<!-- 01 · COVER -->
+<section class="st night s1">
+  <div class="ph" style="background-image:url(img/chinatown-clean.jpg)"></div>
+  <div class="shade"></div>
+  <div class="logo"></div>
+  <div class="title">
+    <div class="kick">New Year's Eve · 2026</div>
+    <h1><span class="t">GIRLS<br>THERAPY</span><span class="sub">After dark: Bangkok</span></h1>
+  </div>
+  <div class="rx">
+    <div class="top"><span class="sym">Rx</span><span class="who">Patient: you + the girls<br>4 days · 3 nights</span></div>
+    <dl>
+      <dt>Prescribed</dt><dd>New Year's in Bangkok</dd>
+      <dt>Dosage</dt><dd>Taken nightly, after dark</dd>
+      <dt>Side effects</dt><dd>Sore feet, no regrets</dd>
+      <dt>Duration</dt><dd>Four days, two years</dd>
+    </dl>
+  </div>
+  <div class="badge"><small>Travelling</small><b>30 Dec</b><i>to</i><b>02 Jan</b><small>2026 → 2027</small></div>
+  <div class="tag wide">A culinary city by day.<br>An underground scene after dark.</div>
+  <div class="ft"><span>Girls Therapy · NYE Bangkok</span><span>01 / 06</span></div>
+</section>
+
+<!-- 02 · SAFE SPACE -->
+<section class="st dark s2">
+  <div class="logo"></div>
+  <div class="hd"><span>Session 01</span><span>The safe space</span></div>
+  <div class="ph" style="background-image:url(img/room.jpg)"></div>
+  <div class="note"><div class="mono">Therapist's note</div><p>Patient expects to start the year well-rested. Results may vary.</p></div>
+  <h2>Your <span class="it">safe space</span> is central, design-driven, and close to everything</h2>
+  <p class="sub">The kind of room you actually want to come back to at 3am.</p>
+  <div class="ft"><span>Girls Therapy · NYE Bangkok</span><span>02 / 06</span></div>
+</section>
+
+<!-- 03 · TREATMENT -->
+<section class="st light s3">
+  <div class="logo"></div>
+  <div class="hd"><span>Session 02</span><span>Treatment plan</span></div>
+  <div class="eb mono">The main course of treatment</div>
+  <h2 class="wide">The nights are<br>the <span class="it">treatment</span></h2>
+  <ul class="plan">
+    <li class="h"><span>Prescribed nightly</span><span>✓ = done</span></li>
+    <li><i class="box"></i><div><b>Group work</b><span>A bar crawl every night.</span></div></li>
+    <li><i class="box"></i><div><b>Exposure therapy</b><span>A well-curated route across the best neighbourhoods — the under-the-radar places.</span></div></li>
+    <li><i class="box"></i><div><b>Sound therapy</b><span>New Year's Eve. One room, one sound system, one reason to stay past midnight.</span></div></li>
+  </ul>
+  <div class="ph bar" style="background-image:url(img/bar.jpg)"></div>
+  <div class="ph street" style="background-image:url(img/street.jpg)"></div>
+  <div class="ft"><span>Girls Therapy · NYE Bangkok</span><span>03 / 06</span></div>
+</section>
+
+<!-- 04 · TWO SESSIONS -->
+<section class="st dark s4">
+  <div class="logo"></div>
+  <div class="hd"><span>Session 03</span><span>Daily schedule</span></div>
+  <h2 class="wide">Four days.<br>Two <span class="it">sessions</span> a day.</h2>
+  <div class="blk d">
+    <div class="lbl"><span class="wide">Day</span><span class="mono">10:00 — 18:00</span></div>
+    <div class="pics two"><div style="background-image:url(img/market.jpg)"></div><div style="background-image:url(img/grill.jpg)"></div></div>
+    <p><em>Talk it out over food —</em> street stalls, neighbourhood restaurants, and the tables worth booking.</p>
+  </div>
+  <div class="blk n">
+    <div class="lbl"><span class="wide">Night</span><span class="mono">21:00 — 00:00 →</span></div>
+    <div class="pics"><div style="background-image:url(img/cocktail.jpg)"></div></div>
+    <p><em>Let it all out —</em> the bars, the rooftops, and the one club night worth staying for.</p>
+  </div>
+  <div class="ft"><span>Girls Therapy · NYE Bangkok</span><span>04 / 06</span></div>
+</section>
+
+<!-- 05 · COOL-DOWN -->
+<section class="st light s5">
+  <div class="logo"></div>
+  <div class="hd"><span>Session 04</span><span>Optional add-on</span></div>
+  <div class="eb mono">New Year's Day · Toscana Valley, Khao Yai</div>
+  <h2 class="wide">After the countdown,<span class="it">the cool-down</span></h2>
+  <div class="label">
+    <div class="top"><span>Rx · Fresh air</span><span class="r">Take as needed</span></div>
+    <div class="ph" style="background-image:url(img/windmill.jpg)"></div>
+    <div class="rows">
+      <div><small>Active ingredient</small><span>Rolling hills</span></div>
+      <div><small>Dosage</small><span>One slow day</span></div>
+      <div><small>Distance</small><span>3 hrs from BKK</span></div>
+    </div>
+  </div>
+  <div class="stamp">Doctor's<b>ORDERS</b>Slow down</div>
+  <p class="copy">Rolling hills, fresh air, and a slower pace.<br>The side of Thailand most travellers never get to.</p>
+  <div class="ft"><span>Girls Therapy · NYE Bangkok</span><span>05 / 06</span></div>
+</section>
+
+<!-- 06 · FINE PRINT -->
+<section class="st dark s6">
+  <div class="logo"></div>
+  <div class="hd"><span>Session 05</span><span>The fine print</span></div>
+  <div class="eb mono">New Year's Eve · 4 days, 3 nights</div>
+  <h2 class="wide">30 Dec 2026<span class="arr">→</span><br>02 Jan 2027</h2>
+  <ul class="incl">
+    <li class="h"><span>Your prescription includes</span><span>✓</span></li>
+    <li><i class="box"></i><div><b>Flights</b><span>Return, Jakarta to Bangkok</span></div></li>
+    <li><i class="box"></i><div><b>Hotel</b><span>4 days, 3 nights</span></div></li>
+    <li><i class="box"></i><div><b>Private transportation</b><span>Throughout the trip</span></div></li>
+    <li><i class="box"></i><div><b>The Culinary Journey</b><span>Street food at the right hour. Neighbourhood restaurants, at the tables worth booking.</span></div></li>
+    <li><i class="box"></i><div><b>The Night Programme</b><span>A curated bar route, chosen by locals. One club night out.</span></div></li>
+  </ul>
+  <div class="price"><div><small>From</small><b>Rp 18,900,000</b></div><em>/ pax</em></div>
+  <div class="cta"><span>Book your session</span><span>→</span></div>
+  <div class="ft"><span>Girls Therapy · NYE Bangkok</span><span>06 / 06</span></div>
+</section>
+
+</body>
+</html>
