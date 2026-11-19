@@ -1,17 +1,16 @@
-// Compile the 4:5 feed slides (slides.html) into one PDF, one slide per page.
-const { chromium } = require('playwright');
+// Compile the 4:5 feed slides into one PDF, one slide per page.
+// Built from the rendered PNGs (export/girls-therapy-0X-*.png) so every viewer shows it the same:
+// a live HTML→PDF keeps blend modes and SVG filters that some mobile viewers draw as blank pages.
+// Run `node render.js` first.
 const path = require('path');
-(async () => {
-  const b = await chromium.launch();
-  const p = await b.newPage({ viewport: { width: 1600, height: 2000 } });
-  await p.goto('file://' + path.join(__dirname, 'slides.html'), { waitUntil: 'networkidle' });
-  await p.evaluate(() => document.fonts.ready);
-  await p.addStyleTag({ content: `
-    @page { size: 1600px 2000px; margin: 0; }
-    html, body { margin: 0; background: none; }
-    .slide { margin: 0; break-after: page; }
-    .slide:last-of-type { break-after: auto; }
-    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }` });
-  await p.pdf({ path: path.join(__dirname, 'export', 'Girls-Therapy-NYE-Bangkok.pdf'), width: '1600px', height: '2000px', printBackground: true, preferCSSPageSize: true });
-  await b.close();
-})();
+const { execFileSync } = require('child_process');
+const exp = path.join(__dirname, 'export');
+execFileSync('python3', ['-c', `
+import glob, sys
+from PIL import Image
+d = sys.argv[1]
+files = sorted(glob.glob(d + '/girls-therapy-0*.png'))
+pages = [Image.open(f).convert('RGB') for f in files]
+pages[0].save(d + '/Girls-Therapy-NYE-Bangkok.pdf', save_all=True, append_images=pages[1:], resolution=200, quality=92)
+print(len(pages), 'pages')
+`, exp], { stdio: 'inherit' });
