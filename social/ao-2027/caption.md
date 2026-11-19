@@ -80,51 +80,27 @@ DM kami atau WhatsApp +62 812-2000-0185.
 
 ## Caption (English + Bahasa Indonesia, ready to post)
 
+Prices and inclusions are on AO's package cards, so the caption doesn't repeat them: when the packages are adjusted, only the cards and the DMs change.
+
+```
 Australian Open 2027. Choose your round.
 
-Every package includes a lower level seat at Rod Laver Arena, close to the court, and exclusive access to the AO Reserve area — The Gallery.
+As an official reseller of AO Travel & Experiences, DAYS is proud to offer Official Travel Packages to the Australian Open 2027. Quarterfinals to finals weekend, with a lower level seat at Rod Laver Arena and access to AO Reserve — The Gallery.
 
-QUARTERFINALS · 25–28 Jan
-Two night sessions at Rod Laver Arena: one men's and one women's quarterfinal. 4 days, 3 nights at Hilton Melbourne.
-IDR 49.800.000 / person
+Swipe for the four packages.
 
-SEMIFINALS · 28–31 Jan
-Two night sessions: the women's and men's semifinals. 4 days, 3 nights at Hilton Melbourne.
-IDR 69.800.000 / person
-
-FINALS · 29 Jan – 1 Feb
-The women's final under the lights and the men's final day session. 4 days, 3 nights at Hilton Melbourne.
-IDR 119.800.000 / person
-
-SEMIFINAL + FINAL
-Flight ticket Jakarta – Melbourne, 4 days, 3 nights at a 4–5 star hotel, and night sessions at Rod Laver Arena.
-IDR 159.800.000 / person
-
-DAYS is an AO Travel & Experiences official reseller. To book, DM us or WhatsApp +62 812-2000-0185.
+Comment CLOSER and we'll send you the details.
 
 —
 
 Australian Open 2027. Pilih babakmu.
 
-Setiap paket sudah termasuk kursi lower level di Rod Laver Arena, dekat dengan lapangan, dan akses eksklusif ke area AO Reserve — The Gallery.
+Sebagai official reseller AO Travel & Experiences, DAYS menghadirkan Official Travel Packages untuk Australian Open 2027. Dari perempat final sampai final, dengan kursi lower level di Rod Laver Arena dan akses ke AO Reserve — The Gallery.
 
-QUARTERFINALS · 25–28 Jan
-Dua night session di Rod Laver Arena: satu perempat final putra dan satu putri. 4 hari 3 malam di Hilton Melbourne.
-IDR 49.800.000 / orang
+Geser untuk lihat empat paketnya.
 
-SEMIFINALS · 28–31 Jan
-Dua night session: semifinal putri dan putra. 4 hari 3 malam di Hilton Melbourne.
-IDR 69.800.000 / orang
-
-FINALS · 29 Jan – 1 Feb
-Final putri di bawah lampu stadion dan final putra di day session. 4 hari 3 malam di Hilton Melbourne.
-IDR 119.800.000 / orang
-
-SEMIFINAL + FINAL
-Tiket pesawat Jakarta – Melbourne, 4 hari 3 malam di hotel bintang 4–5, dan night session di Rod Laver Arena.
-IDR 159.800.000 / orang
-
-DAYS adalah AO Travel & Experiences official reseller. Untuk booking, DM kami atau WhatsApp +62 812-2000-0185.
+Komen CLOSER, kami kirim detailnya lewat DM.
+```
 
 ---
 
