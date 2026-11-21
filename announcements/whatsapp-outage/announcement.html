@@ -1,0 +1,79 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;800&family=JetBrains+Mono:wght@500&display=block" rel="stylesheet">
+<style>
+:root{--orange:#EC5B39;--orange-d:#F26A49;--ink:#1B1714;--paper:#FBF8F5;--muted:#A69C93;--line:#3A332E}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#777;font-family:"Inter Tight",system-ui,sans-serif;color:var(--paper)}
+.frame{position:relative;background:var(--ink);overflow:hidden;display:flex;flex-direction:column}
+.feed{width:1080px;height:1350px;padding:88px 88px 80px}
+.story{width:1080px;height:1920px;padding:200px 96px 280px}
+.frame::before{content:"";position:absolute;right:-170px;top:-170px;width:400px;height:400px;border-radius:50%;background:var(--orange)}
+.story::before{right:-200px;top:-60px;width:480px;height:480px}
+.top{position:relative;margin-bottom:56px;display:flex;justify-content:space-between;align-items:flex-start}
+.logo{height:64px;filter:none}
+.tag{font:500 22px/1 "JetBrains Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);background:var(--paper);padding:14px 20px;border-radius:999px;display:inline-flex;gap:12px;align-items:center}
+.tag i{width:12px;height:12px;border-radius:50%;background:var(--orange);display:inline-block;animation:none}
+.body{position:relative;margin-top:auto}
+.eyebrow{font:500 24px/1 "JetBrains Mono",monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--orange-d);margin-bottom:34px}
+h1{font-weight:800;font-size:138px;line-height:.92;letter-spacing:-.035em}
+h1 em{font-style:normal;color:var(--orange-d)}
+.lede{margin-top:40px;font-size:36px;line-height:1.38;color:#D9D1C9;max-width:840px}
+.list{margin-top:48px;border-top:2px solid var(--line)}
+.row{display:flex;align-items:baseline;gap:28px;padding:24px 0;border-bottom:2px solid var(--line);font-weight:600;font-size:40px;letter-spacing:-.01em}
+.row span{font:500 22px/1 "JetBrains Mono",monospace;color:var(--orange-d);letter-spacing:.06em;width:44px}
+.row.more{color:#BDB3AA;font-weight:500}
+.cta{margin-top:56px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.btn{background:var(--orange);color:var(--ink);font-weight:800;font-size:46px;letter-spacing:-.015em;padding:30px 48px;border-radius:999px;display:inline-flex;align-items:center;gap:20px}
+.btn svg{width:42px;height:42px}
+.alt{font:500 22px/1.6 "JetBrains Mono",monospace;color:var(--muted);text-align:right;letter-spacing:.02em}
+.story h1{font-size:158px}
+.story .lede{font-size:42px}
+.story .row{font-size:46px;padding:30px 0}
+.story .cta{flex-direction:column;align-items:flex-start;gap:40px;margin-top:72px}
+.story .btn{font-size:54px;padding:36px 60px}
+.story .alt{text-align:left;font-size:26px}
+</style></head><body>
+
+<section class="frame feed" id="feed">
+  <div class="top">
+    <img class="logo" src="days-wordmark.png" alt="DAYS">
+  </div>
+  <div class="body">
+    <div class="eyebrow">Service update</div>
+    <h1>WhatsApp<br>is down.<br><em>We’re not.</em></h1>
+    <p class="lede">Our WhatsApp line is having a moment. While we sort it, every enquiry comes straight through our DMs.</p>
+    <div class="list">
+      <div class="row"><span>01</span>Bangkok Girls Therapy</div>
+      <div class="row"><span>02</span>Australian Open 2027</div>
+      <div class="row more"><span>03</span>Every other DAYS package</div>
+    </div>
+    <div class="cta">
+      <div class="btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg>Send us a DM</div>
+      <div class="alt">or email<br>daysforward.id@gmail.com</div>
+    </div>
+  </div>
+</section>
+
+<br>
+
+<section class="frame story" id="story">
+  <div class="top">
+    <img class="logo" src="days-wordmark.png" alt="DAYS" style="height:76px">
+  </div>
+  <div class="body">
+    <div class="eyebrow">Service update</div>
+    <h1>WhatsApp<br>is down.<br><em>We’re not.</em></h1>
+    <p class="lede">Our WhatsApp line is having a moment. While we sort it, every enquiry comes straight through our DMs.</p>
+    <div class="list">
+      <div class="row"><span>01</span>Bangkok Girls Therapy</div>
+      <div class="row"><span>02</span>Australian Open 2027</div>
+      <div class="row more"><span>03</span>Every other DAYS package</div>
+    </div>
+    <div class="cta">
+      <div class="btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg>Send us a DM</div>
+      <div class="alt">or email daysforward.id@gmail.com</div>
+    </div>
+  </div>
+</section>
+</body></html>
