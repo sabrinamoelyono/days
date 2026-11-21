@@ -6,7 +6,7 @@ const path = require('path');
   const p = await b.newPage({ viewport: { width: 1200, height: 1400 } });
   await p.goto('file://' + path.join(__dirname, 'announcement.html'), { waitUntil: 'networkidle' });
   await p.evaluate(() => document.fonts.ready);
-  for (const [id, name] of [['feed', 'DAYS_WhatsApp_Update_Feed_1080x1350.png'], ['story', 'DAYS_WhatsApp_Update_Story_1080x1920.png']])
+  for (const [id, name] of [['feed', 'DAYS_WhatsApp_Update_Feed_1080x1350.png'], ['story', 'DAYS_WhatsApp_Update_Story_1080x1920.png'], ['feed-light', 'DAYS_WhatsApp_Update_Feed_Light_1080x1350.png'], ['story-light', 'DAYS_WhatsApp_Update_Story_Light_1080x1920.png']])
     await (await p.$('#' + id)).screenshot({ path: path.join(__dirname, name) });
   await b.close();
 })();

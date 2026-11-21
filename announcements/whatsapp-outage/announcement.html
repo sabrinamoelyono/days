@@ -33,6 +33,12 @@ h1 em{font-style:normal;color:var(--orange-d)}
 .story .cta{flex-direction:column;align-items:flex-start;gap:40px;margin-top:72px}
 .story .btn{font-size:54px;padding:36px 60px}
 .story .alt{text-align:left;font-size:26px}
+
+/* Light theme: Paper background, Ink text, Brand Ink for small orange text */
+.light{--orange-d:#C9431F;--muted:#6E655E;--line:#E8E0D8;background:var(--paper);color:var(--ink)}
+.light h1 em{color:var(--orange)}
+.light .lede{color:#4A423C}
+.light .row.more{color:#6E655E}
 </style></head><body>
 
 <section class="frame feed" id="feed">
@@ -59,6 +65,52 @@ h1 em{font-style:normal;color:var(--orange-d)}
 <br>
 
 <section class="frame story" id="story">
+  <div class="top">
+    <img class="logo" src="days-wordmark.png" alt="DAYS" style="height:76px">
+  </div>
+  <div class="body">
+    <div class="eyebrow">Service update</div>
+    <h1>WhatsApp<br>is down.<br><em>We’re not.</em></h1>
+    <p class="lede">Our WhatsApp line is having a moment. While we sort it, every enquiry comes straight through our DMs.</p>
+    <div class="list">
+      <div class="row"><span>01</span>Bangkok Girls Therapy</div>
+      <div class="row"><span>02</span>Australian Open 2027</div>
+      <div class="row"><span>03</span>Primavera Sound 2027</div>
+      <div class="row more"><span>04</span>Every other DAYS package</div>
+    </div>
+    <div class="cta">
+      <div class="btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg>Send us a DM</div>
+      <div class="alt">or email lets@talkaboutdays.com</div>
+    </div>
+  </div>
+</section>
+
+<br>
+
+<section class="frame feed light" id="feed-light">
+  <div class="top">
+    <img class="logo" src="days-wordmark.png" alt="DAYS">
+  </div>
+  <div class="body">
+    <div class="eyebrow">Service update</div>
+    <h1>WhatsApp<br>is down.<br><em>We’re not.</em></h1>
+    <p class="lede">Our WhatsApp line is having a moment. While we sort it, every enquiry comes straight through our DMs.</p>
+    <div class="list">
+      <div class="row"><span>01</span>Bangkok Girls Therapy</div>
+      <div class="row"><span>02</span>Australian Open 2027</div>
+      <div class="row"><span>03</span>Primavera Sound 2027</div>
+      <div class="row more"><span>04</span>Every other DAYS package</div>
+    </div>
+    <div class="cta">
+      <div class="btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg>Send us a DM</div>
+      <div class="alt">or email<br>lets@talkaboutdays.com</div>
+    </div>
+  </div>
+</section>
+
+<br>
+
+<section class="frame story light" id="story-light">
   <div class="top">
     <img class="logo" src="days-wordmark.png" alt="DAYS" style="height:76px">
   </div>
