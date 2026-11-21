@@ -87,7 +87,7 @@ All four are registered at the Tebet office for preparation, operations and comm
 
 - **Website:** [talkaboutdays.com](https://www.talkaboutdays.com/)
 - **Office:** Jl. Tebet Barat IX No. 2, Tebet, South Jakarta 12810, Indonesia
-- **Email:** [daysforward.id@gmail.com](mailto:daysforward.id@gmail.com)
+- **Email:** [lets@talkaboutdays.com](mailto:lets@talkaboutdays.com)
 - **Phone:** +62 812-2000-0185
 
 ## In this repository
